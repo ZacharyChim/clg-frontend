@@ -11,7 +11,7 @@ const nextConfig = {
       },
     ],
     loader: 'akamai',
-    path: '',
+    path: '/',
     // unoptimized: true,
   },
   reactStrictMode: true,
