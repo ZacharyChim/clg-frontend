@@ -4,14 +4,15 @@ const dns = require('dns')
 dns.setDefaultResultOrder('ipv4first')
 const nextConfig = {
   images: {
-    remotePatterns: [
-      {
-        protocol: 'http',
-        hostname: '**',
-      },
-    ],
-    loader: 'imgix',
-    path: '/',
+    domains: ['165.22.255.85:1338', '165.22.255.85'],
+    // remotePatterns: [
+    //   {
+    //     protocol: 'http',
+    //     hostname: '**',
+    //   },
+    // ],
+    // loader: 'imgix',
+    // path: '/',
     // unoptimized: true,
   },
   reactStrictMode: true,
