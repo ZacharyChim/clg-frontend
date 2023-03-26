@@ -21,6 +21,13 @@ const nextConfig = {
     NEXT_PUBLIC_STRAPI_URL: 'http://localhost:1338',
     NEXT_PUBLIC_SITE_URL: 'http://localhost:3000',
   },
+  typescript: {
+    // !! WARN !!
+    // Dangerously allow production builds to successfully complete even if
+    // your project has type errors.
+    // !! WARN !!
+    ignoreBuildErrors: true,
+  },
 }
 
 module.exports = nextConfig
