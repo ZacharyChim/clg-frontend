@@ -6,9 +6,10 @@ const nextConfig = {
   images: {
     remotePatterns: [
       {
-        protocol: "http",
-        hostname: "**",
+        protocol: 'http',
+        hostname: '**',
       },
+    ],
     // unoptimized: true,
   },
   reactStrictMode: true,
