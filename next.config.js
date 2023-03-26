@@ -10,6 +10,8 @@ const nextConfig = {
         hostname: '**',
       },
     ],
+    loader: 'akamai',
+    path: '',
     // unoptimized: true,
   },
   reactStrictMode: true,
