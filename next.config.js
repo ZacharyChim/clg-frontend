@@ -28,6 +28,7 @@ const nextConfig = {
     NEXT_PUBLIC_STRAPI_API_URL: 'http://165.22.255.85:1338/api',
     NEXT_PUBLIC_STRAPI_URL: 'http://165.22.255.85:1338',
     NEXT_PUBLIC_SITE_URL: 'https://clg-frontend.vercel.app',
+    // NEXT_PUBLIC_SITE_URL: 'http://localhost:3000',
   },
   typescript: {
     // !! WARN !!
