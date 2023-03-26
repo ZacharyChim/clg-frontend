@@ -27,7 +27,7 @@ const nextConfig = {
     // For local development without Docker
     NEXT_PUBLIC_STRAPI_API_URL: 'http://165.22.255.85:1338/api',
     NEXT_PUBLIC_STRAPI_URL: 'http://165.22.255.85:1338',
-    NEXT_PUBLIC_SITE_URL: 'clg-frontend-1homcui1c-zacharychim.vercel.app',
+    NEXT_PUBLIC_SITE_URL: 'clg-frontend.vercel.app',
   },
   typescript: {
     // !! WARN !!
