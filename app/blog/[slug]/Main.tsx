@@ -75,10 +75,10 @@ export default async function Main(props: PageProps) {
               {month} {date}, {year}
             </p>
 
-            <div
+            <article
               className='text-darkBrown mt-4'
               dangerouslySetInnerHTML={{ __html: content }}
-            ></div>
+            ></article>
           </div>
 
           <div className='md:w-1/3 text-center mx-auto'>
