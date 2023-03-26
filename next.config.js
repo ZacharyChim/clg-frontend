@@ -4,7 +4,7 @@ const dns = require('dns')
 dns.setDefaultResultOrder('ipv4first')
 const nextConfig = {
   images: {
-    domains: ['localhost'],
+    domains: ['165.22.255.85'],
     unoptimized: true,
   },
   reactStrictMode: true,
@@ -19,7 +19,7 @@ const nextConfig = {
     // For local development without Docker
     NEXT_PUBLIC_STRAPI_API_URL: 'http://165.22.255.85:1338/api',
     NEXT_PUBLIC_STRAPI_URL: 'http://165.22.255.85:1338',
-    NEXT_PUBLIC_SITE_URL: 'http://localhost:3000',
+    NEXT_PUBLIC_SITE_URL: 'clg-frontend-1homcui1c-zacharychim.vercel.app',
   },
   typescript: {
     // !! WARN !!
