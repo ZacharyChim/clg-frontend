@@ -10,7 +10,7 @@ const nextConfig = {
         hostname: '**',
       },
     ],
-    loader: 'akamai',
+    loader: 'imgix',
     path: '/',
     // unoptimized: true,
   },
