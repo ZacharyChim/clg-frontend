@@ -12,7 +12,7 @@ type PropType = {
 
 export default function Faqs(props: PropType) {
   return (
-    <div className='mx-auto space-y-4 max-w-4xl mb-16 mt-20 px-10 w-full self-center'>
+    <div className='mx-auto space-y-4 max-w-4xl mb-16 mt-10 px-10 w-full self-center'>
       <h3 className='w-full text-center text-darkBlue font-bold text-4xl mb-10'>
         FAQs
       </h3>

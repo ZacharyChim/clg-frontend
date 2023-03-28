@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import React from 'react'
-import { fetchSingle, richTextReducer, trimTitle } from '../../lib/utils'
+import { fetchSingle, richTextReducer } from '../../lib/utils'
 import Contact from '../../components/Contact'
 import Countries from '../../components/Countries'
 import curve from '/public/small-curve.png'

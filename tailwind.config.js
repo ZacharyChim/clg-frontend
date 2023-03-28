@@ -32,6 +32,9 @@ module.exports = {
         veryLightGray: 'hsl(0, 0%, 98%)',
         grayishWhite: '#c4faff',
         darkBrown: '#3f3f3f',
+        textGray: '#7b94a8',
+        borderBlue: '#d5f0ff',
+        borderGray: '#d6d6d6',
       },
       backgroundImage: {
         contactBg: "url('/contact-bg.png')",

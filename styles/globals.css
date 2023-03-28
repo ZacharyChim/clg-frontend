@@ -87,3 +87,9 @@ details[open] > summary > h4 > span.summary-title {
 .half_background {
   background: linear-gradient(to top, #cefdf9 40%, transparent 50%);
 }
+
+article h2,
+article h3 {
+  font-weight: bold;
+  padding: 2px 0;
+}
