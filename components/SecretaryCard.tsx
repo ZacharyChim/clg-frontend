@@ -9,12 +9,12 @@ type PropType = {
 
 export default function SecretaryCard(props: PropType) {
   return (
-    <div className='px-6 py-8 border-4 border-borderBlue rounded-lg'>
+    <div className='px-6 py-8 border-4 border-borderBlue rounded-lg h-fit'>
       <details
         className='group [&_summary::-webkit-details-marker]:hidden'
         // open
       >
-        <summary className='flex flex-col w-full cursor-pointer border-b border-borderGray'>
+        <summary className='flex flex-col cursor-pointer border-b border-borderGray'>
           <span className='text-sm text-textGray pb-1'>{props.type}</span>
           <span className='font-bold text-sm text-darkBlue pb-1'>
             {props.title}
@@ -42,7 +42,7 @@ export default function SecretaryCard(props: PropType) {
         </summary>
 
         <article
-          className='text-xs mt-4 leading-relaxed text-gray-700'
+          className='text-xs mt-4 text-gray-700'
           dangerouslySetInnerHTML={{ __html: props.details }}
         ></article>
       </details>

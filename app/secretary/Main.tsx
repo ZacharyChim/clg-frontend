@@ -182,7 +182,7 @@ export default async function Main() {
           <h3 className='text-center text-darkBlue font-bold text-4xl my-20'>
             {service}
           </h3>
-          <div className='grid md:grid-rows-3 md:grid-cols-3 gap-6 pb-20'>
+          <div className='grid md:grid-cols-3 gap-6 pb-20 h-fit'>
             <SecretaryCard
               type={secretary1}
               title={secretary1Title}
