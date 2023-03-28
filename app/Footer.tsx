@@ -62,17 +62,17 @@ async function Footer() {
         <div className='bg-white w-full h-full'>
           <Image src={footerCurve} alt='' />
         </div>
-        <div className='max-w-6xl px-4 py-16 mx-auto space-y-8 lg:space-y-16 lg:px-8'>
-          <div className='grid grid-cols-1 gap-4 mx-auto lg:grid-cols-4'>
-            <div className='mx-auto md:border-r'>
-              <div className='px-4 py-8'>
+        <div className='max-w-6xl px-10 py-16 md:mx-auto space-y-8 md:space-y-16 md:px-8'>
+          <div className='grid grid-cols-1 gap-4 md:mx-auto md:grid-cols-4'>
+            <div className='md:mx-auto md:border-r'>
+              <div className='pb-8'>
                 <Image
                   src={logoURL}
                   alt='CLG Group Logo'
                   width={logoWidth}
                   height={logoHeight}
                   quality='100'
-                  className='mx-auto '
+                  className='ml-6'
                 />
               </div>
               <ul>
@@ -114,24 +114,24 @@ async function Footer() {
           </div>
         </div> */}
 
-            <div className='mx-auto grid grid-cols-1 gap-4 text-sm lg:col-span-3 lg:grid-cols-4'>
-              <div>
-                <p className='font-bold text-grayishWhite pl-6 pb-4'>
+            <div className='ml-6 md:mx-auto grid grid-cols-1 gap-4 text-sm lg:col-span-3 lg:grid-cols-4'>
+              <div className='md:ml-4'>
+                <p className='font-bold text-grayishWhite pb-4'>
                   <Link href={allLinks[0].externalPath}>
                     {allLinks[0].title}
                   </Link>
                 </p>
-                <p className='font-bold text-grayishWhite pl-6 pb-4'>
+                <p className='font-bold text-grayishWhite pb-4'>
                   <Link href={allLinks[1].externalPath}>
                     {allLinks[1].title}
                   </Link>
                 </p>
-                <p className='font-bold text-grayishWhite pl-6 pb-4'>
+                <p className='font-bold text-grayishWhite pb-4'>
                   <Link href={allLinks[2].externalPath}>
                     {allLinks[2].title}
                   </Link>
                 </p>
-                <p className='font-bold text-grayishWhite pl-6 pb-1'>
+                <p className='font-bold text-grayishWhite pb-1'>
                   <Link href={allLinks[3].path}>{allLinks[3].title}</Link>
                 </p>
               </div>
