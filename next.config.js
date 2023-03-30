@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
-// const dns = require('dns')
+const dns = require('dns')
 
-// dns.setDefaultResultOrder('ipv4first')
+dns.setDefaultResultOrder('ipv4first')
 const nextConfig = {
   images: {
     // domains: ['165.22.255.85:1338', '165.22.255.85', 'localhost'],
@@ -13,7 +13,7 @@ const nextConfig = {
     ],
     // loader: 'imgix',
     // path: '/',
-    unoptimized: true,
+    // unoptimized: true,
   },
   reactStrictMode: true,
   swcMinify: true,
