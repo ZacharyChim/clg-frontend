@@ -2,15 +2,15 @@ import React from 'react'
 import Hero from '../../components/Hero'
 import Main from './Main'
 
-function payroll() {
+function xero() {
   return (
-    <div className='bg-preIpoCurveLine bg-no-repeat bg-[center_top_106rem] bg-contain'>
+    <div className='bg-preIpoCurveLine bg-no-repeat bg-[center_top_134rem] bg-contain'>
       {/* @ts-ignore */}
-      <Hero page='payroll' />
+      <Hero page='xero' />
       {/* @ts-ignore */}
       <Main />
     </div>
   )
 }
 
-export default payroll
+export default xero

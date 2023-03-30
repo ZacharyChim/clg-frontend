@@ -13,11 +13,11 @@ export default function ImageArticle(props: PropType) {
   return (
     <div className='mx-auto text-center'>
       <div
-        className={`flex flex-col gap-8 pl-10 py-5 items-center ${
+        className={`flex flex-col gap-8 py-5 mx-4 items-center ${
           props.imageLeft ? 'md:flex-row' : 'md:flex-row-reverse'
         }`}
       >
-        <div className='px-10 my-16 md:w-1/2'>
+        <div className='px-4 my-16 md:w-1/2'>
           <Image
             alt=''
             src={props.aboutImage.url}

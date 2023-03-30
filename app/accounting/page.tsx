@@ -4,7 +4,7 @@ import Main from './Main'
 
 function accounting() {
   return (
-    <div className='bg-preIpoCurveLine bg-no-repeat bg-[center_top_94rem] bg-contain'>
+    <div className='bg-preIpoCurveLine bg-no-repeat bg-[center_top_110rem] bg-contain'>
       {/* @ts-ignore */}
       <Hero page='accounting' />
       {/* @ts-ignore */}

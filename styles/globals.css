@@ -93,3 +93,8 @@ article h3 {
   font-weight: bold;
   padding: 2px 0;
 }
+
+.xero {
+  color: #0ea6e5;
+  text-decoration-line: underline;
+}

@@ -4,7 +4,7 @@ import Main from './Main'
 
 function tax() {
   return (
-    <div className='bg-curveLine bg-no-repeat bg-[center_top_60rem] bg-contain'>
+    <div className='bg-curveLine bg-no-repeat bg-[center_top_66rem] bg-contain'>
       {/* @ts-ignore */}
       <Hero page='tax' />
       {/* @ts-ignore */}

@@ -4,7 +4,7 @@ import Main from './Main'
 
 function dBiz() {
   return (
-    <div className='bg-preIpoCurveLine bg-no-repeat bg-[center_top_110rem] bg-contain'>
+    <div className='bg-preIpoCurveLine bg-no-repeat bg-[center_top_116rem] bg-contain'>
       {/* @ts-ignore */}
       <Hero page='d-biz' />
       {/* @ts-ignore */}

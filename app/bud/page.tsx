@@ -4,7 +4,7 @@ import Main from './Main'
 
 function bud() {
   return (
-    <div className='bg-curveLine bg-no-repeat bg-[center_top_110rem] bg-contain'>
+    <div className='bg-curveLine bg-no-repeat bg-[center_top_116rem] bg-contain'>
       {/* @ts-ignore */}
       <Hero page='bud' />
       {/* @ts-ignore */}
