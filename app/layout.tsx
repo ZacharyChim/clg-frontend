@@ -18,10 +18,10 @@ export default function RootLayout({
       <body>
         {/* @ts-ignore */}
         <Header />
-        {/* <p>{process.env.NEXT_PUBLIC_STRAPI_API_URL}</p> */}
-        {/* {children} */}
+
+        {children}
         {/* @ts-ignore */}
-        {/* <Footer /> */}
+        <Footer />
       </body>
     </html>
   )

@@ -98,3 +98,61 @@ article h3 {
   color: #0ea6e5;
   text-decoration-line: underline;
 }
+
+.input-wrapper {
+  position: relative;
+  margin: 4px;
+}
+
+.contact-input {
+  border: 1px solid #0da4e7;
+  border-radius: 4px;
+  position: relative;
+  margin-top: 12px;
+  width: 100%;
+  line-height: 6ex;
+  padding: 0 10px;
+}
+
+.contact-select {
+  border: 1px solid #0da4e7;
+  border-radius: 4px;
+  margin-top: 12px;
+  height: 80%;
+  padding: 0 10px;
+  color: #0da4e7;
+}
+
+.contact-input::placeholder {
+  color: #0da4e7;
+  opacity: 1;
+  transition: opacity 0.5s;
+}
+
+.contact-input:focus::placeholder {
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+.contact-label {
+  position: absolute;
+  top: 0.1ex;
+  z-index: 1;
+  left: 1em;
+  /* background-color: white; */
+  padding: 0 5px;
+  color: transparent;
+  opacity: 0;
+}
+
+.input-wrapper:focus-within .contact-label {
+  position: absolute;
+  top: 0.1ex;
+  z-index: 1;
+  left: 1em;
+  background-color: white;
+  padding: 0 5px;
+  color: #0da4e7;
+  opacity: 1;
+  transition: opacity 0.5s;
+}

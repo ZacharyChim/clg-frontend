@@ -1,7 +1,16 @@
 import React from 'react'
+import Hero from '../../components/Hero'
+import Main from './Main'
 
-export default function Contact() {
+function contact() {
   return (
-    <div>Contact Us page</div>
+    <div>
+      {/* @ts-ignore */}
+      <Hero page='contact' />
+      {/* @ts-ignore */}
+      <Main />
+    </div>
   )
 }
+
+export default contact
