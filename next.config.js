@@ -13,7 +13,7 @@ const nextConfig = {
     ],
     // loader: 'imgix',
     // path: '/',
-    unoptimized: true,
+    // unoptimized: true,
   },
   reactStrictMode: true,
   swcMinify: true,
