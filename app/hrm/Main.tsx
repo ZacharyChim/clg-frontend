@@ -467,7 +467,7 @@ export default async function Main() {
       </section>
       <Image src={contactTop} alt='' />
 
-      <section className='flex flex-col mx-auto items-center bg-curveLine bg-[center_top_12rem] bg-contain'>
+      <section className='flex flex-col mx-auto items-center bg-curveLine bg-[center_top_12rem] bg-contain  bg-no-repeat'>
         <h3 className='max-w-lg text-center text-darkBlue font-bold text-4xl mt-20'>
           {tasks}
         </h3>
