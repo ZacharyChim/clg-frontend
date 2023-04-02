@@ -24,7 +24,11 @@ export default function Navigation(props) {
         </div>
         <div className='hidden md:flex space-x-6'>
           {props.parentMenu.map((item) => (
-            <Link href='#' key={v4()} className='hover:text-darkGrayishBlue'>
+            <Link
+              href={item.externalPath}
+              key={v4()}
+              className='hover:text-darkGrayishBlue'
+            >
               {item.title}
             </Link>
           ))}
