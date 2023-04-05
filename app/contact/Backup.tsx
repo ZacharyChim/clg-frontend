@@ -1,6 +1,6 @@
-'use client'
 import Image from 'next/image'
 import React from 'react'
+import { fetchSingle } from '../../lib/utils'
 import clg from '../../public/clg-logo.png'
 import facebook from '../../public/icon-facebook.png'
 import linkedin from '../../public/icon-linkedin.png'
@@ -11,111 +11,36 @@ import emailBlue from '../../public/icon-blue-email.png'
 import mobileBlue from '../../public/icon-blue-mobile.png'
 import faxBlue from '../../public/icon-blue-fax.png'
 import addrBlue from '../../public/icon-blue-addr.png'
-import contactUs from '../../public/contact_us.png'
 
-export default function Main() {
-  const title = 'Fill up the form and our team will get back to you soon.'
-  const serviceTitle = 'Which Services Are You Interested In ?'
-  const more = '(You Can Select More Than One)'
-  const audit = 'AUDIT & ASSURANCE'
-  const audit1 = 'Accounting and Bookkeeping'
-  const audit2 = 'Audit Assurance'
-  const audit3 = 'Hong Kong Taxation'
-  const advisory = 'ADVISORY'
-  const advisory1 = 'Company Secretary'
-  const advisory2 = 'Payroll Outsourcing Service'
-  const funding = 'FUNDING AUDIT'
-  const funding1 = 'BUD'
-  const funding2 = 'TVP'
-  const funding3 = 'Other Fundings'
-  const cloud = 'CLOUD SOLUTION'
-  const cloud1 = 'Accounting Solution'
-  const cloud2 = 'HRM Solution'
-  const cloud3 = 'POS System / F&B POS System'
-  const cloud4 = 'Bookkeeping Documentation'
-  const cloud5 = 'Online Shop'
-  const hours = 'We will contact you within 24 hours of completing the form.'
+export default async function Main() {
+  const contact = await fetchSingle('contact')
 
-  const contactUsWidth = 88
-  const contactUsHeight = 16
+  const title = contact.title
+  const serviceTitle = contact.service_title
+  const more = contact.more
+  const audit = contact.audit
+  const audit1 = contact.audit1
+  const audit2 = contact.audit2
+  const audit3 = contact.audit3
+  const advisory = contact.advisory
+  const advisory1 = contact.advisory1
+  const advisory2 = contact.advisory2
+  const funding = contact.funding
+  const funding1 = contact.funding1
+  const funding2 = contact.funding2
+  const funding3 = contact.funding3
+  const cloud = contact.cloud
+  const cloud1 = contact.cloud1
+  const cloud2 = contact.cloud2
+  const cloud3 = contact.cloud3
+  const cloud4 = contact.cloud4
+  const cloud5 = contact.cloud5
+  const hours = contact.hours
 
-  function unCheck(name: string) {
-    var get = document.getElementsByName(name)
-
-    for (var i = 0; i < get.length; i++) {
-      get[i].checked = false
-    }
-  }
-
-  const handleSubmit = async (event) => {
-    // Stop the form from submitting and refreshing the page.
-    event.preventDefault()
-
-    const formData = new FormData(event.target)
-    const value = Object.fromEntries(formData.entries())
-
-    let regions
-    event.target.regions.value === 'Regions'
-      ? (regions = '')
-      : (regions = event.target.regions.value)
-
-    let data = {
-      data: {
-        audit: '',
-        advisory: '',
-        funding: '',
-        cloud: '',
-        name: formData.get('name'),
-        tel: formData.get('tel'),
-        email: formData.get('email'),
-        regions: regions,
-        industry: formData.get('industry'),
-        company: formData.get('company'),
-        message: formData.get('message'),
-      },
-    }
-
-    if (formData.getAll('audit').length !== 0) {
-      data.data.audit = formData.getAll('audit').toString()
-    }
-    if (formData.getAll('advisory').length !== 0) {
-      data.data.advisory = formData.getAll('advisory').toString()
-    }
-    if (formData.getAll('funding').length !== 0) {
-      data.data.funding = formData.getAll('funding').toString()
-    }
-    if (formData.getAll('cloud').length !== 0) {
-      data.data.cloud = formData.getAll('cloud').toString()
-    }
-
-    const JSONdata = JSON.stringify(data)
-
-    const endpoint = '/api/form'
-
-    const options = {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSONdata,
-    }
-
-    const response = await fetch(endpoint, options)
-
-    const result = await response.json()
-    alert(`Your message is received. We will contact you within 24 hours.`)
-    event.target.name.value = ''
-    event.target.tel.value = ''
-    event.target.email.value = ''
-    event.target.industry.value = ''
-    event.target.company.value = ''
-    event.target.message.value = ''
-    event.target.regions.selectedIndex = 0
-    unCheck('audit')
-    unCheck('advisory')
-    unCheck('funding')
-    unCheck('cloud')
-  }
+  const contactUs =
+    process.env.NEXT_PUBLIC_STRAPI_URL + contact.contact_us.data.attributes.url
+  const contactUsWidth = contact.contact_us.data.attributes.width
+  const contactUsHeight = contact.contact_us.data.attributes.height
 
   return (
     <>
@@ -229,18 +154,14 @@ export default function Main() {
             <span className='font-bold'>{serviceTitle}</span>
             <span className='text-oceanBlue'>{more}</span>
 
-            <form
-              onSubmit={handleSubmit}
-              className='mt-8 grid grid-cols-6 gap-3'
-            >
+            <form action='#' className='mt-8 grid grid-cols-6 gap-3'>
               <div className='col-span-6 sm:col-span-2'>
                 <span className='text-oceanBlue'>{audit}</span>
                 <label htmlFor='MarketingAccept' className='flex gap-1 mt-2'>
                   <input
                     type='checkbox'
-                    id={audit1}
-                    value={audit1}
-                    name='audit'
+                    id='MarketingAccept'
+                    name='marketing_accept'
                     className='h-4 w-4 rounded-md border-gray-200 bg-white shadow-sm'
                   />
 
@@ -250,9 +171,8 @@ export default function Main() {
                 <label htmlFor='MarketingAccept' className='flex gap-1 mt-2'>
                   <input
                     type='checkbox'
-                    id={audit2}
-                    value={audit2}
-                    name='audit'
+                    id='MarketingAccept'
+                    name='marketing_accept'
                     className='h-4 w-4 rounded-md border-gray-200 bg-white shadow-sm'
                   />
 
@@ -262,9 +182,8 @@ export default function Main() {
                 <label htmlFor='MarketingAccept' className='flex gap-1 mt-2'>
                   <input
                     type='checkbox'
-                    id={audit3}
-                    value={audit3}
-                    name='audit'
+                    id='MarketingAccept'
+                    name='marketing_accept'
                     className='h-4 w-4 rounded-md border-gray-200 bg-white shadow-sm'
                   />
 
@@ -277,9 +196,8 @@ export default function Main() {
                 <label htmlFor='MarketingAccept' className='flex gap-1 mt-2'>
                   <input
                     type='checkbox'
-                    id={advisory1}
-                    value={advisory1}
-                    name='advisory'
+                    id='MarketingAccept'
+                    name='marketing_accept'
                     className='h-4 w-4 rounded-md border-gray-200 bg-white shadow-sm'
                   />
 
@@ -289,9 +207,8 @@ export default function Main() {
                 <label htmlFor='MarketingAccept' className='flex gap-1 mt-2'>
                   <input
                     type='checkbox'
-                    id={advisory2}
-                    value={advisory2}
-                    name='advisory'
+                    id='MarketingAccept'
+                    name='marketing_accept'
                     className='h-4 w-4 rounded-md border-gray-200 bg-white shadow-sm'
                   />
 
@@ -304,9 +221,8 @@ export default function Main() {
                 <label htmlFor='MarketingAccept' className='flex gap-1 mt-2'>
                   <input
                     type='checkbox'
-                    id={funding1}
-                    value={funding1}
-                    name='funding'
+                    id='MarketingAccept'
+                    name='marketing_accept'
                     className='h-4 w-4 rounded-md border-gray-200 bg-white shadow-sm'
                   />
 
@@ -316,9 +232,8 @@ export default function Main() {
                 <label htmlFor='MarketingAccept' className='flex gap-1 mt-2'>
                   <input
                     type='checkbox'
-                    id={funding2}
-                    value={funding2}
-                    name='funding'
+                    id='MarketingAccept'
+                    name='marketing_accept'
                     className='h-4 w-4 rounded-md border-gray-200 bg-white shadow-sm'
                   />
 
@@ -328,9 +243,8 @@ export default function Main() {
                 <label htmlFor='MarketingAccept' className='flex gap-1 mt-2'>
                   <input
                     type='checkbox'
-                    id={funding3}
-                    value={funding3}
-                    name='funding'
+                    id='MarketingAccept'
+                    name='marketing_accept'
                     className='h-4 w-4 rounded-md border-gray-200 bg-white shadow-sm'
                   />
 
@@ -345,9 +259,8 @@ export default function Main() {
                 <label htmlFor='MarketingAccept' className='flex gap-1'>
                   <input
                     type='checkbox'
-                    id={cloud1}
-                    value={cloud1}
-                    name='cloud'
+                    id='MarketingAccept'
+                    name='marketing_accept'
                     className='h-4 w-4 rounded-md border-gray-200 bg-white shadow-sm'
                   />
 
@@ -357,9 +270,8 @@ export default function Main() {
                 <label htmlFor='MarketingAccept' className='flex gap-1 mt-2'>
                   <input
                     type='checkbox'
-                    id={cloud2}
-                    value={cloud2}
-                    name='cloud'
+                    id='MarketingAccept'
+                    name='marketing_accept'
                     className='h-4 w-4 rounded-md border-gray-200 bg-white shadow-sm'
                   />
 
@@ -369,9 +281,8 @@ export default function Main() {
                 <label htmlFor='MarketingAccept' className='flex gap-1 mt-2'>
                   <input
                     type='checkbox'
-                    id={cloud3}
-                    value={cloud3}
-                    name='cloud'
+                    id='MarketingAccept'
+                    name='marketing_accept'
                     className='h-4 w-4 rounded-md border-gray-200 bg-white shadow-sm'
                   />
 
@@ -382,9 +293,8 @@ export default function Main() {
                 <label htmlFor='MarketingAccept' className='flex gap-1'>
                   <input
                     type='checkbox'
-                    id={cloud4}
-                    value={cloud4}
-                    name='cloud'
+                    id='MarketingAccept'
+                    name='marketing_accept'
                     className='h-4 w-4 rounded-md border-gray-200 bg-white shadow-sm'
                   />
 
@@ -394,9 +304,8 @@ export default function Main() {
                 <label htmlFor='MarketingAccept' className='flex gap-1 mt-2'>
                   <input
                     type='checkbox'
-                    id={cloud5}
-                    value={cloud5}
-                    name='cloud'
+                    id='MarketingAccept'
+                    name='marketing_accept'
                     className='h-4 w-4 rounded-md border-gray-200 bg-white shadow-sm'
                   />
 
@@ -456,16 +365,15 @@ export default function Main() {
                   id='regions'
                   defaultValue={'Regions'}
                   className='contact-select relative w-full rounded-t-md'
-                  required
                 >
                   <option value='Regions' disabled>
                     Regions
                   </option>
-                  <option value='Africa'>Africa</option>
-                  <option value='Asia'>Asia</option>
-                  <option value='Europe'>Europe</option>
-                  <option value='North America'>North America</option>
-                  <option value='South America'>South America</option>
+                  <option value='1'>Africa</option>
+                  <option value='2'>Asia</option>
+                  <option value='3'>Europe</option>
+                  <option value='4'>North America</option>
+                  <option value='5'>South America</option>
                 </select>
               </div>
 

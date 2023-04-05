@@ -1,22 +1,28 @@
-// import type { NextApiRequest, NextApiResponse } from 'next'
+import type { NextApiRequest, NextApiResponse } from 'next'
 
-// type ResponseData = {
-//   data: string
-// }
+type ResponseData = {
+  data: string
+}
 
-// export default function handler(
-//   req: NextApiRequest,
-//   res: NextApiResponse<ResponseData>
-// ) {
-//   const body = req.body
-//   console.log('body: ', body.name)
+export default async function handler(
+  req: NextApiRequest,
+  res: NextApiResponse<ResponseData>
+) {
+  if (req.method === 'POST') {
+    const ENDPOINT = `${process.env.NEXT_PUBLIC_STRAPI_API_URL}/contact-uses`
+    const body = req.body
 
-//   // Both of these are required.
-//   if (!body.name) {
-//     return res.json({ data: 'Name not found' })
-//   }
-
-//   // // Found the name.
-//   res.json({ data: body.name })
-//   res.status(200).json(body.name)
-// }
+    const response = await fetch(ENDPOINT, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(body),
+    })
+    return res.json({ data: 'Successful' })
+  } else {
+    return res.status(500).json({
+      data: 'This needs to be a POST request',
+    })
+  }
+}
