@@ -13,7 +13,7 @@ const nextConfig = {
     ],
     // loader: 'imgix',
     // path: '/',
-    unoptimized: true,
+    // unoptimized: true,
   },
   reactStrictMode: true,
   swcMinify: true,
@@ -25,9 +25,9 @@ const nextConfig = {
     // For Docker Containers to communicate
     // NEXT_PUBLIC_STRAPI_API_URL: 'http://backend:1338/api',
     // For local development without Docker
-    NEXT_PUBLIC_STRAPI_API_URL: 'http://202.181.146.26:1338/api',
-    NEXT_PUBLIC_STRAPI_URL: 'http://202.181.146.26:1338',
-    NEXT_PUBLIC_SITE_URL: 'https://clg-frontend.vercel.app',
+    // NEXT_PUBLIC_STRAPI_API_URL: 'http://202.181.146.26:1338/api',
+    // NEXT_PUBLIC_STRAPI_URL: 'http://202.181.146.26:1338',
+    // NEXT_PUBLIC_SITE_URL: 'https://clg-frontend.vercel.app',
     // NEXT_PUBLIC_SITE_URL: 'http://localhost:3000',
   },
   typescript: {
