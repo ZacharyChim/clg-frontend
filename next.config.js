@@ -11,7 +11,7 @@ const nextConfig = {
         hostname: '**',
       },
     ],
-    // loader: 'imgix',
+    loader: 'imgix',
     // path: '/',
     // unoptimized: true,
   },
