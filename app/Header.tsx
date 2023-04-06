@@ -29,13 +29,24 @@ const fetchLogo = async () => {
 
 async function Header() {
   const menu = await fetchMenu()
+
   const parentMenu = menu.filter((item) => item.parent === null)
+  const childMenu = menu.filter((item) => item.parent !== null)
+
+  const auditMenu = childMenu.filter((item) => item.parent.id === 38)
+  const cloudMenu = childMenu.filter((item) => item.parent.id === 39)
+
   const logo = await fetchLogo()
   const logoURL = process.env.NEXT_PUBLIC_STRAPI_URL + logo
   return (
     <>
       <header>
-        <Navigation parentMenu={parentMenu} logoURL={logoURL} />
+        <Navigation
+          parentMenu={parentMenu}
+          auditMenu={auditMenu}
+          cloudMenu={cloudMenu}
+          logoURL={logoURL}
+        />
       </header>
     </>
   )
