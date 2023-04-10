@@ -355,7 +355,7 @@ export default async function Main() {
             {benefit}
           </h3>
           <div className='flex flex-col text-center md:flex-row'>
-            <div className='flex flex-col space-y-2 mt-10 p-4 md:w-1/4'>
+            <div className='flex flex-col space-y-4 mr-2 mt-10 md:w-1/5'>
               <div className='self-center pb-2 mt-7'>
                 <Image
                   src={benefit1Image}
@@ -366,11 +366,13 @@ export default async function Main() {
                 />
               </div>
 
-              <h5 className='text-md text-darkBlue'>{benefit1Title}</h5>
+              <h5 className='text-sm font-bold text-darkBlue'>
+                {benefit1Title}
+              </h5>
               <p className='text-sm'>{benefit1Desc}</p>
             </div>
 
-            <div className='flex flex-col space-y-2 mt-10 p-4 md:w-1/4'>
+            <div className='flex flex-col space-y-4 mt-10 mx-2 md:w-1/5'>
               <div className='self-center pb-2 mt-7'>
                 <Image
                   src={benefit2Image}
@@ -381,11 +383,13 @@ export default async function Main() {
                 />
               </div>
 
-              <h5 className='text-md text-darkBlue'>{benefit2Title}</h5>
+              <h5 className='text-sm font-bold text-darkBlue'>
+                {benefit2Title}
+              </h5>
               <p className='text-sm'>{benefit2Desc}</p>
             </div>
 
-            <div className='flex flex-col space-y-2 mt-10 p-4 md:w-1/4'>
+            <div className='flex flex-col space-y-4 mt-10 mx-2 md:w-1/5'>
               <div className='self-center pb-2 mt-7'>
                 <Image
                   src={benefit3Image}
@@ -396,11 +400,13 @@ export default async function Main() {
                 />
               </div>
 
-              <h5 className='text-md text-darkBlue'>{benefit3Title}</h5>
+              <h5 className='text-sm font-bold text-darkBlue'>
+                {benefit3Title}
+              </h5>
               <p className='text-sm'>{benefit3Desc}</p>
             </div>
 
-            <div className='flex flex-col space-y-2 mt-10 p-4 md:w-1/4'>
+            <div className='flex flex-col space-y-4 mt-10 mx-2 md:w-1/5'>
               <div className='self-center pb-2 mt-7'>
                 <Image
                   src={benefit4Image}
@@ -411,11 +417,13 @@ export default async function Main() {
                 />
               </div>
 
-              <h5 className='text-md text-darkBlue'>{benefit4Title}</h5>
+              <h5 className='text-sm font-bold text-darkBlue'>
+                {benefit4Title}
+              </h5>
               <p className='text-sm'>{benefit4Desc}</p>
             </div>
 
-            <div className='flex flex-col space-y-2 mt-10 p-4 md:w-1/4'>
+            <div className='flex flex-col space-y-4 mt-10 ml-2 md:w-1/5'>
               <div className='self-center pb-2'>
                 <Image
                   src={benefit5Image}
@@ -426,7 +434,9 @@ export default async function Main() {
                 />
               </div>
 
-              <h5 className='text-md text-darkBlue'>{benefit5Title}</h5>
+              <h5 className='text-sm font-bold text-darkBlue'>
+                {benefit5Title}
+              </h5>
               <p className='text-sm'>{benefit5Desc}</p>
             </div>
           </div>
@@ -634,7 +644,7 @@ export default async function Main() {
                 height={curveHeight}
                 className='mx-auto my-6'
               />
-              <p className='text-center text-sm text-darkBrown'>{reason1}</p>
+              <p className='text-center text-sm text-darkBrown'>{reason2}</p>
             </div>
           </div>
 
@@ -655,7 +665,7 @@ export default async function Main() {
                 height={curveHeight}
                 className='mx-auto my-6'
               />
-              <p className='text-center text-sm text-darkBrown'>{reason1}</p>
+              <p className='text-center text-sm text-darkBrown'>{reason3}</p>
             </div>
           </div>
 
@@ -675,7 +685,7 @@ export default async function Main() {
                 height={curveHeight}
                 className='mx-auto my-6'
               />
-              <p className='text-center text-sm text-darkBrown'>{reason1}</p>
+              <p className='text-center text-sm text-darkBrown'>{reason4}</p>
             </div>
           </div>
         </div>

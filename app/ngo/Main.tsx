@@ -293,7 +293,7 @@ export default async function Main() {
                   alt=''
                   width={service5ImageWidth}
                   height={service5ImageHeight}
-                  className='object-contain'
+                  className='object-contain ml-7'
                 />
               </div>
               <Image

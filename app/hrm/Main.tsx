@@ -1,11 +1,11 @@
 import Image from 'next/image'
 import React from 'react'
+import Link from 'next/link'
 import { fetchSingle, richTextReducer, trimTitle } from '../../lib/utils'
 import contactTop from '../../public/contact-top.png'
 import caseTop from '../../public/case-top.png'
 import Contact from '../../components/Contact'
 import ImageArticle from '../../components/ImageArticle'
-import arrow from '../../public/arrow-rounded.png'
 import curve from '/public/small-curve.png'
 import whatsapp from '../../public/hrm-whatsapp.png'
 
@@ -22,7 +22,6 @@ export default async function Main() {
   const video = hrm.video_url
 
   const aboutTitle = hrm.about_title
-  const learnMore = hrm.learn_more
 
   const solution1Title = hrm.solution1_title
   const solution1Content = richTextReducer(hrm.solution1_content)
@@ -350,98 +349,98 @@ export default async function Main() {
             {functions}
           </h3>
           <div className='grid grid-cols-1 text-center gap-8 md:grid-cols-4'>
-            <div className='flex flex-col space-y-2 mt-4 p-4'>
-              <div className='self-center pb-2 mt-7'>
+            <div className='flex flex-col space-y-4 mt-4 p-4'>
+              <div className='self-center pb-2 mt-4'>
                 <Image
                   src={function1Image}
                   alt=''
                   width={function1ImageWidth}
                   height={function1ImageHeight}
-                  className='w-32 md:mt-12 md:w-full object-fill'
+                  className='w-36 md:mt-12 object-contain'
                 />
               </div>
 
               <h5 className='text-md text-darkBlue'>{function1Title}</h5>
               <p className='text-sm'>{function1Desc}</p>
             </div>
-            <div className='flex flex-col space-y-2 p-4'>
+            <div className='flex flex-col space-y-4 p-4'>
               <div className='self-center pb-2 mt-7'>
                 <Image
                   src={function2Image}
                   alt=''
                   width={function2ImageWidth}
                   height={function2ImageHeight}
-                  className='w-32 md:mt-12 md:w-full object-fill'
+                  className='w-36 md:mt-12 object-contain'
                 />
               </div>
 
               <h5 className='text-md text-darkBlue'>{function2Title}</h5>
               <p className='text-sm'>{function2Desc}</p>
             </div>
-            <div className='flex flex-col space-y-2 p-4'>
+            <div className='flex flex-col space-y-4 p-4'>
               <div className='self-center pb-2 mt-7'>
                 <Image
                   src={function3Image}
                   alt=''
                   width={function3ImageWidth}
                   height={function3ImageHeight}
-                  className='w-32 md:mt-12 md:w-full object-fill'
+                  className='w-36 md:mt-12 object-contain'
                 />
               </div>
 
               <h5 className='text-md text-darkBlue'>{function3Title}</h5>
               <p className='text-sm'>{function3Desc}</p>
             </div>
-            <div className='flex flex-col space-y-2 p-4'>
+            <div className='flex flex-col space-y-4 p-4'>
               <div className='self-center pb-2 mt-7'>
                 <Image
                   src={function4Image}
                   alt=''
                   width={function4ImageWidth}
                   height={function4ImageHeight}
-                  className='w-32 md:w-full object-fill'
+                  className='w-32 object-fill'
                 />
               </div>
 
               <h5 className='text-md text-darkBlue'>{function4Title}</h5>
               <p className='text-sm'>{function4Desc}</p>
             </div>
-            <div className='flex flex-col space-y-2 p-4'>
+            <div className='flex flex-col space-y-4 p-4'>
               <div className='self-center pb-2'>
                 <Image
                   src={function5Image}
                   alt=''
                   width={function5ImageWidth}
                   height={function5ImageHeight}
-                  className='w-32 md:w-full object-fill'
+                  className='w-36 object-contain'
                 />
               </div>
 
               <h5 className='text-md text-darkBlue'>{function5Title}</h5>
               <p className='text-sm'>{function5Desc}</p>
             </div>
-            <div className='flex flex-col space-y-2 p-4'>
-              <div className='self-center pb-2'>
+            <div className='flex flex-col space-y-4 p-4'>
+              <div className='self-center pb-4'>
                 <Image
                   src={function6Image}
                   alt=''
                   width={function6ImageWidth}
                   height={function6ImageHeight}
-                  className='w-32 md:w-full object-fill'
+                  className='w-40 object-contain'
                 />
               </div>
 
               <h5 className='text-md text-darkBlue'>{function6Title}</h5>
               <p className='text-sm'>{function6Desc}</p>
             </div>
-            <div className='flex flex-col space-y-2 p-4'>
+            <div className='flex flex-col space-y-4 p-4'>
               <div className='self-center pb-2'>
                 <Image
                   src={function7Image}
                   alt=''
                   width={function7ImageWidth}
                   height={function7ImageHeight}
-                  className='w-32 md:w-full object-fill'
+                  className='w-36 object-contain'
                 />
               </div>
 
@@ -455,7 +454,7 @@ export default async function Main() {
                   alt=''
                   width={function8ImageWidth}
                   height={function8ImageHeight}
-                  className='w-32 md:w-full object-fill'
+                  className='w-36 object-contain'
                 />
               </div>
 
@@ -520,7 +519,7 @@ export default async function Main() {
           width={whyImageWidth}
           height={whyImageHeight}
           quality='100'
-          className='pb-2'
+          className='pb-2 max-w-5xl'
         />
         <div className='flex flex-col max-w-5xl md:flex-row'>
           <div className='flex flex-col mt-10 p-4 md:w-1/4'>
@@ -531,7 +530,7 @@ export default async function Main() {
                 width={reason1ImageWidth}
                 height={reason1ImageHeight}
                 quality='100'
-                className='pb-2'
+                className='w-20 pb-2'
               />
               <Image
                 alt=''
@@ -552,7 +551,7 @@ export default async function Main() {
                 width={reason2ImageWidth}
                 height={reason2ImageHeight}
                 quality='100'
-                className=''
+                className='w-20 mb-2'
               />
               <Image
                 alt=''
@@ -561,11 +560,14 @@ export default async function Main() {
                 height={curveHeight}
                 className='mx-auto my-6'
               />
-              <p className='text-center text-sm text-darkBrown'>{reason1}</p>
+              <article
+                className='text-darkBrown text-sm text-center'
+                dangerouslySetInnerHTML={{ __html: reason2 }}
+              ></article>
             </div>
           </div>
 
-          <div className='flex flex-col mt-10 p-4 md:w-1/4'>
+          <div className='flex flex-col mt-12 p-4 md:w-1/4'>
             <div className='flex flex-col items-center pb-2 mt-7'>
               <Image
                 src={reason3Image}
@@ -573,7 +575,7 @@ export default async function Main() {
                 width={reason3ImageWidth}
                 height={reason3ImageHeight}
                 quality='100'
-                className='pb-2'
+                className='w-20 pb-2'
               />
               <Image
                 alt=''
@@ -582,11 +584,11 @@ export default async function Main() {
                 height={curveHeight}
                 className='mx-auto my-6'
               />
-              <p className='text-center text-sm text-darkBrown'>{reason1}</p>
+              <p className='text-center text-sm text-darkBrown'>{reason3}</p>
             </div>
           </div>
 
-          <div className='flex flex-col mt-10 p-4 md:w-1/4'>
+          <div className='flex flex-col mt-12 p-4 md:w-1/4'>
             <div className='flex flex-col items-center pb-2 mt-7'>
               <Image
                 src={reason4Image}
@@ -594,6 +596,7 @@ export default async function Main() {
                 width={reason4ImageWidth}
                 height={reason4ImageHeight}
                 quality='100'
+                className='w-20 mb-2'
               />
               <Image
                 alt=''
@@ -602,7 +605,9 @@ export default async function Main() {
                 height={curveHeight}
                 className='mx-auto my-6'
               />
-              <p className='text-center text-sm text-darkBrown'>{reason1}</p>
+              <Link href='/xero' className='flex items-center'>
+                <p className='text-center text-sm text-darkBrown'>{reason4}</p>
+              </Link>
             </div>
           </div>
         </div>
