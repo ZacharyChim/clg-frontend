@@ -35,6 +35,7 @@ module.exports = {
         textGray: '#7b94a8',
         borderBlue: '#d5f0ff',
         borderGray: '#d6d6d6',
+        menuBlue: '#0da3e3',
       },
       backgroundImage: {
         contactBg: "url('/contact-bg.png')",
@@ -48,6 +49,7 @@ module.exports = {
         textBg: "url('/text-bg.png')",
         moreInfoBg: "url('/more-info.png')",
         titleBg: "url('/title-bg.png')",
+        menuBg: "url('/menu.png')",
       },
     },
   },

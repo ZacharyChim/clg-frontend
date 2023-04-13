@@ -33,7 +33,10 @@ async function Header() {
   const parentMenu = menu.filter((item) => item.parent === null)
   const childMenu = menu.filter((item) => item.parent !== null)
 
-  const auditMenu = childMenu.filter((item) => item.parent.id === 38)
+  const auditMenu = childMenu.filter((item) => item.parent.id === 65)
+  const advisoryMenu = childMenu.filter((item) => item.parent.id === 68)
+  const fundMenu = childMenu.filter((item) => item.parent.id === 71)
+  const incorMenu = childMenu.filter((item) => item.parent.id === 75)
   const cloudMenu = childMenu.filter((item) => item.parent.id === 39)
 
   const logo = await fetchLogo()
@@ -44,6 +47,9 @@ async function Header() {
         <Navigation
           parentMenu={parentMenu}
           auditMenu={auditMenu}
+          advisoryMenu={advisoryMenu}
+          fundMenu={fundMenu}
+          incorMenu={incorMenu}
           cloudMenu={cloudMenu}
           logoURL={logoURL}
         />

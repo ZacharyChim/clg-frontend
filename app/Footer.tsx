@@ -62,7 +62,7 @@ async function Footer() {
         <div className='bg-white w-full h-full'>
           <Image src={footerCurve} alt='' />
         </div>
-        <div className='max-w-6xl px-10 py-16 md:mx-auto space-y-8 md:space-y-16 md:px-8'>
+        <div className='max-w-6xl px-10 py-16 md:mx-auto space-y-8 md:space-y-16 md:px-8 arrow-list'>
           <div className='grid grid-cols-1 gap-4 md:mx-auto md:grid-cols-4'>
             <div className='md:mx-auto md:border-r'>
               <div className='pb-8'>
@@ -136,32 +136,6 @@ async function Footer() {
                 </p>
               </div>
 
-              {/* <div>
-                <nav className='my-2'>
-                  <ul className='space-y-3 text-sm mb-4'>
-                    {linkAboutUS.map((item) => (
-                      <li key={v4()}>
-                        <a
-                          href={item.externalPath}
-                          className='flex items-center text-grayishWhite transition hover:opacity-75'
-                        >
-                          <span className='min-w-[11px]'>
-                            <Image
-                              src={arrow}
-                              alt=''
-                              width={footer.arrow.data.attributes.width}
-                              height={footer.arrow.data.attributes.height}
-                              quality='100'
-                            />
-                          </span>
-                          <span className='ml-1 text-xs'>{item.title}</span>
-                        </a>
-                      </li>
-                    ))}
-                  </ul>
-                </nav>
-              </div> */}
-
               <div>
                 <p className='font-bold text-grayishWhite'>
                   {allLinks[4].title}
@@ -217,7 +191,7 @@ async function Footer() {
 
               <div>
                 <p className='font-bold text-grayishWhite mb-2'>
-                  {allLinks[15].title}
+                  {allLinks[16].title}
                 </p>
 
                 <nav className='mt-2'>
@@ -238,7 +212,7 @@ async function Footer() {
 
               <div>
                 <p className='font-bold text-grayishWhite'>
-                  {allLinks[25].title}
+                  {allLinks[27].title}
                 </p>
 
                 <nav className='mt-2'>

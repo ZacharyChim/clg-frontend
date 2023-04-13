@@ -5,6 +5,10 @@ import Link from 'next/link'
 import React, { useState } from 'react'
 import { Dropdown } from 'flowbite-react'
 import 'flowbite'
+import menuImage from '../public/menu.png'
+import menuPoint from '../public/menu-point.png'
+import menuPointLg from '../public/menu-point-lg.png'
+import menuCloud from '../public/menu-cloud.png'
 
 export default function Navigation(props) {
   const [isOpen, setIsOpen] = useState(false)
@@ -32,7 +36,6 @@ export default function Navigation(props) {
             aria-controls='navbar-multi-level'
             aria-expanded='false'
           >
-            <span className='sr-only'>Open main menu</span>
             <svg
               className='w-6 h-6'
               aria-hidden='true'
@@ -57,9 +60,10 @@ export default function Navigation(props) {
                   return (
                     <li>
                       <button
-                        id='dropdownNavbarLink'
-                        data-dropdown-toggle='dropdownNavbar'
-                        className='flex items-center justify-between w-full py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:w-auto dark:text-white md:dark:hover:text-blue-500 dark:focus:text-white dark:border-gray-700 dark:hover:bg-gray-700 md:dark:hover:bg-transparent'
+                        id='mega-menu-full-cta-image-button'
+                        data-dropdown-toggle='mega-menu-full-image-dropdown'
+                        data-dropdown-offset-distance='12'
+                        className='flex items-center justify-between w-full py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:w-auto'
                       >
                         {item.title}
                         <svg
@@ -77,24 +81,116 @@ export default function Navigation(props) {
                         </svg>
                       </button>
                       <div
-                        id='dropdownNavbar'
-                        className='z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-56 dark:bg-gray-700 dark:divide-gray-600'
+                        id='mega-menu-full-image-dropdown'
+                        className='z-10 absolute hidden left-0 w-full bg-white shadow-sm'
                       >
-                        <ul
-                          className='py-2 text-sm text-gray-700 dark:text-gray-400'
-                          aria-labelledby='dropdownLargeButton'
-                        >
-                          {props.auditMenu.map((subItem) => (
-                            <li>
-                              <Link
-                                href={subItem.externalPath}
-                                className='block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white'
+                        <Image
+                          src={menuPoint}
+                          alt=''
+                          width='1918'
+                          height='27'
+                          quality='100'
+                          className='hidden lg:flex'
+                        ></Image>
+                        <Image
+                          src={menuPointLg}
+                          alt=''
+                          width='1918'
+                          height='27'
+                          quality='100'
+                          className='hidden md:flex lg:hidden'
+                        ></Image>
+                        <div className='grid md:gap-8 mx-auto text-sm text-gray-500 md:grid-cols-5'>
+                          <span className='col-span-2 hidden md:block p-8 text-right bg-menuBg bg-no-repeat bg-cover hover:bg-blend-soft-light'>
+                            <p className='max-w-xl mb-5 text-2xl font-extrabold leading-wide tracking-wide text-white'>
+                              {item.title}
+                            </p>
+                          </span>
+                          <div className='grid mt-4 mx-10 md:mx-0 md:py-10 arrow-list md:grid-rows-2'>
+                            <div>
+                              <p className='text-menuBlue font-bold text-lg mb-2'>
+                                {props.auditMenu[0].parent.title}
+                              </p>
+                              <ul
+                                className='py-2 mb-2 text-sm text-gray-700 space-y-2'
+                                aria-labelledby='dropdownLargeButton'
                               >
-                                {subItem.title}
-                              </Link>
-                            </li>
-                          ))}
-                        </ul>
+                                {props.auditMenu.map((subItem) => (
+                                  <li>
+                                    <Link
+                                      href={subItem.externalPath}
+                                      className='py-2 hover:bg-gray-100 '
+                                    >
+                                      {subItem.title}
+                                    </Link>
+                                  </li>
+                                ))}
+                              </ul>
+                            </div>
+                            <div>
+                              <p className='text-menuBlue font-bold text-lg mb-2'>
+                                {props.fundMenu[0].parent.title}
+                              </p>
+                              <ul
+                                className='py-2 mb-2 text-sm text-gray-700 space-y-2'
+                                aria-labelledby='dropdownLargeButton'
+                              >
+                                {props.fundMenu.map((subItem) => (
+                                  <li>
+                                    <Link
+                                      href={subItem.externalPath}
+                                      className='py-2 hover:bg-gray-100 '
+                                    >
+                                      {subItem.title}
+                                    </Link>
+                                  </li>
+                                ))}
+                              </ul>
+                            </div>
+                          </div>
+                          <div className='grid mt-4 mx-10 md:mx-0 md:py-10 arrow-list md:grid-rows-2'>
+                            <div>
+                              <p className='text-menuBlue font-bold text-lg mb-2'>
+                                {props.advisoryMenu[0].parent.title}
+                              </p>
+                              <ul
+                                className='py-2 mb-2 text-sm text-gray-700 space-y-2'
+                                aria-labelledby='dropdownLargeButton'
+                              >
+                                {props.advisoryMenu.map((subItem) => (
+                                  <li>
+                                    <Link
+                                      href={subItem.externalPath}
+                                      className='py-2 hover:bg-gray-100 '
+                                    >
+                                      {subItem.title}
+                                    </Link>
+                                  </li>
+                                ))}
+                              </ul>
+                            </div>
+                            <div>
+                              <p className='text-menuBlue font-bold text-lg mb-2'>
+                                {props.incorMenu[0].parent.title}
+                              </p>
+                              <ul
+                                className='grid grid-cols-2 mb-2 text-sm text-gray-700 leading-7'
+                                aria-labelledby='dropdownLargeButton'
+                              >
+                                {props.incorMenu.map((subItem) => (
+                                  <li>
+                                    <Link
+                                      href={subItem.externalPath}
+                                      className='py-2 hover:bg-gray-100 '
+                                    >
+                                      {subItem.title}
+                                    </Link>
+                                  </li>
+                                ))}
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
                       </div>
                     </li>
                   )
@@ -103,9 +199,10 @@ export default function Navigation(props) {
                   return (
                     <li>
                       <button
-                        id='dropdownNavbarLink2'
-                        data-dropdown-toggle='dropdownNavbar2'
-                        className='flex items-center justify-between w-full py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:w-auto dark:text-white md:dark:hover:text-blue-500 dark:focus:text-white dark:border-gray-700 dark:hover:bg-gray-700 md:dark:hover:bg-transparent'
+                        id='mega-menu-full-cta-image-button2'
+                        data-dropdown-toggle='mega-menu-full-image-dropdown2'
+                        data-dropdown-offset-distance='12'
+                        className='flex items-center justify-between w-full py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:w-auto'
                       >
                         {item.title}
                         <svg
@@ -123,24 +220,54 @@ export default function Navigation(props) {
                         </svg>
                       </button>
                       <div
-                        id='dropdownNavbar2'
-                        className='z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-56 dark:bg-gray-700 dark:divide-gray-600'
+                        id='mega-menu-full-image-dropdown2'
+                        className='z-10 absolute hidden left-0 w-full bg-white shadow-sm'
                       >
-                        <ul
-                          className='py-2 text-sm text-gray-700 dark:text-gray-400'
-                          aria-labelledby='dropdownLargeButton'
-                        >
-                          {props.cloudMenu.map((cloudItem) => (
-                            <li>
-                              <Link
-                                href={cloudItem.externalPath}
-                                className='block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white'
+                        <Image
+                          src={menuCloud}
+                          alt=''
+                          width='1918'
+                          height='27'
+                          quality='100'
+                          className='hidden md:flex'
+                        ></Image>
+                        {/* <Image
+                          src={menuPoint}
+                          alt=''
+                          width='1918'
+                          height='27'
+                          quality='100'
+                          className='hidden md:flex lg:hidden'
+                        ></Image> */}
+                        <div className='grid md:gap-8 mx-auto text-sm text-gray-500 md:grid-cols-5'>
+                          <span className='col-span-2 hidden md:block p-8 text-right bg-menuBg bg-no-repeat bg-cover hover:bg-blend-soft-light'>
+                            <p className='max-w-xl mb-5 text-2xl font-extrabold leading-wide tracking-wide text-white'>
+                              {item.title}
+                            </p>
+                          </span>
+                          <div className='grid mt-4 mx-10 md:mx-0 md:py-10 arrow-list'>
+                            <div>
+                              <p className='text-menuBlue font-bold text-lg mb-2'>
+                                {props.cloudMenu[0].parent.title}
+                              </p>
+                              <ul
+                                className='py-2 text-sm text-gray-700 dark:text-gray-400 space-y-4'
+                                aria-labelledby='dropdownLargeButton'
                               >
-                                {cloudItem.title}
-                              </Link>
-                            </li>
-                          ))}
-                        </ul>
+                                {props.cloudMenu.map((cloudItem) => (
+                                  <li>
+                                    <Link
+                                      href={cloudItem.externalPath}
+                                      className='py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white'
+                                    >
+                                      {cloudItem.title}
+                                    </Link>
+                                  </li>
+                                ))}
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
                       </div>
                     </li>
                   )

@@ -51,7 +51,8 @@ article a {
   transform: rotate(-45deg) translateY(6px) translate(-6px);
 }
 
-article ul li::before {
+article ul li::before,
+.arrow-list ul li::before {
   content: url(/arrow.png);
   display: inline-block;
   margin-right: 0.5em;
