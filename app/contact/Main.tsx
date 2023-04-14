@@ -12,6 +12,7 @@ import mobileBlue from '../../public/icon-blue-mobile.png'
 import faxBlue from '../../public/icon-blue-fax.png'
 import addrBlue from '../../public/icon-blue-addr.png'
 import contactUs from '../../public/contact_us.png'
+import Link from 'next/link'
 
 export default function Main() {
   const title = 'Fill up the form and our team will get back to you soon.'
@@ -133,34 +134,42 @@ export default function Main() {
           <div className='md:w-1/3'>
             <Image src={clg} alt='' width={160} height={140} quality={100} />
             <div className='flex flex-row gap-5 ml-2'>
-              <Image
-                src={facebook}
-                alt=''
-                width={12}
-                height={22}
-                quality={100}
-              />
-              <Image
-                src={linkedin}
-                alt=''
-                width={23}
-                height={24}
-                quality={100}
-              />
-              <Image
-                src={instagram}
-                alt=''
-                width={22}
-                height={22}
-                quality={100}
-              />
-              <Image
-                src={whatsapp}
-                alt=''
-                width={22}
-                height={22}
-                quality={100}
-              />
+              <Link href='https://www.facebook.com/CLGCPA'>
+                <Image
+                  src={facebook}
+                  alt=''
+                  width={12}
+                  height={22}
+                  quality={100}
+                />
+              </Link>
+              <Link href='https://www.linkedin.com/company/clggroupcpa/'>
+                <Image
+                  src={linkedin}
+                  alt=''
+                  width={23}
+                  height={24}
+                  quality={100}
+                />
+              </Link>
+              <Link href='https://www.instagram.com/clg_group_hk/'>
+                <Image
+                  src={instagram}
+                  alt=''
+                  width={22}
+                  height={22}
+                  quality={100}
+                />
+              </Link>
+              <Link href='https://api.whatsapp.com/send/?phone=85295421138&text&type=phone_number&app_absent=0'>
+                <Image
+                  src={whatsapp}
+                  alt=''
+                  width={22}
+                  height={22}
+                  quality={100}
+                />
+              </Link>
             </div>
             <div className='grid grid-cols-9 gap-y-6 gap-x-2 mt-8'>
               <Image
