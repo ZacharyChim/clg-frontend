@@ -62,7 +62,7 @@ async function Footer() {
         <div className='bg-white w-full h-full'>
           <Image src={footerCurve} alt='' />
         </div>
-        <div className='max-w-6xl px-10 py-16 md:mx-auto space-y-8 md:space-y-16 md:px-8 arrow-list'>
+        <div className='max-w-6xl px-10 py-16 md:mx-auto space-y-8 md:space-y-16 md:px-8'>
           <div className='grid grid-cols-1 gap-4 md:mx-auto md:grid-cols-4'>
             <div className='md:mx-auto md:border-r'>
               <div className='pb-8'>
@@ -114,7 +114,7 @@ async function Footer() {
           </div>
         </div> */}
 
-            <div className='ml-6 md:mx-auto grid grid-cols-1 gap-4 text-sm lg:col-span-3 lg:grid-cols-4'>
+            <div className='arrow-list ml-6 md:mx-auto grid grid-cols-1 gap-4 text-sm lg:col-span-3 lg:grid-cols-4'>
               <div className='md:ml-4'>
                 <p className='font-bold text-grayishWhite pb-4'>
                   <Link href={allLinks[0].externalPath}>
