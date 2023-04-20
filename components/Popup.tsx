@@ -6,6 +6,7 @@ import popImage from '../public/popup.png'
 import React, { useEffect, useState } from 'react'
 
 export default function Popup() {
+  const [hidePopup, setHidePopup] = useState(false)
   const handleSubmit = async (event) => {
     event.preventDefault()
 
@@ -33,9 +34,9 @@ export default function Popup() {
     const result = await response.json()
 
     if (event.target.hide.checked) {
-      setOpen(false)
+      setHidePopup(true)
     } else {
-      setOpen(true)
+      setHidePopup(false)
     }
 
     alert('Our team will contact you as soon as possible.')
@@ -47,8 +48,13 @@ export default function Popup() {
 
   const [isOpen, setOpen] = useState(false)
   useEffect(() => {
-    setOpen(true)
-  }, [isOpen])
+    if (!hidePopup) {
+      setOpen(true)
+    } else {
+      setOpen(false)
+    }
+  }, [])
+
   return (
     <React.Fragment>
       <Modal dismissible={true} show={isOpen} onClose={() => setOpen(false)}>
