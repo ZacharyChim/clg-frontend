@@ -35,6 +35,7 @@ export default function Popup() {
 
     if (event.target.hide.checked) {
       setHidePopup(true)
+      localStorage.setItem('hidePopup', 'true')
     } else {
       setHidePopup(false)
     }
@@ -48,7 +49,7 @@ export default function Popup() {
 
   const [isOpen, setOpen] = useState(false)
   useEffect(() => {
-    if (!hidePopup) {
+    if (localStorage.getItem('hidePopup') !== 'true') {
       setOpen(true)
     } else {
       setOpen(false)
