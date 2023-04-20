@@ -129,7 +129,7 @@ export default function Popup() {
                 />
 
                 <span className='text-sm text-gray-700'>
-                  Don't show this popup again
+                  Do not show this popup again
                 </span>
               </label>
             </form>
