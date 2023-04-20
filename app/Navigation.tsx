@@ -44,9 +44,9 @@ export default function Navigation(props) {
               xmlns='http://www.w3.org/2000/svg'
             >
               <path
-                fill-rule='evenodd'
+                fillRule='evenodd'
                 d='M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z'
-                clip-rule='evenodd'
+                clipRule='evenodd'
               ></path>
             </svg>
           </button>
@@ -58,7 +58,7 @@ export default function Navigation(props) {
               {props.parentMenu.map((item) => {
                 if (item.id === 38) {
                   return (
-                    <li>
+                    <li key={v4()}>
                       <button
                         id='mega-menu-full-cta-image-button'
                         data-dropdown-toggle='mega-menu-full-image-dropdown'
@@ -116,7 +116,7 @@ export default function Navigation(props) {
                                 aria-labelledby='dropdownLargeButton'
                               >
                                 {props.auditMenu.map((subItem) => (
-                                  <li>
+                                  <li key={v4()}>
                                     <Link
                                       href={subItem.externalPath}
                                       className='py-2 hover:bg-gray-100 '
@@ -136,7 +136,7 @@ export default function Navigation(props) {
                                 aria-labelledby='dropdownLargeButton'
                               >
                                 {props.fundMenu.map((subItem) => (
-                                  <li>
+                                  <li key={v4()}>
                                     <Link
                                       href={subItem.externalPath}
                                       className='py-2 hover:bg-gray-100 '
@@ -158,7 +158,7 @@ export default function Navigation(props) {
                                 aria-labelledby='dropdownLargeButton'
                               >
                                 {props.advisoryMenu.map((subItem) => (
-                                  <li>
+                                  <li key={v4()}>
                                     <Link
                                       href={subItem.externalPath}
                                       className='py-2 hover:bg-gray-100 '
@@ -178,7 +178,7 @@ export default function Navigation(props) {
                                 aria-labelledby='dropdownLargeButton'
                               >
                                 {props.incorMenu.map((subItem) => (
-                                  <li>
+                                  <li key={v4()}>
                                     <Link
                                       href={subItem.externalPath}
                                       className='py-2 hover:bg-gray-100 '
@@ -255,7 +255,7 @@ export default function Navigation(props) {
                                 aria-labelledby='dropdownLargeButton'
                               >
                                 {props.cloudMenu.map((cloudItem) => (
-                                  <li>
+                                  <li key={v4()}>
                                     <Link
                                       href={cloudItem.externalPath}
                                       className='py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white'
@@ -273,7 +273,7 @@ export default function Navigation(props) {
                   )
                 }
                 return (
-                  <li>
+                  <li key={v4()}>
                     <Link
                       href={item.externalPath}
                       className='block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent'
@@ -283,111 +283,10 @@ export default function Navigation(props) {
                   </li>
                 )
               })}
-
-              {/* // <li>
-              //   <Link
-              //     href='#'
-              //     className='block py-2 pl-3 pr-4 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500 dark:bg-blue-600 md:dark:bg-transparent'
-              //     aria-current='page'
-              //   >
-              //     Home
-              //   </Link>
-              // </li>
-              
-              // <li>
-              //   <Link
-              //     href='#'
-              //     className='block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent'
-              //   >
-              //     Services
-              //   </Link>
-              // </li>
-              // <li>
-              //   <Link
-              //     href='#'
-              //     className='block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent'
-              //   >
-              //     Pricing
-              //   </Link>
-              // </li> */}
             </ul>
           </div>
         </div>
       </nav>
     </>
-    // <nav className='relative container mx-auto p-5 max-w-5xl'>
-    //   <div className='flex items-center justify-between'>
-    //     <div className='pt-2'>
-    //       <Image
-    //         src={props.logoURL}
-    //         alt='CLG Group Logo'
-    //         width={80}
-    //         height={80}
-    //       />
-    //     </div>
-    //     <div className='hidden md:flex space-x-6'>
-    //       {props.parentMenu.map((item) => {
-    //         if (item.id === 38) {
-    //           return (
-
-    // {/* <Link
-    //   href=''
-    //   key={v4()}
-    //   className='hover:text-darkGrayishBlue'
-    // >
-    //   {item.title}
-    // </Link> */}
-
-    //           )
-    //         }
-    //         if (item.id === 39) {
-    //           return (
-    //             <Link
-    //               href={item.externalPath}
-    //               key={v4()}
-    //               className='hover:text-darkGrayishBlue'
-    //             >
-    //               {item.title}
-    //             </Link>
-    //           )
-    //         }
-    //         return (
-    //           <Link
-    //             href={item.externalPath}
-    //             key={v4()}
-    //             className='hover:text-darkGrayishBlue'
-    //           >
-    //             {item.title}
-    //           </Link>
-    //         )
-    //       })}
-    //     </div>
-    //     <button
-    //       id='menu-btn'
-    //       className={`${
-    //         isOpen ? 'open' : ''
-    //       } block hamburger md:hidden focus:outline-none`}
-    //       onClick={toggleMenu}
-    //     >
-    //       <span className='hamburger-top'></span>
-    //       <span className='hamburger-middle'></span>
-    //       <span className='hamburger-bottom'></span>
-    //     </button>
-    //   </div>
-    //   <div className='md:hidden'>
-    //     <div
-    //       id='menu'
-    //       className={`${
-    //         isHidden ? 'hidden' : 'flex'
-    //       } absolute flex-col items-center self-end py-8 mt-10 space-y-6 font-bold bg-white sm:w-auto sm:self-center left-6 right-6 drop-shadow-md`}
-    //     >
-    //       {props.parentMenu.map((item) => (
-    //         <Link href='#' key={v4()} className='hover:text-darkGrayishBlue'>
-    //           {item.title}
-    //         </Link>
-    //       ))}
-    //     </div>
-    //   </div>
-    // </nav>
   )
 }

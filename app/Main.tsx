@@ -9,6 +9,7 @@ import caseTop from '../public/case-top.png'
 import partnershipTop from '../public/partnership-top.png'
 import serviceTop from '../public/service-top.png'
 import Contact from '../components/Contact'
+import Popup from '../components/Popup'
 
 const fetchData = async () => {
   const res = await fetch(
@@ -735,6 +736,8 @@ export default async function Main() {
 
           <Contact contactUs={contactText} />
         </div>
+
+        <Popup />
       </section>
     </>
   )

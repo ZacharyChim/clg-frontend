@@ -4,6 +4,7 @@ module.exports = {
     './app/**/*.{js,ts,jsx,tsx}',
     './pages/**/*.{js,ts,jsx,tsx}',
     './components/**/*.{js,ts,jsx,tsx}',
+    './node_modules/flowbite-react/**/*.js',
   ],
   theme: {
     // screens: {
@@ -50,6 +51,7 @@ module.exports = {
         moreInfoBg: "url('/more-info.png')",
         titleBg: "url('/title-bg.png')",
         menuBg: "url('/menu.png')",
+        popupBg: "url('/popup.png')",
       },
     },
   },
