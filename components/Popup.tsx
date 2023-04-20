@@ -48,7 +48,7 @@ export default function Popup() {
   const [isOpen, setOpen] = useState(false)
   useEffect(() => {
     setOpen(true)
-  }, [])
+  }, [isOpen])
   return (
     <React.Fragment>
       <Modal dismissible={true} show={isOpen} onClose={() => setOpen(false)}>
