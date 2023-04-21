@@ -4,6 +4,7 @@ import Link from 'next/link'
 import React from 'react'
 import footerCurve from '../public/footer-curve.png'
 import BackToTop from './BackToTop'
+import FloatingButtons from '../components/FloatingButtons'
 
 const fetchFooter = async () => {
   const res = await fetch(
@@ -58,6 +59,7 @@ async function Footer() {
   return (
     <>
       <BackToTop />
+      <FloatingButtons />
       <footer className='bg-oceanBlue'>
         <div className='bg-white w-full h-full'>
           <Image src={footerCurve} alt='' />

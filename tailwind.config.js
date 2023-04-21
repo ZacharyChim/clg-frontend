@@ -37,6 +37,7 @@ module.exports = {
         borderBlue: '#d5f0ff',
         borderGray: '#d6d6d6',
         menuBlue: '#0da3e3',
+        pinkish: '#b7b7b7',
       },
       backgroundImage: {
         contactBg: "url('/contact-bg.png')",
