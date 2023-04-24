@@ -21,7 +21,7 @@ export default function Navigation(props) {
     <>
       <nav className='bg-white border-gray-200 dark:bg-gray-900 dark:border-gray-700'>
         <div className='max-w-5xl flex flex-wrap items-center justify-between mx-auto p-4'>
-          <Link href='#' className='flex items-center'>
+          <Link href='/' className='flex items-center'>
             <Image
               src={props.logoURL}
               alt='CLG Group Logo'
