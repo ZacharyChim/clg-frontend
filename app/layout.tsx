@@ -15,6 +15,13 @@ export default function RootLayout({
     <html lang='en'>
       <head>
         <title>CLG Group</title>
+        <Script
+          strategy='beforeInteractive'
+          src='https://chatroom.dumbchat.ai/lib/TC.chatbot.umd.prod.min.js'
+        ></Script>
+        <Script strategy='afterInteractive'>
+          new TC_ChatBot('CP303284@CB87358406')
+        </Script>
       </head>
       <body>
         {/* @ts-ignore */}
@@ -23,14 +30,6 @@ export default function RootLayout({
         {children}
         {/* @ts-ignore */}
         <Footer />
-
-        <Script
-          strategy='beforeInteractive'
-          src='https://chatroom.dumbchat.ai/lib/TC.chatbot.umd.prod.min.js'
-        ></Script>
-        <Script strategy='afterInteractive'>
-          new TC_ChatBot('CP303284@CB87358406')
-        </Script>
       </body>
     </html>
   )
