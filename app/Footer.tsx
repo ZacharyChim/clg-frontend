@@ -129,12 +129,14 @@ async function Footer() {
                   </Link>
                 </p>
                 <p className='font-bold text-grayishWhite pb-4'>
-                  <Link href={allLinks[2].externalPath}>
-                    {allLinks[2].title}
+                  <Link href={allLinks[3].externalPath}>
+                    {allLinks[3].title}
                   </Link>
                 </p>
                 <p className='font-bold text-grayishWhite pb-1'>
-                  <Link href={allLinks[3].path}>{allLinks[3].title}</Link>
+                  <Link href={allLinks[2].externalPath}>
+                    {allLinks[2].title}
+                  </Link>
                 </p>
               </div>
 

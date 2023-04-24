@@ -13,7 +13,7 @@ export default function Contact(props: PropType) {
         </p>
         <Link
           className='inline-block rounded-full bg-white w-2/5 place-self-end mr-2 py-2 px-4 text-md font-bold text-center text-darkBlue hover:bg-darkBlue hover:text-white md:mb-6'
-          href='#'
+          href='/contact'
         >
           CONTACT US
         </Link>
