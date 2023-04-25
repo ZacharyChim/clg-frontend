@@ -230,7 +230,7 @@ export default function Main() {
               />
               <span className='col-span-8 text-sm mr-10'>
                 Room 2006, 20/F, Futura Plaza, 111-113 How Ming Street, Kwun
-                Tong, Hong Kong 8
+                Tong, Hong Kong
               </span>
             </div>
           </div>
