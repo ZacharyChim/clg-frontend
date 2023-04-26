@@ -2,6 +2,7 @@ import Link from 'next/link'
 import Header from './Header'
 import Footer from './Footer'
 import '../styles/globals.css'
+import Chatbot from '../components/chatbot'
 import Script from 'next/script'
 
 export default function RootLayout({
@@ -15,13 +16,8 @@ export default function RootLayout({
     <html lang='en'>
       <head>
         <title>CLG Group</title>
-        <Script
-          src='https://chatroom.dumbchat.ai/lib/TC.chatbot.umd.prod.min.js?v=20230425'
-          strategy='afterInteractive'
-        ></Script>
-        <Script strategy='afterInteractive'>
-          new TC_ChatBot('CP303284@CB87358406')
-        </Script>
+        <Script src='https://chatroom.dumbchat.ai/lib/TC.chatbot.umd.prod.min.js?v=20230425' />
+        <Script src='chatbot.js' />
       </head>
       <body>
         {/* @ts-ignore */}

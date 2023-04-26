@@ -84,7 +84,7 @@ export default function FloatingButtons() {
               className='mb-4'
             ></Image>
           </Link>
-          <Image src={chat} width='50' height='50' alt='' quality={100}></Image>
+          {/* <Image src={chat} width='50' height='50' alt='' quality={100}></Image> */}
         </div>
       </div>
 
