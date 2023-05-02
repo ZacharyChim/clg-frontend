@@ -61,10 +61,10 @@ async function Footer() {
       <BackToTop />
       <FloatingButtons />
       <footer className='bg-oceanBlue'>
-        <div className='bg-white w-full h-full'>
+        <div className='h-full w-full bg-white'>
           <Image src={footerCurve} alt='' />
         </div>
-        <div className='max-w-6xl px-10 py-16 md:mx-auto space-y-8 md:space-y-16 md:px-8'>
+        <div className='max-w-6xl space-y-8 px-10 py-16 md:mx-auto md:space-y-16 md:px-8'>
           <div className='grid grid-cols-1 gap-4 md:mx-auto md:grid-cols-4'>
             <div className='md:mx-auto md:border-r'>
               <div className='pb-8'>
@@ -80,7 +80,7 @@ async function Footer() {
               <ul>
                 {icons.map((icon) => (
                   <li
-                    className='flex pb-5 pl-4 items-center before:content-[""]'
+                    className='flex items-center pb-5 pl-4 before:content-[""]'
                     key={v4()}
                   >
                     <span className='w-1/12'>
@@ -93,7 +93,7 @@ async function Footer() {
                       />
                     </span>
                     <span className='w-11/12'>
-                      <p className='pl-2 pr-4 text-grayishWhite text-xs'>
+                      <p className='pl-2 pr-4 text-xs text-grayishWhite'>
                         {icon.text}
                       </p>
                     </span>
@@ -116,24 +116,24 @@ async function Footer() {
           </div>
         </div> */}
 
-            <div className='arrow-list ml-6 md:mx-auto grid grid-cols-1 gap-4 text-sm lg:col-span-3 lg:grid-cols-4'>
+            <div className='arrow-list ml-6 grid grid-cols-1 gap-4 text-sm md:mx-auto lg:col-span-3 lg:grid-cols-4'>
               <div className='md:ml-4'>
-                <p className='font-bold text-grayishWhite pb-4'>
+                <p className='pb-4 font-bold text-grayishWhite'>
                   <Link href={allLinks[0].externalPath}>
                     {allLinks[0].title}
                   </Link>
                 </p>
-                <p className='font-bold text-grayishWhite pb-4'>
+                <p className='pb-4 font-bold text-grayishWhite'>
                   <Link href={allLinks[1].externalPath}>
                     {allLinks[1].title}
                   </Link>
                 </p>
-                <p className='font-bold text-grayishWhite pb-4'>
+                <p className='pb-4 font-bold text-grayishWhite'>
                   <Link href={allLinks[3].externalPath}>
                     {allLinks[3].title}
                   </Link>
                 </p>
-                <p className='font-bold text-grayishWhite pb-1'>
+                <p className='pb-1 font-bold text-grayishWhite'>
                   <Link href={allLinks[2].externalPath}>
                     {allLinks[2].title}
                   </Link>
@@ -146,7 +146,7 @@ async function Footer() {
                 </p>
 
                 <nav className='mt-2'>
-                  <ul className='space-y-3 text-xs mb-4'>
+                  <ul className='mb-4 space-y-3 text-xs'>
                     {linkAudit.map((item) => (
                       <li key={v4()}>
                         <a
@@ -159,10 +159,10 @@ async function Footer() {
                     ))}
                   </ul>
 
-                  <p className='font-bold text-grayishWhite mb-3'>
+                  <p className='mb-3 font-bold text-grayishWhite'>
                     {allLinks[8].title}
                   </p>
-                  <ul className='space-y-3 text-xs mb-4'>
+                  <ul className='mb-4 space-y-3 text-xs'>
                     {linkAdvisory.map((item) => (
                       <li key={v4()}>
                         <a
@@ -175,10 +175,10 @@ async function Footer() {
                     ))}
                   </ul>
 
-                  <p className='font-bold text-grayishWhite mb-3'>
+                  <p className='mb-3 font-bold text-grayishWhite'>
                     {allLinks[11].title}
                   </p>
-                  <ul className='space-y-3 text-xs mb-4'>
+                  <ul className='mb-4 space-y-3 text-xs'>
                     {linkFunding.map((item) => (
                       <li key={v4()}>
                         <a
@@ -194,12 +194,12 @@ async function Footer() {
               </div>
 
               <div>
-                <p className='font-bold text-grayishWhite mb-2'>
+                <p className='mb-2 font-bold text-grayishWhite'>
                   {allLinks[16].title}
                 </p>
 
                 <nav className='mt-2'>
-                  <ul className='space-y-3 text-xs mb-4'>
+                  <ul className='mb-4 space-y-3 text-xs'>
                     {linkIncorporation.map((item) => (
                       <li key={v4()}>
                         <a
@@ -220,7 +220,7 @@ async function Footer() {
                 </p>
 
                 <nav className='mt-2'>
-                  <ul className='space-y-3 text-xs mb-4'>
+                  <ul className='mb-4 space-y-3 text-xs'>
                     {linkCloud.map((item) => (
                       <li key={v4()}>
                         <a
@@ -237,8 +237,8 @@ async function Footer() {
             </div>
           </div>
         </div>
-        <div className='bg-darkBlue border-b-8 border-slate-900'>
-          <div className='max-w-5xl px-4 py-5 mx-auto space-y-8  sm:px-6 lg:space-y-16 lg:px-8'>
+        <div className='border-b-8 border-slate-900 bg-darkBlue'>
+          <div className='mx-auto max-w-5xl space-y-8 px-4 py-5  sm:px-6 lg:space-y-16 lg:px-8'>
             <p className='text-xs text-grayishWhite'>{copyright}</p>
           </div>
         </div>

@@ -19,8 +19,8 @@ export default function Navigation(props) {
   }
   return (
     <>
-      <nav className='bg-white border-gray-200 dark:bg-gray-900 dark:border-gray-700'>
-        <div className='max-w-5xl flex flex-wrap items-center justify-between mx-auto p-4'>
+      <nav className='border-gray-200 bg-white dark:border-gray-700 dark:bg-gray-900'>
+        <div className='mx-auto flex max-w-5xl flex-wrap items-center justify-between p-4'>
           <Link href='/' className='flex items-center'>
             <Image
               src={props.logoURL}
@@ -32,12 +32,12 @@ export default function Navigation(props) {
           <button
             data-collapse-toggle='navbar-multi-level'
             type='button'
-            className='inline-flex items-center p-2 ml-3 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600'
+            className='ml-3 inline-flex items-center rounded-lg p-2 text-sm text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600 md:hidden'
             aria-controls='navbar-multi-level'
             aria-expanded='false'
           >
             <svg
-              className='w-6 h-6'
+              className='h-6 w-6'
               aria-hidden='true'
               fill='currentColor'
               viewBox='0 0 20 20'
@@ -54,7 +54,7 @@ export default function Navigation(props) {
             className='hidden w-full md:block md:w-auto'
             id='navbar-multi-level'
           >
-            <ul className='flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700'>
+            <ul className='mt-4 flex flex-col rounded-lg border border-gray-100 bg-gray-50 p-4 font-medium dark:border-gray-700 dark:bg-gray-800 md:mt-0 md:flex-row md:space-x-8 md:border-0 md:bg-white md:p-0 md:dark:bg-gray-900'>
               {props.parentMenu.map((item) => {
                 if (item.id === 38) {
                   return (
@@ -63,11 +63,11 @@ export default function Navigation(props) {
                         id='mega-menu-full-cta-image-button'
                         data-dropdown-toggle='mega-menu-full-image-dropdown'
                         data-dropdown-offset-distance='12'
-                        className='flex items-center justify-between w-full py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:w-auto'
+                        className='flex w-full items-center justify-between rounded py-2 pl-3 pr-4 text-gray-900 hover:bg-gray-100 md:w-auto md:border-0 md:p-0 md:hover:bg-transparent md:hover:text-blue-700'
                       >
                         {item.title}
                         <svg
-                          className='w-5 h-5 ml-1'
+                          className='ml-1 h-5 w-5'
                           aria-hidden='true'
                           fill='#00b7e3'
                           viewBox='0 0 20 20'
@@ -82,7 +82,7 @@ export default function Navigation(props) {
                       </button>
                       <div
                         id='mega-menu-full-image-dropdown'
-                        className='z-10 absolute hidden left-0 w-full bg-white shadow-sm'
+                        className='absolute left-0 z-10 hidden w-full bg-white shadow-sm'
                       >
                         <Image
                           src={menuPoint}
@@ -100,19 +100,19 @@ export default function Navigation(props) {
                           quality='100'
                           className='hidden md:flex lg:hidden'
                         ></Image>
-                        <div className='grid md:gap-8 mx-auto text-sm text-gray-500 md:grid-cols-5'>
-                          <span className='col-span-2 hidden md:block p-8 text-right bg-menuBg bg-no-repeat bg-cover hover:bg-blend-soft-light'>
-                            <p className='max-w-xl mb-5 text-2xl font-extrabold leading-wide tracking-wide text-white'>
+                        <div className='mx-auto grid text-sm text-gray-500 md:grid-cols-5 md:gap-8'>
+                          <span className='col-span-2 hidden bg-menuBg bg-cover bg-no-repeat p-8 text-right hover:bg-blend-soft-light md:block'>
+                            <p className='leading-wide mb-5 max-w-xl text-2xl font-extrabold tracking-wide text-white'>
                               {item.title}
                             </p>
                           </span>
-                          <div className='grid mt-4 mx-10 md:mx-0 md:py-10 arrow-list md:grid-rows-2'>
+                          <div className='arrow-list mx-10 mt-4 grid md:mx-0 md:grid-rows-2 md:py-10'>
                             <div>
-                              <p className='text-menuBlue font-bold text-lg mb-2'>
+                              <p className='mb-2 text-lg font-bold text-menuBlue'>
                                 {props.auditMenu[0].parent.title}
                               </p>
                               <ul
-                                className='py-2 mb-2 text-sm text-gray-700 space-y-2'
+                                className='mb-2 space-y-2 py-2 text-sm text-gray-700'
                                 aria-labelledby='dropdownLargeButton'
                               >
                                 {props.auditMenu.map((subItem) => (
@@ -128,11 +128,11 @@ export default function Navigation(props) {
                               </ul>
                             </div>
                             <div>
-                              <p className='text-menuBlue font-bold text-lg mb-2'>
+                              <p className='mb-2 text-lg font-bold text-menuBlue'>
                                 {props.fundMenu[0].parent.title}
                               </p>
                               <ul
-                                className='py-2 mb-2 text-sm text-gray-700 space-y-2'
+                                className='mb-2 space-y-2 py-2 text-sm text-gray-700'
                                 aria-labelledby='dropdownLargeButton'
                               >
                                 {props.fundMenu.map((subItem) => (
@@ -148,13 +148,13 @@ export default function Navigation(props) {
                               </ul>
                             </div>
                           </div>
-                          <div className='grid mt-4 mx-10 md:mx-0 md:py-10 arrow-list md:grid-rows-2'>
+                          <div className='arrow-list mx-10 mt-4 grid md:mx-0 md:grid-rows-2 md:py-10'>
                             <div>
-                              <p className='text-menuBlue font-bold text-lg mb-2'>
+                              <p className='mb-2 text-lg font-bold text-menuBlue'>
                                 {props.advisoryMenu[0].parent.title}
                               </p>
                               <ul
-                                className='py-2 mb-2 text-sm text-gray-700 space-y-2'
+                                className='mb-2 space-y-2 py-2 text-sm text-gray-700'
                                 aria-labelledby='dropdownLargeButton'
                               >
                                 {props.advisoryMenu.map((subItem) => (
@@ -170,11 +170,11 @@ export default function Navigation(props) {
                               </ul>
                             </div>
                             <div>
-                              <p className='text-menuBlue font-bold text-lg mb-2'>
+                              <p className='mb-2 text-lg font-bold text-menuBlue'>
                                 {props.incorMenu[0].parent.title}
                               </p>
                               <ul
-                                className='grid grid-cols-2 mb-2 text-sm text-gray-700 leading-7'
+                                className='mb-2 grid grid-cols-2 text-sm leading-7 text-gray-700'
                                 aria-labelledby='dropdownLargeButton'
                               >
                                 {props.incorMenu.map((subItem) => (
@@ -197,16 +197,16 @@ export default function Navigation(props) {
                 }
                 if (item.id === 39) {
                   return (
-                    <li>
+                    <li key={v4()}>
                       <button
                         id='mega-menu-full-cta-image-button2'
                         data-dropdown-toggle='mega-menu-full-image-dropdown2'
                         data-dropdown-offset-distance='12'
-                        className='flex items-center justify-between w-full py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:w-auto'
+                        className='flex w-full items-center justify-between rounded py-2 pl-3 pr-4 text-gray-900 hover:bg-gray-100 md:w-auto md:border-0 md:p-0 md:hover:bg-transparent md:hover:text-blue-700'
                       >
                         {item.title}
                         <svg
-                          className='w-5 h-5 ml-1'
+                          className='ml-1 h-5 w-5'
                           aria-hidden='true'
                           fill='#00b7e3'
                           viewBox='0 0 20 20'
@@ -221,7 +221,7 @@ export default function Navigation(props) {
                       </button>
                       <div
                         id='mega-menu-full-image-dropdown2'
-                        className='z-10 absolute hidden left-0 w-full bg-white shadow-sm'
+                        className='absolute left-0 z-10 hidden w-full bg-white shadow-sm'
                       >
                         <Image
                           src={menuCloud}
@@ -239,19 +239,19 @@ export default function Navigation(props) {
                           quality='100'
                           className='hidden md:flex lg:hidden'
                         ></Image> */}
-                        <div className='grid md:gap-8 mx-auto text-sm text-gray-500 md:grid-cols-5'>
-                          <span className='col-span-2 hidden md:block p-8 text-right bg-menuBg bg-no-repeat bg-cover hover:bg-blend-soft-light'>
-                            <p className='max-w-xl mb-5 text-2xl font-extrabold leading-wide tracking-wide text-white'>
+                        <div className='mx-auto grid text-sm text-gray-500 md:grid-cols-5 md:gap-8'>
+                          <span className='col-span-2 hidden bg-menuBg bg-cover bg-no-repeat p-8 text-right hover:bg-blend-soft-light md:block'>
+                            <p className='leading-wide mb-5 max-w-xl text-2xl font-extrabold tracking-wide text-white'>
                               {item.title}
                             </p>
                           </span>
-                          <div className='grid mt-4 mx-10 md:mx-0 md:py-10 arrow-list'>
+                          <div className='arrow-list mx-10 mt-4 grid md:mx-0 md:py-10'>
                             <div>
-                              <p className='text-menuBlue font-bold text-lg mb-2'>
+                              <p className='mb-2 text-lg font-bold text-menuBlue'>
                                 {props.cloudMenu[0].parent.title}
                               </p>
                               <ul
-                                className='py-2 text-sm text-gray-700 dark:text-gray-400 space-y-4'
+                                className='space-y-4 py-2 text-sm text-gray-700 dark:text-gray-400'
                                 aria-labelledby='dropdownLargeButton'
                               >
                                 {props.cloudMenu.map((cloudItem) => (
@@ -276,7 +276,7 @@ export default function Navigation(props) {
                   <li key={v4()}>
                     <Link
                       href={item.externalPath}
-                      className='block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent'
+                      className='block rounded py-2 pl-3 pr-4 text-gray-900 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:border-0 md:p-0 md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:bg-transparent md:dark:hover:text-blue-500'
                     >
                       {item.title}
                     </Link>
