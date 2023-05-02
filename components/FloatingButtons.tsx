@@ -1,11 +1,12 @@
 'use client'
-import { Button, Modal } from 'flowbite-react'
+import { Modal } from 'flowbite-react'
 import Image from 'next/image'
 import Link from 'next/link'
 import demoImage from '../public/demo.png'
 import calendar from '../public/calendar.png'
 import whatsapp from '../public/whatsapp2.png'
 import React, { useEffect, useState } from 'react'
+import { useSearchParams } from 'next/navigation'
 
 const Step1 = (props: any) => {
   const [value1, setValue1] = useState('')
@@ -44,7 +45,6 @@ const Step1 = (props: any) => {
           required
           onChange={(e) => {
             props.setPreferredTime1(e.target.value)
-            console.log('Inputbox' + e.target.value)
           }}
         >
           <option value='09-10'>09:00 - 10:00</option>
@@ -75,7 +75,6 @@ const Step1 = (props: any) => {
           onChange={(e) => setValue2(e.target.value)}
           onBlur={(e) => {
             props.setPreferredDate2(e.target.value)
-            console.log('Date2 Input: ' + e.target.value)
           }}
         />
       </div>
@@ -242,6 +241,9 @@ const Step1 = (props: any) => {
 }
 export default function FloatingButtons() {
   // const [hidePopup, setHidePopup] = useState(false)
+  const searchParams = useSearchParams()
+
+  const demo = searchParams.get('demo')
 
   const [step, setStep] = useState(1)
   const [preferredDate1, setPreferredDate1] = useState('')
@@ -274,10 +276,6 @@ export default function FloatingButtons() {
       ? (regions = '')
       : (regions = event.target.regions.value)
 
-    console.log(accounting)
-    console.log(hrm)
-    console.log(pos)
-    console.log(shop)
     let services = ''
     if (accounting) {
       services += 'Accounting Solution; '
@@ -298,9 +296,6 @@ export default function FloatingButtons() {
     if (preferredDate3) {
       if (!preferredTime3) setPreferredTime3('09-10')
     }
-
-    console.log(services)
-    console.log(preferredDate1)
 
     let data = {
       data: {
@@ -355,11 +350,15 @@ export default function FloatingButtons() {
     setPos(false)
     setShop(false)
 
-    setOpen(false)
+    setIsOpen(false)
   }
 
-  const [isOpen, setOpen] = useState(false)
-
+  const [isOpen, setIsOpen] = useState(false)
+  useEffect(() => {
+    if (demo) {
+      setIsOpen(true)
+    }
+  }, [])
   const Step2 = () => (
     <>
       <div key='step2' className='contact input-wrapper col-span-2'>
@@ -487,7 +486,7 @@ export default function FloatingButtons() {
     <React.Fragment>
       <div key='floatingButtons' className='relative'>
         <div className='fixed top-1/3 right-5'>
-          <button type='button' onClick={() => setOpen(true)}>
+          <button type='button' onClick={() => setIsOpen(true)}>
             <Image
               src={calendar}
               width='50'
@@ -517,12 +516,12 @@ export default function FloatingButtons() {
         size='5xl'
         dismissible={true}
         show={isOpen}
-        onClose={() => setOpen(false)}
+        onClose={() => setIsOpen(false)}
       >
         <Modal.Body className='max-w-5xl p-0'>
           <div className='relative cursor-pointer text-gray-700 hover:bg-gray-200 hover:text-gray-900'>
             <span
-              onClick={() => setOpen(false)}
+              onClick={() => setIsOpen(false)}
               className='absolute right-5 top-3'
             >
               X
