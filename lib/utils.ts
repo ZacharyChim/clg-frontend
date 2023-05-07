@@ -31,7 +31,7 @@ export const richTextReducer = (raw: string) => {
   return fixedImage
 }
 
-export const trimTitle = (str: string, limit = 53) => {
+export const trimTitle = (str: string, limit = 50) => {
   let newTitle: string[] = []
   if (str.length >= limit) {
     str.split(' ').reduce((acc, cur) => {
