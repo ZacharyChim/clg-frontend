@@ -231,6 +231,7 @@ const Step1 = (props: any) => {
       <div key='nextDiv' className='col-span-4 items-center gap-4'>
         <button
           onClick={props.handleNext}
+          type='button'
           className='mx-2 mt-4 shrink-0 rounded-full border border-blue-400 bg-blue-400 py-3 pl-10 pr-8 text-sm font-bold text-white transition hover:bg-transparent hover:text-blue-400 focus:outline-none focus:ring active:text-blue-500'
         >
           NEXT <span className='ml-2'>&rarr;</span>
@@ -257,8 +258,7 @@ export default function FloatingButtons() {
   const [pos, setPos] = useState(false)
   const [shop, setShop] = useState(false)
 
-  const handleNext = (e: any) => {
-    e.preventDefault()
+  const handleNext = () => {
     setStep(step + 1)
   }
 
