@@ -1,8 +1,8 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
-import Contact from '../../components/Contact'
-import { fetchSingle, richTextReducer, trimTitle } from '../../lib/utils'
+import Contact from '../../../components/Contact'
+import { fetchSingle, richTextReducer, trimTitle } from '../../../lib/utils'
 
 export default async function Main() {
   const otherFunding = await fetchSingle('other-funding')
@@ -48,9 +48,9 @@ export default async function Main() {
   const moreInfo = otherFunding.more_info
 
   return (
-    <section id='case' className='flex flex-col mx-auto items-center max-w-5xl'>
+    <section id='case' className='mx-auto flex max-w-5xl flex-col items-center'>
       <div className='mx-auto pt-20 text-center'>
-        <div className='flex flex-col gap-8 pb-20 px-5 md:flex-row'>
+        <div className='flex flex-col gap-8 px-5 pb-20 md:flex-row'>
           <div className='m-auto md:w-1/2'>
             <Image
               alt=''
@@ -65,31 +65,31 @@ export default async function Main() {
               src={number1}
               width={number1Width}
               height={number1Height}
-              className='h-16 w-16 object-fit'
+              className='object-fit h-16 w-16'
               quality='100'
             />
-            <h2 className='text-3xl font-bold text-darkBlue mb-10'>{title1}</h2>
+            <h2 className='mb-10 text-3xl font-bold text-darkBlue'>{title1}</h2>
             <article
-              className='text-darkBrown leading-7 space-y-4'
+              className='space-y-4 leading-7 text-darkBrown'
               dangerouslySetInnerHTML={{ __html: content1 }}
             ></article>
           </div>
         </div>
       </div>
 
-      <div className='flex flex-col-reverse gap-8 pb-20 px-5 md:flex-row'>
+      <div className='flex flex-col-reverse gap-8 px-5 pb-20 md:flex-row'>
         <div className='text-left md:w-1/2'>
           <Image
             alt=''
             src={number2}
             width={number2Width}
             height={number2Height}
-            className='h-16 w-16 object-fit'
+            className='object-fit h-16 w-16'
             quality='100'
           />
-          <h2 className='text-3xl font-bold text-darkBlue mb-10'>{title2}</h2>
+          <h2 className='mb-10 text-3xl font-bold text-darkBlue'>{title2}</h2>
           <article
-            className='text-darkBrown leading-7 space-y-4'
+            className='space-y-4 leading-7 text-darkBrown'
             dangerouslySetInnerHTML={{ __html: content2 }}
           ></article>
         </div>
@@ -103,7 +103,7 @@ export default async function Main() {
         </div>
       </div>
 
-      <div className='flex flex-col gap-8 pb-20 px-5 md:flex-row'>
+      <div className='flex flex-col gap-8 px-5 pb-20 md:flex-row'>
         <div className='m-auto md:w-1/2'>
           <Image
             alt=''
@@ -118,12 +118,12 @@ export default async function Main() {
             src={number3}
             width={number3Width}
             height={number3Height}
-            className='h-16 w-16 object-fit'
+            className='object-fit h-16 w-16'
             quality='100'
           />
-          <h2 className='text-3xl font-bold text-darkBlue mb-10'>{title3}</h2>
+          <h2 className='mb-10 text-3xl font-bold text-darkBlue'>{title3}</h2>
           <article
-            className='text-darkBrown leading-7 space-y-4'
+            className='space-y-4 leading-7 text-darkBrown'
             dangerouslySetInnerHTML={{ __html: content3 }}
           ></article>
         </div>

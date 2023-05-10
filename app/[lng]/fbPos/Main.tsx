@@ -1,8 +1,8 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
-import Contact from '../../components/Contact'
-import { fetchSingle, richTextReducer, trimTitle } from '../../lib/utils'
+import Contact from '../../../components/Contact'
+import { fetchSingle, richTextReducer, trimTitle } from '../../../lib/utils'
 import curve from '/public/small-curve.png'
 
 export default async function Main() {
@@ -141,9 +141,9 @@ export default async function Main() {
   const contactUs = fbPos.contact_us
 
   return (
-    <section id='case' className='flex flex-col mx-auto items-center max-w-5xl'>
+    <section id='case' className='mx-auto flex max-w-5xl flex-col items-center'>
       <div className='mx-auto text-center'>
-        <div className='flex flex-col gap-8 pl-10 py-5 items-center md:flex-row'>
+        <div className='flex flex-col items-center gap-8 py-5 pl-10 md:flex-row'>
           <div className='text-left md:w-1/2'>
             <Image
               alt=''
@@ -153,15 +153,15 @@ export default async function Main() {
               className='object-fit'
               quality='100'
             />
-            <h2 className='text-3xl font-bold text-darkBlue mb-6 mt-4'>
+            <h2 className='mb-6 mt-4 text-3xl font-bold text-darkBlue'>
               {aboutTitle}
             </h2>
             <article
-              className='text-darkBrown leading-7 space-y-4 mx-4'
+              className='mx-4 space-y-4 leading-7 text-darkBrown'
               dangerouslySetInnerHTML={{ __html: aboutText }}
             ></article>
           </div>
-          <div className='mb-16 my-16 md:w-1/2'>
+          <div className='my-16 mb-16 md:w-1/2'>
             <Image
               alt=''
               src={aboutImage}
@@ -172,12 +172,12 @@ export default async function Main() {
         </div>
       </div>
 
-      <h3 className='text-center text-darkBlue font-bold text-4xl mb-4'>
+      <h3 className='mb-4 text-center text-4xl font-bold text-darkBlue'>
         {title}
       </h3>
 
       <div className='mx-auto pt-20 text-center'>
-        <div className='flex flex-col gap-8 pb-20 px-5 md:flex-row'>
+        <div className='flex flex-col gap-8 px-5 pb-20 md:flex-row'>
           <div className='m-auto md:w-1/2'>
             <Image
               alt=''
@@ -186,16 +186,16 @@ export default async function Main() {
               height={image1Height}
             />
           </div>
-          <div className='text-left m-10 md:w-1/2'>
+          <div className='m-10 text-left md:w-1/2'>
             <Image
               alt=''
               src={number1}
               width={number1Width}
               height={number1Height}
-              className='w-16 pb-2 object-fit'
+              className='object-fit w-16 pb-2'
               quality='100'
             />
-            <h2 className='text-3xl font-bold text-darkBlue mb-6'>
+            <h2 className='mb-6 text-3xl font-bold text-darkBlue'>
               {customers}
             </h2>
             <Image
@@ -207,7 +207,7 @@ export default async function Main() {
               quality='100'
             />
             <article
-              className='text-darkBrown leading-7 space-y-4 mt-4 mb-4'
+              className='mt-4 mb-4 space-y-4 leading-7 text-darkBrown'
               dangerouslySetInnerHTML={{ __html: customersText1 }}
             ></article>
             <Image
@@ -219,24 +219,24 @@ export default async function Main() {
               quality='100'
             />
             <article
-              className='text-darkBrown leading-7 space-y-4 mt-4'
+              className='mt-4 space-y-4 leading-7 text-darkBrown'
               dangerouslySetInnerHTML={{ __html: customersText2 }}
             ></article>
           </div>
         </div>
       </div>
 
-      <div className='flex flex-col-reverse gap-8 pb-20 px-5 md:flex-row'>
-        <div className='text-left m-10 md:w-1/2'>
+      <div className='flex flex-col-reverse gap-8 px-5 pb-20 md:flex-row'>
+        <div className='m-10 text-left md:w-1/2'>
           <Image
             alt=''
             src={number2}
             width={number2Width}
             height={number2Height}
-            className='w-16 pb-2 object-fit'
+            className='object-fit w-16 pb-2'
             quality='100'
           />
-          <h2 className='text-3xl font-bold text-darkBlue mb-6'>
+          <h2 className='mb-6 text-3xl font-bold text-darkBlue'>
             {restaurantStaff}
           </h2>
           <Image
@@ -248,7 +248,7 @@ export default async function Main() {
             quality='100'
           />
           <article
-            className='text-darkBrown leading-7 space-y-4 mt-4'
+            className='mt-4 space-y-4 leading-7 text-darkBrown'
             dangerouslySetInnerHTML={{ __html: restaurantText }}
           ></article>
         </div>
@@ -262,7 +262,7 @@ export default async function Main() {
         </div>
       </div>
 
-      <div className='flex flex-col gap-8 pb-20 px-5 md:flex-row'>
+      <div className='flex flex-col gap-8 px-5 pb-20 md:flex-row'>
         <div className='m-auto md:w-1/2'>
           <Image
             alt=''
@@ -271,16 +271,16 @@ export default async function Main() {
             height={image3Height}
           />
         </div>
-        <div className='text-left m-10 md:w-1/2'>
+        <div className='m-10 text-left md:w-1/2'>
           <Image
             alt=''
             src={number3}
             width={number3Width}
             height={number3Height}
-            className='w-16 pb-2 object-fit'
+            className='object-fit w-16 pb-2'
             quality='100'
           />
-          <h2 className='text-3xl font-bold text-darkBlue mb-6'>{manager}</h2>
+          <h2 className='mb-6 text-3xl font-bold text-darkBlue'>{manager}</h2>
           <Image
             alt=''
             src={managerTitle}
@@ -290,26 +290,26 @@ export default async function Main() {
             quality='100'
           />
           <article
-            className='text-darkBrown leading-7 space-y-4 mt-4'
+            className='mt-4 space-y-4 leading-7 text-darkBrown'
             dangerouslySetInnerHTML={{ __html: managerText }}
           ></article>
         </div>
       </div>
 
-      <h3 className='text-center text-darkBlue font-bold text-4xl mb-4'>
+      <h3 className='mb-4 text-center text-4xl font-bold text-darkBlue'>
         {solutions}
       </h3>
 
-      <div className='max-w-4xl grid grid-cols-1 gap-8 mt-16 mb-10 md:grid-cols-2 md:gap-12 lg:grid-cols-4'>
+      <div className='mt-16 mb-10 grid max-w-4xl grid-cols-1 gap-8 md:grid-cols-2 md:gap-12 lg:grid-cols-4'>
         <div>
           <Image
             alt=''
             src={icon1}
             width={icon1Width}
             height={icon1Height}
-            className='h-16 w-14 mx-auto mb-2'
+            className='mx-auto mb-2 h-16 w-14'
           />
-          <h4 className='text-center text-darkBlue font-bold text-xl mb-4'>
+          <h4 className='mb-4 text-center text-xl font-bold text-darkBlue'>
             {solutionsTitle1}
           </h4>
           <Image
@@ -319,7 +319,7 @@ export default async function Main() {
             height={curveHeight}
             className='mx-auto mb-4'
           />
-          <p className='text-center text-xs mx-4 md:mx-0'>{solutionsText1}</p>
+          <p className='mx-4 text-center text-xs md:mx-0'>{solutionsText1}</p>
         </div>
         <div>
           <Image
@@ -327,9 +327,9 @@ export default async function Main() {
             src={icon2}
             width={icon2Width}
             height={icon2Height}
-            className='h-16 w-16 mx-auto mb-2'
+            className='mx-auto mb-2 h-16 w-16'
           />
-          <h4 className='text-center text-darkBlue font-bold text-xl mb-4'>
+          <h4 className='mb-4 text-center text-xl font-bold text-darkBlue'>
             {solutionsTitle2}
           </h4>
           <Image
@@ -339,7 +339,7 @@ export default async function Main() {
             height={curveHeight}
             className='mx-auto mb-4'
           />
-          <p className='text-center text-xs mx-4 md:mx-0'>{solutionsText2}</p>
+          <p className='mx-4 text-center text-xs md:mx-0'>{solutionsText2}</p>
         </div>
         <div>
           <Image
@@ -347,9 +347,9 @@ export default async function Main() {
             src={icon3}
             width={icon3Width}
             height={icon3Height}
-            className='h-16 w-16 mx-auto mb-2'
+            className='mx-auto mb-2 h-16 w-16'
           />
-          <h4 className='text-center text-darkBlue font-bold text-xl mb-4'>
+          <h4 className='mb-4 text-center text-xl font-bold text-darkBlue'>
             {solutionsTitle3}
           </h4>
           <Image
@@ -359,7 +359,7 @@ export default async function Main() {
             height={curveHeight}
             className='mx-auto mb-4'
           />
-          <p className='text-center text-xs mx-4 md:mx-0'>{solutionsText3}</p>
+          <p className='mx-4 text-center text-xs md:mx-0'>{solutionsText3}</p>
         </div>
         <div>
           <Image
@@ -367,9 +367,9 @@ export default async function Main() {
             src={icon4}
             width={icon4Width}
             height={icon4Height}
-            className='h-16 w-16 mx-auto mb-2'
+            className='mx-auto mb-2 h-16 w-16'
           />
-          <h4 className='text-center text-darkBlue font-bold text-xl mb-4'>
+          <h4 className='mb-4 text-center text-xl font-bold text-darkBlue'>
             {solutionsTitle4}
           </h4>
           <Image
@@ -379,7 +379,7 @@ export default async function Main() {
             height={curveHeight}
             className='mx-auto mb-4'
           />
-          <p className='text-center text-xs mx-4 md:mx-0'>{solutionsText4}</p>
+          <p className='mx-4 text-center text-xs md:mx-0'>{solutionsText4}</p>
         </div>
         <div>
           <Image
@@ -387,9 +387,9 @@ export default async function Main() {
             src={icon5}
             width={icon5Width}
             height={icon5Height}
-            className='h-16 w-16 mx-auto mb-2'
+            className='mx-auto mb-2 h-16 w-16'
           />
-          <h4 className='text-center text-darkBlue font-bold text-xl mb-4'>
+          <h4 className='mb-4 text-center text-xl font-bold text-darkBlue'>
             {solutionsTitle5}
           </h4>
           <Image
@@ -399,7 +399,7 @@ export default async function Main() {
             height={curveHeight}
             className='mx-auto mb-4'
           />
-          <p className='text-center text-xs mx-4 md:mx-0'>{solutionsText5}</p>
+          <p className='mx-4 text-center text-xs md:mx-0'>{solutionsText5}</p>
         </div>
         <div>
           <Image
@@ -407,9 +407,9 @@ export default async function Main() {
             src={icon6}
             width={icon6Width}
             height={icon6Height}
-            className='h-16 w-12 mx-auto mb-2'
+            className='mx-auto mb-2 h-16 w-12'
           />
-          <h4 className='text-center text-darkBlue font-bold text-xl mb-4'>
+          <h4 className='mb-4 text-center text-xl font-bold text-darkBlue'>
             {solutionsTitle6}
           </h4>
           <Image
@@ -419,7 +419,7 @@ export default async function Main() {
             height={curveHeight}
             className='mx-auto mb-4'
           />
-          <p className='text-center text-xs mx-4 md:mx-0'>{solutionsText6}</p>
+          <p className='mx-4 text-center text-xs md:mx-0'>{solutionsText6}</p>
         </div>
         <div>
           <Image
@@ -427,9 +427,9 @@ export default async function Main() {
             src={icon7}
             width={icon7Width}
             height={icon7Height}
-            className='h-16 w-16 mx-auto mb-2'
+            className='mx-auto mb-2 h-16 w-16'
           />
-          <h4 className='text-center text-darkBlue font-bold text-xl mb-4'>
+          <h4 className='mb-4 text-center text-xl font-bold text-darkBlue'>
             {solutionsTitle7}
           </h4>
           <Image
@@ -439,7 +439,7 @@ export default async function Main() {
             height={curveHeight}
             className='mx-auto mb-4'
           />
-          <p className='text-center text-xs mx-4 md:mx-0'>{solutionsText7}</p>
+          <p className='mx-4 text-center text-xs md:mx-0'>{solutionsText7}</p>
         </div>
         <div>
           <Image
@@ -447,9 +447,9 @@ export default async function Main() {
             src={icon8}
             width={icon8Width}
             height={icon8Height}
-            className='h-16 w-16 mx-auto mb-2'
+            className='mx-auto mb-2 h-16 w-16'
           />
-          <h4 className='text-center text-darkBlue font-bold text-xl mb-4'>
+          <h4 className='mb-4 text-center text-xl font-bold text-darkBlue'>
             {solutionsTitle8}
           </h4>
           <Image
@@ -459,7 +459,7 @@ export default async function Main() {
             height={curveHeight}
             className='mx-auto mb-4'
           />
-          <p className='text-center text-xs mx-4 md:mx-0'>{solutionsText8}</p>
+          <p className='mx-4 text-center text-xs md:mx-0'>{solutionsText8}</p>
         </div>
       </div>
 

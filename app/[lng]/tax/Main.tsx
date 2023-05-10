@@ -1,8 +1,8 @@
 import React from 'react'
-import { fetchSingle, richTextReducer, trimTitle } from '../../lib/utils'
-import ImageArticle from '../../components/ImageArticle'
-import Contact from '../../components/Contact'
-import Faqs from '../../components/Faqs'
+import { fetchSingle, richTextReducer, trimTitle } from '../../../lib/utils'
+import ImageArticle from '../../../components/ImageArticle'
+import Contact from '../../../components/Contact'
+import Faqs from '../../../components/Faqs'
 
 export default async function Main() {
   const tax = await fetchSingle('tax')
@@ -64,7 +64,7 @@ export default async function Main() {
   ]
 
   return (
-    <section className='flex flex-col mx-auto items-center max-w-5xl'>
+    <section className='mx-auto flex max-w-5xl flex-col items-center'>
       <ImageArticle
         aboutImage={aboutImageObj}
         aboutArticle={aboutArticle}

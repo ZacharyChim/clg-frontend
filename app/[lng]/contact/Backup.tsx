@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import React from 'react'
-import { fetchSingle } from '../../lib/utils'
+import { fetchSingle } from '../../../lib/utils'
 import clg from '../../../public/clg-logo.png'
 import facebook from '../../../public/icon-facebook.png'
 import linkedin from '../../../public/icon-linkedin.png'

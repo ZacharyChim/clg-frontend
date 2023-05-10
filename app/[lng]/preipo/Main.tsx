@@ -1,8 +1,8 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
-import Contact from '../../components/Contact'
-import { fetchSingle, richTextReducer, trimTitle } from '../../lib/utils'
+import Contact from '../../../components/Contact'
+import { fetchSingle, richTextReducer, trimTitle } from '../../../lib/utils'
 
 export default async function Main() {
   const preipo = await fetchSingle('pre-ipo')
@@ -52,9 +52,9 @@ export default async function Main() {
   const title = preipo.title
 
   return (
-    <section id='case' className='flex flex-col mx-auto items-center max-w-5xl'>
+    <section id='case' className='mx-auto flex max-w-5xl flex-col items-center'>
       <div className='mx-auto pt-20 text-center'>
-        <div className='flex flex-col gap-8 pb-20 px-5 md:flex-row'>
+        <div className='flex flex-col gap-8 px-5 pb-20 md:flex-row'>
           <div className='text-left md:w-1/2'>
             <Image
               alt=''
@@ -64,11 +64,11 @@ export default async function Main() {
               className='object-fit'
               quality='100'
             />
-            <h2 className='text-3xl font-bold text-darkBlue mb-6 mt-4'>
+            <h2 className='mb-6 mt-4 text-3xl font-bold text-darkBlue'>
               {aboutTitle}
             </h2>
             <article
-              className='text-darkBrown leading-7 space-y-4'
+              className='space-y-4 leading-7 text-darkBrown'
               dangerouslySetInnerHTML={{ __html: aboutText }}
             ></article>
           </div>
@@ -83,12 +83,12 @@ export default async function Main() {
         </div>
       </div>
 
-      <h3 className='text-center text-darkBlue font-bold text-4xl mb-4'>
+      <h3 className='mb-4 text-center text-4xl font-bold text-darkBlue'>
         {title}
       </h3>
 
       <div className='mx-auto pt-20 text-center'>
-        <div className='flex flex-col gap-8 pb-20 px-5 md:flex-row'>
+        <div className='flex flex-col gap-8 px-5 pb-20 md:flex-row'>
           <div className='m-auto md:w-1/2'>
             <Image
               alt=''
@@ -97,7 +97,7 @@ export default async function Main() {
               height={image1Height}
             />
           </div>
-          <div className='text-left m-16 md:w-1/2'>
+          <div className='m-16 text-left md:w-1/2'>
             <Image
               alt=''
               src={number1}
@@ -110,8 +110,8 @@ export default async function Main() {
         </div>
       </div>
 
-      <div className='flex flex-col-reverse gap-8 pb-20 px-5 md:flex-row'>
-        <div className='text-left m-16 md:w-1/2'>
+      <div className='flex flex-col-reverse gap-8 px-5 pb-20 md:flex-row'>
+        <div className='m-16 text-left md:w-1/2'>
           <Image
             alt=''
             src={number2}
@@ -131,7 +131,7 @@ export default async function Main() {
         </div>
       </div>
 
-      <div className='flex flex-col gap-8 pb-20 px-5 md:flex-row'>
+      <div className='flex flex-col gap-8 px-5 pb-20 md:flex-row'>
         <div className='m-auto md:w-1/2'>
           <Image
             alt=''
@@ -140,7 +140,7 @@ export default async function Main() {
             height={image3Height}
           />
         </div>
-        <div className='text-left m-16 md:w-1/2'>
+        <div className='m-16 text-left md:w-1/2'>
           <Image
             alt=''
             src={number3}

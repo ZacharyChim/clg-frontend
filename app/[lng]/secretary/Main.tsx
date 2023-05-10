@@ -1,12 +1,12 @@
 import Image from 'next/image'
 import React from 'react'
-import { fetchSingle, richTextReducer, trimTitle } from '../../lib/utils'
+import { fetchSingle, richTextReducer, trimTitle } from '../../../lib/utils'
 import contactTop from '../../../public/contact-top.png'
 import caseTop from '../../../public/case-top.png'
-import Contact from '../../components/Contact'
-import ImageArticle from '../../components/ImageArticle'
-import Faqs from '../../components/Faqs'
-import SecretaryCard from '../../components/SecretaryCard'
+import Contact from '../../../components/Contact'
+import ImageArticle from '../../../components/ImageArticle'
+import Faqs from '../../../components/Faqs'
+import SecretaryCard from '../../../components/SecretaryCard'
 
 export default async function Main() {
   const secretary = await fetchSingle('secretary')

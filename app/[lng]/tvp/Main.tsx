@@ -1,9 +1,9 @@
 import Image from 'next/image'
 import React from 'react'
-import { fetchSingle, richTextReducer, trimTitle } from '../../lib/utils'
-import ImageArticle from '../../components/ImageArticle'
-import Contact from '../../components/Contact'
-import Faqs from '../../components/Faqs'
+import { fetchSingle, richTextReducer, trimTitle } from '../../../lib/utils'
+import ImageArticle from '../../../components/ImageArticle'
+import Contact from '../../../components/Contact'
+import Faqs from '../../../components/Faqs'
 
 export default async function Main() {
   const tvp = await fetchSingle('tvp')
@@ -119,7 +119,7 @@ export default async function Main() {
 
   return (
     <>
-      <section className='flex flex-col mx-auto items-center max-w-5xl'>
+      <section className='mx-auto flex max-w-5xl flex-col items-center'>
         <ImageArticle
           aboutImage={aboutImageObj}
           aboutArticle={aboutObj}
@@ -128,25 +128,25 @@ export default async function Main() {
         />
       </section>
 
-      <section className='w-full bg-veryLightBlue my-10'>
-        <div className='max-w-5xl px-5 pb-5 mx-auto text-left'>
+      <section className='my-10 w-full bg-veryLightBlue'>
+        <div className='mx-auto max-w-5xl px-5 pb-5 text-left'>
           <div className='flex flex-col text-center md:flex-row'>
-            <div className='flex flex-col space-y-2 mt-10 mr-4 py-8 md:w-3/10'>
+            <div className='md:w-3/10 mt-10 mr-4 flex flex-col space-y-2 py-8'>
               <h5 className='text-4xl font-bold text-darkBlue'>{data1}</h5>
               <p className='text-sm'>{data1Desc}</p>
             </div>
 
-            <div className='flex flex-col space-y-2 mt-10 mx-8 py-8 md:w-1/5'>
+            <div className='mx-8 mt-10 flex flex-col space-y-2 py-8 md:w-1/5'>
               <h5 className='text-4xl font-bold text-darkBlue'>{data2}</h5>
               <p className='text-sm'>{data2Desc}</p>
             </div>
 
-            <div className='flex flex-col space-y-2 mt-10 mx-8 py-8 md:w-1/5'>
+            <div className='mx-8 mt-10 flex flex-col space-y-2 py-8 md:w-1/5'>
               <h5 className='text-4xl font-bold text-darkBlue'>{data3}</h5>
               <p className='text-sm'>{data3Desc}</p>
             </div>
 
-            <div className='flex flex-col space-y-2 mt-10 ml-10 py-8 md:w-3/10'>
+            <div className='md:w-3/10 mt-10 ml-10 flex flex-col space-y-2 py-8'>
               <h5 className='text-4xl font-bold text-darkBlue'>{data4}</h5>
               <p className='text-sm'>{data4Desc}</p>
             </div>
@@ -154,9 +154,9 @@ export default async function Main() {
         </div>
       </section>
 
-      <section className='flex flex-col mx-auto items-center max-w-5xl'>
-        <div className='flex flex-col my-10 items-center'>
-          <h3 className='text-center text-darkBlue font-bold text-4xl mb-20'>
+      <section className='mx-auto flex max-w-5xl flex-col items-center'>
+        <div className='my-10 flex flex-col items-center'>
+          <h3 className='mb-20 text-center text-4xl font-bold text-darkBlue'>
             {diagramTitle}
           </h3>
           <Image

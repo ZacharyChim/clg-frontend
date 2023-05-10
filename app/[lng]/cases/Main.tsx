@@ -2,22 +2,22 @@ import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 import { v4 } from 'uuid'
-import { fetchCollection, trimTitle } from '../../lib/utils'
+import { fetchCollection, trimTitle } from '../../../lib/utils'
 
 export default async function Main() {
   const allCases = await fetchCollection('cases')
 
   return (
-    <section id='case' className='flex flex-col mx-auto items-center max-w-5xl'>
-      <div className='px-5 mx-auto pb-20 text-center'>
+    <section id='case' className='mx-auto flex max-w-5xl flex-col items-center'>
+      <div className='mx-auto px-5 pb-20 text-center'>
         <h2 className='text-2xl font-bold text-darkBlue'>All</h2>
         <div className='grid grid-cols-1 gap-8 md:grid-cols-2 md:gap-12 lg:grid-cols-3'>
           {allCases.map((item) => (
             <div
               key={v4()}
-              className='flex flex-col items-center mt-12 space-y-2 bg-veryLightBlue'
+              className='mt-12 flex flex-col items-center space-y-2 bg-veryLightBlue'
             >
-              <article className='overflow-hidden bg-white m-3 border border-gray-100 shadow-sm md:w-auto'>
+              <article className='m-3 overflow-hidden border border-gray-100 bg-white shadow-sm md:w-auto'>
                 <Image
                   alt={item.attributes.title}
                   src={
@@ -29,7 +29,7 @@ export default async function Main() {
                   className='h-48 w-full object-cover'
                 />
 
-                <div className='text-left px-4 py-2'>
+                <div className='px-4 py-2 text-left'>
                   <Link
                     href={
                       process.env.NEXT_PUBLIC_SITE_URL +

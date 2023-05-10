@@ -1,8 +1,8 @@
 import Image from 'next/image'
 import React from 'react'
-import { fetchSingle, richTextReducer, trimTitle } from '../../lib/utils'
-import Contact from '../../components/Contact'
-import Countries from '../../components/Countries'
+import { fetchSingle, richTextReducer } from '../../../lib/utils'
+import Contact from '../../../components/Contact'
+import Countries from '../../../components/Countries'
 import curve from '/public/small-curve.png'
 
 export default async function Main() {
@@ -64,10 +64,10 @@ export default async function Main() {
 
   return (
     <>
-      <section className='flex flex-col mx-auto max-w-5xl mt-10 mb-10 md:flex-row'>
+      <section className='mx-auto mt-10 mb-10 flex max-w-5xl flex-col md:flex-row'>
         {/* @ts-expect-error Server Component */}
         <Countries country='anguilla' />
-        <div className='md:w-4/5 mx-10'>
+        <div className='mx-10 md:w-4/5'>
           <Image
             alt=''
             src={incorporation}
@@ -75,11 +75,11 @@ export default async function Main() {
             height={incorporationHeight}
             quality='100'
           />
-          <h3 className='text-2xl font-bold text-darkBlue mb-6 mt-4'>
+          <h3 className='mb-6 mt-4 text-2xl font-bold text-darkBlue'>
             {benefitTitle}
           </h3>
-          <div className='grid grid-cols-1 gap-8 flex-wrap leading-8 md:gap-8 md:grid-cols-2'>
-            <div className='flex flex-col items-center px-6 pt-10 pb-6 border-4 rounded-md border-veryLightBlue'>
+          <div className='grid grid-cols-1 flex-wrap gap-8 leading-8 md:grid-cols-2 md:gap-8'>
+            <div className='flex flex-col items-center rounded-md border-4 border-veryLightBlue px-6 pt-10 pb-6'>
               <Image
                 alt=''
                 src={benefit1Image}
@@ -88,7 +88,7 @@ export default async function Main() {
                 quality='100'
               />
 
-              <h4 className='text-xl text-center font-bold text-darkBlue mb-4 mt-4'>
+              <h4 className='mb-4 mt-4 text-center text-xl font-bold text-darkBlue'>
                 {benefit1Title}
               </h4>
               <Image
@@ -100,7 +100,7 @@ export default async function Main() {
               />
               <p className='text-center text-darkBrown'>{benefit1Content}</p>
             </div>
-            <div className='flex flex-col items-center px-6 pt-10 pb-6 border-4 rounded-md border-veryLightBlue '>
+            <div className='flex flex-col items-center rounded-md border-4 border-veryLightBlue px-6 pt-10 pb-6 '>
               <Image
                 alt=''
                 src={benefit2Image}
@@ -108,7 +108,7 @@ export default async function Main() {
                 height={benefit2ImageHeight}
                 quality='100'
               />
-              <h4 className='text-xl text-center font-bold text-darkBlue mb-4 mt-4'>
+              <h4 className='mb-4 mt-4 text-center text-xl font-bold text-darkBlue'>
                 {benefit2Title}
               </h4>
               <Image
@@ -120,7 +120,7 @@ export default async function Main() {
               />
               <p className='text-center text-darkBrown'>{benefit2Content}</p>
             </div>
-            <div className='flex flex-col items-center px-6 pt-10 pb-6 border-4 rounded-md border-veryLightBlue '>
+            <div className='flex flex-col items-center rounded-md border-4 border-veryLightBlue px-6 pt-10 pb-6 '>
               <Image
                 alt=''
                 src={benefit3Image}
@@ -129,7 +129,7 @@ export default async function Main() {
                 quality='100'
               />
 
-              <h4 className='text-xl text-center font-bold text-darkBlue mb-4 mt-4'>
+              <h4 className='mb-4 mt-4 text-center text-xl font-bold text-darkBlue'>
                 {benefit3Title}
               </h4>
               <Image
@@ -141,7 +141,7 @@ export default async function Main() {
               />
               <p className='text-center text-darkBrown'>{benefit3Content}</p>
             </div>
-            <div className='flex flex-col items-center px-6 pt-10 pb-6 border-4 rounded-md border-veryLightBlue '>
+            <div className='flex flex-col items-center rounded-md border-4 border-veryLightBlue px-6 pt-10 pb-6 '>
               <Image
                 alt=''
                 src={benefit4Image}
@@ -150,7 +150,7 @@ export default async function Main() {
                 quality='100'
               />
 
-              <h4 className='text-xl text-center font-bold text-darkBlue mb-4 mt-4'>
+              <h4 className='mb-4 mt-4 text-center text-xl font-bold text-darkBlue'>
                 {benefit4Title}
               </h4>
               <Image
@@ -162,7 +162,7 @@ export default async function Main() {
               />
               <p className='text-center text-darkBrown'>{benefit4Content}</p>
             </div>
-            <div className='flex flex-col items-center px-6 pt-10 pb-6 border-4 rounded-md border-veryLightBlue '>
+            <div className='flex flex-col items-center rounded-md border-4 border-veryLightBlue px-6 pt-10 pb-6 '>
               <Image
                 alt=''
                 src={benefit5Image}
@@ -171,7 +171,7 @@ export default async function Main() {
                 quality='100'
               />
 
-              <h4 className='text-xl text-center font-bold text-darkBlue mb-4 mt-4'>
+              <h4 className='mb-4 mt-4 text-center text-xl font-bold text-darkBlue'>
                 {benefit5Title}
               </h4>
               <Image
@@ -184,16 +184,16 @@ export default async function Main() {
               <p className='text-center text-darkBrown'>{benefit5Content}</p>
             </div>
           </div>
-          <h3 className='text-2xl font-bold text-darkBlue mb-6 mt-14'>
+          <h3 className='mb-6 mt-14 text-2xl font-bold text-darkBlue'>
             {article1Title}
           </h3>
           <article
-            className='text-darkBrown leading-9 space-y-4'
+            className='space-y-4 leading-9 text-darkBrown'
             dangerouslySetInnerHTML={{ __html: article1Text }}
           ></article>
         </div>
       </section>
-      <section className='flex flex-col mx-auto items-center max-w-5xl'>
+      <section className='mx-auto flex max-w-5xl flex-col items-center'>
         <Contact contactUs={contactUs} />
       </section>
     </>

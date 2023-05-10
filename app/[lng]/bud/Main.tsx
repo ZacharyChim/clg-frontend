@@ -1,11 +1,11 @@
 import Image from 'next/image'
 import React from 'react'
-import { fetchSingle, richTextReducer, trimTitle } from '../../lib/utils'
-import ImageArticle from '../../components/ImageArticle'
-import Contact from '../../components/Contact'
+import { fetchSingle, richTextReducer, trimTitle } from '../../../lib/utils'
+import ImageArticle from '../../../components/ImageArticle'
+import Contact from '../../../components/Contact'
 import contactTop from '../../../public/contact-top.png'
 import caseTop from '../../../public/case-top.png'
-import Faqs from '../../components/Faqs'
+import Faqs from '../../../components/Faqs'
 
 export default async function Main() {
   const bud = await fetchSingle('bud')
