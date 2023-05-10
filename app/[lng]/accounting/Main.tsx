@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import React from 'react'
-import { fetchSingle, richTextReducer, trimTitle } from '../../../'
+import { fetchSingle, richTextReducer } from '../../../lib/utils'
 import ImageArticle from '../../../components/ImageArticle'
 import Contact from '../../../components/Contact'
 import contactTop from '../../../public/contact-top.png'

@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
-import { fetchCollection, richTextReducer, trimTitle } from '../../../lib/utils'
+import { fetchCollection, richTextReducer, trimTitle } from '../../../../lib/utils'
 import { v4 } from 'uuid'
 
 const fetchPost = async (slug: string) => {
