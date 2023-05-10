@@ -7,7 +7,7 @@ import { dir } from 'i18next'
 import { languages } from '../i18n/settings'
 
 export async function generateStaticParams() {
-  return languages.map((lng) => ({ lng }))
+  return [{ lng: 'en' }, { lng: 'hk' }]
 }
 
 export default function RootLayout({
