@@ -1,8 +1,8 @@
 import Image from 'next/image'
 import React from 'react'
 import { fetchSingle, richTextReducer, trimTitle } from '../../lib/utils'
-import contactTop from '../../public/contact-top.png'
-import caseTop from '../../public/case-top.png'
+import contactTop from '../../../public/contact-top.png'
+import caseTop from '../../../public/case-top.png'
 import Contact from '../../components/Contact'
 import ImageArticle from '../../components/ImageArticle'
 import Faqs from '../../components/Faqs'
@@ -167,7 +167,7 @@ export default async function Main() {
 
   return (
     <>
-      <section className='flex flex-col mx-auto items-center max-w-5xl mb-20'>
+      <section className='mx-auto mb-20 flex max-w-5xl flex-col items-center'>
         <ImageArticle
           aboutImage={aboutImageObj}
           aboutArticle={aboutObj}
@@ -178,11 +178,11 @@ export default async function Main() {
 
       <section id='numbers' className='w-full bg-veryLightBlue'>
         <Image src={caseTop} alt='' />
-        <div className='max-w-7xl px-5 mx-auto text-left'>
-          <h3 className='text-center text-darkBlue font-bold text-4xl my-20'>
+        <div className='mx-auto max-w-7xl px-5 text-left'>
+          <h3 className='my-20 text-center text-4xl font-bold text-darkBlue'>
             {service}
           </h3>
-          <div className='grid md:grid-cols-3 gap-6 pb-20 h-fit'>
+          <div className='grid h-fit gap-6 pb-20 md:grid-cols-3'>
             <SecretaryCard
               type={secretary1}
               title={secretary1Title}
@@ -242,7 +242,7 @@ export default async function Main() {
       </section>
       <Image src={contactTop} alt='' />
 
-      <section className='flex flex-col mx-auto items-center max-w-5xl'>
+      <section className='mx-auto flex max-w-5xl flex-col items-center'>
         <Contact contactUs={contactUs} />
 
         <Faqs faqs={faqs} />

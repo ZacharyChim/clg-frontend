@@ -4,13 +4,13 @@ import Link from 'next/link'
 import { v4 } from 'uuid'
 import { fetchCollection, fetchSingle, trimTitle } from '../../lib/utils'
 
-import contactTop from '../../public/contact-top.png'
-import caseTop from '../../public/case-top.png'
-import partnershipTop from '../../public/partnership-top.png'
-import serviceTop from '../../public/service-top.png'
+import contactTop from '../../../public/contact-top.png'
+import caseTop from '../../../public/case-top.png'
+import partnershipTop from '../../../public/partnership-top.png'
+import serviceTop from '../../../public/service-top.png'
 import Contact from '../../components/Contact'
 import Popup from '../../components/Popup'
-import commaURL from '../../public/comma.png'
+import commaURL from '../../../public/comma.png'
 
 import { useTranslation } from '../i18n'
 

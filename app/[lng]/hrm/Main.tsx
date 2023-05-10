@@ -2,12 +2,12 @@ import Image from 'next/image'
 import React from 'react'
 import Link from 'next/link'
 import { fetchSingle, richTextReducer, trimTitle } from '../../lib/utils'
-import contactTop from '../../public/contact-top.png'
-import caseTop from '../../public/case-top.png'
+import contactTop from '../../../public/contact-top.png'
+import caseTop from '../../../public/case-top.png'
 import Contact from '../../components/Contact'
 import ImageArticle from '../../components/ImageArticle'
 import curve from '/public/small-curve.png'
-import whatsapp from '../../public/hrm-whatsapp.png'
+import whatsapp from '../../../public/hrm-whatsapp.png'
 
 export default async function Main() {
   const curveWidth = 33
@@ -283,9 +283,9 @@ export default async function Main() {
 
   return (
     <>
-      <section className='flex flex-col mx-auto items-left max-w-4xl mb-20 mt-10'>
+      <section className='items-left mx-auto mb-20 mt-10 flex max-w-4xl flex-col'>
         <Image src={cloud} alt='' width={cloudWidth} height={cloudHeight} />
-        <h3 className='text-left text-darkBlue font-bold text-2xl my-4'>
+        <h3 className='my-4 text-left text-2xl font-bold text-darkBlue'>
           {aboutTitle}
         </h3>
         <iframe
@@ -300,7 +300,7 @@ export default async function Main() {
           alt=''
           width='454'
           height='66'
-          className='self-center mt-14 h-14 object-contain'
+          className='mt-14 h-14 self-center object-contain'
           quality={100}
         />
 
@@ -344,19 +344,19 @@ export default async function Main() {
 
       <section className='w-full bg-veryLightBlue'>
         <Image src={caseTop} alt='' />
-        <div className='max-w-6xl px-5 pb-20 mx-auto text-left'>
-          <h3 className='text-center text-darkBlue font-bold text-4xl mt-20'>
+        <div className='mx-auto max-w-6xl px-5 pb-20 text-left'>
+          <h3 className='mt-20 text-center text-4xl font-bold text-darkBlue'>
             {functions}
           </h3>
-          <div className='grid grid-cols-1 text-center gap-8 md:grid-cols-4'>
-            <div className='flex flex-col space-y-4 mt-4 p-4'>
-              <div className='self-center pb-2 mt-4'>
+          <div className='grid grid-cols-1 gap-8 text-center md:grid-cols-4'>
+            <div className='mt-4 flex flex-col space-y-4 p-4'>
+              <div className='mt-4 self-center pb-2'>
                 <Image
                   src={function1Image}
                   alt=''
                   width={function1ImageWidth}
                   height={function1ImageHeight}
-                  className='w-36 md:mt-12 object-contain'
+                  className='w-36 object-contain md:mt-12'
                 />
               </div>
 
@@ -364,13 +364,13 @@ export default async function Main() {
               <p className='text-sm'>{function1Desc}</p>
             </div>
             <div className='flex flex-col space-y-4 p-4'>
-              <div className='self-center pb-2 mt-7'>
+              <div className='mt-7 self-center pb-2'>
                 <Image
                   src={function2Image}
                   alt=''
                   width={function2ImageWidth}
                   height={function2ImageHeight}
-                  className='w-36 md:mt-12 object-contain'
+                  className='w-36 object-contain md:mt-12'
                 />
               </div>
 
@@ -378,13 +378,13 @@ export default async function Main() {
               <p className='text-sm'>{function2Desc}</p>
             </div>
             <div className='flex flex-col space-y-4 p-4'>
-              <div className='self-center pb-2 mt-7'>
+              <div className='mt-7 self-center pb-2'>
                 <Image
                   src={function3Image}
                   alt=''
                   width={function3ImageWidth}
                   height={function3ImageHeight}
-                  className='w-36 md:mt-12 object-contain'
+                  className='w-36 object-contain md:mt-12'
                 />
               </div>
 
@@ -392,7 +392,7 @@ export default async function Main() {
               <p className='text-sm'>{function3Desc}</p>
             </div>
             <div className='flex flex-col space-y-4 p-4'>
-              <div className='self-center pb-2 mt-7'>
+              <div className='mt-7 self-center pb-2'>
                 <Image
                   src={function4Image}
                   alt=''
@@ -466,13 +466,13 @@ export default async function Main() {
       </section>
       <Image src={contactTop} alt='' />
 
-      <section className='flex flex-col mx-auto items-center bg-curveLine bg-[center_top_12rem] bg-contain  bg-no-repeat'>
-        <h3 className='max-w-lg text-center text-darkBlue font-bold text-4xl mt-20'>
+      <section className='mx-auto flex flex-col items-center bg-curveLine bg-contain bg-[center_top_12rem]  bg-no-repeat'>
+        <h3 className='mt-20 max-w-lg text-center text-4xl font-bold text-darkBlue'>
           {tasks}
         </h3>
         <div className='max-w-5xl'>
           <div className='mx-auto text-center'>
-            <div className='flex flex-col gap-8 py-10 items-center md:flex-row'>
+            <div className='flex flex-col items-center gap-8 py-10 md:flex-row'>
               <div className='px-10 md:w-1/2'>
                 <Image
                   alt=''
@@ -481,18 +481,18 @@ export default async function Main() {
                   height={task1ImageHeight}
                 />
               </div>
-              <div className='text-left mx-4 md:w-1/2'>
+              <div className='mx-4 text-left md:w-1/2'>
                 <article
-                  className='text-darkBrown leading-7 space-y-4'
+                  className='space-y-4 leading-7 text-darkBrown'
                   dangerouslySetInnerHTML={{ __html: task1Content }}
                 ></article>
               </div>
             </div>
 
-            <div className='flex flex-col gap-8 py-10 mt-14 items-center md:flex-row'>
-              <div className='text-left mx-4 md:w-1/2'>
+            <div className='mt-14 flex flex-col items-center gap-8 py-10 md:flex-row'>
+              <div className='mx-4 text-left md:w-1/2'>
                 <article
-                  className='text-darkBrown leading-7 space-y-4'
+                  className='space-y-4 leading-7 text-darkBrown'
                   dangerouslySetInnerHTML={{ __html: task2Content }}
                 ></article>
               </div>
@@ -509,8 +509,8 @@ export default async function Main() {
         </div>
       </section>
 
-      <section className='flex flex-col mx-auto max-w-6xl mb-20 items-center'>
-        <h3 className='text-center text-darkBlue font-bold text-4xl my-20'>
+      <section className='mx-auto mb-20 flex max-w-6xl flex-col items-center'>
+        <h3 className='my-20 text-center text-4xl font-bold text-darkBlue'>
           {why}
         </h3>
         <Image
@@ -519,11 +519,11 @@ export default async function Main() {
           width={whyImageWidth}
           height={whyImageHeight}
           quality='100'
-          className='pb-2 max-w-5xl'
+          className='max-w-5xl pb-2'
         />
-        <div className='flex flex-col max-w-5xl md:flex-row'>
-          <div className='flex flex-col mt-10 p-4 md:w-1/4'>
-            <div className='flex flex-col items-center pb-2 mt-7'>
+        <div className='flex max-w-5xl flex-col md:flex-row'>
+          <div className='mt-10 flex flex-col p-4 md:w-1/4'>
+            <div className='mt-7 flex flex-col items-center pb-2'>
               <Image
                 src={reason1Image}
                 alt=''
@@ -543,15 +543,15 @@ export default async function Main() {
             </div>
           </div>
 
-          <div className='flex flex-col mt-10 p-4 md:w-1/4'>
-            <div className='flex flex-col items-center pb-2 mt-7'>
+          <div className='mt-10 flex flex-col p-4 md:w-1/4'>
+            <div className='mt-7 flex flex-col items-center pb-2'>
               <Image
                 src={reason2Image}
                 alt=''
                 width={reason2ImageWidth}
                 height={reason2ImageHeight}
                 quality='100'
-                className='w-20 mb-2'
+                className='mb-2 w-20'
               />
               <Image
                 alt=''
@@ -561,14 +561,14 @@ export default async function Main() {
                 className='mx-auto my-6'
               />
               <article
-                className='text-darkBrown text-sm text-center'
+                className='text-center text-sm text-darkBrown'
                 dangerouslySetInnerHTML={{ __html: reason2 }}
               ></article>
             </div>
           </div>
 
-          <div className='flex flex-col mt-12 p-4 md:w-1/4'>
-            <div className='flex flex-col items-center pb-2 mt-7'>
+          <div className='mt-12 flex flex-col p-4 md:w-1/4'>
+            <div className='mt-7 flex flex-col items-center pb-2'>
               <Image
                 src={reason3Image}
                 alt=''
@@ -588,15 +588,15 @@ export default async function Main() {
             </div>
           </div>
 
-          <div className='flex flex-col mt-12 p-4 md:w-1/4'>
-            <div className='flex flex-col items-center pb-2 mt-7'>
+          <div className='mt-12 flex flex-col p-4 md:w-1/4'>
+            <div className='mt-7 flex flex-col items-center pb-2'>
               <Image
                 src={reason4Image}
                 alt=''
                 width={reason4ImageWidth}
                 height={reason4ImageHeight}
                 quality='100'
-                className='w-20 mb-2'
+                className='mb-2 w-20'
               />
               <Image
                 alt=''

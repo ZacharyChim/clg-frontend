@@ -2,8 +2,8 @@ import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 import { fetchSingle, richTextReducer, trimTitle } from '../../lib/utils'
-import contactTop from '../../public/contact-top.png'
-import caseTop from '../../public/case-top.png'
+import contactTop from '../../../public/contact-top.png'
+import caseTop from '../../../public/case-top.png'
 import Contact from '../../components/Contact'
 
 export default async function Main() {
@@ -68,10 +68,10 @@ export default async function Main() {
     <>
       <section
         id='case'
-        className='flex flex-col mx-auto items-center max-w-5xl'
+        className='mx-auto flex max-w-5xl flex-col items-center'
       >
         <div className='mx-auto text-center'>
-          <div className='flex flex-col gap-8 pl-10 py-5 items-center md:flex-row'>
+          <div className='flex flex-col items-center gap-8 py-5 pl-10 md:flex-row'>
             <div className='text-left md:w-1/2'>
               <Image
                 alt=''
@@ -81,15 +81,15 @@ export default async function Main() {
                 className='object-fit'
                 quality='100'
               />
-              <h2 className='text-3xl font-bold text-darkBlue mb-6 mt-4'>
+              <h2 className='mb-6 mt-4 text-3xl font-bold text-darkBlue'>
                 {aboutTitle}
               </h2>
               <article
-                className='text-darkBrown leading-7 space-y-4'
+                className='space-y-4 leading-7 text-darkBrown'
                 dangerouslySetInnerHTML={{ __html: aboutText }}
               ></article>
             </div>
-            <div className='px-10 my-16 md:w-1/2'>
+            <div className='my-16 px-10 md:w-1/2'>
               <Image
                 alt=''
                 src={aboutImage}
@@ -103,12 +103,12 @@ export default async function Main() {
 
       <section id='numbers' className='w-full bg-veryLightBlue'>
         <Image src={caseTop} alt='' />
-        <div className='max-w-5xl px-5 mx-auto text-left'>
-          <h3 className='text-center text-darkBlue font-bold text-4xl mt-20'>
+        <div className='mx-auto max-w-5xl px-5 text-left'>
+          <h3 className='mt-20 text-center text-4xl font-bold text-darkBlue'>
             {services}
           </h3>
           <div className='flex flex-col py-20 md:flex-row md:space-x-14'>
-            <div className='flex flex-col items-center space-y-2 h-30 md:w-1/3'>
+            <div className='h-30 flex flex-col items-center space-y-2 md:w-1/3'>
               <Image
                 src={image1}
                 alt=''
@@ -116,7 +116,7 @@ export default async function Main() {
                 height={image1Height}
                 className='h-40 w-32'
               />
-              <h5 className='text-lg font-bold text-darkBlue pt-6'>
+              <h5 className='pt-6 text-lg font-bold text-darkBlue'>
                 {serviceTitle1}
               </h5>
               <article
@@ -125,7 +125,7 @@ export default async function Main() {
               ></article>
             </div>
 
-            <div className='flex flex-col items-center space-y-2 h-30 md:w-1/3'>
+            <div className='h-30 flex flex-col items-center space-y-2 md:w-1/3'>
               <Image
                 src={image2}
                 alt=''
@@ -133,7 +133,7 @@ export default async function Main() {
                 height={image2Height}
                 className='h-40 w-40'
               />
-              <h5 className='text-lg font-bold text-darkBlue pt-6'>
+              <h5 className='pt-6 text-lg font-bold text-darkBlue'>
                 {serviceTitle2}
               </h5>
               <article
@@ -142,7 +142,7 @@ export default async function Main() {
               ></article>
             </div>
 
-            <div className='flex flex-col items-center space-y-2 h-30 md:w-1/3'>
+            <div className='h-30 flex flex-col items-center space-y-2 md:w-1/3'>
               <Image
                 src={image3}
                 alt=''
@@ -150,7 +150,7 @@ export default async function Main() {
                 height={image3Height}
                 className='h-40 w-40'
               />
-              <h5 className='text-lg font-bold text-darkBlue pt-6'>
+              <h5 className='pt-6 text-lg font-bold text-darkBlue'>
                 {serviceTitle3}
               </h5>
               <article
@@ -159,7 +159,7 @@ export default async function Main() {
               ></article>
             </div>
 
-            <div className='flex flex-col items-center space-y-2 h-30 md:w-1/3'>
+            <div className='h-30 flex flex-col items-center space-y-2 md:w-1/3'>
               <Image
                 src={image4}
                 alt=''
@@ -167,11 +167,11 @@ export default async function Main() {
                 height={image4Height}
                 className='h-40 w-36'
               />
-              <h5 className='text-lg font-bold text-darkBlue pt-6'>
+              <h5 className='pt-6 text-lg font-bold text-darkBlue'>
                 {serviceTitle4}
               </h5>
               <article
-                className='text-sm items-left w-full'
+                className='items-left w-full text-sm'
                 dangerouslySetInnerHTML={{ __html: serviceText4 }}
               ></article>
             </div>
@@ -183,14 +183,14 @@ export default async function Main() {
       </section>
       <section
         id='case'
-        className='flex flex-col mx-auto items-center max-w-5xl mt-28'
+        className='mx-auto mt-28 flex max-w-5xl flex-col items-center'
       >
-        <h3 className='text-center text-darkBlue font-bold text-4xl'>
+        <h3 className='text-center text-4xl font-bold text-darkBlue'>
           {features}
         </h3>
 
         <div className='mx-auto pt-10 text-center'>
-          <div className='flex flex-col gap-8 pb-20 px-5 md:flex-row'>
+          <div className='flex flex-col gap-8 px-5 pb-20 md:flex-row'>
             <div className='m-auto md:w-1/2'>
               <Image
                 alt=''
@@ -199,9 +199,9 @@ export default async function Main() {
                 height={featureImageHeight}
               />
             </div>
-            <div className='text-left m-10 md:w-1/2'>
+            <div className='m-10 text-left md:w-1/2'>
               <article
-                className='text-darkBrown text-sm leading-7 space-y-4 mt-4 mb-4'
+                className='mt-4 mb-4 space-y-4 text-sm leading-7 text-darkBrown'
                 dangerouslySetInnerHTML={{ __html: featureText }}
               ></article>
             </div>

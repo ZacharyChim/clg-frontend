@@ -3,8 +3,8 @@ import React from 'react'
 import { fetchSingle, richTextReducer, trimTitle } from '../../lib/utils'
 import ImageArticle from '../../components/ImageArticle'
 import Contact from '../../components/Contact'
-import contactTop from '../../public/contact-top.png'
-import caseTop from '../../public/case-top.png'
+import contactTop from '../../../public/contact-top.png'
+import caseTop from '../../../public/case-top.png'
 import Faqs from '../../components/Faqs'
 
 export default async function Main() {
@@ -148,8 +148,8 @@ export default async function Main() {
 
   return (
     <>
-      <section className='flex flex-col mx-auto items-center max-w-5xl'>
-        <div className='self-start mt-10'>
+      <section className='mx-auto flex max-w-5xl flex-col items-center'>
+        <div className='mt-10 self-start'>
           <Image
             alt=''
             src={auditTag}
@@ -157,12 +157,12 @@ export default async function Main() {
             height={auditTagHeight}
             className='items-start'
           />
-          <h3 className='text-2xl font-bold text-darkBlue mt-4'>
+          <h3 className='mt-4 text-2xl font-bold text-darkBlue'>
             {auditTitle}
           </h3>
         </div>
 
-        <div className='flex flex-col my-20 items-center'>
+        <div className='my-20 flex flex-col items-center'>
           <Image
             src={tableImage}
             alt=''
@@ -173,14 +173,14 @@ export default async function Main() {
         </div>
       </section>
 
-      <section className='w-full bg-veryLightBlue mt-20'>
+      <section className='mt-20 w-full bg-veryLightBlue'>
         <Image src={caseTop} alt='' />
-        <div className='max-w-5xl px-5 pb-5 mx-auto text-left'>
-          <h3 className='text-center text-darkBlue font-bold text-4xl mt-20'>
+        <div className='mx-auto max-w-5xl px-5 pb-5 text-left'>
+          <h3 className='mt-20 text-center text-4xl font-bold text-darkBlue'>
             {service}
           </h3>
           <div className='flex flex-col text-center md:flex-row'>
-            <div className='flex flex-col space-y-2 mt-10 p-8 md:w-1/5'>
+            <div className='mt-10 flex flex-col space-y-2 p-8 md:w-1/5'>
               <div className='self-center pb-6'>
                 <Image
                   src={service1Image}
@@ -193,7 +193,7 @@ export default async function Main() {
               <h5 className='text-md text-darkBlue'>{service1}</h5>
             </div>
 
-            <div className='flex flex-col space-y-2 mt-10 p-8 md:w-1/5'>
+            <div className='mt-10 flex flex-col space-y-2 p-8 md:w-1/5'>
               <div className='self-center pb-6'>
                 <Image
                   src={service2Image}
@@ -206,7 +206,7 @@ export default async function Main() {
               <h5 className='text-md text-darkBlue'>{service2}</h5>
             </div>
 
-            <div className='flex flex-col space-y-2 mt-10 p-8 md:w-1/5'>
+            <div className='mt-10 flex flex-col space-y-2 p-8 md:w-1/5'>
               <div className='self-center pb-6'>
                 <Image
                   src={service3Image}
@@ -219,7 +219,7 @@ export default async function Main() {
               <h5 className='text-md text-darkBlue'>{service3}</h5>
             </div>
 
-            <div className='flex flex-col space-y-2 mt-10 p-8 md:w-1/5'>
+            <div className='mt-10 flex flex-col space-y-2 p-8 md:w-1/5'>
               <div className='self-center pb-6'>
                 <Image
                   src={service4Image}
@@ -232,7 +232,7 @@ export default async function Main() {
               <h5 className='text-md text-darkBlue'>{service4}</h5>
             </div>
 
-            <div className='flex flex-col space-y-2 mt-10 p-8 md:w-1/5'>
+            <div className='mt-10 flex flex-col space-y-2 p-8 md:w-1/5'>
               <div className='self-center pb-6'>
                 <Image
                   src={service5Image}
@@ -249,7 +249,7 @@ export default async function Main() {
       </section>
       <Image src={contactTop} alt='' />
 
-      <section className='flex flex-col mx-auto items-center space-y-32 max-w-5xl'>
+      <section className='mx-auto flex max-w-5xl flex-col items-center space-y-32'>
         <ImageArticle
           aboutImage={article1ImageObj}
           aboutArticle={article1Obj}

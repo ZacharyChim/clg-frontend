@@ -1,8 +1,8 @@
 import Image from 'next/image'
 import React from 'react'
 import { fetchSingle, richTextReducer, trimTitle } from '../../lib/utils'
-import contactTop from '../../public/contact-top.png'
-import caseTop from '../../public/case-top.png'
+import contactTop from '../../../public/contact-top.png'
+import caseTop from '../../../public/case-top.png'
 import Contact from '../../components/Contact'
 
 export default async function Main() {
@@ -87,9 +87,9 @@ export default async function Main() {
 
   return (
     <>
-      <section className='flex flex-col mx-auto items-center max-w-5xl'>
+      <section className='mx-auto flex max-w-5xl flex-col items-center'>
         <div className='mx-auto text-center'>
-          <div className='flex flex-col gap-8 pl-10 py-5 items-center md:flex-row'>
+          <div className='flex flex-col items-center gap-8 py-5 pl-10 md:flex-row'>
             <div className='text-left md:w-1/2'>
               <Image
                 alt=''
@@ -99,15 +99,15 @@ export default async function Main() {
                 className='object-fit'
                 quality='100'
               />
-              <h2 className='text-3xl font-bold text-darkBlue mb-6 mt-4'>
+              <h2 className='mb-6 mt-4 text-3xl font-bold text-darkBlue'>
                 {aboutTitle}
               </h2>
               <article
-                className='text-darkBrown leading-7 space-y-4'
+                className='space-y-4 leading-7 text-darkBrown'
                 dangerouslySetInnerHTML={{ __html: aboutText }}
               ></article>
             </div>
-            <div className='px-10 my-16 md:w-1/2'>
+            <div className='my-16 px-10 md:w-1/2'>
               <Image
                 alt=''
                 src={aboutImage}
@@ -121,12 +121,12 @@ export default async function Main() {
 
       <section id='numbers' className='w-full bg-veryLightBlue'>
         <Image src={caseTop} alt='' />
-        <div className='max-w-5xl px-5 mx-auto text-left'>
-          <h3 className='text-center text-darkBlue font-bold text-4xl mt-20'>
+        <div className='mx-auto max-w-5xl px-5 text-left'>
+          <h3 className='mt-20 text-center text-4xl font-bold text-darkBlue'>
             {steps}
           </h3>
           <div className='flex flex-col py-20 text-center md:flex-row'>
-            <div className='flex flex-col items-center space-y-2 h-30 md:w-1/3'>
+            <div className='h-30 flex flex-col items-center space-y-2 md:w-1/3'>
               <Image
                 src={image1}
                 alt=''
@@ -134,7 +134,7 @@ export default async function Main() {
                 height={image1Height}
                 className='h-40 w-32'
               />
-              <h5 className='text-md text-darkBlue pt-6'>{stepTitle1}</h5>
+              <h5 className='text-md pt-6 text-darkBlue'>{stepTitle1}</h5>
             </div>
             <div className='mx-auto my-10 md:m-auto'>
               <Image
@@ -146,7 +146,7 @@ export default async function Main() {
               />
             </div>
 
-            <div className='flex flex-col items-center space-y-2 h-30 md:w-1/3'>
+            <div className='h-30 flex flex-col items-center space-y-2 md:w-1/3'>
               <Image
                 src={image2}
                 alt=''
@@ -154,7 +154,7 @@ export default async function Main() {
                 height={image2Height}
                 className='h-40 w-40'
               />
-              <h5 className='text-md text-darkBlue pt-6'>{stepTitle2}</h5>
+              <h5 className='text-md pt-6 text-darkBlue'>{stepTitle2}</h5>
             </div>
             <div className='mx-auto my-10 md:m-auto'>
               <Image
@@ -165,7 +165,7 @@ export default async function Main() {
                 className='h-10 w-5'
               />
             </div>
-            <div className='flex flex-col items-center space-y-2 h-30 md:w-1/3'>
+            <div className='h-30 flex flex-col items-center space-y-2 md:w-1/3'>
               <Image
                 src={image3}
                 alt=''
@@ -173,7 +173,7 @@ export default async function Main() {
                 height={image3Height}
                 className='h-40 w-40'
               />
-              <h5 className='text-md text-darkBlue pt-6'>{stepTitle3}</h5>
+              <h5 className='text-md pt-6 text-darkBlue'>{stepTitle3}</h5>
             </div>
           </div>
         </div>
@@ -182,14 +182,14 @@ export default async function Main() {
 
       <section
         id='case'
-        className='flex flex-col mx-auto items-center max-w-5xl mt-28'
+        className='mx-auto mt-28 flex max-w-5xl flex-col items-center'
       >
-        <h3 className='max-w-xl leading-10 text-center text-darkBlue font-bold text-4xl'>
+        <h3 className='max-w-xl text-center text-4xl font-bold leading-10 text-darkBlue'>
           {features}
         </h3>
 
-        <div className='flex flex-row mx-auto pt-10 text-center mt-10 mb-10 items-center justify-center flex-wrap'>
-          <div className='flex flex-col items-center space-y-2 h-30 p-10 md:w-1/3'>
+        <div className='mx-auto mt-10 mb-10 flex flex-row flex-wrap items-center justify-center pt-10 text-center'>
+          <div className='h-30 flex flex-col items-center space-y-2 p-10 md:w-1/3'>
             <Image
               src={featureImage1}
               alt=''
@@ -197,15 +197,15 @@ export default async function Main() {
               height={featureImage1Height}
               // className='h-40 w-32'
             />
-            <h5 className='text-lg font-bold text-darkBlue pt-6'>
+            <h5 className='pt-6 text-lg font-bold text-darkBlue'>
               {featureTitle1}
             </h5>
             <article
-              className='text-darkBrown text-sm leading-7 space-y-4 mt-4 mb-4'
+              className='mt-4 mb-4 space-y-4 text-sm leading-7 text-darkBrown'
               dangerouslySetInnerHTML={{ __html: featureText1 }}
             ></article>
           </div>
-          <div className='flex flex-col items-center space-y-2 h-30 p-10 md:w-1/3'>
+          <div className='h-30 flex flex-col items-center space-y-2 p-10 md:w-1/3'>
             <Image
               src={featureImage2}
               alt=''
@@ -213,15 +213,15 @@ export default async function Main() {
               height={featureImage2Height}
               // className='h-40 w-32'
             />
-            <h5 className='text-lg font-bold text-darkBlue pt-6'>
+            <h5 className='pt-6 text-lg font-bold text-darkBlue'>
               {featureTitle2}
             </h5>
             <article
-              className='text-darkBrown text-sm leading-7 space-y-4 mt-4 mb-4'
+              className='mt-4 mb-4 space-y-4 text-sm leading-7 text-darkBrown'
               dangerouslySetInnerHTML={{ __html: featureText2 }}
             ></article>
           </div>
-          <div className='flex flex-col items-center space-y-2 h-30 p-10 md:w-1/3'>
+          <div className='h-30 flex flex-col items-center space-y-2 p-10 md:w-1/3'>
             <Image
               src={featureImage3}
               alt=''
@@ -229,15 +229,15 @@ export default async function Main() {
               height={featureImage3Height}
               // className='h-40 w-32'
             />
-            <h5 className='text-lg font-bold text-darkBlue pt-6'>
+            <h5 className='pt-6 text-lg font-bold text-darkBlue'>
               {featureTitle3}
             </h5>
             <article
-              className='text-darkBrown text-sm leading-7 space-y-4 mt-4 mb-4'
+              className='mt-4 mb-4 space-y-4 text-sm leading-7 text-darkBrown'
               dangerouslySetInnerHTML={{ __html: featureText3 }}
             ></article>
           </div>
-          <div className='flex flex-col items-center space-y-2 h-30 p-10 md:w-1/3'>
+          <div className='h-30 flex flex-col items-center space-y-2 p-10 md:w-1/3'>
             <Image
               src={featureImage4}
               alt=''
@@ -245,15 +245,15 @@ export default async function Main() {
               height={featureImage4Height}
               // className='h-40 w-32'
             />
-            <h5 className='text-lg font-bold text-darkBlue pt-6'>
+            <h5 className='pt-6 text-lg font-bold text-darkBlue'>
               {featureTitle4}
             </h5>
             <article
-              className='text-darkBrown text-sm leading-7 space-y-4 mt-4 mb-4'
+              className='mt-4 mb-4 space-y-4 text-sm leading-7 text-darkBrown'
               dangerouslySetInnerHTML={{ __html: featureText4 }}
             ></article>
           </div>
-          <div className='flex flex-col items-center space-y-2 h-30 p-10 md:w-1/3'>
+          <div className='h-30 flex flex-col items-center space-y-2 p-10 md:w-1/3'>
             <Image
               src={featureImage5}
               alt=''
@@ -261,11 +261,11 @@ export default async function Main() {
               height={featureImage5Height}
               // className='h-40 w-32'
             />
-            <h5 className='text-lg font-bold text-darkBlue pt-6'>
+            <h5 className='pt-6 text-lg font-bold text-darkBlue'>
               {featureTitle5}
             </h5>
             <article
-              className='text-darkBrown text-sm leading-7 space-y-4 mt-4 mb-4'
+              className='mt-4 mb-4 space-y-4 text-sm leading-7 text-darkBrown'
               dangerouslySetInnerHTML={{ __html: featureText5 }}
             ></article>
           </div>
