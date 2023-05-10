@@ -5,11 +5,11 @@ import Link from 'next/link'
 import React, { useState } from 'react'
 import { Dropdown } from 'flowbite-react'
 import 'flowbite'
-import menuImage from '../../../public/menu.png'
-import menuPoint from '../../../public/menu-point.png'
-import menuPointLg from '../../../public/menu-point-lg.png'
-import menuCloud from '../../../public/menu-cloud.png'
-import langIcon from '../../../public/lang.png'
+import menuImage from '../../public/menu.png'
+import menuPoint from '../../public/menu-point.png'
+import menuPointLg from '../../public/menu-point-lg.png'
+import menuCloud from '../../public/menu-cloud.png'
+import langIcon from '../../public/lang.png'
 
 export default function Navigation(props) {
   const [isOpen, setIsOpen] = useState(false)
