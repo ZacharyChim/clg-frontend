@@ -6,8 +6,8 @@ import Script from 'next/script'
 import { dir } from 'i18next'
 import { languages } from '../i18n/settings'
 
-export async function generateStaticParams() {
-  return languages.map((lng) => ({ lng }))
+export async function generateStaticParams(languages: any) {
+  return languages.map((lng: any) => ({ lng }))
 }
 
 export default function RootLayout({
