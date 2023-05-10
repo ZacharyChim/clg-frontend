@@ -1,17 +1,17 @@
 'use client'
 import Image from 'next/image'
 import React from 'react'
-import clg from '../../public/clg-logo.png'
-import facebook from '../../public/icon-facebook.png'
-import linkedin from '../../public/icon-linkedin.png'
-import instagram from '../../public/icon-instagram.png'
-import whatsapp from '../../public/icon-whatsapp.png'
-import whatsappBlue from '../../public/icon-blue-whatsapp.png'
-import emailBlue from '../../public/icon-blue-email.png'
-import mobileBlue from '../../public/icon-blue-mobile.png'
-import faxBlue from '../../public/icon-blue-fax.png'
-import addrBlue from '../../public/icon-blue-addr.png'
-import contactUs from '../../public/contact_us.png'
+import clg from '../../../public/clg-logo.png'
+import facebook from '../../../public/icon-facebook.png'
+import linkedin from '../../../public/icon-linkedin.png'
+import instagram from '../../../public/icon-instagram.png'
+import whatsapp from '../../../public/icon-whatsapp.png'
+import whatsappBlue from '../../../public/icon-blue-whatsapp.png'
+import emailBlue from '../../../public/icon-blue-email.png'
+import mobileBlue from '../../../public/icon-blue-mobile.png'
+import faxBlue from '../../../public/icon-blue-fax.png'
+import addrBlue from '../../../public/icon-blue-addr.png'
+import contactUs from '../../../public/contact_us.png'
 import Link from 'next/link'
 
 export default function Main() {
@@ -120,7 +120,7 @@ export default function Main() {
 
   return (
     <>
-      <section className='flex flex-col mx-auto max-w-5xl mt-10 mb-40 items-left'>
+      <section className='items-left mx-auto mt-10 mb-40 flex max-w-5xl flex-col'>
         <Image
           src={contactUs}
           alt=''
@@ -128,12 +128,12 @@ export default function Main() {
           height={contactUsHeight}
         />
 
-        <h3 className='text-2xl font-bold text-darkBlue mt-4'>{title}</h3>
+        <h3 className='mt-4 text-2xl font-bold text-darkBlue'>{title}</h3>
 
         <div className='flex flex-col md:flex-row'>
           <div className='md:w-1/3'>
             <Image src={clg} alt='' width={160} height={140} quality={100} />
-            <div className='flex flex-row gap-5 ml-2'>
+            <div className='ml-2 flex flex-row gap-5'>
               <Link href='https://www.facebook.com/CLGCPA'>
                 <Image
                   src={facebook}
@@ -171,7 +171,7 @@ export default function Main() {
                 />
               </Link>
             </div>
-            <div className='grid grid-cols-9 gap-y-6 gap-x-2 mt-8'>
+            <div className='mt-8 grid grid-cols-9 gap-y-6 gap-x-2'>
               <Image
                 src={whatsappBlue}
                 alt=''
@@ -181,7 +181,7 @@ export default function Main() {
                 className='col-span-1 mx-auto'
               />
               <span className='col-span-8 text-sm'>
-                <span className='text-oceanBlue text-sm'>Whatsapp</span>: +853
+                <span className='text-sm text-oceanBlue'>Whatsapp</span>: +853
                 9542-1138
               </span>
               <Image
@@ -193,7 +193,7 @@ export default function Main() {
                 className='col-span-1 mx-auto'
               />
               <span className='col-span-8 text-sm'>
-                <span className='text-oceanBlue text-sm'>Email</span>:
+                <span className='text-sm text-oceanBlue'>Email</span>:
                 info@clgcpa.com
               </span>
               <Image
@@ -205,7 +205,7 @@ export default function Main() {
                 className='col-span-1 mx-auto'
               />
               <span className='col-span-8 text-sm'>
-                <span className='text-oceanBlue text-sm'>Tel</span>: +853
+                <span className='text-sm text-oceanBlue'>Tel</span>: +853
                 3564-8665
               </span>
               <Image
@@ -217,7 +217,7 @@ export default function Main() {
                 className='col-span-1 mx-auto'
               />
               <span className='col-span-8 text-sm'>
-                <span className='text-oceanBlue text-sm'>Fax</span>: +853
+                <span className='text-sm text-oceanBlue'>Fax</span>: +853
                 3464-0607
               </span>
               <Image
@@ -228,7 +228,7 @@ export default function Main() {
                 quality={100}
                 className='col-span-1 mx-auto'
               />
-              <span className='col-span-8 text-sm mr-10'>
+              <span className='col-span-8 mr-10 text-sm'>
                 Room 2006, 20/F, Futura Plaza, 111-113 How Ming Street, Kwun
                 Tong, Hong Kong
               </span>
@@ -244,7 +244,7 @@ export default function Main() {
             >
               <div className='col-span-6 sm:col-span-2'>
                 <span className='text-oceanBlue'>{audit}</span>
-                <label htmlFor='MarketingAccept' className='flex gap-1 mt-2'>
+                <label htmlFor='MarketingAccept' className='mt-2 flex gap-1'>
                   <input
                     type='checkbox'
                     id={audit1}
@@ -256,7 +256,7 @@ export default function Main() {
                   <span className='text-sm text-gray-700'>{audit1}</span>
                 </label>
 
-                <label htmlFor='MarketingAccept' className='flex gap-1 mt-2'>
+                <label htmlFor='MarketingAccept' className='mt-2 flex gap-1'>
                   <input
                     type='checkbox'
                     id={audit2}
@@ -268,7 +268,7 @@ export default function Main() {
                   <span className='text-sm text-gray-700'>{audit2}</span>
                 </label>
 
-                <label htmlFor='MarketingAccept' className='flex gap-1 mt-2'>
+                <label htmlFor='MarketingAccept' className='mt-2 flex gap-1'>
                   <input
                     type='checkbox'
                     id={audit3}
@@ -283,7 +283,7 @@ export default function Main() {
 
               <div className='col-span-6 sm:col-span-2'>
                 <span className='text-oceanBlue'>{advisory}</span>
-                <label htmlFor='MarketingAccept' className='flex gap-1 mt-2'>
+                <label htmlFor='MarketingAccept' className='mt-2 flex gap-1'>
                   <input
                     type='checkbox'
                     id={advisory1}
@@ -295,7 +295,7 @@ export default function Main() {
                   <span className='text-sm text-gray-700'>{advisory1}</span>
                 </label>
 
-                <label htmlFor='MarketingAccept' className='flex gap-1 mt-2'>
+                <label htmlFor='MarketingAccept' className='mt-2 flex gap-1'>
                   <input
                     type='checkbox'
                     id={advisory2}
@@ -310,7 +310,7 @@ export default function Main() {
 
               <div className='col-span-6 sm:col-span-2'>
                 <span className='text-oceanBlue'>{funding}</span>
-                <label htmlFor='MarketingAccept' className='flex gap-1 mt-2'>
+                <label htmlFor='MarketingAccept' className='mt-2 flex gap-1'>
                   <input
                     type='checkbox'
                     id={funding1}
@@ -322,7 +322,7 @@ export default function Main() {
                   <span className='text-sm text-gray-700'>{funding1}</span>
                 </label>
 
-                <label htmlFor='MarketingAccept' className='flex gap-1 mt-2'>
+                <label htmlFor='MarketingAccept' className='mt-2 flex gap-1'>
                   <input
                     type='checkbox'
                     id={funding2}
@@ -334,7 +334,7 @@ export default function Main() {
                   <span className='text-sm text-gray-700'>{funding2}</span>
                 </label>
 
-                <label htmlFor='MarketingAccept' className='flex gap-1 mt-2'>
+                <label htmlFor='MarketingAccept' className='mt-2 flex gap-1'>
                   <input
                     type='checkbox'
                     id={funding3}
@@ -363,7 +363,7 @@ export default function Main() {
                   <span className='text-sm text-gray-700'>{cloud1}</span>
                 </label>
 
-                <label htmlFor='MarketingAccept' className='flex gap-1 mt-2'>
+                <label htmlFor='MarketingAccept' className='mt-2 flex gap-1'>
                   <input
                     type='checkbox'
                     id={cloud2}
@@ -375,7 +375,7 @@ export default function Main() {
                   <span className='text-sm text-gray-700'>{cloud2}</span>
                 </label>
 
-                <label htmlFor='MarketingAccept' className='flex gap-1 mt-2'>
+                <label htmlFor='MarketingAccept' className='mt-2 flex gap-1'>
                   <input
                     type='checkbox'
                     id={cloud3}
@@ -400,7 +400,7 @@ export default function Main() {
                   <span className='text-sm text-gray-700'>{cloud4}</span>
                 </label>
 
-                <label htmlFor='MarketingAccept' className='flex gap-1 mt-2'>
+                <label htmlFor='MarketingAccept' className='mt-2 flex gap-1'>
                   <input
                     type='checkbox'
                     id={cloud5}
@@ -415,8 +415,8 @@ export default function Main() {
 
               <div className='col-span-6'></div>
 
-              <div className='col-span-6 contact input-wrapper md:col-span-3'>
-                <label htmlFor='Name' className='text-gray-700 contact-label'>
+              <div className='contact input-wrapper col-span-6 md:col-span-3'>
+                <label htmlFor='Name' className='contact-label text-gray-700'>
                   Name
                 </label>
 
@@ -424,14 +424,14 @@ export default function Main() {
                   type='text'
                   id='name'
                   name='name'
-                  className='text-sm text-gray-700 contact-input'
+                  className='contact-input text-sm text-gray-700'
                   placeholder='Name'
                   required
                 />
               </div>
 
-              <div className='col-span-6 contact input-wrapper md:col-span-3'>
-                <label htmlFor='Tel' className='text-gray-700 contact-label'>
+              <div className='contact input-wrapper col-span-6 md:col-span-3'>
+                <label htmlFor='Tel' className='contact-label text-gray-700'>
                   Tel
                 </label>
 
@@ -439,14 +439,14 @@ export default function Main() {
                   type='tel'
                   id='tel'
                   name='tel'
-                  className='text-sm text-gray-700 contact-input'
+                  className='contact-input text-sm text-gray-700'
                   placeholder='Tel'
                   required
                 />
               </div>
 
-              <div className='col-span-6 contact input-wrapper'>
-                <label htmlFor='Email' className='text-gray-700 contact-label'>
+              <div className='contact input-wrapper col-span-6'>
+                <label htmlFor='Email' className='contact-label text-gray-700'>
                   Email
                 </label>
 
@@ -454,13 +454,13 @@ export default function Main() {
                   type='email'
                   id='email'
                   name='email'
-                  className='text-sm text-gray-700 contact-input'
+                  className='contact-input text-sm text-gray-700'
                   placeholder='Email'
                   required
                 />
               </div>
 
-              <div className='col-span-6 contact input-wrapper md:col-span-3'>
+              <div className='contact input-wrapper col-span-6 md:col-span-3'>
                 <select
                   id='regions'
                   defaultValue={'Regions'}
@@ -478,10 +478,10 @@ export default function Main() {
                 </select>
               </div>
 
-              <div className='col-span-6 contact input-wrapper md:col-span-3'>
+              <div className='contact input-wrapper col-span-6 md:col-span-3'>
                 <label
                   htmlFor='Industry'
-                  className='text-gray-700 contact-label'
+                  className='contact-label text-gray-700'
                 >
                   Business Industry
                 </label>
@@ -490,16 +490,16 @@ export default function Main() {
                   type='text'
                   id='industry'
                   name='industry'
-                  className='text-sm text-gray-700 contact-input'
+                  className='contact-input text-sm text-gray-700'
                   placeholder='Business Industry'
                   required
                 />
               </div>
 
-              <div className='col-span-6 contact input-wrapper'>
+              <div className='contact input-wrapper col-span-6'>
                 <label
                   htmlFor='Company'
-                  className='text-gray-700 contact-label'
+                  className='contact-label text-gray-700'
                 >
                   Company Name
                 </label>
@@ -508,16 +508,16 @@ export default function Main() {
                   type='text'
                   id='company'
                   name='company'
-                  className='text-sm text-gray-700 contact-input'
+                  className='contact-input text-sm text-gray-700'
                   placeholder='Company Name'
                   required
                 />
               </div>
 
-              <div className='col-span-6 contact input-wrapper'>
+              <div className='contact input-wrapper col-span-6'>
                 <label
                   htmlFor='Message'
-                  className='text-gray-700 contact-label'
+                  className='contact-label text-gray-700'
                 >
                   Message
                 </label>
@@ -525,7 +525,7 @@ export default function Main() {
                 <textarea
                   id='message'
                   name='message'
-                  className='text-sm text-gray-700 contact-input'
+                  className='contact-input text-sm text-gray-700'
                   placeholder='Message'
                   required
                 />
@@ -534,7 +534,7 @@ export default function Main() {
               <div className='col-span-6 items-center gap-4'>
                 <p className='mx-2 text-sm text-oceanBlue'>{hours}</p>
 
-                <button className='shrink-0 rounded-full border border-blue-400 bg-blue-400 pl-10 pr-4 py-3 mx-2 mt-4 text-sm font-bold text-white transition hover:bg-transparent hover:text-blue-400 focus:outline-none focus:ring active:text-blue-500'>
+                <button className='mx-2 mt-4 shrink-0 rounded-full border border-blue-400 bg-blue-400 py-3 pl-10 pr-4 text-sm font-bold text-white transition hover:bg-transparent hover:text-blue-400 focus:outline-none focus:ring active:text-blue-500'>
                   SUBMIT <span className='ml-4'>&#10132;</span>
                 </button>
               </div>

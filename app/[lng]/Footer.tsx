@@ -2,27 +2,10 @@ import { v4 } from 'uuid'
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
-import footerCurve from '../public/footer-curve.png'
+import footerCurve from '../../public/footer-curve.png'
 import BackToTop from './BackToTop'
-import FloatingButtons from '../components/FloatingButtons'
-
-const fetchFooter = async () => {
-  const res = await fetch(
-    `${process.env.NEXT_PUBLIC_STRAPI_API_URL}/footer?populate=%2A`
-  )
-
-  const footer = await res.json()
-  return footer.data.attributes
-}
-
-const fetchSocial = async () => {
-  const res = await fetch(
-    `${process.env.NEXT_PUBLIC_STRAPI_API_URL}/footer?populate[0]=SocialIcons&populate[1]=SocialIcons.Icon&populate[2]=seoData.Icon.media`
-  )
-
-  const social = await res.json()
-  return social.data.attributes.SocialIcons
-}
+import FloatingButtons from '../../components/FloatingButtons'
+import { fetchSingle } from '../../lib/utils'
 
 const fetchLinks = async () => {
   const res = await fetch(
@@ -33,9 +16,14 @@ const fetchLinks = async () => {
   return links
 }
 
-async function Footer() {
-  const footer = await fetchFooter()
-  const copyright = footer.copyright
+async function Footer(props: { lng: string }) {
+  const footer = await fetchSingle('footer')
+  const translate = (slug: string) => {
+    return props.lng === 'hk'
+      ? footer.localizations.data[0].attributes[slug]
+      : footer[slug]
+  }
+  const copyright = translate('copyright')
   const allLinks = await fetchLinks()
   const linkWithParent = allLinks.filter((item) => item.parent !== null)
   // const linkAboutUS = linkWithParent.filter((item) => item.parent.id === 4)
@@ -50,11 +38,29 @@ async function Footer() {
     process.env.NEXT_PUBLIC_STRAPI_URL + footer.LogoWhite.data.attributes.url
   const logoWidth = footer.LogoWhite.data.attributes.width
   const logoHeight = footer.LogoWhite.data.attributes.height
-  const social = await fetchSocial()
-  const icons = social.map((icon) => ({
-    text: icon.Text,
-    iconURL: icon.Icon.data.attributes.url,
-  }))
+  const addr = translate('addr_text')
+  const icons = [
+    {
+      text: footer.whatsapp_text,
+      iconURL: footer.whatsapp_icon.data.attributes.url,
+    },
+    {
+      text: footer.email_text,
+      iconURL: footer.email_icon.data.attributes.url,
+    },
+    {
+      text: footer.tel_text,
+      iconURL: footer.tel_icon.data.attributes.url,
+    },
+    {
+      text: footer.fax_text,
+      iconURL: footer.fax_icon.data.attributes.url,
+    },
+    {
+      text: addr,
+      iconURL: footer.addr_icon.data.attributes.url,
+    },
+  ]
 
   return (
     <>
@@ -238,7 +244,7 @@ async function Footer() {
           </div>
         </div>
         <div className='border-b-8 border-slate-900 bg-darkBlue'>
-          <div className='mx-auto max-w-5xl space-y-8 px-4 py-5  sm:px-6 lg:space-y-16 lg:px-8'>
+          <div className='mx-auto max-w-5xl space-y-8 px-2 py-5 md:px-0 lg:space-y-16'>
             <p className='text-xs text-grayishWhite'>{copyright}</p>
           </div>
         </div>

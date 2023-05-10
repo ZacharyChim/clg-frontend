@@ -2,99 +2,102 @@ import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { v4 } from 'uuid'
-import { fetchCollection, fetchSingle, trimTitle } from '../lib/utils'
+import { fetchCollection, fetchSingle, trimTitle } from '../../lib/utils'
 
-import contactTop from '../public/contact-top.png'
-import caseTop from '../public/case-top.png'
-import partnershipTop from '../public/partnership-top.png'
-import serviceTop from '../public/service-top.png'
-import Contact from '../components/Contact'
-import Popup from '../components/Popup'
+import contactTop from '../../public/contact-top.png'
+import caseTop from '../../public/case-top.png'
+import partnershipTop from '../../public/partnership-top.png'
+import serviceTop from '../../public/service-top.png'
+import Contact from '../../components/Contact'
+import Popup from '../../components/Popup'
+import commaURL from '../../public/comma.png'
 
-const fetchData = async () => {
-  const res = await fetch(
-    `${process.env.NEXT_PUBLIC_STRAPI_API_URL}/home-page?populate=%2A`
-  )
+import { useTranslation } from '../i18n'
 
-  const resData = await res.json()
-  return resData
-}
+// const fetchData = async () => {
+//   const res = await fetch(
+//     `${process.env.NEXT_PUBLIC_STRAPI_API_URL}/home-page?populate=%2A`
+//   )
 
-const fetchDesc = async () => {
-  const res = await fetch(
-    `${process.env.NEXT_PUBLIC_STRAPI_API_URL}/home-page?populate[0]=ImageDescLeft&populate[1]=ImageDescLeft.Image&populate[2]=ImageDescRight&populate[3]=ImageDescRight.Image&populate[4]=ImageDescLeft.ImageTitle&populate[5]=ImageDescRight.ImageTitle`
-  )
+//   const resData = await res.json()
+//   return resData
+// }
 
-  const resData = await res.json()
-  return resData
-}
+// const fetchDesc = async () => {
+//   const res = await fetch(
+//     `${process.env.NEXT_PUBLIC_STRAPI_API_URL}/home-page?populate[0]=ImageDescLeft&populate[1]=ImageDescLeft.Image&populate[2]=ImageDescRight&populate[3]=ImageDescRight.Image&populate[4]=ImageDescLeft.ImageTitle&populate[5]=ImageDescRight.ImageTitle`
+//   )
 
-export default async function Main() {
+//   const resData = await res.json()
+//   return resData
+// }
+
+export default async function Main(props: { lng: string }) {
   const data = await fetchSingle('home-page')
 
   const allCases = await fetchCollection('cases')
   const newCases = allCases.filter((item) => item.id < 4)
 
-  const commaURL =
-    process.env.NEXT_PUBLIC_STRAPI_URL + data.comma.data.attributes.url
+  const translate = (slug: string) => {
+    return props.lng === 'hk'
+      ? data.localizations.data[0].attributes[slug]
+      : data[slug]
+  }
 
-  const desc = await fetchDesc()
+  const introTitle = translate('intro_title')
+  const introText = translate('intro_text')
+
   const descLeftURL =
     process.env.NEXT_PUBLIC_STRAPI_URL +
-    desc.data.attributes.ImageDescLeft.Image.data.attributes.url
-  const descLeftWidth =
-    desc.data.attributes.ImageDescLeft.Image.data.attributes.width
-  const descLeftHeight =
-    desc.data.attributes.ImageDescLeft.Image.data.attributes.height
+    data.desc_left_image.data.attributes.url
+  const descLeftWidth = data.desc_left_image.data.attributes.width
+  const descLeftHeight = data.desc_left_image.data.attributes.height
 
   const descLeftTitleURL =
     process.env.NEXT_PUBLIC_STRAPI_URL +
-    desc.data.attributes.ImageDescLeft.ImageTitle.data.attributes.url
-  const descLeftTitleWidth =
-    desc.data.attributes.ImageDescLeft.ImageTitle.data.attributes.width
-  const descLeftTitleHeight =
-    desc.data.attributes.ImageDescLeft.ImageTitle.data.attributes.height
+    data.desc_left_title.data.attributes.url
+  const descLeftTitleWidth = data.desc_left_title.data.attributes.width
+  const descLeftTitleHeight = data.desc_left_title.data.attributes.height
+
+  const descLeft = translate('desc_left')
+  const descRight = translate('desc_right')
 
   const descRightTitleURL =
     process.env.NEXT_PUBLIC_STRAPI_URL +
-    desc.data.attributes.ImageDescRight.ImageTitle.data.attributes.url
-  const descRightTitleWidth =
-    desc.data.attributes.ImageDescRight.ImageTitle.data.attributes.width
-  const descRightTitleHeight =
-    desc.data.attributes.ImageDescRight.ImageTitle.data.attributes.height
+    data.desc_right_title.data.attributes.url
+  const descRightTitleWidth = data.desc_right_title.data.attributes.width
+  const descRightTitleHeight = data.desc_right_title.data.attributes.height
 
   const descRightURL =
     process.env.NEXT_PUBLIC_STRAPI_URL +
-    desc.data.attributes.ImageDescRight.Image.data.attributes.url
-  const descRightWidth =
-    desc.data.attributes.ImageDescRight.Image.data.attributes.width
-  const descRightHeight =
-    desc.data.attributes.ImageDescRight.Image.data.attributes.height
+    data.desc_right_image.data.attributes.url
+  const descRightWidth = data.desc_right_image.data.attributes.width
+  const descRightHeight = data.desc_right_image.data.attributes.height
 
   const expURL =
     process.env.NEXT_PUBLIC_STRAPI_URL + data.experience.data.attributes.url
   const expWidth = data.experience.data.attributes.width
   const expHeight = data.experience.data.attributes.height
 
-  const expNumber = data.experienceNumber
-  const expText = data.experienceText
+  const expNumber = translate('experienceNumber')
+  const expText = translate('experienceText')
 
   const clientURL =
     process.env.NEXT_PUBLIC_STRAPI_URL + data.client.data.attributes.url
   const clientWidth = data.client.data.attributes.width
   const clientHeight = data.client.data.attributes.height
 
-  const clientNumber = data.clientNumber
-  const clientText = data.clientText
+  const clientNumber = translate('clientNumber')
+  const clientText = translate('clientText')
 
   const awardURL =
     process.env.NEXT_PUBLIC_STRAPI_URL + data.award.data.attributes.url
   const awardWidth = data.award.data.attributes.width
   const awardHeight = data.award.data.attributes.height
 
-  const awardTitle = data.awardTitle
-  const awardText = data.awardText
-  const awardDesc = data.awardDesc
+  const awardTitle = translate('awardTitle')
+  const awardText = translate('awardText')
+  const awardDesc = translate('awardDesc')
 
   const xeroURL =
     process.env.NEXT_PUBLIC_STRAPI_URL + data.xero.data.attributes.url
@@ -106,18 +109,18 @@ export default async function Main() {
   const xeroSilverWidth = data.xeroSilver.data.attributes.width
   const xeroSilverHeight = data.xeroSilver.data.attributes.height
 
-  const xeroTitle = data.xeroTitle
-  const xeroText = data.xeroText
+  const xeroTitle = translate('xeroTitle')
+  const xeroText = translate('xeroText')
 
-  const serviceTitle = data.serviceTitle
-  const incorporation = data.incorporation
-  const secretary = data.secretary
-  const accounting = data.accounting
-  const taxation = data.taxation
-  const auditing = data.auditing
-  const funding = data.funding
-  const cloud = data.cloud
-  const solution = data.solution
+  const serviceTitle = translate('serviceTitle')
+  const incorporation = translate('incorporation')
+  const secretary = translate('secretary')
+  const accounting = translate('accounting')
+  const taxation = translate('taxation')
+  const auditing = translate('auditing')
+  const funding = translate('funding')
+  const cloud = translate('cloud')
+  const solution = translate('solution')
 
   const incorporationURL =
     process.env.NEXT_PUBLIC_STRAPI_URL +
@@ -161,8 +164,8 @@ export default async function Main() {
   const solutionWidth = data.solutionImage.data.attributes.width
   const solutionHeight = data.solutionImage.data.attributes.height
 
-  const partnership = data.partnership
-  const partnershipDesc = data.partnershipDesc
+  const partnership = translate('partnership')
+  const partnershipDesc = translate('partnershipDesc')
 
   const workstemURL =
     process.env.NEXT_PUBLIC_STRAPI_URL + data.workstemLogo.data.attributes.url
@@ -235,36 +238,36 @@ export default async function Main() {
   const postifyWidth = data.postifyLogo.data.attributes.width
   const postifyHeight = data.postifyLogo.data.attributes.height
 
-  const caseTitle = data.caseTitle
-  const caseDesc = data.caseDesc
+  const caseTitle = translate('caseTitle')
+  const caseDesc = translate('caseDesc')
 
-  const contactTitle = data.contactTitle
-  const contactSubtitle = data.contactSubtitle
-  const contactText = data.contactText
-  const introTitle = data.intro_title
-  const introText = data.intro_text
+  const contactTitle = translate('contactTitle')
+  const contactSubtitle = translate('contactSubtitle')
+  const contactText = translate('contactText')
+
+  const detailsLink = translate('details')
 
   return (
     <>
       <section
         id='desc'
-        className='flex flex-col max-w-2xl px-5 mx-auto mt-12 text-center items-center'
+        className='mx-auto mt-12 flex max-w-2xl flex-col items-center px-5 text-center'
       >
-        <h3 className='w-96 text-center text-darkBlue font-bold text-4xl mb-4'>
+        <h3 className='mb-4 w-96 text-center text-4xl font-bold text-darkBlue'>
           {introTitle}
         </h3>
-        <p className='leading-10 text-justify my-6'>{introText}</p>
-        <span className='w-12 my-5'>
+        <p className='my-6 text-justify leading-10'>{introText}</p>
+        <span className='my-5 w-12'>
           <Image src={commaURL} alt='comma' width='70' height='51' />
         </span>
       </section>
 
       <section
         id='simple'
-        className='bg-curveLine bg-contain bg-no-repeat bg-center mb-10 md:bg-top'
+        className='bg-center md:bg-top mb-10 bg-curveLine bg-contain bg-no-repeat'
       >
-        <div className='container flex flex-col max-w-5xl px-10 mx-auto mt-10 space-y-12 items-center md:space-y-0 md:flex-row'>
-          <div className='container flex flex-col px-4 mx-auto mt-10 space-y-12 md:space-y-0 md:flex-row md:w-1/2'>
+        <div className='container mx-auto mt-10 flex max-w-5xl flex-col items-center space-y-12 px-10 md:flex-row md:space-y-0'>
+          <div className='container mx-auto mt-10 flex flex-col space-y-12 px-4 md:w-1/2 md:flex-row md:space-y-0'>
             <Image
               src={descLeftURL}
               alt='Keep It Simple'
@@ -279,15 +282,11 @@ export default async function Main() {
               width={descLeftTitleWidth}
               height={descLeftTitleHeight}
             />
-            <p>
-              We offer a hands-on approach with an understanding of your value
-              chain. We help simplify everyday business tasks with cloud
-              solutions.
-            </p>
+            <p>{descLeft}</p>
           </div>
         </div>
-        <div className='container flex flex-col-reverse max-w-5xl px-10 mx-auto mt-10 space-y-12 items-center md:space-y-0 md:flex-row'>
-          <div className='container flex flex-col px-4 mt-10 mx-auto space-y-8 md:space-y-0 md:w-1/2'>
+        <div className='container mx-auto mt-10 flex max-w-5xl flex-col-reverse items-center space-y-12 px-10 md:flex-row md:space-y-0'>
+          <div className='container mx-auto mt-10 flex flex-col space-y-8 px-4 md:w-1/2 md:space-y-0'>
             <Image
               src={descRightTitleURL}
               alt='Glow It Fast'
@@ -295,11 +294,7 @@ export default async function Main() {
               height={descRightTitleHeight}
             />
 
-            <p>
-              Let us take you to the complex accounting, finance and taxes
-              world. You then focus on what matters most, growing the business
-              faster together.
-            </p>
+            <p>{descRight}</p>
           </div>
           <div className='flex flex-col space-y-8 md:w-1/2'>
             <Image
@@ -314,42 +309,42 @@ export default async function Main() {
 
       <section id='numbers' className='bg-veryLightBlue'>
         <Image src={caseTop} alt='' />
-        <div className='max-w-5xl px-5 mx-auto text-center'>
+        <div className='mx-auto max-w-5xl px-5 text-center'>
           <div className='flex flex-col py-20 md:flex-row md:space-x-14'>
-            <div className='flex flex-col items-center p-8 space-y-2 h-30 md:w-1/3'>
+            <div className='h-30 flex flex-col items-center space-y-2 p-8 md:w-1/3'>
               <Image
                 src={expURL}
                 alt={expText}
                 width={expWidth}
                 height={expHeight}
               />
-              <h5 className='text-4xl font-bold text-veryDarkBlue pt-6'>
+              <h5 className='pt-6 text-4xl font-bold text-veryDarkBlue'>
                 {expNumber}
               </h5>
               <p className='text-xl'>{expText}</p>
             </div>
 
-            <div className='flex flex-col items-center p-8 space-y-2 h-30 md:w-1/3'>
+            <div className='h-30 flex flex-col items-center space-y-2 p-8 md:w-1/3'>
               <Image
                 src={clientURL}
                 alt={clientText}
                 width={clientWidth}
                 height={clientHeight}
               />
-              <h5 className='text-4xl font-bold text-veryDarkBlue pt-6'>
+              <h5 className='pt-6 text-4xl font-bold text-veryDarkBlue'>
                 {clientNumber}
               </h5>
               <p className='text-xl'>{clientText}</p>
             </div>
 
-            <div className='flex flex-col items-center p-8 space-y-2 h-30 md:w-1/3'>
+            <div className='h-30 flex flex-col items-center space-y-2 p-8 md:w-1/3'>
               <Image
                 src={awardURL}
                 alt={awardText}
                 width={awardWidth}
                 height={awardHeight}
               />
-              <h5 className='text-4xl font-bold text-veryDarkBlue pt-6'>
+              <h5 className='pt-6 text-4xl font-bold text-veryDarkBlue'>
                 {awardTitle}
               </h5>
               <p className='text-xl'>{awardText}</p>
@@ -359,10 +354,10 @@ export default async function Main() {
         </div>
       </section>
 
-      <section id='xero' className='bg-lineBg bg-no-repeat bg-cover bg-center'>
+      <section id='xero' className='bg-center bg-lineBg bg-cover bg-no-repeat'>
         <Image src={contactTop} alt='' />
-        <div className='container max-w-4xl flex flex-col px-4 mx-auto py-40 md:flex-row'>
-          <div className='flex flex-col mr-10 mb-10 items-center md:w-1/2'>
+        <div className='container mx-auto flex max-w-4xl flex-col px-4 py-40 md:flex-row'>
+          <div className='mr-10 mb-10 flex flex-col items-center md:w-1/2'>
             <Image src={xeroURL} alt='' width={xeroWidth} height={xeroHeight} />
           </div>
           <div className='flex flex-col space-y-8 md:w-1/2'>
@@ -372,7 +367,7 @@ export default async function Main() {
               width={xeroSilverWidth}
               height={xeroSilverHeight}
             />
-            <h3 className='text-brightBlue text-xl font-bold'>{xeroTitle}</h3>
+            <h3 className='text-xl font-bold text-brightBlue'>{xeroTitle}</h3>
             <p className='text-darkBrown'>{xeroText}</p>
           </div>
         </div>
@@ -380,92 +375,92 @@ export default async function Main() {
       </section>
 
       <section id='services' className='bg-deepBlue'>
-        <div className='max-w-4xl px-5 mx-auto py-20 text-center'>
-          <h2 className='text-4xl font-bold text-white mb-10 mt-10 '>
+        <div className='mx-auto max-w-4xl px-5 py-20 text-center'>
+          <h2 className='mb-10 mt-10 text-4xl font-bold text-white '>
             {serviceTitle}
           </h2>
 
           <div className='flex flex-col md:flex-row md:space-x-4'>
-            <div className='flex flex-col items-center p-6 space-y-2 md:w-1/4'>
+            <div className='flex flex-col items-center space-y-2 p-6 md:w-1/4'>
               <Image
                 src={incorporationURL}
                 alt={incorporation}
                 width={incorporationWidth}
                 height={incorporationHeight}
               />
-              <h5 className='text-md text-white pt-6'>{incorporation}</h5>
+              <h5 className='text-md pt-6 text-white'>{incorporation}</h5>
             </div>
 
-            <div className='flex flex-col items-center p-6 space-y-2 md:w-1/4'>
+            <div className='flex flex-col items-center space-y-2 p-6 md:w-1/4'>
               <Image
                 src={secretaryURL}
                 alt={secretary}
                 width={secretaryWidth}
                 height={secretaryHeight}
               />
-              <h5 className='text-md text-white pt-6'>{secretary}</h5>
+              <h5 className='text-md pt-6 text-white'>{secretary}</h5>
             </div>
 
-            <div className='flex flex-col items-center p-6 space-y-2 md:w-1/4'>
+            <div className='flex flex-col items-center space-y-2 p-6 md:w-1/4'>
               <Image
                 src={accountingURL}
                 alt={accounting}
                 width={accountingWidth}
                 height={accountingHeight}
               />
-              <h5 className='text-md text-white pt-6'>{accounting}</h5>
+              <h5 className='text-md pt-6 text-white'>{accounting}</h5>
             </div>
 
-            <div className='flex flex-col items-center p-6 space-y-2 md:w-1/4'>
+            <div className='flex flex-col items-center space-y-2 p-6 md:w-1/4'>
               <Image
                 src={taxationURL}
                 alt={taxation}
                 width={taxationWidth}
                 height={taxationHeight}
               />
-              <h5 className='text-md text-white pt-6'>{taxation}</h5>
+              <h5 className='text-md pt-6 text-white'>{taxation}</h5>
             </div>
           </div>
 
           <div className='flex flex-col md:flex-row md:space-x-4'>
-            <div className='flex flex-col items-center p-6 space-y-2 md:w-1/4'>
+            <div className='flex flex-col items-center space-y-2 p-6 md:w-1/4'>
               <Image
                 src={auditingURL}
                 alt={auditing}
                 width={auditingWidth}
                 height={auditingHeight}
               />
-              <h5 className='text-md text-white pt-6'>{auditing}</h5>
+              <h5 className='text-md pt-6 text-white'>{auditing}</h5>
             </div>
 
-            <div className='flex flex-col items-center p-6 space-y-2 md:w-1/4'>
+            <div className='flex flex-col items-center space-y-2 p-6 md:w-1/4'>
               <Image
                 src={fundingURL}
                 alt={funding}
                 width={fundingWidth}
                 height={fundingHeight}
               />
-              <h5 className='text-md text-white pt-6'>{funding}</h5>
+              <h5 className='text-md pt-6 text-white'>{funding}</h5>
             </div>
 
-            <div className='flex flex-col items-center p-6 space-y-2 md:w-1/4'>
+            <div className='flex flex-col items-center space-y-2 p-6 md:w-1/4'>
               <Image
                 src={cloudURL}
                 alt={cloud}
                 width={cloudWidth}
                 height={cloudHeight}
               />
-              <h5 className='text-md text-white pt-6'>{cloud}</h5>
+              <h5 className='text-md pt-6 text-white'>{cloud}</h5>
             </div>
 
-            <div className='flex flex-col items-center p-6 space-y-2 md:w-1/4'>
+            <div className='flex flex-col items-center space-y-2 p-6 md:w-1/4'>
               <Image
                 src={solutionURL}
                 alt={solution}
                 width={solutionWidth}
                 height={solutionHeight}
               />
-              <h5 className='text-md text-white pt-6'>{solution}</h5>
+              <h5 className='text-md pt-6 text-white'>{solution}</h5>
             </div>
           </div>
         </div>
@@ -473,11 +468,11 @@ export default async function Main() {
 
       <section id='partnership' className='bg-white'>
         <Image src={partnershipTop} alt='' />
-        <div className='max-w-4xl mx-auto py-20 text-center'>
-          <h2 className='text-4xl font-bold text-darkBlue mb-10 mt-10 '>
+        <div className='mx-auto max-w-4xl py-20 text-center'>
+          <h2 className='mb-10 mt-10 text-4xl font-bold text-darkBlue '>
             {partnership}
           </h2>
-          <p className='text-lg text-darkBrown mb-10'>{partnershipDesc}</p>
+          <p className='mb-10 text-lg text-darkBrown'>{partnershipDesc}</p>
 
           <div className='flex flex-col items-center justify-center md:flex-row md:space-x-0'>
             <div className='flex flex-col justify-center space-y-2 md:w-1/4'>
@@ -489,7 +484,7 @@ export default async function Main() {
               />
             </div>
 
-            <div className='flex flex-col justify-center p-6 space-y-2 md:w-1/4'>
+            <div className='flex flex-col justify-center space-y-2 p-6 md:w-1/4'>
               <Image
                 src={hubdocURL}
                 alt=''
@@ -498,7 +493,7 @@ export default async function Main() {
               />
             </div>
 
-            <div className='flex flex-col justify-center p-6 space-y-2 md:w-1/4'>
+            <div className='flex flex-col justify-center space-y-2 p-6 md:w-1/4'>
               <Image
                 src={xeroLogoURL}
                 alt=''
@@ -507,7 +502,7 @@ export default async function Main() {
               />
             </div>
 
-            <div className='flex flex-col justify-center p-6 space-y-2 md:w-1/4'>
+            <div className='flex flex-col justify-center space-y-2 p-6 md:w-1/4'>
               <Image
                 src={mshopURL}
                 alt=''
@@ -518,7 +513,7 @@ export default async function Main() {
           </div>
 
           <div className='flex flex-col items-center justify-center md:flex-row md:space-x-4'>
-            <div className='flex flex-col justify-center p-6 space-y-2 md:w-1/3'>
+            <div className='flex flex-col justify-center space-y-2 p-6 md:w-1/3'>
               <Image
                 src={gingersoftURL}
                 alt=''
@@ -527,7 +522,7 @@ export default async function Main() {
               />
             </div>
 
-            <div className='flex flex-col justify-center p-6 space-y-2 md:w-1/3'>
+            <div className='flex flex-col justify-center space-y-2 p-6 md:w-1/3'>
               <Image
                 src={eats365URL}
                 alt=''
@@ -536,7 +531,7 @@ export default async function Main() {
               />
             </div>
 
-            <div className='flex flex-col justify-center p-6 space-y-2 md:w-1/3'>
+            <div className='flex flex-col justify-center space-y-2 p-6 md:w-1/3'>
               <Image
                 src={foodmarkethubURL}
                 alt=''
@@ -547,7 +542,7 @@ export default async function Main() {
           </div>
 
           <div className='flex flex-col items-center justify-center md:flex-row md:space-x-4'>
-            <div className='flex flex-col justify-center p-6 space-y-2 md:w-1/4'>
+            <div className='flex flex-col justify-center space-y-2 p-6 md:w-1/4'>
               <Image
                 src={yoovURL}
                 alt=''
@@ -556,7 +551,7 @@ export default async function Main() {
               />
             </div>
 
-            <div className='flex flex-col justify-center p-6 space-y-2 md:w-1/4'>
+            <div className='flex flex-col justify-center space-y-2 p-6 md:w-1/4'>
               <Image
                 src={dkdooURL}
                 alt=''
@@ -565,7 +560,7 @@ export default async function Main() {
               />
             </div>
 
-            <div className='flex flex-col justify-center p-6 space-y-2 md:w-1/4'>
+            <div className='flex flex-col justify-center space-y-2 p-6 md:w-1/4'>
               <Image
                 src={kpayURL}
                 alt=''
@@ -574,7 +569,7 @@ export default async function Main() {
               />
             </div>
 
-            <div className='flex flex-col justify-center p-6 space-y-2 md:w-1/4'>
+            <div className='flex flex-col justify-center space-y-2 p-6 md:w-1/4'>
               <Image
                 src={eberURL}
                 alt=''
@@ -585,7 +580,7 @@ export default async function Main() {
           </div>
 
           <div className='flex flex-col items-center justify-center md:flex-row md:space-x-4'>
-            <div className='flex flex-col justify-center p-6 space-y-2 md:w-1/4'>
+            <div className='flex flex-col justify-center space-y-2 p-6 md:w-1/4'>
               <Image
                 src={hikeURL}
                 alt=''
@@ -594,7 +589,7 @@ export default async function Main() {
               />
             </div>
 
-            <div className='flex flex-col justify-center p-6 space-y-2 md:w-1/4'>
+            <div className='flex flex-col justify-center space-y-2 p-6 md:w-1/4'>
               <Image
                 src={boutirURL}
                 alt=''
@@ -603,7 +598,7 @@ export default async function Main() {
               />
             </div>
 
-            <div className='flex flex-col justify-center p-6 space-y-2 md:w-1/4'>
+            <div className='flex flex-col justify-center space-y-2 p-6 md:w-1/4'>
               <Image
                 src={postifyURL}
                 alt=''
@@ -617,19 +612,19 @@ export default async function Main() {
 
       <section id='case' className='bg-veryLightBlue'>
         <Image src={caseTop} alt='' />
-        <div className='max-w-5xl px-5 mx-auto pt-32 pb-20 text-center'>
-          <h2 className='text-4xl font-bold text-darkBlue mb-10 mt-10 '>
+        <div className='mx-auto max-w-5xl px-5 pt-32 pb-20 text-center'>
+          <h2 className='mb-10 mt-10 text-4xl font-bold text-darkBlue '>
             {caseTitle}
           </h2>
-          <p className='text-lg text-darkBrown mb-10'>{caseDesc}</p>
+          <p className='mb-10 text-lg text-darkBrown'>{caseDesc}</p>
 
-          <div className='flex flex-col pb-20 space-y-12 md:flex-row md:space-x-14'>
+          <div className='flex flex-col space-y-12 pb-20 md:flex-row md:space-x-14'>
             {newCases.map((item) => (
               <div
                 key={v4()}
-                className='flex flex-col items-center mt-12 space-y-2 md:w-1/3'
+                className='mt-12 flex flex-col items-center space-y-2 md:w-1/3'
               >
-                <article className='overflow-hidden w-96 bg-white border border-gray-100 shadow-sm md:w-auto'>
+                <article className='w-96 overflow-hidden border border-gray-100 bg-white shadow-sm md:w-auto'>
                   <Image
                     alt={item.attributes.title}
                     src={
@@ -643,7 +638,7 @@ export default async function Main() {
                     className='h-56 w-full object-cover'
                   />
 
-                  <div className='text-left p-4 sm:p-6'>
+                  <div className='p-4 text-left sm:p-6'>
                     <Link
                       href={
                         process.env.NEXT_PUBLIC_SITE_URL +
@@ -664,7 +659,7 @@ export default async function Main() {
                       }
                       className='group mt-4 inline-flex gap-1 text-sm font-medium text-blue-600'
                     >
-                      DETAILS
+                      {detailsLink}
                     </Link>
                   </div>
                 </article>
@@ -726,15 +721,15 @@ export default async function Main() {
 
       <section id='contact' className='bg-white'>
         <Image src={contactTop} alt='' />
-        <div className='max-w-3xl mx-auto pt-10 text-center'>
-          <h2 className='text-4xl font-bold text-darkBlue mt-10'>
+        <div className='mx-auto max-w-3xl pt-10 text-center'>
+          <h2 className='mt-10 text-4xl font-bold text-darkBlue'>
             {contactTitle}
           </h2>
-          <h2 className='text-4xl font-bold text-darkBlue mb-10'>
+          <h2 className='mb-10 text-4xl font-bold text-darkBlue'>
             {contactSubtitle}
           </h2>
-
-          <Contact contactUs={contactText} />
+          {/* @ts-ignore */}
+          <Contact contactUs={contactText} lng={props.lng} />
         </div>
 
         <Popup />

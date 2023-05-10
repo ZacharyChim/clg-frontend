@@ -1,11 +1,11 @@
 import Image from 'next/image'
 import React from 'react'
-import { fetchSingle, richTextReducer, trimTitle } from '../../lib/utils'
-import ImageArticle from '../../components/ImageArticle'
-import Contact from '../../components/Contact'
+import { fetchSingle, richTextReducer, trimTitle } from '../../../lib/utils'
+import ImageArticle from '../../../components/ImageArticle'
+import Contact from '../../../components/Contact'
 import contactTop from '../../public/contact-top.png'
 import caseTop from '../../public/case-top.png'
-import Faqs from '../../components/Faqs'
+import Faqs from '../../../components/Faqs'
 
 export default async function Main() {
   const accounting = await fetchSingle('accounting')
@@ -231,8 +231,8 @@ export default async function Main() {
 
   return (
     <>
-      <section className='flex flex-col mx-auto items-center max-w-5xl'>
-        <div className='self-start mt-10'>
+      <section className='mx-auto flex max-w-5xl flex-col items-center'>
+        <div className='mt-10 self-start'>
           <Image
             alt=''
             src={accountingTag}
@@ -240,7 +240,7 @@ export default async function Main() {
             height={accountingTagHeight}
             className='items-start'
           />
-          <h3 className='text-2xl font-bold text-darkBlue mt-4'>
+          <h3 className='mt-4 text-2xl font-bold text-darkBlue'>
             {accountingTitle}
           </h3>
         </div>
@@ -278,23 +278,23 @@ export default async function Main() {
           imageLeft={true}
         />
 
-        <h3 className='text-2xl font-bold text-darkBlue my-4 mx-10 self-start'>
+        <h3 className='my-4 mx-10 self-start text-2xl font-bold text-darkBlue'>
           {aboutTitle}
         </h3>
         <article
-          className='text-darkBrown leading-8 space-y-4 mb-4 mx-10'
+          className='mx-10 mb-4 space-y-4 leading-8 text-darkBrown'
           dangerouslySetInnerHTML={{ __html: aboutText }}
         ></article>
       </section>
 
-      <section id='numbers' className='w-full bg-veryLightBlue mt-20'>
+      <section id='numbers' className='mt-20 w-full bg-veryLightBlue'>
         <Image src={caseTop} alt='' />
-        <div className='max-w-5xl px-5 mx-auto text-left'>
-          <h3 className='text-center text-darkBlue font-bold text-4xl mt-20'>
+        <div className='mx-auto max-w-5xl px-5 text-left'>
+          <h3 className='mt-20 text-center text-4xl font-bold text-darkBlue'>
             {service}
           </h3>
           <div className='flex flex-col py-10 text-center md:flex-row'>
-            <div className='flex flex-col items-center space-y-2 h-30 mt-10 md:w-1/3'>
+            <div className='h-30 mt-10 flex flex-col items-center space-y-2 md:w-1/3'>
               <Image
                 src={service1Image}
                 alt=''
@@ -302,10 +302,10 @@ export default async function Main() {
                 height={service1ImageHeight}
                 className='h-40 w-40'
               />
-              <h5 className='text-md text-darkBlue pt-6'>{service1}</h5>
+              <h5 className='text-md pt-6 text-darkBlue'>{service1}</h5>
             </div>
 
-            <div className='flex flex-col items-center space-y-2 h-30 mt-10 md:w-1/3'>
+            <div className='h-30 mt-10 flex flex-col items-center space-y-2 md:w-1/3'>
               <Image
                 src={service2Image}
                 alt=''
@@ -313,10 +313,10 @@ export default async function Main() {
                 height={service2ImageHeight}
                 className='h-40 w-40'
               />
-              <h5 className='text-md text-darkBlue pt-6'>{service2}</h5>
+              <h5 className='text-md pt-6 text-darkBlue'>{service2}</h5>
             </div>
 
-            <div className='flex flex-col items-center space-y-2 h-30 mt-10 md:w-1/3'>
+            <div className='h-30 mt-10 flex flex-col items-center space-y-2 md:w-1/3'>
               <Image
                 src={service3Image}
                 alt=''
@@ -324,10 +324,10 @@ export default async function Main() {
                 height={service3ImageHeight}
                 className='h-40 w-40'
               />
-              <h5 className='text-md text-darkBlue pt-6'>{service3}</h5>
+              <h5 className='text-md pt-6 text-darkBlue'>{service3}</h5>
             </div>
 
-            <div className='flex flex-col items-center space-y-2 h-30 mt-10 md:w-1/3'>
+            <div className='h-30 mt-10 flex flex-col items-center space-y-2 md:w-1/3'>
               <Image
                 src={service4Image}
                 alt=''
@@ -335,16 +335,16 @@ export default async function Main() {
                 height={service4ImageHeight}
                 className='h-40 w-40'
               />
-              <h5 className='text-md text-darkBlue pt-6'>{service4}</h5>
+              <h5 className='text-md pt-6 text-darkBlue'>{service4}</h5>
             </div>
           </div>
         </div>
       </section>
       <Image src={contactTop} alt='' />
 
-      <section className='flex flex-col mx-auto items-center max-w-5xl'>
-        <div className='flex flex-col my-20 items-center'>
-          <h3 className='text-3xl font-bold text-darkBlue mb-8'>{table}</h3>
+      <section className='mx-auto flex max-w-5xl flex-col items-center'>
+        <div className='my-20 flex flex-col items-center'>
+          <h3 className='mb-8 text-3xl font-bold text-darkBlue'>{table}</h3>
           <Image
             src={tableImage}
             alt=''

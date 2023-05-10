@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import React from 'react'
-import { fetchSingle } from '../lib/utils'
+import { fetchSingle } from '../../lib/utils'
 
 export default async function Hero() {
   const data = await fetchSingle('home-page')
@@ -18,18 +18,18 @@ export default async function Hero() {
   const subSlogan = data.sub_slogan
 
   return (
-    <section id='hero' className='bg-heroBg bg-cover bg-top bg-no-repeat'>
-      <div className='container flex flex-col max-w-5xl md:flex-row items-center mx-auto py-12   md:space-x-4'>
-        <div className='flex flex-col md:mt-20 space-y-0 mx-4 md:w-1/3'>
+    <section id='hero' className='bg-top bg-heroBg bg-cover bg-no-repeat'>
+      <div className='container mx-auto flex max-w-5xl flex-col items-center py-12 md:flex-row   md:space-x-4'>
+        <div className='mx-4 flex flex-col space-y-0 md:mt-20 md:w-1/3'>
           <div>
-            <h1 className='text-4xl text-darkBlue font-bold text-center my-4 md:text-4xl md:text-left'>
+            <h1 className='my-4 text-center text-4xl font-bold text-darkBlue md:text-left md:text-4xl'>
               {mainSlogan}
             </h1>
-            <h2 className='text-4xl text-veryDarkBlue font-bold text-center md:text-4xl md:text-left'>
+            <h2 className='text-center text-4xl font-bold text-veryDarkBlue md:text-left md:text-4xl'>
               {subSlogan}
             </h2>
           </div>
-          <div className='px-36 py-10 md:mt-10 md:pr-32 md:px-0 md:pt-32'>
+          <div className='px-36 py-10 md:mt-10 md:px-0 md:pr-32 md:pt-32'>
             <Image
               src={heroIconURL}
               alt=''

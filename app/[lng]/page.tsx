@@ -1,14 +1,14 @@
 import Main from './Main'
 import Hero from './Hero'
 
-export default function Home() {
+export default function Home({ params: { lng } }: { params: { lng: string } }) {
   return (
     <>
       {/* @ts-ignore */}
-      <Hero />
+      <Hero lng={lng} />
 
       {/* @ts-ignore */}
-      <Main />
+      <Main lng={lng} />
     </>
   )
 }

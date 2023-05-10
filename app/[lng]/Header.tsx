@@ -27,7 +27,7 @@ const fetchLogo = async () => {
 //   title: string
 // }
 
-async function Header() {
+async function Header(props: { lng: string }) {
   const menu = await fetchMenu()
 
   const parentMenu = menu.filter((item) => item.parent === null)
@@ -52,6 +52,7 @@ async function Header() {
           incorMenu={incorMenu}
           cloudMenu={cloudMenu}
           logoURL={logoURL}
+          lng={props.lng}
         />
       </header>
     </>
