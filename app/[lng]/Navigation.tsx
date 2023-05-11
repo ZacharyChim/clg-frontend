@@ -20,12 +20,7 @@ export default function Navigation(props) {
       <nav className='border-gray-200	bg-white align-text-bottom dark:border-gray-700 dark:bg-gray-900'>
         <div className='mx-auto flex max-w-5xl flex-wrap items-center justify-between p-4'>
           <Link href='/' className='flex items-center'>
-            <Image
-              src={props.logoURL}
-              alt='CLG Group Logo'
-              width={80}
-              height={80}
-            />
+            <Image src={props.logoURL} alt='' width={80} height={80} />
           </Link>
           <button
             data-collapse-toggle='navbar-multi-level'
