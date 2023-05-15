@@ -4,7 +4,14 @@ NEXT_PUBLIC_STRAPI_API_URL= 'http://backend.clggroup.com.hk:1338/api'
 NEXT_PUBLIC_STRAPI_URL= 'http://backend.clggroup.com.hk:1338'
 NEXT_PUBLIC_SITE_URL= 'https://localhost:3000'
 
-# Deploy Step
+# Suggested environment
+
+1. node version: 18.11.13
+2. npm version: 8.15.0
+3. next.js version: 13.1.1
+4. Mac version: 12.5
+
+# Deploy Steps
 
 ## Backend
 
