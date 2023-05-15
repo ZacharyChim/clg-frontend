@@ -1,7 +1,11 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
-import { fetchCollection, richTextReducer, trimTitle } from '../../../../lib/utils'
+import {
+  fetchCollection,
+  richTextReducer,
+  trimTitle,
+} from '../../../../lib/utils'
 import { v4 } from 'uuid'
 
 const fetchCase = async (slug: string) => {
@@ -45,13 +49,13 @@ export default async function Main(props: PageProps) {
   const newCases = allCases.filter((item) => item.id < 4)
 
   return (
-    <section id='case' className='flex flex-col mx-auto items-center max-w-5xl'>
-      <div className='container px-5 py-24 mx-auto flex flex-col'>
+    <section id='case' className='mx-auto flex max-w-5xl flex-col items-center'>
+      <div className='container mx-auto flex flex-col px-5 py-24'>
         <div className='flex flex-col md:flex-row'>
-          <div className='md:w-2/3 pr-8 pb-8 text-center md:text-left'>
+          <div className='pr-8 pb-8 text-center md:w-2/3 md:text-left'>
             <Link
               href='/cases'
-              className='text-darkBlue inline-flex items-center text-xl'
+              className='inline-flex items-center text-xl text-darkBlue'
             >
               <svg
                 xmlns='http://www.w3.org/2000/svg'
@@ -68,27 +72,27 @@ export default async function Main(props: PageProps) {
               Back
             </Link>
 
-            <h2 className='text-3xl my-4 font-bold text-darkBlue'>
+            <h2 className='my-4 text-3xl font-bold text-darkBlue'>
               {caseObj.title}
             </h2>
-            <p className='text-darkBrown half_background inline text-left'>
+            <p className='half_background inline text-left text-darkBrown'>
               {month} {date}, {year}
             </p>
 
             <article
-              className='text-darkBrown mt-4'
+              className='mt-4 text-darkBrown'
               dangerouslySetInnerHTML={{ __html: content }}
             ></article>
           </div>
 
-          <div className='md:w-1/3 text-center mx-auto'>
-            <div className='flex flex-col pb-20 space-y-12'>
+          <div className='mx-auto text-center md:w-1/3'>
+            <div className='flex flex-col space-y-12 pb-20'>
               {newCases.map((item) => (
                 <div
                   key={v4()}
-                  className='flex flex-col bg-veryLightBlue items-center space-y-2 '
+                  className='flex flex-col items-center space-y-2 bg-veryLightBlue '
                 >
-                  <article className='overflow-hidden m-3 bg-white border border-gray-100 shadow-sm md:w-auto'>
+                  <article className='m-3 overflow-hidden border border-gray-100 bg-white shadow-sm md:w-auto'>
                     <Image
                       alt={item.attributes.title}
                       src={
@@ -104,7 +108,7 @@ export default async function Main(props: PageProps) {
                       className='h-56 w-full object-cover'
                     />
 
-                    <div className='text-left p-4 md:p-2'>
+                    <div className='p-4 text-left md:p-2'>
                       <Link
                         href={
                           process.env.NEXT_PUBLIC_SITE_URL +

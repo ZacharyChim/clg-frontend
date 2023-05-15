@@ -9,6 +9,8 @@ type PageProps = {
 }
 
 export default function Post({ params: { slug } }: PageProps) {
+  console.log('in Slug: ' + slug)
+
   return (
     <>
       {/* @ts-ignore */}
