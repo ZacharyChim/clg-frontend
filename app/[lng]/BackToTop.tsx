@@ -1,6 +1,7 @@
 'use client'
 import Image from 'next/image'
 import React from 'react'
+import backToTop from '../../public/backToTop.png'
 
 export default function BackToTop() {
   const isBrowser = () => typeof window !== 'undefined' //The approach recommended by Next.js
@@ -11,15 +12,9 @@ export default function BackToTop() {
   }
 
   return (
-    <div className='flex flex-col items-center mt-10'>
+    <div className='mt-10 flex flex-col items-center'>
       <button className='inline-block' onClick={scrollToTop}>
-        <Image
-          src='/backToTop.png'
-          alt=''
-          width='50'
-          height='50'
-          quality='90'
-        />
+        <Image src={backToTop} alt='' width='50' height='50' quality='90' />
       </button>
     </div>
   )
