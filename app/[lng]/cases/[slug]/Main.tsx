@@ -22,10 +22,6 @@ const fetchCase = async (slug: string) => {
   return resData.data.attributes
 }
 
-type PageProps = {
-  slug: string
-}
-
 export default async function Main({ lng, slug }: PageProps) {
   const caseObj = await fetchCase(slug)
   const content = richTextReducer(caseObj.content)
