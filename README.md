@@ -31,3 +31,26 @@ NEXT_PUBLIC_SITE_URL= 'https://localhost:3000'
 ## Frontend
 
 1. yarn build
+
+# Multiple Dynamic Routes:
+
+For multiple dynamic routes, e.g. app/**[lng]**/blog/**[slug]**/page.js, params need to be manually generated:
+
+```
+export async function generateStaticParams() {
+  let params: {}[] = []
+  const posts = await fetchCollection('posts')
+
+  posts.map((item) => {
+    params.push({ lng: 'en', slug: item.attributes.slug as string })
+  })
+
+  posts.map((item) => {
+    params.push({ lng: 'hk', slug: item.attributes.slug as string })
+  })
+
+  return params
+}
+```
+
+Reference: https://nextjs.org/docs/app/api-reference/functions/generate-static-params#examples
