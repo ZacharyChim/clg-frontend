@@ -12,13 +12,13 @@ type PageProps = {
 
 export async function generateStaticParams() {
   let params: {}[] = []
-  const posts = await fetchCollection('posts')
+  const cases = await fetchCollection('cases')
 
-  posts.map((item: any) => {
+  cases.map((item: any) => {
     params.push({ lng: 'en', slug: item.attributes.slug as string })
   })
 
-  posts.map((item: any) => {
+  cases.map((item: any) => {
     params.push({ lng: 'hk', slug: item.attributes.slug as string })
   })
 
