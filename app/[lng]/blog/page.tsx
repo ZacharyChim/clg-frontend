@@ -9,7 +9,6 @@ type PageProps = {
 }
 
 function Blog({ params: { lng } }: PageProps) {
-  console.log('in Page: ' + lng)
   return (
     <div>
       {/* @ts-ignore */}
