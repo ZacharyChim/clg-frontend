@@ -8,6 +8,11 @@ import {
 } from '../../../../lib/utils'
 import { v4 } from 'uuid'
 
+type PageProps = {
+  slug: string
+  lng: string
+}
+
 const fetchCase = async (slug: string) => {
   const res = await fetch(
     `${process.env.NEXT_PUBLIC_STRAPI_API_URL}/cases/${slug}`
@@ -21,8 +26,8 @@ type PageProps = {
   slug: string
 }
 
-export default async function Main(props: PageProps) {
-  const caseObj = await fetchCase(props.slug)
+export default async function Main({ lng, slug }: PageProps) {
+  const caseObj = await fetchCase(slug)
   const content = richTextReducer(caseObj.content)
 
   const publishedAt = new Date(caseObj.publishedAt)
@@ -46,7 +51,7 @@ export default async function Main(props: PageProps) {
   const date = publishedAt.getDate()
 
   const allCases = await fetchCollection('cases')
-  const newCases = allCases.filter((item) => item.id < 4)
+  const newCases = allCases.filter((item: any) => item.id < 4)
 
   return (
     <section id='case' className='mx-auto flex max-w-5xl flex-col items-center'>
@@ -112,6 +117,8 @@ export default async function Main(props: PageProps) {
                       <Link
                         href={
                           process.env.NEXT_PUBLIC_SITE_URL +
+                          '/' +
+                          lng +
                           '/cases/' +
                           item.attributes.slug
                         }
@@ -124,6 +131,8 @@ export default async function Main(props: PageProps) {
                       <Link
                         href={
                           process.env.NEXT_PUBLIC_SITE_URL +
+                          '/' +
+                          lng +
                           '/cases/' +
                           item.attributes.slug
                         }

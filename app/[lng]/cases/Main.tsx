@@ -4,7 +4,11 @@ import React from 'react'
 import { v4 } from 'uuid'
 import { fetchCollection, trimTitle } from '../../../lib/utils'
 
-export default async function Main() {
+type PageProps = {
+  lng: string
+}
+
+export default async function Main({ lng }: PageProps) {
   const allCases = await fetchCollection('cases')
 
   return (
@@ -33,6 +37,8 @@ export default async function Main() {
                   <Link
                     href={
                       process.env.NEXT_PUBLIC_SITE_URL +
+                      '/' +
+                      lng +
                       '/cases/' +
                       item.attributes.slug
                     }
@@ -45,6 +51,8 @@ export default async function Main() {
                   <Link
                     href={
                       process.env.NEXT_PUBLIC_SITE_URL +
+                      '/' +
+                      lng +
                       '/cases/' +
                       item.attributes.slug
                     }

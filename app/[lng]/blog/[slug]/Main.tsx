@@ -8,6 +8,11 @@ import {
 } from '../../../../lib/utils'
 import { v4 } from 'uuid'
 
+type PageProps = {
+  slug: string
+  lng: string
+}
+
 const fetchPost = async (slug: string) => {
   const res = await fetch(
     `${process.env.NEXT_PUBLIC_STRAPI_API_URL}/posts/${slug}`
@@ -17,13 +22,7 @@ const fetchPost = async (slug: string) => {
   return resData.data.attributes
 }
 
-export default async function Main({
-  lng,
-  slug,
-}: {
-  lng: string
-  slug: string
-}) {
+export default async function Main({ lng, slug }: PageProps) {
   const post = await fetchPost(slug)
   const content = richTextReducer(post.content)
 
@@ -48,7 +47,7 @@ export default async function Main({
   const date = publishedAt.getDate()
 
   const allPosts = await fetchCollection('posts')
-  const newPosts = allPosts.filter((item) => item.id < 4)
+  const newPosts = allPosts.filter((item:any) => item.id < 4)
 
   return (
     <section id='post' className='mx-auto flex max-w-5xl flex-col items-center'>

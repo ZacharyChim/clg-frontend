@@ -14,22 +14,18 @@ export async function generateStaticParams() {
   let params: {}[] = []
   const posts = await fetchCollection('posts')
 
-  posts.map((item) => {
+  posts.map((item: any) => {
     params.push({ lng: 'en', slug: item.attributes.slug as string })
   })
 
-  posts.map((item) => {
+  posts.map((item: any) => {
     params.push({ lng: 'hk', slug: item.attributes.slug as string })
   })
 
   return params
 }
 
-export default function Post({
-  params,
-}: {
-  params: { lng: string; slug: string }
-}) {
+export default function Post({ params }: PageProps) {
   const { lng, slug } = params
 
   return (
