@@ -15,7 +15,6 @@ export default function Popup(props: PageProps) {
   props.lng === 'en'
     ? (lang = props.popupText)
     : (lang = props.popupText.localizations.data[0].attributes)
-  console.log(lang.your_tax_expert)
   const [hidePopup, setHidePopup] = useState(false)
   const handleSubmit = async (event) => {
     event.preventDefault()
