@@ -34,6 +34,7 @@ import { useTranslation } from '../i18n'
 
 export default async function Main(props: { lng: string }) {
   const data = await fetchSingle('home-page')
+  const popupText = await fetchSingle('popup-text')
 
   const allCases = await fetchCollection('cases')
   const newCases = allCases.filter((item) => item.id < 4)
@@ -732,7 +733,7 @@ export default async function Main(props: { lng: string }) {
           <Contact contactUs={contactText} lng={props.lng} />
         </div>
 
-        <Popup />
+        <Popup lng={props.lng} popupText={popupText} />
       </section>
     </>
   )

@@ -2,163 +2,38 @@
   "data": {
     "id": 1,
     "attributes": {
-      "copyright": "© 2022 CLG Group. All Rights Reserved. Auto-renewal Policy Terms &         Conditions Privacy Policy & Disclaimer Affiliates",
-      "createdAt": "2023-01-13T20:42:50.770Z",
-      "updatedAt": "2023-05-10T19:02:18.519Z",
-      "publishedAt": "2023-01-13T20:42:52.261Z",
-      "contact_us": "CONTACT US",
-      "whatsapp_text": "Whatsapp : +852 9542-1138",
-      "email_text": "Email : info@clgcpa.com",
-      "tel_text": "Tel : +852 3564-8665",
-      "fax_text": "Fax : +852 3464-0607",
-      "addr_text": "Room 2006, 20/F, Futura Plaza,  111-113 How Ming Street,  Kwun Tong, Hong Kong",
-      "LogoWhite": {
-        "data": {
-          "id": 14,
-          "attributes": {
-            "name": "CLG-Logo-White.png",
-            "alternativeText": null,
-            "caption": null,
-            "width": 174,
-            "height": 64,
-            "formats": null,
-            "hash": "CLG_Logo_White_89dd21aafa",
-            "ext": ".png",
-            "mime": "image/png",
-            "size": 1.05,
-            "url": "/uploads/CLG_Logo_White_89dd21aafa.png",
-            "previewUrl": null,
-            "provider": "local",
-            "provider_metadata": null,
-            "createdAt": "2023-01-16T09:36:16.812Z",
-            "updatedAt": "2023-01-16T09:36:16.812Z"
+      "your_tax_expert": "YOUR TAX EXPERT",
+      "sign_up_now": "Sign up now to get a",
+      "free": "FREE",
+      "tax_guide": "tax guide to solve your tax problems",
+      "name": "Name",
+      "tel": "Tel",
+      "dont_show": "Do not show this popup again",
+      "createdAt": "2023-05-18T07:46:03.310Z",
+      "updatedAt": "2023-05-18T07:50:23.704Z",
+      "publishedAt": "2023-05-18T07:46:10.107Z",
+      "we_will_contact": "Our team will contact you as soon as possible.",
+      "locale": "en",
+      "localizations": {
+        "data": [
+          {
+            "id": 2,
+            "attributes": {
+              "your_tax_expert": "你的稅務專家",
+              "sign_up_now": "馬上註冊即可獲得",
+              "free": "免費",
+              "tax_guide": "稅務顧問以解答你的欵問",
+              "name": "姓名",
+              "tel": "電話",
+              "dont_show": "不再顯示這個視窗",
+              "createdAt": "2023-05-18T07:50:23.698Z",
+              "updatedAt": "2023-05-18T07:50:25.268Z",
+              "publishedAt": "2023-05-18T07:50:25.267Z",
+              "we_will_contact": "我們的團隊會盡快與你聯絡",
+              "locale": "zh-Hant-HK"
+            }
           }
-        }
-      },
-      "SocialIcons": [
-        { "id": 6, "Text": "Whatsapp : +852 9542-1138" },
-        { "id": 7, "Text": "Email : info@clgcpa.com" },
-        { "id": 8, "Text": "Tel : +852 3564-8665" },
-        { "id": 9, "Text": "Fax : +852 3464-0607" },
-        {
-          "id": 10,
-          "Text": "Room 2006, 20/F, Futura Plaza,  111-113 How Ming Street,  Kwun Tong, Hong Kong"
-        }
-      ],
-      "whatsapp_icon": {
-        "data": {
-          "id": 7,
-          "attributes": {
-            "name": "whatsapp.png",
-            "alternativeText": null,
-            "caption": null,
-            "width": 28,
-            "height": 28,
-            "formats": {},
-            "hash": "whatsapp_5b853adf8c",
-            "ext": ".png",
-            "mime": "image/png",
-            "size": 0.47,
-            "url": "/uploads/whatsapp_5b853adf8c.png",
-            "previewUrl": null,
-            "provider": "local",
-            "provider_metadata": null,
-            "createdAt": "2023-01-05T21:20:36.650Z",
-            "updatedAt": "2023-02-10T06:46:45.395Z"
-          }
-        }
-      },
-      "email_icon": {
-        "data": {
-          "id": 8,
-          "attributes": {
-            "name": "email.png",
-            "alternativeText": null,
-            "caption": null,
-            "width": 28,
-            "height": 28,
-            "formats": {},
-            "hash": "email_9a64ad9036",
-            "ext": ".png",
-            "mime": "image/png",
-            "size": 0.36,
-            "url": "/uploads/email_9a64ad9036.png",
-            "previewUrl": null,
-            "provider": "local",
-            "provider_metadata": null,
-            "createdAt": "2023-01-05T21:22:03.180Z",
-            "updatedAt": "2023-02-10T06:46:54.851Z"
-          }
-        }
-      },
-      "tel_icon": {
-        "data": {
-          "id": 9,
-          "attributes": {
-            "name": "tel.png",
-            "alternativeText": null,
-            "caption": null,
-            "width": 28,
-            "height": 28,
-            "formats": {},
-            "hash": "tel_7c7a81ca3b",
-            "ext": ".png",
-            "mime": "image/png",
-            "size": 0.3,
-            "url": "/uploads/tel_7c7a81ca3b.png",
-            "previewUrl": null,
-            "provider": "local",
-            "provider_metadata": null,
-            "createdAt": "2023-01-05T21:22:37.300Z",
-            "updatedAt": "2023-02-10T06:47:01.443Z"
-          }
-        }
-      },
-      "fax_icon": {
-        "data": {
-          "id": 10,
-          "attributes": {
-            "name": "fax.png",
-            "alternativeText": null,
-            "caption": null,
-            "width": 28,
-            "height": 28,
-            "formats": {},
-            "hash": "fax_ddf936d2e8",
-            "ext": ".png",
-            "mime": "image/png",
-            "size": 0.43,
-            "url": "/uploads/fax_ddf936d2e8.png",
-            "previewUrl": null,
-            "provider": "local",
-            "provider_metadata": null,
-            "createdAt": "2023-01-05T21:22:57.802Z",
-            "updatedAt": "2023-02-10T06:47:07.899Z"
-          }
-        }
-      },
-      "addr_icon": {
-        "data": {
-          "id": 11,
-          "attributes": {
-            "name": "addr.png",
-            "alternativeText": null,
-            "caption": null,
-            "width": 28,
-            "height": 28,
-            "formats": {},
-            "hash": "addr_bd7f710799",
-            "ext": ".png",
-            "mime": "image/png",
-            "size": 0.47,
-            "url": "/uploads/addr_bd7f710799.png",
-            "previewUrl": null,
-            "provider": "local",
-            "provider_metadata": null,
-            "createdAt": "2023-01-05T21:23:26.476Z",
-            "updatedAt": "2023-02-10T06:47:28.023Z"
-          }
-        }
+        ]
       }
     }
   },

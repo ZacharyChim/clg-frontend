@@ -5,7 +5,17 @@ import Link from 'next/link'
 import popImage from '../public/popup.png'
 import React, { useEffect, useState } from 'react'
 
-export default function Popup() {
+type PageProps = {
+  lng: string
+  popupText: any
+}
+
+export default function Popup(props: PageProps) {
+  let lang: any
+  props.lng === 'en'
+    ? (lang = props.popupText)
+    : (lang = props.popupText.localizations.data[0].attributes)
+  console.log(lang.your_tax_expert)
   const [hidePopup, setHidePopup] = useState(false)
   const handleSubmit = async (event) => {
     event.preventDefault()
@@ -40,7 +50,7 @@ export default function Popup() {
       setHidePopup(false)
     }
 
-    alert('Our team will contact you as soon as possible.')
+    alert(lang.we_will_contact)
 
     if (isOpen) {
       setOpen(false)
@@ -59,55 +69,59 @@ export default function Popup() {
   return (
     <React.Fragment>
       <Modal dismissible={true} show={isOpen} onClose={() => setOpen(false)}>
-        <Modal.Header className='relative bg-popupBg h-96 bg-no-repeat border-b-0'>
-          <p className='absolute top-80 left-40 text-darkBlue font-bold text-4xl mt-6'>
-            YOUR TAX EXPERT
+        <Modal.Header className='relative h-96 border-b-0 bg-popupBg bg-no-repeat'>
+          <p
+            className={`absolute top-80 ${
+              props.lng === 'en' ? 'left-40' : 'left-52'
+            } mx-auto mt-6 text-4xl font-bold text-darkBlue`}
+          >
+            {lang.your_tax_expert}
           </p>
         </Modal.Header>
         <Modal.Body>
-          <div className='space-y-6 mb-20'>
+          <div className='mb-20 space-y-6'>
             <p className='text-center text-lg leading-relaxed text-veryDarkBlue'>
-              Sign up now to get a
-              <span className='text-3xl font-bold text-darkBlue half_background mx-2'>
-                FREE
+              {lang.sign_up_now}
+              <span className='half_background mx-2 text-3xl font-bold text-darkBlue'>
+                {lang.free}
               </span>
-              tax guide to solve your tax problems
+              {lang.tax_guide}
             </p>
             <form
               onSubmit={handleSubmit}
               className='mt-8 flex flex-col items-center'
             >
-              <div className='flex flex-row w-full gap-3 px-4'>
+              <div className='flex w-full flex-row gap-3 px-4'>
                 <div className='input-wrapper w-full'>
-                  <label htmlFor='Name' className='text-gray-700 contact-label'>
-                    Name
+                  <label htmlFor='Name' className='contact-label text-gray-700'>
+                    {lang.name}
                   </label>
 
                   <input
                     type='text'
                     id='name'
                     name='name'
-                    className='text-sm text-gray-700 contact-input'
-                    placeholder='Name'
+                    className='contact-input text-sm text-gray-700'
+                    placeholder={lang.name}
                     required
                   />
                 </div>
                 <div className='input-wrapper w-full'>
-                  <label htmlFor='Tel' className='text-gray-700 contact-label'>
-                    Tel
+                  <label htmlFor='Tel' className='contact-label text-gray-700'>
+                    {lang.tel}
                   </label>
 
                   <input
                     type='text'
                     id='tel'
                     name='tel'
-                    className='text-sm text-gray-700 contact-input'
-                    placeholder='tel'
+                    className='contact-input text-sm text-gray-700'
+                    placeholder={lang.tel}
                     required
                   />
                 </div>
                 <div className='mx-auto'>
-                  <button className='mt-3 pl-3 h-12 w-12 rounded-full border border-blue-400 bg-blue-400 text-sm font-bold text-white transition hover:bg-transparent hover:text-blue-400 focus:outline-none focus:ring active:text-blue-500'>
+                  <button className='mt-3 h-12 w-12 rounded-full border border-blue-400 bg-blue-400 pl-3 text-sm font-bold text-white transition hover:bg-transparent hover:text-blue-400 focus:outline-none focus:ring active:text-blue-500'>
                     <svg
                       className='h-5 w-5 rtl:rotate-180'
                       xmlns='http://www.w3.org/2000/svg'
@@ -125,7 +139,7 @@ export default function Popup() {
                   </button>
                 </div>
               </div>
-              <label htmlFor='hide' className='flex gap-1 mt-2'>
+              <label htmlFor='hide' className='mt-2 flex gap-1'>
                 <input
                   type='checkbox'
                   id='hide'
@@ -135,9 +149,7 @@ export default function Popup() {
                   className='h-4 w-4 rounded-md border-gray-200 bg-white shadow-sm'
                 />
 
-                <span className='text-sm text-gray-700'>
-                  Do not show this popup again
-                </span>
+                <span className='text-sm text-gray-700'>{lang.dont_show}</span>
               </label>
             </form>
           </div>
