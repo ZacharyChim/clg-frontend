@@ -12,12 +12,12 @@ const Step1 = (props: any) => {
   const [value1, setValue1] = useState('')
   const [value2, setValue2] = useState('')
   const [value3, setValue3] = useState('')
-
+  let lang = props.lang
   return (
     <div key='step1' className='container col-span-4 grid'>
       <div key='preferredDate1Div' className='contact input-wrapper col-span-2'>
         <label htmlFor='preferredDate' className='contact-label text-gray-700'>
-          Your Preferred Date
+          {lang.your_preferred_date}
         </label>
         <input
           key='preferredDate1'
@@ -35,7 +35,7 @@ const Step1 = (props: any) => {
 
       <div key='preferredTime1Div' className='contact input-wrapper col-span-2'>
         <label htmlFor='time1' className='contact-label text-gray-700'>
-          Time
+          {lang.time}
         </label>
         <select
           key='preferredTime1'
@@ -61,7 +61,7 @@ const Step1 = (props: any) => {
 
       <div key='preferredDate2Div' className='contact input-wrapper col-span-2'>
         <label htmlFor='PreferredDate2' className='contact-label text-gray-700'>
-          Your Second Preferred Date
+          {lang.your_second_preferred_date}
         </label>
 
         <input
@@ -81,7 +81,7 @@ const Step1 = (props: any) => {
 
       <div key='preferredTime2Div' className='contact input-wrapper col-span-2'>
         <label htmlFor='time2' className='contact-label text-gray-700'>
-          Time
+          {lang.time}
         </label>
         <select
           key='preferredTime2'
@@ -104,7 +104,7 @@ const Step1 = (props: any) => {
 
       <div key='preferredDate3Div' className='contact input-wrapper col-span-2'>
         <label htmlFor='PreferredDate3' className='contact-label text-gray-700'>
-          Your Third Preferred Date
+          {lang.your_third_preferred_date}
         </label>
 
         <input
@@ -122,7 +122,7 @@ const Step1 = (props: any) => {
 
       <div key='preferredTime3Div' className='contact input-wrapper col-span-2'>
         <label htmlFor='time3' className='contact-label text-gray-700'>
-          Time
+          {lang.time}
         </label>
         <select
           key='preferredTime3'
@@ -145,13 +145,13 @@ const Step1 = (props: any) => {
 
       <div key='servicesDiv' className='col-span-4'>
         <h3 className='py-6 font-bold text-gray-700'>
-          What Services Are You Interested In?{' '}
+          {lang.what_service}
           <span className='font-normal text-oceanBlue'>
-            (You Can Tick More Than One)
+            ({lang.you_can_tick})
           </span>
         </h3>
 
-        <p className='pb-4 font-bold text-oceanBlue'>CLOUD SOLUTION</p>
+        <p className='pb-4 font-bold text-oceanBlue'>{lang.cloud_solution}</p>
         <div className='flex w-full flex-row'>
           <div className='w-1/2'>
             <label htmlFor='accounting' className='mb-2 flex gap-1'>
@@ -168,7 +168,9 @@ const Step1 = (props: any) => {
                 }}
               />
 
-              <span className='text-sm text-gray-700'>Accounting Solution</span>
+              <span className='text-sm text-gray-700'>
+                {lang.accounting_solution}
+              </span>
             </label>
 
             <label htmlFor='hrm' className='mb-2 flex gap-1'>
@@ -185,7 +187,7 @@ const Step1 = (props: any) => {
                 }}
               />
 
-              <span className='text-sm text-gray-700'>HRM Solution</span>
+              <span className='text-sm text-gray-700'>{lang.hrm}</span>
             </label>
           </div>
           <div className='w-1/2'>
@@ -203,9 +205,7 @@ const Step1 = (props: any) => {
                 }}
               />
 
-              <span className='text-sm text-gray-700'>
-                POS System / F&B POS System
-              </span>
+              <span className='text-sm text-gray-700'>{lang.pos}</span>
             </label>
 
             <label htmlFor='shop' className='mb-2 flex gap-1'>
@@ -222,7 +222,7 @@ const Step1 = (props: any) => {
                 }}
               />
 
-              <span className='text-sm text-gray-700'>Online Shop</span>
+              <span className='text-sm text-gray-700'>{lang.online_shop}</span>
             </label>
           </div>
         </div>
@@ -234,15 +234,21 @@ const Step1 = (props: any) => {
           type='button'
           className='mx-2 mt-4 shrink-0 rounded-full border border-blue-400 bg-blue-400 py-3 pl-10 pr-8 text-sm font-bold text-white transition hover:bg-transparent hover:text-blue-400 focus:outline-none focus:ring active:text-blue-500'
         >
-          NEXT <span className='ml-2'>&rarr;</span>
+          {lang.next} <span className='ml-2'>&rarr;</span>
         </button>
       </div>
     </div>
   )
 }
-export default function FloatingButtons() {
+
+type PageProps = {
+  lang: any
+}
+
+export default function FloatingButtons(props: PageProps) {
   // const [hidePopup, setHidePopup] = useState(false)
   const searchParams = useSearchParams()
+  let lang = props.lang
 
   const demo = searchParams.get('demo')
 
@@ -363,7 +369,7 @@ export default function FloatingButtons() {
     <>
       <div key='step2' className='contact input-wrapper col-span-2'>
         <label htmlFor='Name' className='contact-label text-gray-700'>
-          Name
+          {lang.name}
         </label>
 
         <input
@@ -371,14 +377,14 @@ export default function FloatingButtons() {
           id='name'
           name='name'
           className='contact-input text-sm text-gray-700'
-          placeholder='Name'
+          placeholder={lang.name}
           required
         />
       </div>
 
       <div className='contact input-wrapper col-span-2'>
         <label htmlFor='Tel' className='contact-label text-gray-700'>
-          Tel
+          {lang.tel}
         </label>
 
         <input
@@ -386,14 +392,14 @@ export default function FloatingButtons() {
           id='tel'
           name='tel'
           className='contact-input text-sm text-gray-700'
-          placeholder='Tel'
+          placeholder={lang.tel}
           required
         />
       </div>
 
       <div className='contact input-wrapper col-span-4'>
         <label htmlFor='Email' className='contact-label text-gray-700'>
-          Email
+          {lang.email}
         </label>
 
         <input
@@ -414,7 +420,7 @@ export default function FloatingButtons() {
           required
         >
           <option value='Regions' disabled>
-            Regions
+            {lang.regions}
           </option>
           <option value='Africa'>Africa</option>
           <option value='Asia'>Asia</option>
@@ -426,7 +432,7 @@ export default function FloatingButtons() {
 
       <div className='contact input-wrapper col-span-2'>
         <label htmlFor='Industry' className='contact-label text-gray-700'>
-          Business Industry
+          {lang.industry}
         </label>
 
         <input
@@ -434,14 +440,14 @@ export default function FloatingButtons() {
           id='industry'
           name='industry'
           className='contact-input text-sm text-gray-700'
-          placeholder='Business Industry'
+          placeholder={lang.industry}
           required
         />
       </div>
 
       <div className='contact input-wrapper col-span-2'>
         <label htmlFor='Company' className='contact-label text-gray-700'>
-          Company Name
+          {lang.company}
         </label>
 
         <input
@@ -449,21 +455,21 @@ export default function FloatingButtons() {
           id='company'
           name='company'
           className='contact-input text-sm text-gray-700'
-          placeholder='Company Name'
+          placeholder={lang.company}
           required
         />
       </div>
 
       <div className='contact input-wrapper col-span-4'>
         <label htmlFor='Message' className='contact-label text-gray-700'>
-          Message
+          {lang.message}
         </label>
 
         <textarea
           id='message'
           name='message'
           className='contact-input text-sm text-gray-700'
-          placeholder='Message'
+          placeholder={lang.message}
           required
         />
       </div>
@@ -473,10 +479,10 @@ export default function FloatingButtons() {
           onClick={handleBack}
           className='mx-2 mt-4 shrink-0 rounded-full border border-pinkish bg-pinkish py-3 pl-10 pr-10 text-sm font-bold text-white transition hover:bg-transparent hover:text-pinkish focus:outline-none focus:ring active:text-pinkish'
         >
-          <span className='mr-2'>&larr;</span> BACK
+          <span className='mr-2'>&larr;</span> {lang.back}
         </button>
         <button className='mx-2 mt-4 shrink-0 rounded-full border border-blue-400 bg-blue-400 py-3 pl-10 pr-8 text-sm font-bold text-white transition hover:bg-transparent hover:text-blue-400 focus:outline-none focus:ring active:text-blue-500'>
-          SUBMIT <span className='ml-2'>&rarr;</span>
+          {lang.submit} <span className='ml-2'>&rarr;</span>
         </button>
       </div>
     </>
@@ -530,12 +536,10 @@ export default function FloatingButtons() {
           <div className='flex flex-row'>
             <div className='m-10 w-3/5 space-y-4'>
               <h3 className='p-0 text-2xl font-bold text-darkBlue'>
-                Schedule a Demo
+                {lang.schedule_demo}
               </h3>
               <p className='text-md m-0 p-0 text-left text-veryDarkBlue'>
-                Tell us about your business, goals and challenges. Our Team is
-                ready to plan the route to success and then walk through
-                together with you.
+                {lang.tell_us}
               </p>
               <form
                 onSubmit={handleSubmit}
@@ -543,6 +547,7 @@ export default function FloatingButtons() {
               >
                 {step === 1 ? (
                   <Step1
+                    lang={lang}
                     preferredDate1={preferredDate1}
                     setPreferredDate1={setPreferredDate1}
                     preferredTime1={preferredTime1}

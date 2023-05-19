@@ -18,6 +18,13 @@ const fetchLinks = async () => {
 
 async function Footer(props: { lng: string }) {
   const footer = await fetchSingle('footer')
+  const floatingButtons = await fetchSingle('floating-button')
+  let lang
+  props.lng === 'en'
+    ? (lang = floatingButtons)
+    : (lang = floatingButtons.localizations.data[0].attributes)
+
+  console.log(lang.schedule_demo)
   const translate = (slug: string) => {
     return props.lng === 'hk'
       ? footer.localizations.data[0].attributes[slug]
@@ -65,7 +72,7 @@ async function Footer(props: { lng: string }) {
   return (
     <>
       <BackToTop />
-      <FloatingButtons />
+      <FloatingButtons lang={lang} />
       <footer className='bg-oceanBlue'>
         <div className='h-full w-full bg-white'>
           <Image src={footerCurve} alt='' />
