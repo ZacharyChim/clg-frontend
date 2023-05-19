@@ -23,8 +23,6 @@ async function Footer(props: { lng: string }) {
   props.lng === 'en'
     ? (lang = floatingButtons)
     : (lang = floatingButtons.localizations.data[0].attributes)
-
-  console.log(lang.schedule_demo)
   const translate = (slug: string) => {
     return props.lng === 'hk'
       ? footer.localizations.data[0].attributes[slug]
