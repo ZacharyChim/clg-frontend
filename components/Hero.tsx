@@ -2,9 +2,18 @@ import Image from 'next/image'
 import React from 'react'
 import { fetchSingle } from '../lib/utils'
 
-export default async function Hero(props) {
+type PageProps = {
+  page: string
+  lng: string
+}
+
+export default async function Hero(props: PageProps) {
   const data = await fetchSingle(props.page)
-  const mainSlogan = data.main_slogan
+  let lang
+  props.lng === 'en'
+    ? (lang = data)
+    : (lang = data.localizations.data[0].attributes)
+  const mainSlogan = lang.main_slogan
 
   const heroImage =
     process.env.NEXT_PUBLIC_STRAPI_URL + data.hero_image.data.attributes.url
@@ -12,11 +21,11 @@ export default async function Hero(props) {
   const height = data.hero_image.data.attributes.height
 
   return (
-    <section id='hero' className='bg-heroBg bg-cover bg-top bg-no-repeat pb-20'>
-      <div className='container flex flex-col max-w-4xl md:flex-row items-center mx-auto py-12'>
-        <div className='flex flex-col md:mt-20 space-y-0 mx-4 md:w-1/2'>
+    <section id='hero' className='bg-top bg-heroBg bg-cover bg-no-repeat pb-20'>
+      <div className='container mx-auto flex max-w-4xl flex-col items-center py-12 md:flex-row'>
+        <div className='mx-4 flex flex-col space-y-0 md:mt-20 md:w-1/2'>
           <div>
-            <h1 className='text-4xl text-darkBlue font-bold text-center my-4 md:text-5xl md:text-center'>
+            <h1 className='my-4 text-center text-4xl font-bold text-darkBlue md:text-center md:text-5xl'>
               {mainSlogan}
             </h1>
           </div>

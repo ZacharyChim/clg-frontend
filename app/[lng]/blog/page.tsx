@@ -12,7 +12,7 @@ function Blog({ params: { lng } }: PageProps) {
   return (
     <div>
       {/* @ts-ignore */}
-      <Hero page='blog' />
+      <Hero page='blog' lng={lng} />
       {/* @ts-ignore */}
       <Main lng={lng} />
     </div>

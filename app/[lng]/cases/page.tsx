@@ -8,12 +8,11 @@ type PageProps = {
   }
 }
 
-
 function caseStudies({ params: { lng } }: PageProps) {
   return (
     <div>
       {/* @ts-ignore */}
-      <Hero page='case-study' />
+      <Hero page='case-study' lng={lng} />
       {/* @ts-ignore */}
       <Main lng={lng} />
     </div>

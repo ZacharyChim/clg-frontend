@@ -3,6 +3,7 @@ import Link from 'next/link'
 import React from 'react'
 import {
   fetchCollection,
+  fetchSingle,
   richTextReducer,
   trimTitle,
 } from '../../../../lib/utils'
@@ -24,30 +25,54 @@ const fetchPost = async (slug: string) => {
 
 export default async function Main({ lng, slug }: PageProps) {
   const post = await fetchPost(slug)
+  const blogText = await fetchSingle('blog')
+  let lang
+  lng === 'en'
+    ? (lang = blogText)
+    : (lang = blogText.localizations.data[0].attributes)
   const content = richTextReducer(post.content)
 
   const publishedAt = new Date(post.publishedAt)
-  const monthNames = [
-    'JANUARY',
-    'FEBRUARY',
-    'MARCH',
-    'APRIL',
-    'MAY',
-    'JUNE',
-    'JULY',
-    'AUGUST',
-    'SEPTEMBER',
-    'OCTOBER',
-    'NOVEMBER',
-    'DECEMBER',
-  ]
+  let monthNames
+  lng === 'en'
+    ? (monthNames = [
+        'JANUARY',
+        'FEBRUARY',
+        'MARCH',
+        'APRIL',
+        'MAY',
+        'JUNE',
+        'JULY',
+        'AUGUST',
+        'SEPTEMBER',
+        'OCTOBER',
+        'NOVEMBER',
+        'DECEMBER',
+      ])
+    : (monthNames = [
+        '1 月',
+        '2 月',
+        '3 月',
+        '4 月',
+        '5 月',
+        '6 月',
+        '7 月',
+        '8 月',
+        '9 月',
+        '10 月',
+        '11 月',
+        '12 月',
+      ])
   const year = publishedAt.getFullYear()
   const month = monthNames[publishedAt.getMonth()]
 
   const date = publishedAt.getDate()
-
+  let fullDate: string
+  lng === 'en'
+    ? (fullDate = `${month} ${date}, ${year}`)
+    : (fullDate = `${year} 年 ${month} ${date} 日`)
   const allPosts = await fetchCollection('posts')
-  const newPosts = allPosts.filter((item:any) => item.id < 4)
+  const newPosts = allPosts.filter((item: any) => item.id < 4)
 
   return (
     <section id='post' className='mx-auto flex max-w-5xl flex-col items-center'>
@@ -70,14 +95,14 @@ export default async function Main({ lng, slug }: PageProps) {
                   d='M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5z'
                 />
               </svg>
-              Back
+              {lang.back}
             </Link>
 
             <h2 className='my-4 text-3xl font-bold text-darkBlue'>
               {post.title}
             </h2>
             <p className='half_background inline text-left text-darkBrown'>
-              {month} {date}, {year}
+              {fullDate}
             </p>
 
             <article
@@ -134,7 +159,7 @@ export default async function Main({ lng, slug }: PageProps) {
                         }
                         className='group mt-2 inline-flex gap-1 text-sm font-medium text-blue-600'
                       >
-                        DETAILS
+                        {lang.details}
                       </Link>
                     </div>
                   </article>

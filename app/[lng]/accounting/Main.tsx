@@ -7,7 +7,11 @@ import contactTop from '../../../public/contact-top.png'
 import caseTop from '../../../public/case-top.png'
 import Faqs from '../../../components/Faqs'
 
-export default async function Main() {
+type PageProps = {
+  lng: string
+}
+
+export default async function Main({ lng }: PageProps) {
   const accounting = await fetchSingle('accounting')
 
   const accountingTag =
@@ -352,7 +356,8 @@ export default async function Main() {
             height={tableImageHeight}
           />
         </div>
-        <Contact contactUs={contactUs} />
+        {/* @ts-ignore */}
+        <Contact contactUs={contactUs} lng={lng} />
 
         <Faqs faqs={faqs} />
       </section>

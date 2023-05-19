@@ -2,7 +2,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 import { v4 } from 'uuid'
-import { fetchCollection, trimTitle } from '../../../lib/utils'
+import { fetchCollection, fetchSingle, trimTitle } from '../../../lib/utils'
 
 type PageProps = {
   lng: string
@@ -10,11 +10,16 @@ type PageProps = {
 
 export default async function Main({ lng }: PageProps) {
   const allCases = await fetchCollection('cases')
+  const caseText = await fetchSingle('case-study')
+  let lang
+  lng === 'en'
+    ? (lang = caseText)
+    : (lang = caseText.localizations.data[0].attributes)
 
   return (
     <section id='case' className='mx-auto flex max-w-5xl flex-col items-center'>
       <div className='mx-auto px-5 pb-20 text-center'>
-        <h2 className='text-2xl font-bold text-darkBlue'>All</h2>
+        <h2 className='text-2xl font-bold text-darkBlue'>{lang.all}</h2>
         <div className='grid grid-cols-1 gap-8 md:grid-cols-2 md:gap-12 lg:grid-cols-3'>
           {allCases.map((item) => (
             <div
@@ -58,7 +63,7 @@ export default async function Main({ lng }: PageProps) {
                     }
                     className='group mt-2 inline-flex gap-1 text-sm font-medium text-oceanBlue'
                   >
-                    DETAILS
+                    {lang.details}
                   </Link>
                 </div>
               </article>
