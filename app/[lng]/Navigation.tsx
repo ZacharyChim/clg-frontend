@@ -47,7 +47,10 @@ export default function Navigation(props) {
           >
             <ul className='mt-4 flex flex-col rounded-lg border border-gray-100 bg-gray-50 font-medium md:mt-0 md:flex-row md:space-x-8 md:border-0 md:bg-white md:p-0'>
               {props.parentMenu.map((item) => {
-                if (item.id === 38) {
+                if (
+                  item.title === 'Assurance & Advisory' ||
+                  item.title === '鑒證及諮詢'
+                ) {
                   return (
                     <li key={v4()}>
                       <button
@@ -99,13 +102,13 @@ export default function Navigation(props) {
                           <div className='arrow-list mx-10 mt-4 grid md:mx-0 md:grid-rows-2 md:py-10'>
                             <div>
                               <p className='mb-2 text-lg font-bold text-menuBlue'>
-                                {props.auditMenu[0].parent.title}
+                                {props.titleMenu[0]}
                               </p>
                               <ul className='mb-2 space-y-2 py-2 text-sm text-gray-700'>
                                 {props.auditMenu.map((subItem) => (
                                   <li key={v4()}>
                                     <Link
-                                      href={subItem.externalPath}
+                                      href={subItem.url}
                                       className='py-2 hover:bg-gray-100 '
                                     >
                                       {subItem.title}
@@ -116,13 +119,13 @@ export default function Navigation(props) {
                             </div>
                             <div>
                               <p className='mb-2 text-lg font-bold text-menuBlue'>
-                                {props.fundMenu[0].parent.title}
+                                {props.titleMenu[1]}
                               </p>
                               <ul className='mb-2 space-y-2 py-2 text-sm text-gray-700'>
                                 {props.fundMenu.map((subItem) => (
                                   <li key={v4()}>
                                     <Link
-                                      href={subItem.externalPath}
+                                      href={subItem.url}
                                       className='py-2 hover:bg-gray-100 '
                                     >
                                       {subItem.title}
@@ -135,13 +138,13 @@ export default function Navigation(props) {
                           <div className='arrow-list mx-10 mt-4 grid md:mx-0 md:grid-rows-2 md:py-10'>
                             <div>
                               <p className='mb-2 text-lg font-bold text-menuBlue'>
-                                {props.advisoryMenu[0].parent.title}
+                                {props.titleMenu[2]}
                               </p>
                               <ul className='mb-2 space-y-2 py-2 text-sm text-gray-700'>
                                 {props.advisoryMenu.map((subItem) => (
                                   <li key={v4()}>
                                     <Link
-                                      href={subItem.externalPath}
+                                      href={subItem.url}
                                       className='py-2 hover:bg-gray-100 '
                                     >
                                       {subItem.title}
@@ -152,13 +155,13 @@ export default function Navigation(props) {
                             </div>
                             <div>
                               <p className='mb-2 text-lg font-bold text-menuBlue'>
-                                {props.incorMenu[0].parent.title}
+                                {props.titleMenu[3]}
                               </p>
                               <ul className='mb-2 grid grid-cols-2 text-sm leading-7 text-gray-700'>
                                 {props.incorMenu.map((subItem) => (
                                   <li key={v4()}>
                                     <Link
-                                      href={subItem.externalPath}
+                                      href={subItem.url}
                                       className='py-2 hover:bg-gray-100 '
                                     >
                                       {subItem.title}
@@ -173,7 +176,10 @@ export default function Navigation(props) {
                     </li>
                   )
                 }
-                if (item.id === 39) {
+                if (
+                  item.title === 'Cloud Solutions' ||
+                  item.title === '雲端解決方案'
+                ) {
                   return (
                     <li key={v4()}>
                       <button
@@ -226,13 +232,13 @@ export default function Navigation(props) {
                           <div className='arrow-list mx-10 mt-4 grid md:mx-0 md:py-10'>
                             <div>
                               <p className='mb-2 text-lg font-bold text-menuBlue'>
-                                {props.cloudMenu[0].parent.title}
+                                {props.titleMenu[4]}
                               </p>
                               <ul className='space-y-4 py-2 text-sm text-gray-700 dark:text-gray-400'>
                                 {props.cloudMenu.map((cloudItem) => (
                                   <li key={v4()}>
                                     <Link
-                                      href={cloudItem.externalPath}
+                                      href={cloudItem.url}
                                       className='py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white'
                                     >
                                       {cloudItem.title}
@@ -250,7 +256,7 @@ export default function Navigation(props) {
                 return (
                   <li key={v4()}>
                     <Link
-                      href={item.externalPath}
+                      href={item.url}
                       className='block rounded py-2 pl-3 pr-4 text-sm text-gray-900 hover:bg-gray-100 md:border-0 md:p-0 md:hover:bg-transparent md:hover:text-blue-700'
                     >
                       {item.title}

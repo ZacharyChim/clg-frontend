@@ -422,11 +422,8 @@ export default function FloatingButtons(props: PageProps) {
           <option value='Regions' disabled>
             {lang.regions}
           </option>
-          <option value='Africa'>Africa</option>
-          <option value='Asia'>Asia</option>
-          <option value='Europe'>Europe</option>
-          <option value='North America'>North America</option>
-          <option value='South America'>South America</option>
+          <option value='hongkong'>{lang.hongkong}</option>
+          <option value='china'>{lang.china}</option>
         </select>
       </div>
 

@@ -14,28 +14,37 @@ import addrBlue from '../../../public/icon-blue-addr.png'
 import contactUs from '../../../public/contact_us.png'
 import Link from 'next/link'
 
-export default function Main() {
-  const title = 'Fill up the form and our team will get back to you soon.'
-  const serviceTitle = 'Which Services Are You Interested In ?'
-  const more = '(You Can Select More Than One)'
-  const audit = 'AUDIT & ASSURANCE'
-  const audit1 = 'Accounting and Bookkeeping'
-  const audit2 = 'Audit Assurance'
-  const audit3 = 'Hong Kong Taxation'
-  const advisory = 'ADVISORY'
-  const advisory1 = 'Company Secretary'
-  const advisory2 = 'Payroll Outsourcing Service'
-  const funding = 'FUNDING AUDIT'
-  const funding1 = 'BUD'
-  const funding2 = 'TVP'
-  const funding3 = 'Other Fundings'
-  const cloud = 'CLOUD SOLUTION'
-  const cloud1 = 'Accounting Solution'
-  const cloud2 = 'HRM Solution'
-  const cloud3 = 'POS System / F&B POS System'
-  const cloud4 = 'Bookkeeping Documentation'
-  const cloud5 = 'Online Shop'
-  const hours = 'We will contact you within 24 hours of completing the form.'
+type PageProps = {
+  lng: string
+  contactText: any
+}
+
+export default function Main(props: PageProps) {
+  const lang =
+    props.lng === 'en'
+      ? props.contactText
+      : props.contactText.localizations.data[0].attributes
+  const title = lang.title
+  const serviceTitle = lang.service_title
+  const more = lang.more
+  const audit = lang.audit
+  const audit1 = lang.audit1
+  const audit2 = lang.audit2
+  const audit3 = lang.audit3
+  const advisory = lang.advisory
+  const advisory1 = lang.advisory1
+  const advisory2 = lang.advisory2
+  const funding = lang.funding
+  const funding1 = lang.funding1
+  const funding2 = lang.funding2
+  const funding3 = lang.funding3
+  const cloud = lang.cloud
+  const cloud1 = lang.cloud1
+  const cloud2 = lang.cloud2
+  const cloud3 = lang.cloud3
+  const cloud4 = lang.cloud4
+  const cloud5 = lang.cloud5
+  const hours = lang.hours
 
   const contactUsWidth = 88
   const contactUsHeight = 16
@@ -228,10 +237,7 @@ export default function Main() {
                 quality={100}
                 className='col-span-1 mx-auto'
               />
-              <span className='col-span-8 mr-10 text-sm'>
-                Room 2006, 20/F, Futura Plaza, 111-113 How Ming Street, Kwun
-                Tong, Hong Kong
-              </span>
+              <span className='col-span-8 mr-10 text-sm'>{lang.addr}</span>
             </div>
           </div>
           <div className='mt-14 md:w-2/3'>
@@ -417,7 +423,7 @@ export default function Main() {
 
               <div className='contact input-wrapper col-span-6 md:col-span-3'>
                 <label htmlFor='Name' className='contact-label text-gray-700'>
-                  Name
+                  {lang.name}
                 </label>
 
                 <input
@@ -425,14 +431,14 @@ export default function Main() {
                   id='name'
                   name='name'
                   className='contact-input text-sm text-gray-700'
-                  placeholder='Name'
+                  placeholder={lang.name}
                   required
                 />
               </div>
 
               <div className='contact input-wrapper col-span-6 md:col-span-3'>
                 <label htmlFor='Tel' className='contact-label text-gray-700'>
-                  Tel
+                  {lang.tel}
                 </label>
 
                 <input
@@ -440,7 +446,7 @@ export default function Main() {
                   id='tel'
                   name='tel'
                   className='contact-input text-sm text-gray-700'
-                  placeholder='Tel'
+                  placeholder={lang.tel}
                   required
                 />
               </div>
@@ -468,13 +474,10 @@ export default function Main() {
                   required
                 >
                   <option value='Regions' disabled>
-                    Regions
+                    {lang.regions}
                   </option>
-                  <option value='Africa'>Africa</option>
-                  <option value='Asia'>Asia</option>
-                  <option value='Europe'>Europe</option>
-                  <option value='North America'>North America</option>
-                  <option value='South America'>South America</option>
+                  <option value='hongkong'>{lang.hongkong}</option>
+                  <option value='china'>{lang.china}</option>
                 </select>
               </div>
 
@@ -483,7 +486,7 @@ export default function Main() {
                   htmlFor='Industry'
                   className='contact-label text-gray-700'
                 >
-                  Business Industry
+                  {lang.industry}
                 </label>
 
                 <input
@@ -491,7 +494,7 @@ export default function Main() {
                   id='industry'
                   name='industry'
                   className='contact-input text-sm text-gray-700'
-                  placeholder='Business Industry'
+                  placeholder={lang.industry}
                   required
                 />
               </div>
@@ -501,7 +504,7 @@ export default function Main() {
                   htmlFor='Company'
                   className='contact-label text-gray-700'
                 >
-                  Company Name
+                  {lang.company}
                 </label>
 
                 <input
@@ -509,7 +512,7 @@ export default function Main() {
                   id='company'
                   name='company'
                   className='contact-input text-sm text-gray-700'
-                  placeholder='Company Name'
+                  placeholder={lang.company}
                   required
                 />
               </div>
@@ -519,14 +522,14 @@ export default function Main() {
                   htmlFor='Message'
                   className='contact-label text-gray-700'
                 >
-                  Message
+                  {lang.message}
                 </label>
 
                 <textarea
                   id='message'
                   name='message'
                   className='contact-input text-sm text-gray-700'
-                  placeholder='Message'
+                  placeholder={lang.message}
                   required
                 />
               </div>
@@ -535,7 +538,7 @@ export default function Main() {
                 <p className='mx-2 text-sm text-oceanBlue'>{hours}</p>
 
                 <button className='mx-2 mt-4 shrink-0 rounded-full border border-blue-400 bg-blue-400 py-3 pl-10 pr-4 text-sm font-bold text-white transition hover:bg-transparent hover:text-blue-400 focus:outline-none focus:ring active:text-blue-500'>
-                  SUBMIT <span className='ml-4'>&#10132;</span>
+                  {lang.submit} <span className='ml-4'>&#10132;</span>
                 </button>
               </div>
             </form>
