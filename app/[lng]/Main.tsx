@@ -14,24 +14,6 @@ import commaURL from '../../public/comma.png'
 
 import { useTranslation } from '../i18n'
 
-// const fetchData = async () => {
-//   const res = await fetch(
-//     `${process.env.NEXT_PUBLIC_STRAPI_API_URL}/home-page?populate=%2A`
-//   )
-
-//   const resData = await res.json()
-//   return resData
-// }
-
-// const fetchDesc = async () => {
-//   const res = await fetch(
-//     `${process.env.NEXT_PUBLIC_STRAPI_API_URL}/home-page?populate[0]=ImageDescLeft&populate[1]=ImageDescLeft.Image&populate[2]=ImageDescRight&populate[3]=ImageDescRight.Image&populate[4]=ImageDescLeft.ImageTitle&populate[5]=ImageDescRight.ImageTitle`
-//   )
-
-//   const resData = await res.json()
-//   return resData
-// }
-
 export default async function Main(props: { lng: string }) {
   const data = await fetchSingle('home-page')
   const popupText = await fetchSingle('popup-text')
