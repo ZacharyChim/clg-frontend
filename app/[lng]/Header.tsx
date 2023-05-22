@@ -6,18 +6,18 @@ import Navigation from './Navigation'
 import logo from '../../public/logo.png'
 import { fetchSingle } from '../../lib/utils'
 
-const fetchMenu = async () => {
-  const res = await fetch(
-    `${process.env.NEXT_PUBLIC_STRAPI_API_URL}/navigation/render/2`
-  )
+// const fetchMenu = async () => {
+//   const res = await fetch(
+//     `${process.env.NEXT_PUBLIC_STRAPI_API_URL}/navigation/render/2`
+//   )
 
-  const menu = await res.json()
+//   const menu = await res.json()
 
-  return menu
-}
+//   return menu
+// }
 
 async function Header(props: { lng: string }) {
-  const menu = await fetchMenu()
+  // const menu = await fetchMenu()
   const topMenu = await fetchSingle('top-menu')
   const topMenuHK = topMenu.localizations.data[0].attributes
   const cloudSolutionsMenu = await fetchSingle('cloud-solutions-menu')
@@ -68,7 +68,7 @@ async function Header(props: { lng: string }) {
   ]
 
   // const parentMenu = menu.filter((item: any) => item.parent === null)
-  const childMenu = menu.filter((item: any) => item.parent !== null)
+  // const childMenu = menu.filter((item: any) => item.parent !== null)
 
   const assuranceAdvisoryMenu = await fetchSingle('assurance-advisory-menu')
   const assuranceAdvisoryMenuHK =
