@@ -23,7 +23,10 @@ NEXT_PUBLIC_SITE_URL= 'https://localhost:3000'
    1. cd /var/www/clg/clg-backend
    2. git reset --hard
    3. git pull
-   4. yarn build (possible erro: Reached heap limit --> re-run build)
+   4. yarn build
+      (possible error: Reached heap limit -->
+      1. export NODE_OPTIONS=--max_old_space_size=4096
+      2. yarn build --no-optimization)
 4. Start Strapi with PM2
    1. cd ~
    2. pm2 start ecosystem.config.js
