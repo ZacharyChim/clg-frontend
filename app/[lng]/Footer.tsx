@@ -19,6 +19,154 @@ const fetchLinks = async () => {
 async function Footer(props: { lng: string }) {
   const footer = await fetchSingle('footer')
   const floatingButtons = await fetchSingle('floating-button')
+  const bottomMenuData = await fetchSingle('bottom-menu')
+  let langBottomMenu
+  props.lng === 'en'
+    ? (langBottomMenu = bottomMenuData)
+    : (langBottomMenu = bottomMenuData.localizations.data[0].attributes)
+
+  const bottomMenu = [
+    { title: langBottomMenu.home, url: langBottomMenu.home_url },
+    { title: langBottomMenu.blog, url: langBottomMenu.blog_url },
+    { title: langBottomMenu.contact_us, url: langBottomMenu.contact_us_url },
+    {
+      title: langBottomMenu.case_studies,
+      url: langBottomMenu.case_studies_url,
+    },
+    {
+      title: langBottomMenu.audit_assurance,
+      url: langBottomMenu.audit_assurance_url,
+    },
+    { title: langBottomMenu.advisory, url: langBottomMenu.advisory_url },
+    {
+      title: langBottomMenu.funding_audit,
+      url: langBottomMenu.funding_audit_url,
+    },
+    {
+      title: langBottomMenu.incorporation,
+      url: langBottomMenu.incorporation_url,
+    },
+    {
+      title: langBottomMenu.cloud_solutions,
+      url: langBottomMenu.cloud_solutions_url,
+    },
+  ]
+
+  const auditAssuranceMenu = await fetchSingle('assurance-advisory-menu')
+  let langAssuranceAdvisoryMenu
+  props.lng === 'en'
+    ? (langAssuranceAdvisoryMenu = auditAssuranceMenu)
+    : (langAssuranceAdvisoryMenu =
+        auditAssuranceMenu.localizations.data[0].attributes)
+
+  const auditMenu = [
+    {
+      title: langAssuranceAdvisoryMenu.accounting_bookkeeping,
+      url: langAssuranceAdvisoryMenu.accounting_bookkeeping_url,
+    },
+    {
+      title: langAssuranceAdvisoryMenu.audit_assurance,
+      url: langAssuranceAdvisoryMenu.audit_assurance_url,
+    },
+    {
+      title: langAssuranceAdvisoryMenu.hong_kong_taxation,
+      url: langAssuranceAdvisoryMenu.hong_kong_taxation_url,
+    },
+  ]
+
+  const AdvisoryMenu = [
+    {
+      title: langAssuranceAdvisoryMenu.company_secretary,
+      url: langAssuranceAdvisoryMenu.company_secretary_url,
+    },
+    {
+      title: langAssuranceAdvisoryMenu.payroll_outsourcing_service,
+      url: langAssuranceAdvisoryMenu.payroll_outsourcing_service_url,
+    },
+  ]
+
+  const fundingMenu = [
+    {
+      title: langAssuranceAdvisoryMenu.bud,
+      url: langAssuranceAdvisoryMenu.bud_url,
+    },
+    {
+      title: langAssuranceAdvisoryMenu.tvp,
+      url: langAssuranceAdvisoryMenu.tvp_url,
+    },
+    {
+      title: langAssuranceAdvisoryMenu.others,
+      url: langAssuranceAdvisoryMenu.others_url,
+    },
+  ]
+
+  const incorporationMenu = [
+    {
+      title: langAssuranceAdvisoryMenu.anguilla,
+      url: langAssuranceAdvisoryMenu.anguilla_url,
+    },
+    {
+      title: langAssuranceAdvisoryMenu.british,
+      url: langAssuranceAdvisoryMenu.british_url,
+    },
+    {
+      title: langAssuranceAdvisoryMenu.bvi,
+      url: langAssuranceAdvisoryMenu.bvi_url,
+    },
+    {
+      title: langAssuranceAdvisoryMenu.canada,
+      url: langAssuranceAdvisoryMenu.canada_url,
+    },
+    {
+      title: langAssuranceAdvisoryMenu.cayman_island,
+      url: langAssuranceAdvisoryMenu.cayman_island_url,
+    },
+    {
+      title: langAssuranceAdvisoryMenu.hong_kong,
+      url: langAssuranceAdvisoryMenu.hong_kong_url,
+    },
+    {
+      title: langAssuranceAdvisoryMenu.malaysia,
+      url: langAssuranceAdvisoryMenu.malaysia_url,
+    },
+    {
+      title: langAssuranceAdvisoryMenu.ngo,
+      url: langAssuranceAdvisoryMenu.ngo_url,
+    },
+    {
+      title: langAssuranceAdvisoryMenu.seychelles,
+      url: langAssuranceAdvisoryMenu.seychelles_url,
+    },
+    {
+      title: langAssuranceAdvisoryMenu.singapore,
+      url: langAssuranceAdvisoryMenu.singapore_url,
+    },
+  ]
+
+  const cloudMenuData = await fetchSingle('cloud-solutions-menu')
+  let langCloudMenu
+  props.lng === 'en'
+    ? (langCloudMenu = cloudMenuData)
+    : (langCloudMenu = cloudMenuData.localizations.data[0].attributes)
+
+  const cloudMenu = [
+    {
+      title: langCloudMenu.accounting_solution,
+      url: langCloudMenu.accounting_solution_url,
+    },
+    { title: langCloudMenu.hrm_solution, url: langCloudMenu.hrm_solution_url },
+    { title: langCloudMenu.pos_solution, url: langCloudMenu.pos_solution_url },
+    {
+      title: langCloudMenu.fb_pos_solution,
+      url: langCloudMenu.fb_pos_solution_url,
+    },
+    {
+      title: langCloudMenu.receipt_filing_solution,
+      url: langCloudMenu.receipt_filing_solution_url,
+    },
+    { title: langCloudMenu.online_shop, url: langCloudMenu.online_shop_url },
+  ]
+
   let lang
   props.lng === 'en'
     ? (lang = floatingButtons)
@@ -127,41 +275,33 @@ async function Footer(props: { lng: string }) {
           </div>
         </div> */}
 
-            <div className='arrow-list ml-6 grid grid-cols-1 gap-4 text-sm md:mx-auto lg:col-span-3 lg:grid-cols-4'>
+            <div className='arrow-list ml-6 grid w-full grid-cols-1 gap-4 text-sm md:mx-auto lg:col-span-3 lg:grid-cols-4'>
               <div className='md:ml-4'>
                 <p className='pb-4 font-bold text-grayishWhite'>
-                  <Link href={allLinks[0].externalPath}>
-                    {allLinks[0].title}
-                  </Link>
+                  <Link href={bottomMenu[0].url}>{bottomMenu[0].title}</Link>
                 </p>
                 <p className='pb-4 font-bold text-grayishWhite'>
-                  <Link href={allLinks[1].externalPath}>
-                    {allLinks[1].title}
-                  </Link>
+                  <Link href={bottomMenu[1].url}>{bottomMenu[1].title}</Link>
                 </p>
                 <p className='pb-4 font-bold text-grayishWhite'>
-                  <Link href={allLinks[3].externalPath}>
-                    {allLinks[3].title}
-                  </Link>
+                  <Link href={bottomMenu[3].url}>{bottomMenu[3].title}</Link>
                 </p>
                 <p className='pb-1 font-bold text-grayishWhite'>
-                  <Link href={allLinks[2].externalPath}>
-                    {allLinks[2].title}
-                  </Link>
+                  <Link href={bottomMenu[2].url}>{bottomMenu[2].title}</Link>
                 </p>
               </div>
 
               <div>
                 <p className='font-bold text-grayishWhite'>
-                  {allLinks[4].title}
+                  {bottomMenu[4].title}
                 </p>
 
                 <nav className='mt-2'>
                   <ul className='mb-4 space-y-3 text-xs'>
-                    {linkAudit.map((item) => (
+                    {auditMenu.map((item) => (
                       <li key={v4()}>
                         <a
-                          href={item.externalPath}
+                          href={item.url}
                           className='text-grayishWhite transition hover:opacity-75'
                         >
                           {item.title}
@@ -171,13 +311,13 @@ async function Footer(props: { lng: string }) {
                   </ul>
 
                   <p className='mb-3 font-bold text-grayishWhite'>
-                    {allLinks[8].title}
+                    {bottomMenu[5].title}
                   </p>
                   <ul className='mb-4 space-y-3 text-xs'>
-                    {linkAdvisory.map((item) => (
+                    {AdvisoryMenu.map((item) => (
                       <li key={v4()}>
                         <a
-                          href={item.externalPath}
+                          href={item.url}
                           className='text-grayishWhite transition hover:opacity-75'
                         >
                           {item.title}
@@ -187,13 +327,13 @@ async function Footer(props: { lng: string }) {
                   </ul>
 
                   <p className='mb-3 font-bold text-grayishWhite'>
-                    {allLinks[11].title}
+                    {bottomMenu[6].title}
                   </p>
                   <ul className='mb-4 space-y-3 text-xs'>
-                    {linkFunding.map((item) => (
+                    {fundingMenu.map((item) => (
                       <li key={v4()}>
                         <a
-                          href={item.externalPath}
+                          href={item.url}
                           className='text-grayishWhite transition hover:opacity-75'
                         >
                           {item.title}
@@ -206,15 +346,15 @@ async function Footer(props: { lng: string }) {
 
               <div>
                 <p className='mb-2 font-bold text-grayishWhite'>
-                  {allLinks[16].title}
+                  {bottomMenu[7].title}
                 </p>
 
                 <nav className='mt-2'>
                   <ul className='mb-4 space-y-3 text-xs'>
-                    {linkIncorporation.map((item) => (
+                    {incorporationMenu.map((item) => (
                       <li key={v4()}>
                         <a
-                          href={item.externalPath}
+                          href={item.url}
                           className='text-grayishWhite transition hover:opacity-75'
                         >
                           {item.title}
@@ -227,15 +367,15 @@ async function Footer(props: { lng: string }) {
 
               <div>
                 <p className='font-bold text-grayishWhite'>
-                  {allLinks[27].title}
+                  {bottomMenu[8].title}
                 </p>
 
                 <nav className='mt-2'>
                   <ul className='mb-4 space-y-3 text-xs'>
-                    {linkCloud.map((item) => (
+                    {cloudMenu.map((item) => (
                       <li key={v4()}>
                         <a
-                          href={item.externalPath}
+                          href={item.url}
                           className='text-grayishWhite transition hover:opacity-75'
                         >
                           {item.title}
