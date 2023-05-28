@@ -5,11 +5,21 @@ import ImageArticle from '../../../components/ImageArticle'
 import Contact from '../../../components/Contact'
 import Faqs from '../../../components/Faqs'
 
-export default async function Main() {
+type PageProps = {
+  lng: string
+}
+
+export default async function Main({ lng }: PageProps) {
   const tvp = await fetchSingle('tvp')
 
-  const aboutTitle = tvp.about_title
-  const aboutText = richTextReducer(tvp.about_content)
+  let tvpText
+
+  lng === 'en'
+    ? (tvpText = tvp)
+    : (tvpText = tvp.localizations.data[0].attributes)
+
+  const aboutTitle = tvpText.about_title
+  const aboutText = richTextReducer(tvpText.about_content)
   const aboutObj = {
     title: aboutTitle,
     text: aboutText,
@@ -34,17 +44,17 @@ export default async function Main() {
     height: aboutTagImageHeight,
   }
 
-  const data1 = tvp.data1
-  const data1Desc = tvp.data1_desc
-  const data2 = tvp.data2
-  const data2Desc = tvp.data2_desc
-  const data3 = tvp.data3
-  const data3Desc = tvp.data3_desc
-  const data4 = tvp.data4
-  const data4Desc = tvp.data4_desc
+  const data1 = tvpText.data1
+  const data1Desc = tvpText.data1_desc
+  const data2 = tvpText.data2
+  const data2Desc = tvpText.data2_desc
+  const data3 = tvpText.data3
+  const data3Desc = tvpText.data3_desc
+  const data4 = tvpText.data4
+  const data4Desc = tvpText.data4_desc
 
   const article1Title = ''
-  const article1Text = richTextReducer(tvp.article1_text)
+  const article1Text = richTextReducer(tvpText.article1_text)
   const article1Obj = {
     title: article1Title,
     text: article1Text,
@@ -70,50 +80,50 @@ export default async function Main() {
     height: article1TagImageHeight,
   }
 
-  const diagramTitle = tvp.diagram_title
+  const diagramTitle = tvpText.diagram_title
   const diagram =
     process.env.NEXT_PUBLIC_STRAPI_URL + tvp.diagram.data.attributes.url
   const diagramWidth = tvp.diagram.data.attributes.width
   const diagramHeight = tvp.diagram.data.attributes.height
 
-  const contactUs = tvp.contact_us
+  const contactUs = tvpText.contact_us
 
   const faqs: { title: string; content: string }[] = [
     {
-      title: tvp.faq1,
-      content: richTextReducer(tvp.faq1_content),
+      title: tvpText.faq1,
+      content: richTextReducer(tvpText.faq1_content),
     },
     {
-      title: tvp.faq2,
-      content: richTextReducer(tvp.faq2_content),
+      title: tvpText.faq2,
+      content: richTextReducer(tvpText.faq2_content),
     },
     {
-      title: tvp.faq3,
-      content: richTextReducer(tvp.faq3_content),
+      title: tvpText.faq3,
+      content: richTextReducer(tvpText.faq3_content),
     },
     {
-      title: tvp.faq4,
-      content: richTextReducer(tvp.faq4_content),
+      title: tvpText.faq4,
+      content: richTextReducer(tvpText.faq4_content),
     },
     {
-      title: tvp.faq5,
-      content: richTextReducer(tvp.faq5_content),
+      title: tvpText.faq5,
+      content: richTextReducer(tvpText.faq5_content),
     },
     {
-      title: tvp.faq6,
-      content: richTextReducer(tvp.faq6_content),
+      title: tvpText.faq6,
+      content: richTextReducer(tvpText.faq6_content),
     },
     {
-      title: tvp.faq7,
-      content: richTextReducer(tvp.faq7_content),
+      title: tvpText.faq7,
+      content: richTextReducer(tvpText.faq7_content),
     },
     {
-      title: tvp.faq8,
-      content: richTextReducer(tvp.faq8_content),
+      title: tvpText.faq8,
+      content: richTextReducer(tvpText.faq8_content),
     },
     {
-      title: tvp.faq9,
-      content: richTextReducer(tvp.faq9_content),
+      title: tvpText.faq9,
+      content: richTextReducer(tvpText.faq9_content),
     },
   ]
 
@@ -131,22 +141,22 @@ export default async function Main() {
       <section className='my-10 w-full bg-veryLightBlue'>
         <div className='mx-auto max-w-5xl px-5 pb-5 text-left'>
           <div className='flex flex-col text-center md:flex-row'>
-            <div className='md:w-3/10 mt-10 mr-4 flex flex-col space-y-2 py-8'>
+            <div className='mx-auto mt-10 flex flex-col space-y-2 py-8'>
               <h5 className='text-4xl font-bold text-darkBlue'>{data1}</h5>
               <p className='text-sm'>{data1Desc}</p>
             </div>
 
-            <div className='mx-8 mt-10 flex flex-col space-y-2 py-8 md:w-1/5'>
+            <div className='mx-auto mt-10 flex flex-col space-y-2 py-8'>
               <h5 className='text-4xl font-bold text-darkBlue'>{data2}</h5>
               <p className='text-sm'>{data2Desc}</p>
             </div>
 
-            <div className='mx-8 mt-10 flex flex-col space-y-2 py-8 md:w-1/5'>
+            <div className='mx-auto mt-10 flex flex-col space-y-2 py-8'>
               <h5 className='text-4xl font-bold text-darkBlue'>{data3}</h5>
               <p className='text-sm'>{data3Desc}</p>
             </div>
 
-            <div className='md:w-3/10 mt-10 ml-10 flex flex-col space-y-2 py-8'>
+            <div className='mx-auto mt-10 flex flex-col space-y-2 py-8'>
               <h5 className='text-4xl font-bold text-darkBlue'>{data4}</h5>
               <p className='text-sm'>{data4Desc}</p>
             </div>
@@ -173,7 +183,7 @@ export default async function Main() {
           imageLeft={true}
         />
 
-        <Contact contactUs={contactUs} />
+        <Contact contactUs={contactUs} lng={lng} />
 
         <Faqs faqs={faqs} />
       </section>

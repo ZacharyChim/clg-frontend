@@ -9,18 +9,18 @@ type PropType = {
 
 export default function SecretaryCard(props: PropType) {
   return (
-    <div className='px-6 py-8 border-4 border-borderBlue rounded-lg h-fit'>
+    <div className='h-fit rounded-lg border-4 border-borderBlue px-6 py-8'>
       <details
         className='group [&_summary::-webkit-details-marker]:hidden'
         // open
       >
-        <summary className='flex flex-col cursor-pointer border-b border-borderGray'>
-          <span className='text-sm text-textGray pb-1'>{props.type}</span>
-          <span className='font-bold text-sm text-darkBlue pb-1'>
+        <summary className='flex cursor-pointer flex-col border-b border-borderGray'>
+          <span className='pb-1 text-sm text-textGray'>{props.type}</span>
+          <span className='pb-1 text-sm font-bold text-darkBlue'>
             {props.title}
           </span>
-          <span className='font-medium flex justify-between'>
-            <span className='inline-block font-bold text-veryDarkBlue mb-2 half_background'>
+          <span className='flex justify-between font-medium'>
+            <span className='half_background mb-2 inline-block font-bold text-veryDarkBlue'>
               {props.price}
             </span>
 
@@ -32,9 +32,9 @@ export default function SecretaryCard(props: PropType) {
               stroke='currentColor'
             >
               <path
-                stroke-linecap='round'
-                stroke-linejoin='round'
-                stroke-width='2'
+                strokeLinecap='round'
+                strokeLinejoin='round'
+                strokeWidth='2'
                 d='M19 9l-7 7-7-7'
               />
             </svg>
@@ -42,7 +42,7 @@ export default function SecretaryCard(props: PropType) {
         </summary>
 
         <article
-          className='text-xs mt-4 text-gray-700'
+          className='mt-4 text-xs text-gray-700'
           dangerouslySetInnerHTML={{ __html: props.details }}
         ></article>
       </details>

@@ -2,43 +2,711 @@
   "data": {
     "id": 1,
     "attributes": {
-      "createdAt": "2023-05-20T14:46:55.651Z",
-      "updatedAt": "2023-05-20T15:03:24.950Z",
-      "publishedAt": "2023-05-20T14:46:57.070Z",
+      "main_slogan": "BOOKKEEP OUTSOURCING",
+      "accounting_title": "As a SME owner, have you encountered the following problems?",
+      "article1_title": "Documents are messy, discoloured,  wrinkled, rotten, or even missing",
+      "article1_text": "[How to make bookkeep more efficient?](https://clsgroup.com)",
+      "article2_title": "Take a long time to reconcile every month",
+      "article2_text": "[How to make bookkeep more efficient?](https://clsgroup.com)",
+      "article3_title": "Use different software to issue quotations  and invoices, the records become messy",
+      "article3_text": "[How to make bookkeep more efficient?](https://clsgroup.com)",
+      "article4_title": "Working from different places  (Such as Home Office)",
+      "article4_text": "[How to make bookkeep more efficient?](https://clsgroup.com)",
+      "article5_title": "Accounting colleagues leave,  handover becomes difficult",
+      "article5_text": "[How to make bookkeep more efficient?](https://clsgroup.com)",
+      "createdAt": "2023-03-15T04:48:55.121Z",
+      "updatedAt": "2023-05-27T07:09:16.370Z",
+      "publishedAt": "2023-03-15T15:25:25.232Z",
+      "contact_us": "If you have any inquiry about service of bookkeep outsourcing, please contact us for FREE consultation.",
+      "about_title": "About Accounting & Bookkeeping",
+      "about_text": "Section 51C of the inland revenue ordinance requires every person carrying on a trade, profession or business in hong kong to keep sufficient records in the english or chinese language of his income and expenditure to enable the assessable profits to be readily ascertained and such records shall be retained for a period of not less than 7 years.  our professional accounting and bookkeeping services are managed by experienced accountants, coupled with the use of professional accounting software for accounts management, allowing clients to experience high quality accounting services, including:\n\n- Assist clients in reducing accounting costs effectively\n- Book records can be stored for a long time\n- Information is properly handled and kept confidential",
+      "service_title": "Bookkeep outsourcing services",
+      "service1": "All accounting work handled by a professional team",
+      "service2": "Prepare accounts regularly",
+      "service3": "Reduce the operating costs of enterprises and make efficient use of funds",
+      "service4": "Focus on more important business decisions",
+      "table": "WHY CHOOSING CLG GROUP?",
+      "faq1": "How long should accounting-related data be kept?",
+      "faq2": "My company does not need to keep accounts on a monthly or quarterly basis, can accounting services be provided  once a year?",
+      "faq3": "I think it takes too long to settle accounts once a year, what other options are there?",
+      "faq4": "How much is the accounting fee?",
+      "faq1_content": "- Section 51C of the Inland Revenue Ordinance requires accounting records to be kept for a period of at least 7 years.",
+      "faq2_content": "- Yes! We can provide annual accounting services if the accounting documents are kept in order.",
+      "faq3_content": "- If you want to keep a closer eye on the company's financial situation, we can settle accounts on a monthly, quarterly or half-yearly basis according to the customer's request.",
+      "faq4_content": "- Our fees are based on the time required for accounting work, so the industry and size of the business are also factors. If you want to request a quote, please contact us for more information.",
       "locale": "en",
-      "home": "Home",
-      "home_url": "https://clg-frontend.vercel.app/en",
-      "assurance_advisory": "Assurance & Advisory",
-      "assurance_advisory_url": "#",
-      "cloud_solutions": "Cloud Solutions",
-      "cloud_solutions_url": "#",
-      "case_studies": "Case Studies",
-      "case_studies_url": "https://clg-frontend.vercel.app/en/cases",
-      "blog": "Blog",
-      "blog_url": "https://clg-frontend.vercel.app/en/blog",
-      "contact_us": "Contact Us",
-      "contact_us_url": "https://clg-frontend.vercel.app/en/contact",
+      "hero_image": {
+        "data": {
+          "id": 152,
+          "attributes": {
+            "name": "accounting-hero.png",
+            "alternativeText": null,
+            "caption": null,
+            "width": 579,
+            "height": 526,
+            "formats": {
+              "thumbnail": {
+                "name": "thumbnail_accounting-hero.png",
+                "hash": "thumbnail_accounting_hero_f4cc0ccce2",
+                "ext": ".png",
+                "mime": "image/png",
+                "path": null,
+                "width": 172,
+                "height": 156,
+                "size": 45.25,
+                "url": "/uploads/thumbnail_accounting_hero_f4cc0ccce2.png"
+              },
+              "small": {
+                "name": "small_accounting-hero.png",
+                "hash": "small_accounting_hero_f4cc0ccce2",
+                "ext": ".png",
+                "mime": "image/png",
+                "path": null,
+                "width": 500,
+                "height": 454,
+                "size": 260.79,
+                "url": "/uploads/small_accounting_hero_f4cc0ccce2.png"
+              }
+            },
+            "hash": "accounting_hero_f4cc0ccce2",
+            "ext": ".png",
+            "mime": "image/png",
+            "size": 75.61,
+            "url": "/uploads/accounting_hero_f4cc0ccce2.png",
+            "previewUrl": null,
+            "provider": "local",
+            "provider_metadata": null,
+            "createdAt": "2023-03-15T04:38:45.728Z",
+            "updatedAt": "2023-03-15T04:38:45.728Z"
+          }
+        }
+      },
+      "accounting_tag": {
+        "data": {
+          "id": 154,
+          "attributes": {
+            "name": "accounting-tag.png",
+            "alternativeText": null,
+            "caption": null,
+            "width": 299,
+            "height": 16,
+            "formats": {
+              "thumbnail": {
+                "name": "thumbnail_accounting-tag.png",
+                "hash": "thumbnail_accounting_tag_fff4afd6c1",
+                "ext": ".png",
+                "mime": "image/png",
+                "path": null,
+                "width": 245,
+                "height": 13,
+                "size": 6.75,
+                "url": "/uploads/thumbnail_accounting_tag_fff4afd6c1.png"
+              }
+            },
+            "hash": "accounting_tag_fff4afd6c1",
+            "ext": ".png",
+            "mime": "image/png",
+            "size": 1.44,
+            "url": "/uploads/accounting_tag_fff4afd6c1.png",
+            "previewUrl": null,
+            "provider": "local",
+            "provider_metadata": null,
+            "createdAt": "2023-03-15T04:39:56.606Z",
+            "updatedAt": "2023-03-15T04:39:56.606Z"
+          }
+        }
+      },
+      "article1_number": {
+        "data": {
+          "id": 67,
+          "attributes": {
+            "name": "01.png",
+            "alternativeText": null,
+            "caption": null,
+            "width": 85,
+            "height": 83,
+            "formats": {},
+            "hash": "01_62b8ac69f2",
+            "ext": ".png",
+            "mime": "image/png",
+            "size": 1.31,
+            "url": "/uploads/01_62b8ac69f2.png",
+            "previewUrl": null,
+            "provider": "local",
+            "provider_metadata": null,
+            "createdAt": "2023-02-22T17:06:58.866Z",
+            "updatedAt": "2023-03-06T17:00:51.199Z"
+          }
+        }
+      },
+      "article1_image": {
+        "data": {
+          "id": 153,
+          "attributes": {
+            "name": "accounting-image1.png",
+            "alternativeText": null,
+            "caption": null,
+            "width": 543,
+            "height": 524,
+            "formats": {
+              "thumbnail": {
+                "name": "thumbnail_accounting-image1.png",
+                "hash": "thumbnail_accounting_image1_50384fddf8",
+                "ext": ".png",
+                "mime": "image/png",
+                "path": null,
+                "width": 162,
+                "height": 156,
+                "size": 50.85,
+                "url": "/uploads/thumbnail_accounting_image1_50384fddf8.png"
+              },
+              "small": {
+                "name": "small_accounting-image1.png",
+                "hash": "small_accounting_image1_50384fddf8",
+                "ext": ".png",
+                "mime": "image/png",
+                "path": null,
+                "width": 500,
+                "height": 483,
+                "size": 341.89,
+                "url": "/uploads/small_accounting_image1_50384fddf8.png"
+              }
+            },
+            "hash": "accounting_image1_50384fddf8",
+            "ext": ".png",
+            "mime": "image/png",
+            "size": 78.5,
+            "url": "/uploads/accounting_image1_50384fddf8.png",
+            "previewUrl": null,
+            "provider": "local",
+            "provider_metadata": null,
+            "createdAt": "2023-03-15T04:39:00.601Z",
+            "updatedAt": "2023-03-15T04:40:20.015Z"
+          }
+        }
+      },
+      "article2_image": {
+        "data": {
+          "id": 155,
+          "attributes": {
+            "name": "accounting-image2.png",
+            "alternativeText": null,
+            "caption": null,
+            "width": 545,
+            "height": 521,
+            "formats": {
+              "thumbnail": {
+                "name": "thumbnail_accounting-image2.png",
+                "hash": "thumbnail_accounting_image2_9586b91bb7",
+                "ext": ".png",
+                "mime": "image/png",
+                "path": null,
+                "width": 163,
+                "height": 156,
+                "size": 42.93,
+                "url": "/uploads/thumbnail_accounting_image2_9586b91bb7.png"
+              },
+              "small": {
+                "name": "small_accounting-image2.png",
+                "hash": "small_accounting_image2_9586b91bb7",
+                "ext": ".png",
+                "mime": "image/png",
+                "path": null,
+                "width": 500,
+                "height": 478,
+                "size": 285.22,
+                "url": "/uploads/small_accounting_image2_9586b91bb7.png"
+              }
+            },
+            "hash": "accounting_image2_9586b91bb7",
+            "ext": ".png",
+            "mime": "image/png",
+            "size": 88.71,
+            "url": "/uploads/accounting_image2_9586b91bb7.png",
+            "previewUrl": null,
+            "provider": "local",
+            "provider_metadata": null,
+            "createdAt": "2023-03-15T04:40:49.029Z",
+            "updatedAt": "2023-03-15T04:40:49.029Z"
+          }
+        }
+      },
+      "article2_number": {
+        "data": {
+          "id": 68,
+          "attributes": {
+            "name": "02.png",
+            "alternativeText": null,
+            "caption": null,
+            "width": 96,
+            "height": 83,
+            "formats": {},
+            "hash": "02_c8bebdd883",
+            "ext": ".png",
+            "mime": "image/png",
+            "size": 1.42,
+            "url": "/uploads/02_c8bebdd883.png",
+            "previewUrl": null,
+            "provider": "local",
+            "provider_metadata": null,
+            "createdAt": "2023-02-22T17:07:09.859Z",
+            "updatedAt": "2023-03-06T17:01:04.246Z"
+          }
+        }
+      },
+      "article3_number": {
+        "data": {
+          "id": 69,
+          "attributes": {
+            "name": "03.png",
+            "alternativeText": null,
+            "caption": null,
+            "width": 102,
+            "height": 83,
+            "formats": {},
+            "hash": "03_bddda4af9a",
+            "ext": ".png",
+            "mime": "image/png",
+            "size": 1.55,
+            "url": "/uploads/03_bddda4af9a.png",
+            "previewUrl": null,
+            "provider": "local",
+            "provider_metadata": null,
+            "createdAt": "2023-02-22T17:07:24.271Z",
+            "updatedAt": "2023-03-06T17:01:14.728Z"
+          }
+        }
+      },
+      "article3_image": {
+        "data": {
+          "id": 156,
+          "attributes": {
+            "name": "accounting-image3.png",
+            "alternativeText": null,
+            "caption": null,
+            "width": 536,
+            "height": 515,
+            "formats": {
+              "thumbnail": {
+                "name": "thumbnail_accounting-image3.png",
+                "hash": "thumbnail_accounting_image3_d577d91cc4",
+                "ext": ".png",
+                "mime": "image/png",
+                "path": null,
+                "width": 162,
+                "height": 156,
+                "size": 50.21,
+                "url": "/uploads/thumbnail_accounting_image3_d577d91cc4.png"
+              },
+              "small": {
+                "name": "small_accounting-image3.png",
+                "hash": "small_accounting_image3_d577d91cc4",
+                "ext": ".png",
+                "mime": "image/png",
+                "path": null,
+                "width": 500,
+                "height": 480,
+                "size": 361.17,
+                "url": "/uploads/small_accounting_image3_d577d91cc4.png"
+              }
+            },
+            "hash": "accounting_image3_d577d91cc4",
+            "ext": ".png",
+            "mime": "image/png",
+            "size": 110.17,
+            "url": "/uploads/accounting_image3_d577d91cc4.png",
+            "previewUrl": null,
+            "provider": "local",
+            "provider_metadata": null,
+            "createdAt": "2023-03-15T04:48:27.627Z",
+            "updatedAt": "2023-03-15T04:48:27.627Z"
+          }
+        }
+      },
+      "article4_number": {
+        "data": {
+          "id": 150,
+          "attributes": {
+            "name": "04.png",
+            "alternativeText": null,
+            "caption": null,
+            "width": 100,
+            "height": 83,
+            "formats": null,
+            "hash": "04_24384bce4d",
+            "ext": ".png",
+            "mime": "image/png",
+            "size": 1.49,
+            "url": "/uploads/04_24384bce4d.png",
+            "previewUrl": null,
+            "provider": "local",
+            "provider_metadata": null,
+            "createdAt": "2023-03-14T14:20:40.246Z",
+            "updatedAt": "2023-03-14T14:20:40.246Z"
+          }
+        }
+      },
+      "article4_image": {
+        "data": {
+          "id": 157,
+          "attributes": {
+            "name": "accounting-image4.png",
+            "alternativeText": null,
+            "caption": null,
+            "width": 536,
+            "height": 517,
+            "formats": {
+              "thumbnail": {
+                "name": "thumbnail_accounting-image4.png",
+                "hash": "thumbnail_accounting_image4_e23b7c64ae",
+                "ext": ".png",
+                "mime": "image/png",
+                "path": null,
+                "width": 162,
+                "height": 156,
+                "size": 49.58,
+                "url": "/uploads/thumbnail_accounting_image4_e23b7c64ae.png"
+              },
+              "small": {
+                "name": "small_accounting-image4.png",
+                "hash": "small_accounting_image4_e23b7c64ae",
+                "ext": ".png",
+                "mime": "image/png",
+                "path": null,
+                "width": 500,
+                "height": 482,
+                "size": 360.88,
+                "url": "/uploads/small_accounting_image4_e23b7c64ae.png"
+              }
+            },
+            "hash": "accounting_image4_e23b7c64ae",
+            "ext": ".png",
+            "mime": "image/png",
+            "size": 114.22,
+            "url": "/uploads/accounting_image4_e23b7c64ae.png",
+            "previewUrl": null,
+            "provider": "local",
+            "provider_metadata": null,
+            "createdAt": "2023-03-15T04:48:38.519Z",
+            "updatedAt": "2023-03-15T04:48:38.519Z"
+          }
+        }
+      },
+      "article5_number": {
+        "data": {
+          "id": 151,
+          "attributes": {
+            "name": "05.png",
+            "alternativeText": null,
+            "caption": null,
+            "width": 98,
+            "height": 83,
+            "formats": null,
+            "hash": "05_00736ee0cb",
+            "ext": ".png",
+            "mime": "image/png",
+            "size": 1.61,
+            "url": "/uploads/05_00736ee0cb.png",
+            "previewUrl": null,
+            "provider": "local",
+            "provider_metadata": null,
+            "createdAt": "2023-03-14T14:20:50.399Z",
+            "updatedAt": "2023-03-14T14:20:50.399Z"
+          }
+        }
+      },
+      "article5_image": {
+        "data": {
+          "id": 158,
+          "attributes": {
+            "name": "accounting-image5.png",
+            "alternativeText": null,
+            "caption": null,
+            "width": 541,
+            "height": 524,
+            "formats": {
+              "thumbnail": {
+                "name": "thumbnail_accounting-image5.png",
+                "hash": "thumbnail_accounting_image5_d026dc6d93",
+                "ext": ".png",
+                "mime": "image/png",
+                "path": null,
+                "width": 161,
+                "height": 156,
+                "size": 57.33,
+                "url": "/uploads/thumbnail_accounting_image5_d026dc6d93.png"
+              },
+              "small": {
+                "name": "small_accounting-image5.png",
+                "hash": "small_accounting_image5_d026dc6d93",
+                "ext": ".png",
+                "mime": "image/png",
+                "path": null,
+                "width": 500,
+                "height": 484,
+                "size": 420.71,
+                "url": "/uploads/small_accounting_image5_d026dc6d93.png"
+              }
+            },
+            "hash": "accounting_image5_d026dc6d93",
+            "ext": ".png",
+            "mime": "image/png",
+            "size": 104.71,
+            "url": "/uploads/accounting_image5_d026dc6d93.png",
+            "previewUrl": null,
+            "provider": "local",
+            "provider_metadata": null,
+            "createdAt": "2023-03-15T04:48:50.514Z",
+            "updatedAt": "2023-03-15T04:48:50.514Z"
+          }
+        }
+      },
+      "service1_image": {
+        "data": {
+          "id": 159,
+          "attributes": {
+            "name": "accounting-service1.png",
+            "alternativeText": null,
+            "caption": null,
+            "width": 216,
+            "height": 216,
+            "formats": {
+              "thumbnail": {
+                "name": "thumbnail_accounting-service1.png",
+                "hash": "thumbnail_accounting_service1_42f357cd1f",
+                "ext": ".png",
+                "mime": "image/png",
+                "path": null,
+                "width": 156,
+                "height": 156,
+                "size": 38.14,
+                "url": "/uploads/thumbnail_accounting_service1_42f357cd1f.png"
+              }
+            },
+            "hash": "accounting_service1_42f357cd1f",
+            "ext": ".png",
+            "mime": "image/png",
+            "size": 10.45,
+            "url": "/uploads/accounting_service1_42f357cd1f.png",
+            "previewUrl": null,
+            "provider": "local",
+            "provider_metadata": null,
+            "createdAt": "2023-03-16T02:52:30.754Z",
+            "updatedAt": "2023-03-16T02:52:30.754Z"
+          }
+        }
+      },
+      "service2_image": {
+        "data": {
+          "id": 160,
+          "attributes": {
+            "name": "accounting-service2.png",
+            "alternativeText": null,
+            "caption": null,
+            "width": 223,
+            "height": 216,
+            "formats": {
+              "thumbnail": {
+                "name": "thumbnail_accounting-service2.png",
+                "hash": "thumbnail_accounting_service2_e3d1c21811",
+                "ext": ".png",
+                "mime": "image/png",
+                "path": null,
+                "width": 161,
+                "height": 156,
+                "size": 25.38,
+                "url": "/uploads/thumbnail_accounting_service2_e3d1c21811.png"
+              }
+            },
+            "hash": "accounting_service2_e3d1c21811",
+            "ext": ".png",
+            "mime": "image/png",
+            "size": 5.4,
+            "url": "/uploads/accounting_service2_e3d1c21811.png",
+            "previewUrl": null,
+            "provider": "local",
+            "provider_metadata": null,
+            "createdAt": "2023-03-16T02:52:49.645Z",
+            "updatedAt": "2023-03-16T02:52:49.645Z"
+          }
+        }
+      },
+      "service3_image": {
+        "data": {
+          "id": 161,
+          "attributes": {
+            "name": "accounting-service3.png",
+            "alternativeText": null,
+            "caption": null,
+            "width": 238,
+            "height": 216,
+            "formats": {
+              "thumbnail": {
+                "name": "thumbnail_accounting-service3.png",
+                "hash": "thumbnail_accounting_service3_94d208f734",
+                "ext": ".png",
+                "mime": "image/png",
+                "path": null,
+                "width": 172,
+                "height": 156,
+                "size": 32.7,
+                "url": "/uploads/thumbnail_accounting_service3_94d208f734.png"
+              }
+            },
+            "hash": "accounting_service3_94d208f734",
+            "ext": ".png",
+            "mime": "image/png",
+            "size": 7.47,
+            "url": "/uploads/accounting_service3_94d208f734.png",
+            "previewUrl": null,
+            "provider": "local",
+            "provider_metadata": null,
+            "createdAt": "2023-03-16T02:52:57.140Z",
+            "updatedAt": "2023-03-16T02:52:57.140Z"
+          }
+        }
+      },
+      "service4_image": {
+        "data": {
+          "id": 162,
+          "attributes": {
+            "name": "accounting-service4.png",
+            "alternativeText": null,
+            "caption": null,
+            "width": 216,
+            "height": 216,
+            "formats": {
+              "thumbnail": {
+                "name": "thumbnail_accounting-service4.png",
+                "hash": "thumbnail_accounting_service4_50921770f4",
+                "ext": ".png",
+                "mime": "image/png",
+                "path": null,
+                "width": 156,
+                "height": 156,
+                "size": 21.72,
+                "url": "/uploads/thumbnail_accounting_service4_50921770f4.png"
+              }
+            },
+            "hash": "accounting_service4_50921770f4",
+            "ext": ".png",
+            "mime": "image/png",
+            "size": 5.09,
+            "url": "/uploads/accounting_service4_50921770f4.png",
+            "previewUrl": null,
+            "provider": "local",
+            "provider_metadata": null,
+            "createdAt": "2023-03-16T02:53:04.540Z",
+            "updatedAt": "2023-03-16T02:53:04.540Z"
+          }
+        }
+      },
+      "table_image": {
+        "data": {
+          "id": 163,
+          "attributes": {
+            "name": "accounting-table.png",
+            "alternativeText": null,
+            "caption": null,
+            "width": 1347,
+            "height": 1246,
+            "formats": {
+              "thumbnail": {
+                "name": "thumbnail_accounting-table.png",
+                "hash": "thumbnail_accounting_table_fb7f868d30",
+                "ext": ".png",
+                "mime": "image/png",
+                "path": null,
+                "width": 169,
+                "height": 156,
+                "size": 19.01,
+                "url": "/uploads/thumbnail_accounting_table_fb7f868d30.png"
+              },
+              "small": {
+                "name": "small_accounting-table.png",
+                "hash": "small_accounting_table_fb7f868d30",
+                "ext": ".png",
+                "mime": "image/png",
+                "path": null,
+                "width": 500,
+                "height": 463,
+                "size": 94.39,
+                "url": "/uploads/small_accounting_table_fb7f868d30.png"
+              },
+              "medium": {
+                "name": "medium_accounting-table.png",
+                "hash": "medium_accounting_table_fb7f868d30",
+                "ext": ".png",
+                "mime": "image/png",
+                "path": null,
+                "width": 750,
+                "height": 694,
+                "size": 174.25,
+                "url": "/uploads/medium_accounting_table_fb7f868d30.png"
+              },
+              "large": {
+                "name": "large_accounting-table.png",
+                "hash": "large_accounting_table_fb7f868d30",
+                "ext": ".png",
+                "mime": "image/png",
+                "path": null,
+                "width": 1000,
+                "height": 925,
+                "size": 266.91,
+                "url": "/uploads/large_accounting_table_fb7f868d30.png"
+              }
+            },
+            "hash": "accounting_table_fb7f868d30",
+            "ext": ".png",
+            "mime": "image/png",
+            "size": 59.89,
+            "url": "/uploads/accounting_table_fb7f868d30.png",
+            "previewUrl": null,
+            "provider": "local",
+            "provider_metadata": null,
+            "createdAt": "2023-03-16T04:18:14.126Z",
+            "updatedAt": "2023-03-16T04:18:14.126Z"
+          }
+        }
+      },
       "localizations": {
         "data": [
           {
             "id": 2,
             "attributes": {
-              "createdAt": "2023-05-20T14:47:51.160Z",
-              "updatedAt": "2023-05-20T15:04:34.367Z",
-              "publishedAt": "2023-05-20T14:47:52.630Z",
-              "locale": "zh-Hant-HK",
-              "home": "主頁",
-              "home_url": "https://clg-frontend.vercel.app/hk",
-              "assurance_advisory": "鑒證及諮詢",
-              "assurance_advisory_url": "#",
-              "cloud_solutions": "雲端解決方案",
-              "cloud_solutions_url": "#",
-              "case_studies": "個案分享",
-              "case_studies_url": "https://clg-frontend.vercel.app/hk/cases",
-              "blog": "網誌",
-              "blog_url": "https://clg-frontend.vercel.app/hk/blog",
-              "contact_us": "聯絡我們",
-              "contact_us_url": "https://clg-frontend.vercel.app/hk/contact"
+              "main_slogan": "會計外包服務",
+              "accounting_title": "作為中小企老闆，有無遇到以下問題？",
+              "article1_title": "單據凌亂、甩色，皺了，爛了， 甚至整張不見了",
+              "article1_text": "[如何讓會計更有效率？](https://www.clggroup.com.hk/)",
+              "article2_title": "每月對賬費時耗時太長",
+              "article2_text": "[如何讓會計更有效率？](https://www.clggroup.com.hk/)",
+              "article3_title": "用不同軟件開報價單及發票， 會計記錄雜亂，需時尋找最新版本",
+              "article3_text": "[如何讓會計更有效率？](https://www.clggroup.com.hk/)",
+              "article4_title": "不同地方工作 (Home Office)",
+              "article4_text": "[如何讓會計更有效率？](https://www.clggroup.com.hk/)",
+              "article5_title": "會計同事離職， Handover困難",
+              "article5_text": "[如何讓會計更有效率？](https://www.clggroup.com.hk/)",
+              "createdAt": "2023-05-19T13:54:53.148Z",
+              "updatedAt": "2023-05-27T07:09:46.750Z",
+              "publishedAt": "2023-05-19T13:54:54.932Z",
+              "contact_us": "如欲查詢更多有關會計外包服務的資料，請與我們的專業顧問聯絡，我們將為您提供免費諮詢。",
+              "about_title": "會計理帳",
+              "about_text": "稅務條例第51C條規定每名在香港經營某行業、專業或業務的人，須就其入息及開支以英文或中文備存足夠的紀錄，以便其應評稅利潤易於確定；該等紀錄須保留為期最少7年。我們的專業會計服務，均由資深的會計師主理，配合採用專業的會計軟體進行理賬， 讓客戶體驗高質素的會計服務，包括:\n\n- 協助客戶有效降低會計成本\n- 會計記錄可以長期保存\n- 資料得到妥善處理和絕對保密",
+              "service_title": "會計外包服務",
+              "service1": "協助處理所有會計工作",
+              "service2": "定期準備會計賬目",
+              "service3": "減省企業的營運成本，有效善用資金",
+              "service4": "專注於更重要的業務決策",
+              "table": "為什麼選擇CLG Group？",
+              "faq1": "How long should accounting-related data be kept?",
+              "faq2": "My company does not need to keep accounts on a monthly or quarterly basis, can accounting services be provided  once a year?",
+              "faq3": "I think it takes too long to settle accounts once a year, what other options are there?",
+              "faq4": "How much is the accounting fee?",
+              "faq1_content": "- Section 51C of the Inland Revenue Ordinance requires accounting records to be kept for a period of at least 7 years.",
+              "faq2_content": "- Yes! We can provide annual accounting services if the accounting documents are kept in order.",
+              "faq3_content": "- If you want to keep a closer eye on the company's financial situation, we can settle accounts on a monthly, quarterly or half-yearly basis according to the customer's request.",
+              "faq4_content": "- Our fees are based on the time required for accounting work, so the industry and size of the business are also factors. If you want to request a quote, please contact us for more information.",
+              "locale": "zh-Hant-HK"
             }
           }
         ]

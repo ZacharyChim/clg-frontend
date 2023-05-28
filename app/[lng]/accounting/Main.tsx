@@ -13,17 +13,21 @@ type PageProps = {
 
 export default async function Main({ lng }: PageProps) {
   const accounting = await fetchSingle('accounting')
+  let accountingText
 
+  lng === 'en'
+    ? (accountingText = accounting)
+    : (accountingText = accounting.localizations.data[0].attributes)
   const accountingTag =
     process.env.NEXT_PUBLIC_STRAPI_URL +
-    accounting.accounting.data.attributes.url
-  const accountingTagWidth = accounting.accounting.data.attributes.width
-  const accountingTagHeight = accounting.accounting.data.attributes.height
+    accounting.accounting_tag.data.attributes.url
+  const accountingTagWidth = accounting.accounting_tag.data.attributes.width
+  const accountingTagHeight = accounting.accounting_tag.data.attributes.height
 
-  const accountingTitle = accounting.accounting_title
+  const accountingTitle = accountingText.accounting_title
 
-  const article1Title = accounting.article1_title
-  const article1Text = richTextReducer(accounting.article1_text)
+  const article1Title = accountingText.article1_title
+  const article1Text = richTextReducer(accountingText.article1_text)
   const article1Obj = {
     title: article1Title,
     text: article1Text,
@@ -52,8 +56,8 @@ export default async function Main({ lng }: PageProps) {
     height: article1TagImageHeight,
   }
 
-  const article2Title = accounting.article2_title
-  const article2Text = richTextReducer(accounting.article2_text)
+  const article2Title = accountingText.article2_title
+  const article2Text = richTextReducer(accountingText.article2_text)
   const article2Obj = {
     title: article2Title,
     text: article2Text,
@@ -82,8 +86,8 @@ export default async function Main({ lng }: PageProps) {
     height: article2TagImageHeight,
   }
 
-  const article3Title = accounting.article3_title
-  const article3Text = richTextReducer(accounting.article3_text)
+  const article3Title = accountingText.article3_title
+  const article3Text = richTextReducer(accountingText.article3_text)
   const article3Obj = {
     title: article3Title,
     text: article3Text,
@@ -112,8 +116,8 @@ export default async function Main({ lng }: PageProps) {
     height: article3TagImageHeight,
   }
 
-  const article4Title = accounting.article4_title
-  const article4Text = richTextReducer(accounting.article4_text)
+  const article4Title = accountingText.article4_title
+  const article4Text = richTextReducer(accountingText.article4_text)
   const article4Obj = {
     title: article4Title,
     text: article4Text,
@@ -142,8 +146,8 @@ export default async function Main({ lng }: PageProps) {
     height: article4TagImageHeight,
   }
 
-  const article5Title = accounting.article5_title
-  const article5Text = richTextReducer(accounting.article5_text)
+  const article5Title = accountingText.article5_title
+  const article5Text = richTextReducer(accountingText.article5_text)
   const article5Obj = {
     title: article5Title,
     text: article5Text,
@@ -172,11 +176,11 @@ export default async function Main({ lng }: PageProps) {
     height: article5TagImageHeight,
   }
 
-  const service = accounting.service_title
-  const service1 = accounting.service1
-  const service2 = accounting.service2
-  const service3 = accounting.service3
-  const service4 = accounting.service4
+  const service = accountingText.service_title
+  const service1 = accountingText.service1
+  const service2 = accountingText.service2
+  const service3 = accountingText.service3
+  const service4 = accountingText.service4
 
   const service1Image =
     process.env.NEXT_PUBLIC_STRAPI_URL +
@@ -202,34 +206,34 @@ export default async function Main({ lng }: PageProps) {
   const service4ImageWidth = accounting.service4_image.data.attributes.width
   const service4ImageHeight = accounting.service4_image.data.attributes.height
 
-  const aboutTitle = accounting.about_title
-  const aboutText = richTextReducer(accounting.about_text)
+  const aboutTitle = accountingText.about_title
+  const aboutText = richTextReducer(accountingText.about_text)
 
-  const table = accounting.table
+  const table = accountingText.table
   const tableImage =
     process.env.NEXT_PUBLIC_STRAPI_URL +
     accounting.table_image.data.attributes.url
   const tableImageWidth = accounting.table_image.data.attributes.width
   const tableImageHeight = accounting.table_image.data.attributes.height
 
-  const contactUs = accounting.contact_us
+  const contactUs = accountingText.contact_us
 
   const faqs: { title: string; content: string }[] = [
     {
-      title: accounting.faq1,
-      content: richTextReducer(accounting.faq1_content),
+      title: accountingText.faq1,
+      content: richTextReducer(accountingText.faq1_content),
     },
     {
-      title: accounting.faq2,
-      content: richTextReducer(accounting.faq2_content),
+      title: accountingText.faq2,
+      content: richTextReducer(accountingText.faq2_content),
     },
     {
-      title: accounting.faq3,
-      content: richTextReducer(accounting.faq3_content),
+      title: accountingText.faq3,
+      content: richTextReducer(accountingText.faq3_content),
     },
     {
-      title: accounting.faq4,
-      content: richTextReducer(accounting.faq4_content),
+      title: accountingText.faq4,
+      content: richTextReducer(accountingText.faq4_content),
     },
   ]
 

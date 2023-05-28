@@ -8,11 +8,20 @@ import caseTop from '../../../public/case-top.png'
 import Faqs from '../../../components/Faqs'
 import curve from '/public/small-curve.png'
 
-export default async function Main() {
+type PageProps = {
+  lng: string
+}
+
+export default async function Main({ lng }: PageProps) {
   const curveWidth = 33
   const curveHeight = 10
 
   const payroll = await fetchSingle('payroll')
+  let payrollText
+
+  lng === 'en'
+    ? (payrollText = payroll)
+    : (payrollText = payroll.localizations.data[0].attributes)
 
   const payrollTag =
     process.env.NEXT_PUBLIC_STRAPI_URL +
@@ -20,10 +29,10 @@ export default async function Main() {
   const payrollTagWidth = payroll.cloud_solutions.data.attributes.width
   const payrollTagHeight = payroll.cloud_solutions.data.attributes.height
 
-  const payrollTitle = payroll.payroll_title
+  const payrollTitle = payrollText.payroll_title
 
-  const article1Title = payroll.article1_title
-  const article1Text = richTextReducer(payroll.article1_text)
+  const article1Title = payrollText.article1_title
+  const article1Text = richTextReducer(payrollText.article1_text)
   const article1Obj = {
     title: article1Title,
     text: article1Text,
@@ -51,8 +60,8 @@ export default async function Main() {
     height: article1TagImageHeight,
   }
 
-  const article2Title = payroll.article2_title
-  const article2Text = richTextReducer(payroll.article2_text)
+  const article2Title = payrollText.article2_title
+  const article2Text = richTextReducer(payrollText.article2_text)
   const article2Obj = {
     title: article2Title,
     text: article2Text,
@@ -80,8 +89,8 @@ export default async function Main() {
     height: article2TagImageHeight,
   }
 
-  const article3Title = payroll.article3_title
-  const article3Text = richTextReducer(payroll.article3_text)
+  const article3Title = payrollText.article3_title
+  const article3Text = richTextReducer(payrollText.article3_text)
   const article3Obj = {
     title: article3Title,
     text: article3Text,
@@ -109,8 +118,8 @@ export default async function Main() {
     height: article3TagImageHeight,
   }
 
-  const article4Title = payroll.article4_title
-  const article4Text = richTextReducer(payroll.article4_text)
+  const article4Title = payrollText.article4_title
+  const article4Text = richTextReducer(payrollText.article4_text)
   const article4Obj = {
     title: article4Title,
     text: article4Text,
@@ -138,8 +147,8 @@ export default async function Main() {
     height: article4TagImageHeight,
   }
 
-  const article5Title = payroll.article5_title
-  const article5Text = richTextReducer(payroll.article5_text)
+  const article5Title = payrollText.article5_title
+  const article5Text = richTextReducer(payrollText.article5_text)
   const article5Obj = {
     title: article5Title,
     text: article5Text,
@@ -167,11 +176,11 @@ export default async function Main() {
     height: article5TagImageHeight,
   }
 
-  const service = payroll.service_title
-  const service1 = payroll.service1
-  const service2 = payroll.service2
-  const service3 = payroll.service3
-  const service4 = payroll.service4
+  const service = payrollText.service_title
+  const service1 = payrollText.service1
+  const service2 = payrollText.service2
+  const service3 = payrollText.service3
+  const service4 = payrollText.service4
 
   const service1Image =
     process.env.NEXT_PUBLIC_STRAPI_URL +
@@ -202,28 +211,28 @@ export default async function Main() {
   const tableImageWidth = payroll.table_image.data.attributes.width
   const tableImageHeight = payroll.table_image.data.attributes.height
 
-  const contactUs = payroll.contact_us
+  const contactUs = payrollText.contact_us
 
   const faqs: { title: string; content: string }[] = [
     {
-      title: payroll.faq1,
-      content: richTextReducer(payroll.faq1_content),
+      title: payrollText.faq1,
+      content: richTextReducer(payrollText.faq1_content),
     },
     {
-      title: payroll.faq2,
-      content: richTextReducer(payroll.faq2_content),
+      title: payrollText.faq2,
+      content: richTextReducer(payrollText.faq2_content),
     },
     {
-      title: payroll.faq3,
-      content: richTextReducer(payroll.faq3_content),
+      title: payrollText.faq3,
+      content: richTextReducer(payrollText.faq3_content),
     },
     {
-      title: payroll.faq4,
-      content: richTextReducer(payroll.faq4_content),
+      title: payrollText.faq4,
+      content: richTextReducer(payrollText.faq4_content),
     },
     {
-      title: payroll.faq5,
-      content: richTextReducer(payroll.faq5_content),
+      title: payrollText.faq5,
+      content: richTextReducer(payrollText.faq5_content),
     },
   ]
 
@@ -377,7 +386,7 @@ export default async function Main() {
       <Image src={contactTop} alt='' />
 
       <section className='mx-auto flex max-w-5xl flex-col items-center'>
-        <Contact contactUs={contactUs} />
+        <Contact contactUs={contactUs} lng={lng} />
 
         <Faqs faqs={faqs} />
       </section>

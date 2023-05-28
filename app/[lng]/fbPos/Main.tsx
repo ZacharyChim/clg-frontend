@@ -5,16 +5,25 @@ import Contact from '../../../components/Contact'
 import { fetchSingle, richTextReducer, trimTitle } from '../../../lib/utils'
 import curve from '/public/small-curve.png'
 
-export default async function Main() {
+type PageProps = {
+  lng: string
+}
+
+export default async function Main({ lng }: PageProps) {
   const fbPos = await fetchSingle('fb-pos')
+  let fbPosText
+
+  lng === 'en'
+    ? (fbPosText = fbPos)
+    : (fbPosText = fbPos.localizations.data[0].attributes)
 
   const cloudSolutions =
     process.env.NEXT_PUBLIC_STRAPI_URL +
     fbPos.cloud_solutions.data.attributes.url
   const cloudSolutionsWidth = fbPos.cloud_solutions.data.attributes.width
   const cloudSolutionsHeight = fbPos.cloud_solutions.data.attributes.height
-  const aboutTitle = fbPos.about_title
-  const aboutText = richTextReducer(fbPos.about_text)
+  const aboutTitle = fbPosText.about_title
+  const aboutText = richTextReducer(fbPosText.about_text)
   const aboutImage =
     process.env.NEXT_PUBLIC_STRAPI_URL + fbPos.about_image.data.attributes.url
   const aboutWidth = fbPos.about_image.data.attributes.width
@@ -66,13 +75,13 @@ export default async function Main() {
   const number3Width = fbPos.number3.data.attributes.width
   const number3Height = fbPos.number3.data.attributes.height
 
-  const customersText1 = richTextReducer(fbPos.customers_text1)
-  const customersText2 = richTextReducer(fbPos.customers_text2)
-  const customers = fbPos.customers
-  const restaurantStaff = fbPos.restaurant_staff
-  const manager = fbPos.manager
-  const restaurantText = richTextReducer(fbPos.restaurant_text)
-  const managerText = richTextReducer(fbPos.manager_text)
+  const customersText1 = richTextReducer(fbPosText.customers_text1)
+  const customersText2 = richTextReducer(fbPosText.customers_text2)
+  const customers = fbPosText.customers
+  const restaurantStaff = fbPosText.restaurant_staff
+  const manager = fbPosText.manager
+  const restaurantText = richTextReducer(fbPosText.restaurant_text)
+  const managerText = richTextReducer(fbPosText.manager_text)
 
   const icon1 =
     process.env.NEXT_PUBLIC_STRAPI_URL +
@@ -118,27 +127,27 @@ export default async function Main() {
   const curveWidth = 33
   const curveHeight = 10
 
-  const solutionsTitle1 = fbPos.solutions_title1
-  const solutionsTitle2 = fbPos.solutions_title2
-  const solutionsTitle3 = fbPos.solutions_title3
-  const solutionsTitle4 = fbPos.solutions_title4
-  const solutionsTitle5 = fbPos.solutions_title5
-  const solutionsTitle6 = fbPos.solutions_title6
-  const solutionsTitle7 = fbPos.solutions_title7
-  const solutionsTitle8 = fbPos.solutions_title8
+  const solutionsTitle1 = fbPosText.solutions_title1
+  const solutionsTitle2 = fbPosText.solutions_title2
+  const solutionsTitle3 = fbPosText.solutions_title3
+  const solutionsTitle4 = fbPosText.solutions_title4
+  const solutionsTitle5 = fbPosText.solutions_title5
+  const solutionsTitle6 = fbPosText.solutions_title6
+  const solutionsTitle7 = fbPosText.solutions_title7
+  const solutionsTitle8 = fbPosText.solutions_title8
 
-  const solutionsText1 = fbPos.solutions_text1
-  const solutionsText2 = fbPos.solutions_text2
-  const solutionsText3 = fbPos.solutions_text3
-  const solutionsText4 = fbPos.solutions_text4
-  const solutionsText5 = fbPos.solutions_text5
-  const solutionsText6 = fbPos.solutions_text6
-  const solutionsText7 = fbPos.solutions_text7
-  const solutionsText8 = fbPos.solutions_text8
+  const solutionsText1 = fbPosText.solutions_text1
+  const solutionsText2 = fbPosText.solutions_text2
+  const solutionsText3 = fbPosText.solutions_text3
+  const solutionsText4 = fbPosText.solutions_text4
+  const solutionsText5 = fbPosText.solutions_text5
+  const solutionsText6 = fbPosText.solutions_text6
+  const solutionsText7 = fbPosText.solutions_text7
+  const solutionsText8 = fbPosText.solutions_text8
 
-  const title = fbPos.title
-  const solutions = fbPos.solutions
-  const contactUs = fbPos.contact_us
+  const title = fbPosText.title
+  const solutions = fbPosText.solutions
+  const contactUs = fbPosText.contact_us
 
   return (
     <section id='case' className='mx-auto flex max-w-5xl flex-col items-center'>
@@ -463,7 +472,7 @@ export default async function Main() {
         </div>
       </div>
 
-      <Contact contactUs={contactUs} />
+      <Contact contactUs={contactUs} lng={lng} />
     </section>
   )
 }

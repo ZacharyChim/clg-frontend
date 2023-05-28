@@ -2,13 +2,19 @@ import React from 'react'
 import Hero from '../../../components/Hero'
 import Main from './Main'
 
-function seychelles() {
+type PageProps = {
+  params: {
+    lng: string
+  }
+}
+
+function seychelles({ params: { lng } }: PageProps) {
   return (
     <div>
       {/* @ts-ignore */}
-      <Hero page='seychelles' />
+      <Hero page='seychelles' lng={lng} />
       {/* @ts-ignore */}
-      <Main />
+      <Main lng={lng} />
     </div>
   )
 }

@@ -12,22 +12,22 @@ type PropType = {
 
 export default function Faqs(props: PropType) {
   return (
-    <div className='mx-auto space-y-4 max-w-4xl mb-16 mt-10 px-10 w-full self-center'>
-      <h3 className='w-full text-center text-darkBlue font-bold text-4xl mb-10'>
+    <div className='mx-auto mb-16 mt-10 w-full max-w-4xl space-y-4 self-center px-10'>
+      <h3 className='mb-10 w-full text-center text-4xl font-bold text-darkBlue'>
         FAQs
       </h3>
       {props.faqs.map((item, index) => (
         <details
           key={v4()}
-          className='group border-b pb-6 border-black [&_summary::-webkit-details-marker]:hidden'
+          className='group border-b border-black pb-6 [&_summary::-webkit-details-marker]:hidden'
           // open
         >
-          <summary className='flex items-center justify-between w-full leading-7 p-4 cursor-pointer '>
-            <h4 className='font-medium flex items-start'>
-              <span className='w-7 grow-0 shrink-0 inline-block text-center text-white bg-oceanBlue mr-2 rounded-full'>
+          <summary className='flex w-full cursor-pointer items-center justify-between p-4 leading-7 '>
+            <h4 className='flex items-start font-medium'>
+              <span className='mr-2 inline-block w-7 shrink-0 grow-0 rounded-full bg-oceanBlue text-center text-white'>
                 {index + 1}
               </span>
-              <span className='inline-block font-bold text-darkBlue summary-title'>
+              <span className='summary-title inline-block font-bold text-darkBlue'>
                 {item.title}
               </span>
             </h4>
@@ -40,16 +40,16 @@ export default function Faqs(props: PropType) {
               stroke='currentColor'
             >
               <path
-                stroke-linecap='round'
-                stroke-linejoin='round'
-                stroke-width='2'
+                strokeLinecap='round'
+                strokeLinejoin='round'
+                strokeWidth='2'
                 d='M19 9l-7 7-7-7'
               />
             </svg>
           </summary>
 
           <article
-            className='text-sm px-14 mt-4 leading-relaxed text-gray-700 faq'
+            className='faq mt-4 px-14 text-sm leading-relaxed text-gray-700'
             dangerouslySetInnerHTML={{ __html: item.content }}
           ></article>
         </details>

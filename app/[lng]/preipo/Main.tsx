@@ -4,8 +4,19 @@ import React from 'react'
 import Contact from '../../../components/Contact'
 import { fetchSingle, richTextReducer, trimTitle } from '../../../lib/utils'
 
-export default async function Main() {
+type PageProps = {
+  params: {
+    lng: string
+  }
+}
+
+export default async function Main({ lng }: PageProps) {
   const preipo = await fetchSingle('pre-ipo')
+  let preipoText
+
+  lng === 'en'
+    ? (preipoText = preipo)
+    : (preipoText = preipo.localizations.data[0].attributes)
 
   const advisory =
     process.env.NEXT_PUBLIC_STRAPI_URL + preipo.advisory.data.attributes.url
@@ -45,11 +56,11 @@ export default async function Main() {
   const number3Width = preipo.number3.data.attributes.width
   const number3Height = preipo.number3.data.attributes.height
 
-  const aboutTitle = preipo.about_title
-  const aboutText = richTextReducer(preipo.about_text)
-  const contactUs = preipo.contact_us
+  const aboutTitle = preipoText.about_title
+  const aboutText = richTextReducer(preipoText.about_text)
+  const contactUs = preipoText.contact_us
 
-  const title = preipo.title
+  const title = preipoText.title
 
   return (
     <section id='case' className='mx-auto flex max-w-5xl flex-col items-center'>

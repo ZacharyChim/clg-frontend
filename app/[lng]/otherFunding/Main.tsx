@@ -4,8 +4,17 @@ import React from 'react'
 import Contact from '../../../components/Contact'
 import { fetchSingle, richTextReducer, trimTitle } from '../../../lib/utils'
 
-export default async function Main() {
+type PageProps = {
+  lng: string
+}
+
+export default async function Main({ lng }: PageProps) {
   const otherFunding = await fetchSingle('other-funding')
+  let otherFundingText
+
+  lng === 'en'
+    ? (otherFundingText = otherFunding)
+    : (otherFundingText = otherFunding.localizations.data[0].attributes)
   const image1 =
     process.env.NEXT_PUBLIC_STRAPI_URL + otherFunding.image1.data.attributes.url
   const image1Width = otherFunding.image1.data.attributes.width
@@ -37,15 +46,15 @@ export default async function Main() {
   const number3Width = otherFunding.number3.data.attributes.width
   const number3Height = otherFunding.number3.data.attributes.height
 
-  const title1 = otherFunding.title1
-  const title2 = otherFunding.title2
-  const title3 = otherFunding.title3
+  const title1 = otherFundingText.title1
+  const title2 = otherFundingText.title2
+  const title3 = otherFundingText.title3
 
-  const content1 = richTextReducer(otherFunding.content1)
-  const content2 = richTextReducer(otherFunding.content2)
-  const content3 = richTextReducer(otherFunding.content3)
+  const content1 = richTextReducer(otherFundingText.content1)
+  const content2 = richTextReducer(otherFundingText.content2)
+  const content3 = richTextReducer(otherFundingText.content3)
 
-  const moreInfo = otherFunding.more_info
+  const moreInfo = otherFundingText.more_info
 
   return (
     <section id='case' className='mx-auto flex max-w-5xl flex-col items-center'>
@@ -129,7 +138,7 @@ export default async function Main() {
         </div>
       </div>
 
-      <Contact contactUs={moreInfo} />
+      <Contact contactUs={moreInfo} lng={lng} />
     </section>
   )
 }

@@ -8,10 +8,19 @@ import ImageArticle from '../../../components/ImageArticle'
 import arrow from '../../../public/arrow-rounded.png'
 import curve from '/public/small-curve.png'
 
-export default async function Main() {
+type PageProps = {
+  lng: string
+}
+
+export default async function Main({ lng }: PageProps) {
   const curveWidth = 33
   const curveHeight = 10
   const xero = await fetchSingle('xero')
+  let xeroText
+
+  lng === 'en'
+    ? (xeroText = xero)
+    : (xeroText = xero.localizations.data[0].attributes)
 
   const cloud =
     process.env.NEXT_PUBLIC_STRAPI_URL +
@@ -21,10 +30,10 @@ export default async function Main() {
 
   const video = xero.video_url
 
-  const aboutTitle = xero.about_title
+  const aboutTitle = xeroText.about_title
 
-  const solution1Title = xero.solution1_title
-  const solution1Content = richTextReducer(xero.solution1_content)
+  const solution1Title = xeroText.solution1_title
+  const solution1Content = richTextReducer(xeroText.solution1_content)
   const solution1Obj = {
     title: solution1Title,
     text: solution1Content,
@@ -50,8 +59,8 @@ export default async function Main() {
     height: solution1ImageHeight,
   }
 
-  const solution2Title = xero.solution2_title
-  const solution2Content = richTextReducer(xero.solution2_content)
+  const solution2Title = xeroText.solution2_title
+  const solution2Content = richTextReducer(xeroText.solution2_content)
   const solution2Obj = {
     title: solution2Title,
     text: solution2Content,
@@ -77,8 +86,8 @@ export default async function Main() {
     height: solution2ImageHeight,
   }
 
-  const solution3Title = xero.solution3_title
-  const solution3Content = richTextReducer(xero.solution3_content)
+  const solution3Title = xeroText.solution3_title
+  const solution3Content = richTextReducer(xeroText.solution3_content)
   const solution3Obj = {
     title: solution3Title,
     text: solution3Content,
@@ -104,8 +113,8 @@ export default async function Main() {
     height: solution3ImageHeight,
   }
 
-  const solution4Title = xero.solution4_title
-  const solution4Content = richTextReducer(xero.solution4_content)
+  const solution4Title = xeroText.solution4_title
+  const solution4Content = richTextReducer(xeroText.solution4_content)
   const solution4Obj = {
     title: solution4Title,
     text: solution4Content,
@@ -131,8 +140,8 @@ export default async function Main() {
     height: solution4ImageHeight,
   }
 
-  const solution5Title = xero.solution5_title
-  const solution5Content = richTextReducer(xero.solution5_content)
+  const solution5Title = xeroText.solution5_title
+  const solution5Content = richTextReducer(xeroText.solution5_content)
   const solution5Obj = {
     title: solution5Title,
     text: solution5Content,
@@ -158,8 +167,8 @@ export default async function Main() {
     height: solution5ImageHeight,
   }
 
-  const solution6Title = xero.solution6_title
-  const solution6Content = richTextReducer(xero.solution6_content)
+  const solution6Title = xeroText.solution6_title
+  const solution6Content = richTextReducer(xeroText.solution6_content)
   const solution6Obj = {
     title: solution6Title,
     text: solution6Content,
@@ -185,46 +194,46 @@ export default async function Main() {
     height: solution6ImageHeight,
   }
 
-  const benefit = xero.benefit_title
+  const benefit = xeroText.benefit_title
 
   const benefit1Image =
     process.env.NEXT_PUBLIC_STRAPI_URL + xero.benefit1_image.data.attributes.url
   const benefit1ImageWidth = xero.benefit1_image.data.attributes.width
   const benefit1ImageHeight = xero.benefit1_image.data.attributes.height
-  const benefit1Title = xero.benefit1_title
-  const benefit1Desc = xero.benefit1_desc
+  const benefit1Title = xeroText.benefit1_title
+  const benefit1Desc = xeroText.benefit1_desc
 
   const benefit2Image =
     process.env.NEXT_PUBLIC_STRAPI_URL + xero.benefit2_image.data.attributes.url
   const benefit2ImageWidth = xero.benefit2_image.data.attributes.width
   const benefit2ImageHeight = xero.benefit2_image.data.attributes.height
-  const benefit2Title = xero.benefit2_title
-  const benefit2Desc = xero.benefit2_desc
+  const benefit2Title = xeroText.benefit2_title
+  const benefit2Desc = xeroText.benefit2_desc
 
   const benefit3Image =
     process.env.NEXT_PUBLIC_STRAPI_URL + xero.benefit3_image.data.attributes.url
   const benefit3ImageWidth = xero.benefit3_image.data.attributes.width
   const benefit3ImageHeight = xero.benefit3_image.data.attributes.height
-  const benefit3Title = xero.benefit3_title
-  const benefit3Desc = xero.benefit3_desc
+  const benefit3Title = xeroText.benefit3_title
+  const benefit3Desc = xeroText.benefit3_desc
 
   const benefit4Image =
     process.env.NEXT_PUBLIC_STRAPI_URL + xero.benefit4_image.data.attributes.url
   const benefit4ImageWidth = xero.benefit4_image.data.attributes.width
   const benefit4ImageHeight = xero.benefit4_image.data.attributes.height
-  const benefit4Title = xero.benefit4_title
-  const benefit4Desc = xero.benefit4_desc
+  const benefit4Title = xeroText.benefit4_title
+  const benefit4Desc = xeroText.benefit4_desc
 
   const benefit5Image =
     process.env.NEXT_PUBLIC_STRAPI_URL + xero.benefit5_image.data.attributes.url
   const benefit5ImageWidth = xero.benefit5_image.data.attributes.width
   const benefit5ImageHeight = xero.benefit5_image.data.attributes.height
-  const benefit5Title = xero.benefit5_title
-  const benefit5Desc = xero.benefit5_desc
+  const benefit5Title = xeroText.benefit5_title
+  const benefit5Desc = xeroText.benefit5_desc
 
-  const simple = xero.simple
+  const simple = xeroText.simple
 
-  const simpleContent = xero.simple_content
+  const simpleContent = xeroText.simple_content
   const simpleTitle =
     process.env.NEXT_PUBLIC_STRAPI_URL + xero.simple_title.data.attributes.url
   const simpleTitleWidth = xero.simple_title.data.attributes.width
@@ -234,7 +243,7 @@ export default async function Main() {
   const simpleImageWidth = xero.simple_image.data.attributes.width
   const simpleImageHeight = xero.simple_image.data.attributes.height
 
-  const smartContent = xero.smart_content
+  const smartContent = xeroText.smart_content
   const smartTitle =
     process.env.NEXT_PUBLIC_STRAPI_URL + xero.smart_title.data.attributes.url
   const smartTitleWidth = xero.smart_title.data.attributes.width
@@ -244,7 +253,7 @@ export default async function Main() {
   const smartImageWidth = xero.smart_image.data.attributes.width
   const smartImageHeight = xero.smart_image.data.attributes.height
 
-  const secureContent = xero.secure_content
+  const secureContent = xeroText.secure_content
   const secureTitle =
     process.env.NEXT_PUBLIC_STRAPI_URL + xero.secure_title.data.attributes.url
   const secureTitleWidth = xero.secure_title.data.attributes.width
@@ -254,7 +263,7 @@ export default async function Main() {
   const secureImageWidth = xero.secure_image.data.attributes.width
   const secureImageHeight = xero.secure_image.data.attributes.height
 
-  const steps = xero.steps
+  const steps = xeroText.steps
 
   const step1 =
     process.env.NEXT_PUBLIC_STRAPI_URL + xero.step1.data.attributes.url
@@ -269,32 +278,32 @@ export default async function Main() {
   const step3Width = xero.step3.data.attributes.width
   const step3Height = xero.step3.data.attributes.height
 
-  const reasons = xero.reasons
-  const reason1 = xero.reason1
+  const reasons = xeroText.reasons
+  const reason1 = xeroText.reason1
   const reason1Image =
     process.env.NEXT_PUBLIC_STRAPI_URL + xero.reason1_image.data.attributes.url
   const reason1ImageWidth = xero.reason1_image.data.attributes.width
   const reason1ImageHeight = xero.reason1_image.data.attributes.height
 
-  const reason2 = xero.reason2
+  const reason2 = xeroText.reason2
   const reason2Image =
     process.env.NEXT_PUBLIC_STRAPI_URL + xero.reason2_image.data.attributes.url
   const reason2ImageWidth = xero.reason2_image.data.attributes.width
   const reason2ImageHeight = xero.reason2_image.data.attributes.height
 
-  const reason3 = xero.reason3
+  const reason3 = xeroText.reason3
   const reason3Image =
     process.env.NEXT_PUBLIC_STRAPI_URL + xero.reason3_image.data.attributes.url
   const reason3ImageWidth = xero.reason3_image.data.attributes.width
   const reason3ImageHeight = xero.reason3_image.data.attributes.height
 
-  const reason4 = xero.reason4
+  const reason4 = xeroText.reason4
   const reason4Image =
     process.env.NEXT_PUBLIC_STRAPI_URL + xero.reason4_image.data.attributes.url
   const reason4ImageWidth = xero.reason4_image.data.attributes.width
   const reason4ImageHeight = xero.reason4_image.data.attributes.height
 
-  const contactUs = xero.contact_us
+  const contactUs = xeroText.contact_us
 
   return (
     <>
@@ -689,7 +698,7 @@ export default async function Main() {
             </div>
           </div>
         </div>
-        <Contact contactUs={contactUs} />
+        <Contact contactUs={contactUs} lng={lng} />
       </section>
     </>
   )

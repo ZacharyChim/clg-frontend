@@ -4,8 +4,18 @@ import React from 'react'
 import Contact from '../../../components/Contact'
 import { fetchSingle, richTextReducer, trimTitle } from '../../../lib/utils'
 
-export default async function Main() {
+type PageProps = {
+  lng: string
+}
+
+export default async function Main({ lng }: PageProps) {
   const internalControl = await fetchSingle('internal-control')
+
+  let internalControlText
+
+  lng === 'en'
+    ? (internalControlText = internalControl)
+    : (internalControlText = internalControl.localizations.data[0].attributes)
 
   const advisory =
     process.env.NEXT_PUBLIC_STRAPI_URL +
@@ -61,11 +71,11 @@ export default async function Main() {
   const number4Width = internalControl.number4.data.attributes.width
   const number4Height = internalControl.number4.data.attributes.height
 
-  const aboutTitle = internalControl.about_title
-  const aboutText = richTextReducer(internalControl.about_text)
-  const contactUs = internalControl.contact_us
+  const aboutTitle = internalControlText.about_title
+  const aboutText = richTextReducer(internalControlText.about_text)
+  const contactUs = internalControlText.contact_us
 
-  const title = internalControl.title
+  const title = internalControlText.title
 
   return (
     <section id='case' className='mx-auto flex max-w-5xl flex-col items-center'>
@@ -189,7 +199,7 @@ export default async function Main() {
         </div>
       </div>
 
-      <Contact contactUs={contactUs} />
+      <Contact contactUs={contactUs} lng={lng} />
     </section>
   )
 }

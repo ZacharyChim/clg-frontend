@@ -5,65 +5,77 @@ import Contact from '../../../components/Contact'
 import Countries from '../../../components/Countries'
 import curve from '/public/small-curve.png'
 
-export default async function Main() {
+type PageProps = {
+  lng: string
+}
+
+export default async function Main({ lng }: PageProps) {
   const bvi = await fetchSingle('bvi')
+  let bviText
+
+  lng === 'en'
+    ? (bviText = bvi)
+    : (bviText = bvi.localizations.data[0].attributes)
+
+  let langBvi
+  lng === 'en' ? (langBvi = 'bvi') : (langBvi = '英屬維爾京群島')
   const curveWidth = 33
   const curveHeight = 10
-  const benefitTitle = bvi.benefit_title
+  const benefitTitle = bviText.benefit_title
 
   const incorporation =
     process.env.NEXT_PUBLIC_STRAPI_URL + bvi.incorporation.data.attributes.url
   const incorporationWidth = bvi.incorporation.data.attributes.width
   const incorporationHeight = bvi.incorporation.data.attributes.height
 
-  const benefit1Title = bvi.benefit1_title
-  const benefit1Content = bvi.benefit1_content
+  const benefit1Title = bviText.benefit1_title
+  const benefit1Content = bviText.benefit1_content
   const benefit1Image =
     process.env.NEXT_PUBLIC_STRAPI_URL + bvi.benefit1_image.data.attributes.url
   const benefit1ImageWidth = bvi.benefit1_image.data.attributes.width
   const benefit1ImageHeight = bvi.benefit1_image.data.attributes.height
 
-  const benefit2Title = bvi.benefit2_title
-  const benefit2Content = bvi.benefit2_content
+  const benefit2Title = bviText.benefit2_title
+  const benefit2Content = bviText.benefit2_content
   const benefit2Image =
     process.env.NEXT_PUBLIC_STRAPI_URL + bvi.benefit2_image.data.attributes.url
   const benefit2ImageWidth = bvi.benefit2_image.data.attributes.width
   const benefit2ImageHeight = bvi.benefit2_image.data.attributes.height
 
-  const benefit3Title = bvi.benefit3_title
-  const benefit3Content = bvi.benefit3_content
+  const benefit3Title = bviText.benefit3_title
+  const benefit3Content = bviText.benefit3_content
   const benefit3Image =
     process.env.NEXT_PUBLIC_STRAPI_URL + bvi.benefit3_image.data.attributes.url
   const benefit3ImageWidth = bvi.benefit3_image.data.attributes.width
   const benefit3ImageHeight = bvi.benefit3_image.data.attributes.height
 
-  const benefit4Title = bvi.benefit4_title
-  const benefit4Content = bvi.benefit4_content
+  const benefit4Title = bviText.benefit4_title
+  const benefit4Content = bviText.benefit4_content
   const benefit4Image =
     process.env.NEXT_PUBLIC_STRAPI_URL + bvi.benefit4_image.data.attributes.url
   const benefit4ImageWidth = bvi.benefit4_image.data.attributes.width
   const benefit4ImageHeight = bvi.benefit4_image.data.attributes.height
 
-  const benefit5Title = bvi.benefit5_title
-  const benefit5Content = bvi.benefit5_content
+  const benefit5Title = bviText.benefit5_title
+  const benefit5Content = bviText.benefit5_content
   const benefit5Image =
     process.env.NEXT_PUBLIC_STRAPI_URL + bvi.benefit5_image.data.attributes.url
   const benefit5ImageWidth = bvi.benefit5_image.data.attributes.width
   const benefit5ImageHeight = bvi.benefit5_image.data.attributes.height
 
-  const article1Title = bvi.article1_title
-  const article1Text = richTextReducer(bvi.article1_text)
+  const article1Title = bviText.article1_title
+  const article1Text = richTextReducer(bviText.article1_text)
 
-  const article2Title = bvi.article2_title
-  const article2Text = richTextReducer(bvi.article2_text)
+  const article2Title = bviText.article2_title
+  const article2Text = richTextReducer(bviText.article2_text)
 
-  const contactUs = bvi.contact_us
+  const contactUs = bviText.contact_us
 
   return (
     <>
       <section className='mx-auto mt-10 mb-10 flex max-w-5xl flex-col md:flex-row'>
         {/* @ts-expect-error Server Component */}
-        <Countries country='bvi' />
+        <Countries country={langBvi} lng={lng} />
         <div className='mx-10 md:w-4/5'>
           <Image
             alt=''
@@ -198,7 +210,7 @@ export default async function Main() {
         </div>
       </section>
       <section className='mx-auto flex max-w-5xl flex-col items-center'>
-        <Contact contactUs={contactUs} />
+        <Contact contactUs={contactUs} lng={lng} />
       </section>
     </>
   )

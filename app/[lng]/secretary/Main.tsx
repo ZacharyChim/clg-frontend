@@ -8,8 +8,17 @@ import ImageArticle from '../../../components/ImageArticle'
 import Faqs from '../../../components/Faqs'
 import SecretaryCard from '../../../components/SecretaryCard'
 
-export default async function Main() {
+type PageProps = {
+  lng: string
+}
+
+export default async function Main({ lng }: PageProps) {
   const secretary = await fetchSingle('secretary')
+  let secretaryText
+
+  lng === 'en'
+    ? (secretaryText = secretary)
+    : (secretaryText = secretary.localizations.data[0].attributes)
 
   const advisory =
     process.env.NEXT_PUBLIC_STRAPI_URL + secretary.advisory.data.attributes.url
@@ -20,8 +29,8 @@ export default async function Main() {
     width: advisoryWidth,
     height: advisoryHeight,
   }
-  const aboutTitle = secretary.about_title
-  const aboutText = richTextReducer(secretary.about_content)
+  const aboutTitle = secretaryText.about_title
+  const aboutText = richTextReducer(secretaryText.about_content)
   const aboutObj = {
     title: aboutTitle,
     text: aboutText,
@@ -37,131 +46,131 @@ export default async function Main() {
     height: aboutHeight,
   }
 
-  const service = secretary.service_title
+  const service = secretaryText.service_title
 
-  const secretary1 = secretary.secretary1
-  const secretary1Title = secretary.secretary1_title
-  const secretary1Price = secretary.secretary1_price
-  const secretary1Details = richTextReducer(secretary.secretary1_details)
+  const secretary1 = secretaryText.secretary1
+  const secretary1Title = secretaryText.secretary1_title
+  const secretary1Price = secretaryText.secretary1_price
+  const secretary1Details = richTextReducer(secretaryText.secretary1_details)
 
-  const secretary2 = secretary.secretary2
-  const secretary2Title = secretary.secretary2_title
-  const secretary2Price = secretary.secretary2_price
-  const secretary2Details = richTextReducer(secretary.secretary2_details)
+  const secretary2 = secretaryText.secretary2
+  const secretary2Title = secretaryText.secretary2_title
+  const secretary2Price = secretaryText.secretary2_price
+  const secretary2Details = richTextReducer(secretaryText.secretary2_details)
 
-  const secretary3 = secretary.secretary3
-  const secretary3Title = secretary.secretary3_title
-  const secretary3Price = secretary.secretary3_price
-  const secretary3Details = richTextReducer(secretary.secretary3_details)
+  const secretary3 = secretaryText.secretary3
+  const secretary3Title = secretaryText.secretary3_title
+  const secretary3Price = secretaryText.secretary3_price
+  const secretary3Details = richTextReducer(secretaryText.secretary3_details)
 
-  const otherSecretary1 = secretary.otherSecretary1
-  const otherSecretary1Title = secretary.otherSecretary1_title
-  const otherSecretary1Price = secretary.otherSecretary1_price
+  const otherSecretary1 = secretaryText.otherSecretary1
+  const otherSecretary1Title = secretaryText.otherSecretary1_title
+  const otherSecretary1Price = secretaryText.otherSecretary1_price
   const otherSecretary1Details = richTextReducer(
-    secretary.otherSecretary1_details
+    secretaryText.otherSecretary1_details
   )
 
-  const otherSecretary2 = secretary.otherSecretary2
-  const otherSecretary2Title = secretary.otherSecretary2_title
-  const otherSecretary2Price = secretary.otherSecretary2_price
+  const otherSecretary2 = secretaryText.otherSecretary2
+  const otherSecretary2Title = secretaryText.otherSecretary2_title
+  const otherSecretary2Price = secretaryText.otherSecretary2_price
   const otherSecretary2Details = richTextReducer(
-    secretary.otherSecretary2_details
+    secretaryText.otherSecretary2_details
   )
 
-  const otherSecretary3 = secretary.otherSecretary3
-  const otherSecretary3Title = secretary.otherSecretary3_title
-  const otherSecretary3Price = secretary.otherSecretary3_price
+  const otherSecretary3 = secretaryText.otherSecretary3
+  const otherSecretary3Title = secretaryText.otherSecretary3_title
+  const otherSecretary3Price = secretaryText.otherSecretary3_price
   const otherSecretary3Details = richTextReducer(
-    secretary.otherSecretary3_details
+    secretaryText.otherSecretary3_details
   )
 
-  const otherSecretary4 = secretary.otherSecretary4
-  const otherSecretary4Title = secretary.otherSecretary4_title
-  const otherSecretary4Price = secretary.otherSecretary4_price
+  const otherSecretary4 = secretaryText.otherSecretary4
+  const otherSecretary4Title = secretaryText.otherSecretary4_title
+  const otherSecretary4Price = secretaryText.otherSecretary4_price
   const otherSecretary4Details = richTextReducer(
-    secretary.otherSecretary4_details
+    secretaryText.otherSecretary4_details
   )
 
-  const otherSecretary5 = secretary.otherSecretary5
-  const otherSecretary5Title = secretary.otherSecretary5_title
-  const otherSecretary5Price = secretary.otherSecretary5_price
+  const otherSecretary5 = secretaryText.otherSecretary5
+  const otherSecretary5Title = secretaryText.otherSecretary5_title
+  const otherSecretary5Price = secretaryText.otherSecretary5_price
   const otherSecretary5Details = richTextReducer(
-    secretary.otherSecretary5_details
+    secretaryText.otherSecretary5_details
   )
 
-  const otherSecretary6 = secretary.otherSecretary6
-  const otherSecretary6Title = secretary.otherSecretary6_title
-  const otherSecretary6Price = secretary.otherSecretary6_price
+  const otherSecretary6 = secretaryText.otherSecretary6
+  const otherSecretary6Title = secretaryText.otherSecretary6_title
+  const otherSecretary6Price = secretaryText.otherSecretary6_price
   const otherSecretary6Details = richTextReducer(
-    secretary.otherSecretary6_details
+    secretaryText.otherSecretary6_details
   )
 
-  const contactUs = secretary.contact_us
+  const contactUs = secretaryText.contact_us
 
   const faqs: { title: string; content: string }[] = [
     {
-      title: secretary.faq1,
-      content: richTextReducer(secretary.faq1_content),
+      title: secretaryText.faq1,
+      content: richTextReducer(secretaryText.faq1_content),
     },
     {
-      title: secretary.faq2,
-      content: richTextReducer(secretary.faq2_content),
+      title: secretaryText.faq2,
+      content: richTextReducer(secretaryText.faq2_content),
     },
     {
-      title: secretary.faq3,
-      content: richTextReducer(secretary.faq3_content),
+      title: secretaryText.faq3,
+      content: richTextReducer(secretaryText.faq3_content),
     },
     {
-      title: secretary.faq4,
-      content: richTextReducer(secretary.faq4_content),
+      title: secretaryText.faq4,
+      content: richTextReducer(secretaryText.faq4_content),
     },
     {
-      title: secretary.faq5,
-      content: richTextReducer(secretary.faq5_content),
+      title: secretaryText.faq5,
+      content: richTextReducer(secretaryText.faq5_content),
     },
     {
-      title: secretary.faq6,
-      content: richTextReducer(secretary.faq6_content),
+      title: secretaryText.faq6,
+      content: richTextReducer(secretaryText.faq6_content),
     },
     {
-      title: secretary.faq7,
-      content: richTextReducer(secretary.faq7_content),
+      title: secretaryText.faq7,
+      content: richTextReducer(secretaryText.faq7_content),
     },
     {
-      title: secretary.faq8,
-      content: richTextReducer(secretary.faq8_content),
+      title: secretaryText.faq8,
+      content: richTextReducer(secretaryText.faq8_content),
     },
     {
-      title: secretary.faq9,
-      content: richTextReducer(secretary.faq9_content),
+      title: secretaryText.faq9,
+      content: richTextReducer(secretaryText.faq9_content),
     },
     {
-      title: secretary.faq10,
-      content: richTextReducer(secretary.faq10_content),
+      title: secretaryText.faq10,
+      content: richTextReducer(secretaryText.faq10_content),
     },
     {
-      title: secretary.faq11,
-      content: richTextReducer(secretary.faq11_content),
+      title: secretaryText.faq11,
+      content: richTextReducer(secretaryText.faq11_content),
     },
     {
-      title: secretary.faq12,
-      content: richTextReducer(secretary.faq12_content),
+      title: secretaryText.faq12,
+      content: richTextReducer(secretaryText.faq12_content),
     },
     {
-      title: secretary.faq13,
-      content: richTextReducer(secretary.faq13_content),
+      title: secretaryText.faq13,
+      content: richTextReducer(secretaryText.faq13_content),
     },
     {
-      title: secretary.faq14,
-      content: richTextReducer(secretary.faq14_content),
+      title: secretaryText.faq14,
+      content: richTextReducer(secretaryText.faq14_content),
     },
     {
-      title: secretary.faq15,
-      content: richTextReducer(secretary.faq15_content),
+      title: secretaryText.faq15,
+      content: richTextReducer(secretaryText.faq15_content),
     },
     {
-      title: secretary.faq16,
-      content: richTextReducer(secretary.faq16_content),
+      title: secretaryText.faq16,
+      content: richTextReducer(secretaryText.faq16_content),
     },
   ]
 

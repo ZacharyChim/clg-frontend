@@ -5,11 +5,22 @@ import Contact from '../../../components/Contact'
 import Countries from '../../../components/Countries'
 import curve from '/public/small-curve.png'
 
-export default async function Main() {
+type PageProps = {
+  lng: string
+}
+
+export default async function Main({ lng }: PageProps) {
   const canada = await fetchSingle('canada')
+  let canadaText
+
+  lng === 'en'
+    ? (canadaText = canada)
+    : (canadaText = canada.localizations.data[0].attributes)
+  let langCanada
+  lng === 'en' ? (langCanada = 'canada') : (langCanada = '加拿大')
   const curveWidth = 33
   const curveHeight = 10
-  const benefitTitle = canada.benefit_title
+  const benefitTitle = canadaText.benefit_title
 
   const incorporation =
     process.env.NEXT_PUBLIC_STRAPI_URL +
@@ -17,43 +28,43 @@ export default async function Main() {
   const incorporationWidth = canada.incorporation.data.attributes.width
   const incorporationHeight = canada.incorporation.data.attributes.height
 
-  const benefit1Title = canada.benefit1_title
-  const benefit1Content = canada.benefit1_content
+  const benefit1Title = canadaText.benefit1_title
+  const benefit1Content = canadaText.benefit1_content
   const benefit1Image =
     process.env.NEXT_PUBLIC_STRAPI_URL +
     canada.benefit1_image.data.attributes.url
   const benefit1ImageWidth = canada.benefit1_image.data.attributes.width
   const benefit1ImageHeight = canada.benefit1_image.data.attributes.height
 
-  const benefit2Title = canada.benefit2_title
-  const benefit2Content = canada.benefit2_content
+  const benefit2Title = canadaText.benefit2_title
+  const benefit2Content = canadaText.benefit2_content
   const benefit2Image =
     process.env.NEXT_PUBLIC_STRAPI_URL +
     canada.benefit2_image.data.attributes.url
   const benefit2ImageWidth = canada.benefit2_image.data.attributes.width
   const benefit2ImageHeight = canada.benefit2_image.data.attributes.height
 
-  const benefit3Title = canada.benefit3_title
-  const benefit3Content = canada.benefit3_content
+  const benefit3Title = canadaText.benefit3_title
+  const benefit3Content = canadaText.benefit3_content
   const benefit3Image =
     process.env.NEXT_PUBLIC_STRAPI_URL +
     canada.benefit3_image.data.attributes.url
   const benefit3ImageWidth = canada.benefit3_image.data.attributes.width
   const benefit3ImageHeight = canada.benefit3_image.data.attributes.height
 
-  const article1Title = canada.article1_title
-  const article1Text = richTextReducer(canada.article1_text)
+  const article1Title = canadaText.article1_title
+  const article1Text = richTextReducer(canadaText.article1_text)
 
-  const article2Title = canada.article2_title
-  const article2Text = richTextReducer(canada.article2_text)
+  const article2Title = canadaText.article2_title
+  const article2Text = richTextReducer(canadaText.article2_text)
 
-  const contactUs = canada.contact_us
+  const contactUs = canadaText.contact_us
 
   return (
     <>
       <section className='mx-auto mt-10 mb-10 flex max-w-5xl flex-col md:flex-row'>
         {/* @ts-expect-error Server Component */}
-        <Countries country='Canada' />
+        <Countries country={langCanada} lng={lng} />
         <div className='mx-10 md:w-4/5'>
           <Image
             alt=''
@@ -146,7 +157,7 @@ export default async function Main() {
         </div>
       </section>
       <section className='mx-auto flex max-w-5xl flex-col items-center'>
-        <Contact contactUs={contactUs} />
+        <Contact contactUs={contactUs} lng={lng} />
       </section>
     </>
   )

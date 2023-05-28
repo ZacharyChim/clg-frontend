@@ -2,13 +2,19 @@ import React from 'react'
 import Hero from '../../../components/Hero'
 import Main from './Main'
 
-function otherFunding() {
+type PageProps = {
+  params: {
+    lng: string
+  }
+}
+
+function otherFunding({ params: { lng } }: PageProps) {
   return (
     <div>
       {/* @ts-ignore */}
-      <Hero page='other-funding' />
+      <Hero page='other-funding' lng={lng} />
       {/* @ts-ignore */}
-      <Main />
+      <Main lng={lng} />
     </div>
   )
 }

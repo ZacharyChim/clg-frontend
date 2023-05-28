@@ -5,11 +5,24 @@ import Contact from '../../../components/Contact'
 import Countries from '../../../components/Countries'
 import curve from '/public/small-curve.png'
 
-export default async function Main() {
+type PageProps = {
+  lng: string
+}
+
+export default async function Main({ lng }: PageProps) {
   const seychelles = await fetchSingle('seychelles')
+
+  let seychellesText
+
+  lng === 'en'
+    ? (seychellesText = seychelles)
+    : (seychellesText = seychelles.localizations.data[0].attributes)
+  let langSeychelles
+  lng === 'en' ? (langSeychelles = 'seychelles') : (langSeychelles = '塞舌爾')
+
   const curveWidth = 33
   const curveHeight = 10
-  const benefitTitle = seychelles.benefit_title
+  const benefitTitle = seychellesText.benefit_title
 
   const incorporation =
     process.env.NEXT_PUBLIC_STRAPI_URL +
@@ -17,59 +30,59 @@ export default async function Main() {
   const incorporationWidth = seychelles.incorporation.data.attributes.width
   const incorporationHeight = seychelles.incorporation.data.attributes.height
 
-  const benefit1Title = seychelles.benefit1_title
-  const benefit1Content = seychelles.benefit1_content
+  const benefit1Title = seychellesText.benefit1_title
+  const benefit1Content = seychellesText.benefit1_content
   const benefit1Image =
     process.env.NEXT_PUBLIC_STRAPI_URL +
     seychelles.benefit1_image.data.attributes.url
   const benefit1ImageWidth = seychelles.benefit1_image.data.attributes.width
   const benefit1ImageHeight = seychelles.benefit1_image.data.attributes.height
 
-  const benefit2Title = seychelles.benefit2_title
-  const benefit2Content = seychelles.benefit2_content
+  const benefit2Title = seychellesText.benefit2_title
+  const benefit2Content = seychellesText.benefit2_content
   const benefit2Image =
     process.env.NEXT_PUBLIC_STRAPI_URL +
     seychelles.benefit2_image.data.attributes.url
   const benefit2ImageWidth = seychelles.benefit2_image.data.attributes.width
   const benefit2ImageHeight = seychelles.benefit2_image.data.attributes.height
 
-  const benefit3Title = seychelles.benefit3_title
-  const benefit3Content = seychelles.benefit3_content
+  const benefit3Title = seychellesText.benefit3_title
+  const benefit3Content = seychellesText.benefit3_content
   const benefit3Image =
     process.env.NEXT_PUBLIC_STRAPI_URL +
     seychelles.benefit3_image.data.attributes.url
   const benefit3ImageWidth = seychelles.benefit3_image.data.attributes.width
   const benefit3ImageHeight = seychelles.benefit3_image.data.attributes.height
 
-  const benefit4Title = seychelles.benefit4_title
-  const benefit4Content = seychelles.benefit4_content
+  const benefit4Title = seychellesText.benefit4_title
+  const benefit4Content = seychellesText.benefit4_content
   const benefit4Image =
     process.env.NEXT_PUBLIC_STRAPI_URL +
     seychelles.benefit4_image.data.attributes.url
   const benefit4ImageWidth = seychelles.benefit4_image.data.attributes.width
   const benefit4ImageHeight = seychelles.benefit4_image.data.attributes.height
 
-  const benefit5Title = seychelles.benefit5_title
-  const benefit5Content = seychelles.benefit5_content
+  const benefit5Title = seychellesText.benefit5_title
+  const benefit5Content = seychellesText.benefit5_content
   const benefit5Image =
     process.env.NEXT_PUBLIC_STRAPI_URL +
     seychelles.benefit5_image.data.attributes.url
   const benefit5ImageWidth = seychelles.benefit5_image.data.attributes.width
   const benefit5ImageHeight = seychelles.benefit5_image.data.attributes.height
 
-  const article1Title = seychelles.article1_title
-  const article1Text = richTextReducer(seychelles.article1_text)
+  const article1Title = seychellesText.article1_title
+  const article1Text = richTextReducer(seychellesText.article1_text)
 
-  const article2Title = seychelles.article2_title
-  const article2Text = richTextReducer(seychelles.article2_text)
+  const article2Title = seychellesText.article2_title
+  const article2Text = richTextReducer(seychellesText.article2_text)
 
-  const contactUs = seychelles.contact_us
+  const contactUs = seychellesText.contact_us
 
   return (
     <>
       <section className='mx-auto mt-10 mb-10 flex max-w-5xl flex-col md:flex-row'>
         {/* @ts-expect-error Server Component */}
-        <Countries country='seychelles' />
+        <Countries country={langSeychelles} lng={lng} />
         <div className='mx-10 md:w-4/5'>
           <Image
             alt=''
@@ -204,7 +217,7 @@ export default async function Main() {
         </div>
       </section>
       <section className='mx-auto flex max-w-5xl flex-col items-center'>
-        <Contact contactUs={contactUs} />
+        <Contact contactUs={contactUs} lng={lng} />
       </section>
     </>
   )

@@ -4,8 +4,17 @@ import ImageArticle from '../../../components/ImageArticle'
 import Contact from '../../../components/Contact'
 import Faqs from '../../../components/Faqs'
 
-export default async function Main() {
+type PageProps = {
+  lng: string
+}
+
+export default async function Main({ lng }: PageProps) {
   const tax = await fetchSingle('tax')
+  let taxDataText
+
+  lng === 'en'
+    ? (taxDataText = tax)
+    : (taxDataText = tax.localizations.data[0].attributes)
 
   const audit =
     process.env.NEXT_PUBLIC_STRAPI_URL + tax.audit.data.attributes.url
@@ -17,8 +26,8 @@ export default async function Main() {
     height: auditHeight,
   }
 
-  const aboutTitle = tax.about_title
-  const aboutText = richTextReducer(tax.about_text)
+  const aboutTitle = taxDataText.about_title
+  const aboutText = richTextReducer(taxDataText.about_text)
   const aboutArticle = {
     title: aboutTitle,
     text: aboutText,
@@ -44,23 +53,44 @@ export default async function Main() {
     height: taxImageHeight,
   }
 
-  const taxTitle = tax.tax_title
-  const taxText = richTextReducer(tax.tax_text)
+  const taxTitle = taxDataText.tax_title
+  const taxText = richTextReducer(taxDataText.tax_text)
   const taxArticle = {
     title: taxTitle,
     text: taxText,
   }
 
-  const contactUs = tax.contact_us
+  const contactUs = taxDataText.contact_us
 
   const faqs: { title: string; content: string }[] = [
-    { title: tax.faq1, content: richTextReducer(tax.faq1_content) },
-    { title: tax.faq2, content: richTextReducer(tax.faq2_content) },
-    { title: tax.faq3, content: richTextReducer(tax.faq3_content) },
-    { title: tax.faq4, content: richTextReducer(tax.faq4_content) },
-    { title: tax.faq5, content: richTextReducer(tax.faq5_content) },
-    { title: tax.faq6, content: richTextReducer(tax.faq6_content) },
-    { title: tax.faq7, content: richTextReducer(tax.faq7_content) },
+    {
+      title: taxDataText.faq1,
+      content: richTextReducer(taxDataText.faq1_content),
+    },
+    {
+      title: taxDataText.faq2,
+      content: richTextReducer(taxDataText.faq2_content),
+    },
+    {
+      title: taxDataText.faq3,
+      content: richTextReducer(taxDataText.faq3_content),
+    },
+    {
+      title: taxDataText.faq4,
+      content: richTextReducer(taxDataText.faq4_content),
+    },
+    {
+      title: taxDataText.faq5,
+      content: richTextReducer(taxDataText.faq5_content),
+    },
+    {
+      title: taxDataText.faq6,
+      content: richTextReducer(taxDataText.faq6_content),
+    },
+    {
+      title: taxDataText.faq7,
+      content: richTextReducer(taxDataText.faq7_content),
+    },
   ]
 
   return (
@@ -78,7 +108,7 @@ export default async function Main() {
         imageLeft={true}
       />
 
-      <Contact contactUs={contactUs} />
+      <Contact contactUs={contactUs} lng={lng} />
 
       <Faqs faqs={faqs} />
     </section>

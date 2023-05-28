@@ -6,22 +6,31 @@ import contactTop from '../../../public/contact-top.png'
 import caseTop from '../../../public/case-top.png'
 import Contact from '../../../components/Contact'
 
-export default async function Main() {
+type PageProps = {
+  lng: string
+}
+
+export default async function Main({ lng }: PageProps) {
   const mshop = await fetchSingle('mshop')
+  let mshopText
+
+  lng === 'en'
+    ? (mshopText = mshop)
+    : (mshopText = mshop.localizations.data[0].attributes)
 
   const cloudSolutions =
     process.env.NEXT_PUBLIC_STRAPI_URL +
     mshop.cloud_solutions.data.attributes.url
   const cloudSolutionsWidth = mshop.cloud_solutions.data.attributes.width
   const cloudSolutionsHeight = mshop.cloud_solutions.data.attributes.height
-  const aboutTitle = mshop.about_title
-  const aboutText = richTextReducer(mshop.about_text)
+  const aboutTitle = mshopText.about_title
+  const aboutText = richTextReducer(mshopText.about_text)
   const aboutImage =
     process.env.NEXT_PUBLIC_STRAPI_URL + mshop.about_image.data.attributes.url
   const aboutWidth = mshop.about_image.data.attributes.width
   const aboutHeight = mshop.about_image.data.attributes.height
 
-  const services = mshop.services
+  const services = mshopText.services
 
   const image1 =
     process.env.NEXT_PUBLIC_STRAPI_URL +
@@ -44,25 +53,25 @@ export default async function Main() {
   const image4Width = mshop.service4_image.data.attributes.width
   const image4Height = mshop.service4_image.data.attributes.height
 
-  const serviceTitle1 = mshop.service1_title
-  const serviceTitle2 = mshop.service2_title
-  const serviceTitle3 = mshop.service3_title
-  const serviceTitle4 = mshop.service4_title
+  const serviceTitle1 = mshopText.service1_title
+  const serviceTitle2 = mshopText.service2_title
+  const serviceTitle3 = mshopText.service3_title
+  const serviceTitle4 = mshopText.service4_title
 
-  const serviceText1 = richTextReducer(mshop.service1_text)
-  const serviceText2 = richTextReducer(mshop.service2_text)
-  const serviceText3 = richTextReducer(mshop.service3_text)
-  const serviceText4 = richTextReducer(mshop.service4_text)
+  const serviceText1 = richTextReducer(mshopText.service1_text)
+  const serviceText2 = richTextReducer(mshopText.service2_text)
+  const serviceText3 = richTextReducer(mshopText.service3_text)
+  const serviceText4 = richTextReducer(mshopText.service4_text)
 
-  const features = mshop.features
+  const features = mshopText.features
   const featureImage =
     process.env.NEXT_PUBLIC_STRAPI_URL + mshop.feature_image.data.attributes.url
   const featureImageWidth = mshop.feature_image.data.attributes.width
   const featureImageHeight = mshop.feature_image.data.attributes.height
 
-  const featureText = richTextReducer(mshop.feature_text)
+  const featureText = richTextReducer(mshopText.feature_text)
 
-  const contactUs = mshop.contact_us
+  const contactUs = mshopText.contact_us
 
   return (
     <>
@@ -208,7 +217,7 @@ export default async function Main() {
           </div>
         </div>
 
-        <Contact contactUs={contactUs} />
+        <Contact contactUs={contactUs} lng={lng} />
       </section>
     </>
   )

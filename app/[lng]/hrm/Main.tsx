@@ -9,10 +9,19 @@ import ImageArticle from '../../../components/ImageArticle'
 import curve from '/public/small-curve.png'
 import whatsapp from '../../../public/hrm-whatsapp.png'
 
-export default async function Main() {
+type PageProps = {
+  lng: string
+}
+
+export default async function Main({ lng }: PageProps) {
   const curveWidth = 33
   const curveHeight = 10
   const hrm = await fetchSingle('hrm')
+  let hrmText
+
+  lng === 'en'
+    ? (hrmText = hrm)
+    : (hrmText = hrm.localizations.data[0].attributes)
 
   const cloud =
     process.env.NEXT_PUBLIC_STRAPI_URL + hrm.cloud_solutions.data.attributes.url
@@ -21,10 +30,10 @@ export default async function Main() {
 
   const video = hrm.video_url
 
-  const aboutTitle = hrm.about_title
+  const aboutTitle = hrmText.about_title
 
-  const solution1Title = hrm.solution1_title
-  const solution1Content = richTextReducer(hrm.solution1_content)
+  const solution1Title = hrmText.solution1_title
+  const solution1Content = richTextReducer(hrmText.solution1_content)
   const solution1Obj = {
     title: solution1Title,
     text: solution1Content,
@@ -49,8 +58,8 @@ export default async function Main() {
     height: solution1ImageHeight,
   }
 
-  const solution2Title = hrm.solution2_title
-  const solution2Content = richTextReducer(hrm.solution2_content)
+  const solution2Title = hrmText.solution2_title
+  const solution2Content = richTextReducer(hrmText.solution2_content)
   const solution2Obj = {
     title: solution2Title,
     text: solution2Content,
@@ -75,8 +84,8 @@ export default async function Main() {
     height: solution2ImageHeight,
   }
 
-  const solution3Title = hrm.solution3_title
-  const solution3Content = richTextReducer(hrm.solution3_content)
+  const solution3Title = hrmText.solution3_title
+  const solution3Content = richTextReducer(hrmText.solution3_content)
   const solution3Obj = {
     title: solution3Title,
     text: solution3Content,
@@ -101,8 +110,8 @@ export default async function Main() {
     height: solution3ImageHeight,
   }
 
-  const solution4Title = hrm.solution4_title
-  const solution4Content = richTextReducer(hrm.solution4_content)
+  const solution4Title = hrmText.solution4_title
+  const solution4Content = richTextReducer(hrmText.solution4_content)
   const solution4Obj = {
     title: solution4Title,
     text: solution4Content,
@@ -127,8 +136,8 @@ export default async function Main() {
     height: solution4ImageHeight,
   }
 
-  const solution5Title = hrm.solution5_title
-  const solution5Content = richTextReducer(hrm.solution5_content)
+  const solution5Title = hrmText.solution5_title
+  const solution5Content = richTextReducer(hrmText.solution5_content)
   const solution5Obj = {
     title: solution5Title,
     text: solution5Content,
@@ -153,8 +162,8 @@ export default async function Main() {
     height: solution5ImageHeight,
   }
 
-  const solution6Title = hrm.solution6_title
-  const solution6Content = richTextReducer(hrm.solution6_content)
+  const solution6Title = hrmText.solution6_title
+  const solution6Content = richTextReducer(hrmText.solution6_content)
   const solution6Obj = {
     title: solution6Title,
     text: solution6Content,
@@ -179,7 +188,7 @@ export default async function Main() {
     height: solution6ImageHeight,
   }
 
-  const functions = hrm.functions
+  const functions = hrmText.functions
 
   const function1Image =
     process.env.NEXT_PUBLIC_STRAPI_URL + hrm.function1_image.data.attributes.url
@@ -235,51 +244,51 @@ export default async function Main() {
   const function8Title = hrm.function8_title
   const function8Desc = hrm.function8_desc
 
-  const tasks = hrm.tasks
+  const tasks = hrmText.tasks
 
-  const task1Content = richTextReducer(hrm.task1_content)
+  const task1Content = richTextReducer(hrmText.task1_content)
   const task1Image =
     process.env.NEXT_PUBLIC_STRAPI_URL + hrm.task1_image.data.attributes.url
   const task1ImageWidth = hrm.task1_image.data.attributes.width
   const task1ImageHeight = hrm.task1_image.data.attributes.height
 
-  const task2Content = richTextReducer(hrm.task2_content)
+  const task2Content = richTextReducer(hrmText.task2_content)
   const task2Image =
     process.env.NEXT_PUBLIC_STRAPI_URL + hrm.task2_image.data.attributes.url
   const task2ImageWidth = hrm.task2_image.data.attributes.width
   const task2ImageHeight = hrm.task2_image.data.attributes.height
 
-  const why = hrm.why
+  const why = hrmText.why
   const whyImage =
     process.env.NEXT_PUBLIC_STRAPI_URL + hrm.why_image.data.attributes.url
   const whyImageWidth = hrm.why_image.data.attributes.width
   const whyImageHeight = hrm.why_image.data.attributes.height
 
-  const reason1 = hrm.reason1
+  const reason1 = hrmText.reason1
   const reason1Image =
     process.env.NEXT_PUBLIC_STRAPI_URL + hrm.reason1_image.data.attributes.url
   const reason1ImageWidth = hrm.reason1_image.data.attributes.width
   const reason1ImageHeight = hrm.reason1_image.data.attributes.height
 
-  const reason2 = hrm.reason2
+  const reason2 = hrmText.reason2
   const reason2Image =
     process.env.NEXT_PUBLIC_STRAPI_URL + hrm.reason2_image.data.attributes.url
   const reason2ImageWidth = hrm.reason2_image.data.attributes.width
   const reason2ImageHeight = hrm.reason2_image.data.attributes.height
 
-  const reason3 = hrm.reason3
+  const reason3 = hrmText.reason3
   const reason3Image =
     process.env.NEXT_PUBLIC_STRAPI_URL + hrm.reason3_image.data.attributes.url
   const reason3ImageWidth = hrm.reason3_image.data.attributes.width
   const reason3ImageHeight = hrm.reason3_image.data.attributes.height
 
-  const reason4 = hrm.reason4
+  const reason4 = hrmText.reason4
   const reason4Image =
     process.env.NEXT_PUBLIC_STRAPI_URL + hrm.reason4_image.data.attributes.url
   const reason4ImageWidth = hrm.reason4_image.data.attributes.width
   const reason4ImageHeight = hrm.reason4_image.data.attributes.height
 
-  const contactUs = hrm.contact_us
+  const contactUs = hrmText.contact_us
 
   return (
     <>
@@ -611,7 +620,7 @@ export default async function Main() {
             </div>
           </div>
         </div>
-        <Contact contactUs={contactUs} />
+        <Contact contactUs={contactUs} lng={lng} />
       </section>
     </>
   )

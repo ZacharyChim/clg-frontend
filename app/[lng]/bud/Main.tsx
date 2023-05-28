@@ -7,11 +7,20 @@ import contactTop from '../../../public/contact-top.png'
 import caseTop from '../../../public/case-top.png'
 import Faqs from '../../../components/Faqs'
 
-export default async function Main() {
-  const bud = await fetchSingle('bud')
+type PageProps = {
+  lng: string
+}
 
-  const aboutTitle = bud.about_title
-  const aboutText = richTextReducer(bud.about_content)
+export default async function Main({ lng }: PageProps) {
+  const bud = await fetchSingle('bud')
+  let budText
+
+  lng === 'en'
+    ? (budText = bud)
+    : (budText = bud.localizations.data[0].attributes)
+
+  const aboutTitle = budText.about_title
+  const aboutText = richTextReducer(budText.about_content)
   const aboutObj = {
     title: aboutTitle,
     text: aboutText,
@@ -36,17 +45,17 @@ export default async function Main() {
     height: aboutTagImageHeight,
   }
 
-  const data1 = bud.data1
-  const data1Desc = bud.data1_desc
-  const data2 = bud.data2
-  const data2Desc = bud.data2_desc
-  const data3 = bud.data3
-  const data3Desc = bud.data3_desc
-  const data4 = bud.data4
-  const data4Desc = bud.data4_desc
+  const data1 = budText.data1
+  const data1Desc = budText.data1_desc
+  const data2 = budText.data2
+  const data2Desc = budText.data2_desc
+  const data3 = budText.data3
+  const data3Desc = budText.data3_desc
+  const data4 = budText.data4
+  const data4Desc = budText.data4_desc
 
   const article1Title = ''
-  const article1Text = richTextReducer(bud.article1_text)
+  const article1Text = richTextReducer(budText.article1_text)
   const article1Obj = {
     title: article1Title,
     text: article1Text,
@@ -73,7 +82,7 @@ export default async function Main() {
   }
 
   const article2Title = ''
-  const article2Text = richTextReducer(bud.article2_text)
+  const article2Text = richTextReducer(budText.article2_text)
   const article2Obj = {
     title: article2Title,
     text: article2Text,
@@ -99,7 +108,7 @@ export default async function Main() {
     height: article2TagImageHeight,
   }
 
-  const contactUs = bud.contact_us
+  const contactUs = budText.contact_us
 
   const faqs: { title: string; content: string }[] = [
     {
@@ -164,24 +173,28 @@ export default async function Main() {
       </section>
 
       <section className='my-20 w-full bg-veryLightBlue'>
-        <div className='mx-auto max-w-5xl px-5 pb-5 text-left'>
+        <div
+          className={`mx-auto ${
+            lng === 'en' ? 'max-w-5xl' : 'max-w-4xl'
+          } px-5 pb-5 text-left`}
+        >
           <div className='flex flex-col text-center md:flex-row'>
-            <div className='md:w-3/10 mt-10 mr-4 flex flex-col space-y-2 py-8'>
+            <div className='mx-auto mt-10 flex flex-col space-y-2 py-8'>
               <h5 className='text-4xl font-bold text-darkBlue'>{data1}</h5>
               <p className='text-sm'>{data1Desc}</p>
             </div>
 
-            <div className='mx-6 mt-10 flex flex-col space-y-2 py-8 md:w-1/5'>
+            <div className='mx-auto mt-10 flex flex-col space-y-2 py-8'>
               <h5 className='text-4xl font-bold text-darkBlue'>{data2}</h5>
               <p className='text-sm'>{data2Desc}</p>
             </div>
 
-            <div className='mx-6 mt-10 flex flex-col space-y-2 py-8 md:w-1/5'>
+            <div className='mx-auto mt-10 flex flex-col space-y-2 py-8'>
               <h5 className='text-4xl font-bold text-darkBlue'>{data3}</h5>
               <p className='text-sm'>{data3Desc}</p>
             </div>
 
-            <div className='md:w-3/10 mt-10 ml-10 flex flex-col space-y-2 py-8'>
+            <div className=' mx-auto mt-10 flex flex-col space-y-2 py-8'>
               <h5 className='text-4xl font-bold text-darkBlue'>{data4}</h5>
               <p className='text-sm'>{data4Desc}</p>
             </div>
@@ -203,7 +216,7 @@ export default async function Main() {
           tagImage={article2TagImageObj}
           imageLeft={true}
         />
-        <Contact contactUs={contactUs} />
+        <Contact contactUs={contactUs} lng={lng} />
 
         <Faqs faqs={faqs} />
       </section>

@@ -8,10 +8,19 @@ import contactTop from '../../../public/contact-top.png'
 import caseTop from '../../../public/case-top.png'
 import curve from '/public/small-curve.png'
 
-export default async function Main() {
+type PageProps = {
+  lng: string
+}
+
+export default async function Main({ lng }: PageProps) {
   const curveWidth = 33
   const curveHeight = 10
   const ngo = await fetchSingle('ngo')
+  let ngoText
+
+  lng === 'en'
+    ? (ngoText = ngo)
+    : (ngoText = ngo.localizations.data[0].attributes)
 
   const incorporation =
     process.env.NEXT_PUBLIC_STRAPI_URL + ngo.incorporation.data.attributes.url
@@ -23,8 +32,8 @@ export default async function Main() {
     height: incorporationHeight,
   }
 
-  const aboutTitle = ngo.about_title
-  const aboutContent = richTextReducer(ngo.about_content)
+  const aboutTitle = ngoText.about_title
+  const aboutContent = richTextReducer(ngoText.about_content)
   const aboutObj = {
     title: aboutTitle,
     text: aboutContent,
@@ -39,10 +48,10 @@ export default async function Main() {
     height: aboutImageHeight,
   }
 
-  const purpose = ngo.purpose
-  const purpose1 = ngo.purpose1
-  const purpose2 = ngo.purpose2
-  const purpose3 = ngo.purpose3
+  const purpose = ngoText.purpose
+  const purpose1 = ngoText.purpose1
+  const purpose2 = ngoText.purpose2
+  const purpose3 = ngoText.purpose3
   const purpose1Image =
     process.env.NEXT_PUBLIC_STRAPI_URL + ngo.purpose1_image.data.attributes.url
   const purpose1ImageWidth = ngo.purpose1_image.data.attributes.width
@@ -56,22 +65,22 @@ export default async function Main() {
   const purpose3ImageWidth = ngo.purpose3_image.data.attributes.width
   const purpose3ImageHeight = ngo.purpose3_image.data.attributes.height
 
-  const addition = ngo.addition
-  const benefitTitle = ngo.benefit_title
-  const benefitContent = richTextReducer(ngo.benefit_content)
+  const addition = ngoText.addition
+  const benefitTitle = ngoText.benefit_title
+  const benefitContent = richTextReducer(ngoText.benefit_content)
 
-  const leftSmall = ngo.left_small
-  const left = ngo.left
-  const rightSmall = ngo.right_small
-  const right = ngo.right
+  const leftSmall = ngoText.left_small
+  const left = ngoText.left
+  const rightSmall = ngoText.right_small
+  const right = ngoText.right
 
-  const serviceTitle = ngo.service_title
-  const service1 = ngo.service1
-  const service2 = ngo.service2
-  const service3 = ngo.service3
-  const service4 = ngo.service4
-  const service5 = ngo.service5
-  const service6 = ngo.service6
+  const serviceTitle = ngoText.service_title
+  const service1 = ngoText.service1
+  const service2 = ngoText.service2
+  const service3 = ngoText.service3
+  const service4 = ngoText.service4
+  const service5 = ngoText.service5
+  const service6 = ngoText.service6
 
   const service1Image =
     process.env.NEXT_PUBLIC_STRAPI_URL + ngo.service1_image.data.attributes.url
@@ -103,7 +112,7 @@ export default async function Main() {
   const service6ImageWidth = ngo.service6_image.data.attributes.width
   const service6ImageHeight = ngo.service6_image.data.attributes.height
 
-  const contactUs = ngo.contact_us
+  const contactUs = ngoText.contact_us
 
   return (
     <>
@@ -195,7 +204,7 @@ export default async function Main() {
             <p>{left}</p>
           </div>
           <div className='rounded-3xl bg-darkBlue p-6 md:w-1/2'>
-            <p className='mb-1 text-sm'>{rightSmall}</p>
+            <p className='mb-6 text-sm'>{rightSmall}</p>
             <p>{right}</p>
           </div>
         </div>
@@ -330,7 +339,7 @@ export default async function Main() {
       </section>
       <Image src={contactTop} alt='' />
       <section className='mx-auto mt-10 flex max-w-5xl flex-col items-center'>
-        <Contact contactUs={contactUs} />
+        <Contact contactUs={contactUs} lng={lng} />
       </section>
     </>
   )

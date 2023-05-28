@@ -7,16 +7,23 @@ import number1 from '../../../public/01.png'
 import number2 from '../../../public/02.png'
 import number3 from '../../../public/03.png'
 
-export default async function Main() {
+type PageProps = {
+  lng: string
+}
+
+export default async function Main({ lng }: PageProps) {
   const hk = await fetchSingle('hk')
+  let hkText
 
-  const serviceTitle = hk.service_title
-  const serviceDesc = hk.service_desc
+  lng === 'en' ? (hkText = hk) : (hkText = hk.localizations.data[0].attributes)
 
-  const service1 = hk.service1_title
-  const service2 = hk.service2_title
-  const service3 = hk.service3_title
-  const service4 = hk.service4_title
+  const serviceTitle = hkText.service_title
+  const serviceDesc = hkText.service_desc
+
+  const service1 = hkText.service1_title
+  const service2 = hkText.service2_title
+  const service3 = hkText.service3_title
+  const service4 = hkText.service4_title
 
   const service1Image =
     process.env.NEXT_PUBLIC_STRAPI_URL + hk.service1_image.data.attributes.url
@@ -38,12 +45,12 @@ export default async function Main() {
   const service4ImageWidth = hk.service4_image.data.attributes.width
   const service4ImageHeight = hk.service4_image.data.attributes.height
 
-  const procedureTitle = hk.procedure_title
-  const procedureStep1 = richTextReducer(hk.procedure_step1)
-  const procedureStep2 = richTextReducer(hk.procedure_step2)
-  const procedureStep3 = richTextReducer(hk.procedure_step3)
+  const procedureTitle = hkText.procedure_title
+  const procedureStep1 = richTextReducer(hkText.procedure_step1)
+  const procedureStep2 = richTextReducer(hkText.procedure_step2)
+  const procedureStep3 = richTextReducer(hkText.procedure_step3)
 
-  const contactUs = hk.contact_us
+  const contactUs = hkText.contact_us
 
   const faqs: { title: string; content: string }[] = [
     {
@@ -195,7 +202,7 @@ export default async function Main() {
             ></article>
           </div>
         </div>
-        <Contact contactUs={contactUs} />
+        <Contact contactUs={contactUs} lng={lng} />
         <Faqs faqs={faqs} />
       </section>
     </>

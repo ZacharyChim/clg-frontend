@@ -5,11 +5,23 @@ import Contact from '../../../components/Contact'
 import Countries from '../../../components/Countries'
 import curve from '/public/small-curve.png'
 
-export default async function Main() {
+type PageProps = {
+  lng: string
+}
+
+export default async function Main({ lng }: PageProps) {
   const malaysia = await fetchSingle('malaysia')
+  let malaysiaText
+
+  lng === 'en'
+    ? (malaysiaText = malaysia)
+    : (malaysiaText = malaysia.localizations.data[0].attributes)
+
+  let langMalaysia
+  lng === 'en' ? (langMalaysia = 'malaysia') : (langMalaysia = '馬來西亞')
   const curveWidth = 33
   const curveHeight = 10
-  const benefitTitle = malaysia.benefit_title
+  const benefitTitle = malaysiaText.benefit_title
 
   const incorporation =
     process.env.NEXT_PUBLIC_STRAPI_URL +
@@ -17,65 +29,65 @@ export default async function Main() {
   const incorporationWidth = malaysia.incorporation.data.attributes.width
   const incorporationHeight = malaysia.incorporation.data.attributes.height
 
-  const benefit1Title = malaysia.benefit1_title
-  const benefit1Content = malaysia.benefit1_content
+  const benefit1Title = malaysiaText.benefit1_title
+  const benefit1Content = malaysiaText.benefit1_content
   const benefit1Image =
     process.env.NEXT_PUBLIC_STRAPI_URL +
     malaysia.benefit1_image.data.attributes.url
   const benefit1ImageWidth = malaysia.benefit1_image.data.attributes.width
   const benefit1ImageHeight = malaysia.benefit1_image.data.attributes.height
 
-  const benefit2Title = malaysia.benefit2_title
-  const benefit2Content = malaysia.benefit2_content
+  const benefit2Title = malaysiaText.benefit2_title
+  const benefit2Content = malaysiaText.benefit2_content
   const benefit2Image =
     process.env.NEXT_PUBLIC_STRAPI_URL +
     malaysia.benefit2_image.data.attributes.url
   const benefit2ImageWidth = malaysia.benefit2_image.data.attributes.width
   const benefit2ImageHeight = malaysia.benefit2_image.data.attributes.height
 
-  const benefit3Title = malaysia.benefit3_title
-  const benefit3Content = malaysia.benefit3_content
+  const benefit3Title = malaysiaText.benefit3_title
+  const benefit3Content = malaysiaText.benefit3_content
   const benefit3Image =
     process.env.NEXT_PUBLIC_STRAPI_URL +
     malaysia.benefit3_image.data.attributes.url
   const benefit3ImageWidth = malaysia.benefit3_image.data.attributes.width
   const benefit3ImageHeight = malaysia.benefit3_image.data.attributes.height
 
-  const benefit4Title = malaysia.benefit4_title
-  const benefit4Content = malaysia.benefit4_content
+  const benefit4Title = malaysiaText.benefit4_title
+  const benefit4Content = malaysiaText.benefit4_content
   const benefit4Image =
     process.env.NEXT_PUBLIC_STRAPI_URL +
     malaysia.benefit4_image.data.attributes.url
   const benefit4ImageWidth = malaysia.benefit4_image.data.attributes.width
   const benefit4ImageHeight = malaysia.benefit4_image.data.attributes.height
 
-  const benefit5Title = malaysia.benefit5_title
-  const benefit5Content = malaysia.benefit5_content
+  const benefit5Title = malaysiaText.benefit5_title
+  const benefit5Content = malaysiaText.benefit5_content
   const benefit5Image =
     process.env.NEXT_PUBLIC_STRAPI_URL +
     malaysia.benefit5_image.data.attributes.url
   const benefit5ImageWidth = malaysia.benefit5_image.data.attributes.width
   const benefit5ImageHeight = malaysia.benefit5_image.data.attributes.height
 
-  const article1Title = malaysia.article1_title
-  const article1Text = richTextReducer(malaysia.article1_text)
+  const article1Title = malaysiaText.article1_title
+  const article1Text = richTextReducer(malaysiaText.article1_text)
 
-  const article2Title = malaysia.article2_title
-  const article2Text = richTextReducer(malaysia.article2_text)
+  const article2Title = malaysiaText.article2_title
+  const article2Text = richTextReducer(malaysiaText.article2_text)
 
-  const article3Title = malaysia.article3_title
-  const article3Text = richTextReducer(malaysia.article3_text)
+  const article3Title = malaysiaText.article3_title
+  const article3Text = richTextReducer(malaysiaText.article3_text)
 
-  const article4Title = malaysia.article4_title
-  const article4Text = richTextReducer(malaysia.article4_text)
+  const article4Title = malaysiaText.article4_title
+  const article4Text = richTextReducer(malaysiaText.article4_text)
 
-  const contactUs = malaysia.contact_us
+  const contactUs = malaysiaText.contact_us
 
   return (
     <>
       <section className='mx-auto mt-10 mb-10 flex max-w-5xl flex-col md:flex-row'>
         {/* @ts-expect-error Server Component */}
-        <Countries country='malaysia' />
+        <Countries country={langMalaysia} lng={lng} />
         <div className='mx-10 md:w-4/5'>
           <Image
             alt=''
@@ -224,7 +236,7 @@ export default async function Main() {
         </div>
       </section>
       <section className='mx-auto flex max-w-5xl flex-col items-center'>
-        <Contact contactUs={contactUs} />
+        <Contact contactUs={contactUs} lng={lng} />
       </section>
     </>
   )

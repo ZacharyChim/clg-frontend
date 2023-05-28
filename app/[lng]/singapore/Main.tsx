@@ -5,11 +5,22 @@ import Contact from '../../../components/Contact'
 import Countries from '../../../components/Countries'
 import curve from '/public/small-curve.png'
 
-export default async function Main() {
+type PageProps = {
+  lng: string
+}
+
+export default async function Main({ lng }: PageProps) {
   const singapore = await fetchSingle('singapore')
+  let singaporeText
+
+  lng === 'en'
+    ? (singaporeText = singapore)
+    : (singaporeText = singapore.localizations.data[0].attributes)
+  let langSingapore
+  lng === 'en' ? (langSingapore = 'singapore') : (langSingapore = '新加坡')
   const curveWidth = 33
   const curveHeight = 10
-  const benefitTitle = singapore.benefit_title
+  const benefitTitle = singaporeText.benefit_title
 
   const incorporation =
     process.env.NEXT_PUBLIC_STRAPI_URL +
@@ -17,51 +28,51 @@ export default async function Main() {
   const incorporationWidth = singapore.incorporation.data.attributes.width
   const incorporationHeight = singapore.incorporation.data.attributes.height
 
-  const benefit1Title = singapore.benefit1_title
-  const benefit1Content = singapore.benefit1_content
+  const benefit1Title = singaporeText.benefit1_title
+  const benefit1Content = singaporeText.benefit1_content
   const benefit1Image =
     process.env.NEXT_PUBLIC_STRAPI_URL +
     singapore.benefit1_image.data.attributes.url
   const benefit1ImageWidth = singapore.benefit1_image.data.attributes.width
   const benefit1ImageHeight = singapore.benefit1_image.data.attributes.height
 
-  const benefit2Title = singapore.benefit2_title
-  const benefit2Content = singapore.benefit2_content
+  const benefit2Title = singaporeText.benefit2_title
+  const benefit2Content = singaporeText.benefit2_content
   const benefit2Image =
     process.env.NEXT_PUBLIC_STRAPI_URL +
     singapore.benefit2_image.data.attributes.url
   const benefit2ImageWidth = singapore.benefit2_image.data.attributes.width
   const benefit2ImageHeight = singapore.benefit2_image.data.attributes.height
 
-  const benefit3Title = singapore.benefit3_title
-  const benefit3Content = singapore.benefit3_content
+  const benefit3Title = singaporeText.benefit3_title
+  const benefit3Content = singaporeText.benefit3_content
   const benefit3Image =
     process.env.NEXT_PUBLIC_STRAPI_URL +
     singapore.benefit3_image.data.attributes.url
   const benefit3ImageWidth = singapore.benefit3_image.data.attributes.width
   const benefit3ImageHeight = singapore.benefit3_image.data.attributes.height
 
-  const benefit4Title = singapore.benefit4_title
-  const benefit4Content = singapore.benefit4_content
+  const benefit4Title = singaporeText.benefit4_title
+  const benefit4Content = singaporeText.benefit4_content
   const benefit4Image =
     process.env.NEXT_PUBLIC_STRAPI_URL +
     singapore.benefit4_image.data.attributes.url
   const benefit4ImageWidth = singapore.benefit4_image.data.attributes.width
   const benefit4ImageHeight = singapore.benefit4_image.data.attributes.height
 
-  const article1Title = singapore.article1_title
-  const article1Text = richTextReducer(singapore.article1_text)
+  const article1Title = singaporeText.article1_title
+  const article1Text = richTextReducer(singaporeText.article1_text)
 
-  const article2Title = singapore.article2_title
-  const article2Text = richTextReducer(singapore.article2_text)
+  const article2Title = singaporeText.article2_title
+  const article2Text = richTextReducer(singaporeText.article2_text)
 
-  const contactUs = singapore.contact_us
+  const contactUs = singaporeText.contact_us
 
   return (
     <>
       <section className='mx-auto mt-10 mb-10 flex max-w-5xl flex-col md:flex-row'>
         {/* @ts-expect-error Server Component */}
-        <Countries country='Singapore' />
+        <Countries country={langSingapore} lng={lng} />
         <div className='mx-10 md:w-4/5'>
           <Image
             alt=''
@@ -174,7 +185,7 @@ export default async function Main() {
         </div>
       </section>
       <section className='mx-auto flex max-w-5xl flex-col items-center'>
-        <Contact contactUs={contactUs} />
+        <Contact contactUs={contactUs} lng={lng} />
       </section>
     </>
   )

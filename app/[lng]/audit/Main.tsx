@@ -7,18 +7,27 @@ import contactTop from '../../../public/contact-top.png'
 import caseTop from '../../../public/case-top.png'
 import Faqs from '../../../components/Faqs'
 
-export default async function Main() {
+type PageProps = {
+  lng: string
+}
+
+export default async function Main({ lng }: PageProps) {
   const audit = await fetchSingle('audit')
+  let auditText
+
+  lng === 'en'
+    ? (auditText = audit)
+    : (auditText = audit.localizations.data[0].attributes)
 
   const auditTag =
     process.env.NEXT_PUBLIC_STRAPI_URL + audit.audit.data.attributes.url
   const auditTagWidth = audit.audit.data.attributes.width
   const auditTagHeight = audit.audit.data.attributes.height
 
-  const auditTitle = audit.audit_title
+  const auditTitle = auditText.audit_title
 
-  const article1Title = audit.article1_title
-  const article1Text = richTextReducer(audit.article1_text)
+  const article1Title = auditText.article1_title
+  const article1Text = richTextReducer(auditText.article1_text)
   const article1Obj = {
     title: article1Title,
     text: article1Text,
@@ -46,8 +55,8 @@ export default async function Main() {
     height: article1TagImageHeight,
   }
 
-  const article2Title = audit.article2_title
-  const article2Text = richTextReducer(audit.article2_text)
+  const article2Title = auditText.article2_title
+  const article2Text = richTextReducer(auditText.article2_text)
   const article2Obj = {
     title: article2Title,
     text: article2Text,
@@ -75,12 +84,12 @@ export default async function Main() {
     height: article2TagImageHeight,
   }
 
-  const service = audit.service_title
-  const service1 = audit.service1
-  const service2 = audit.service2
-  const service3 = audit.service3
-  const service4 = audit.service4
-  const service5 = audit.service5
+  const service = auditText.service_title
+  const service1 = auditText.service1
+  const service2 = auditText.service2
+  const service3 = auditText.service3
+  const service4 = auditText.service4
+  const service5 = auditText.service5
 
   const service1Image =
     process.env.NEXT_PUBLIC_STRAPI_URL +
@@ -117,7 +126,7 @@ export default async function Main() {
   const tableImageWidth = audit.audit_diagram.data.attributes.width
   const tableImageHeight = audit.audit_diagram.data.attributes.height
 
-  const contactUs = audit.contact_us
+  const contactUs = auditText.contact_us
 
   const faqs: { title: string; content: string }[] = [
     {
@@ -263,7 +272,7 @@ export default async function Main() {
           tagImage={article2TagImageObj}
           imageLeft={false}
         />
-        <Contact contactUs={contactUs} />
+        <Contact contactUs={contactUs} lng={lng} />
 
         <Faqs faqs={faqs} />
       </section>

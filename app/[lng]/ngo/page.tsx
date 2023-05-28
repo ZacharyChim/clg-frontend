@@ -2,13 +2,19 @@ import React from 'react'
 import Hero from '../../../components/Hero'
 import Main from './Main'
 
-function ngo() {
+type PageProps = {
+  params: {
+    lng: string
+  }
+}
+
+function ngo({ params: { lng } }: PageProps) {
   return (
     <div>
       {/* @ts-ignore */}
-      <Hero page='ngo' />
+      <Hero page='ngo' lng={lng} />
       {/* @ts-ignore */}
-      <Main />
+      <Main lng={lng} />
     </div>
   )
 }

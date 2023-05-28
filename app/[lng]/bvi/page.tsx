@@ -2,13 +2,19 @@ import React from 'react'
 import Hero from '../../../components/Hero'
 import Main from './Main'
 
-function bvi() {
+type PageProps = {
+  params: {
+    lng: string
+  }
+}
+
+function bvi({ params: { lng } }: PageProps) {
   return (
     <div>
       {/* @ts-ignore */}
-      <Hero page='bvi' />
+      <Hero page='bvi' lng={lng} />
       {/* @ts-ignore */}
-      <Main />
+      <Main lng={lng} />
     </div>
   )
 }

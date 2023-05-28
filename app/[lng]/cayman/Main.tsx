@@ -5,11 +5,23 @@ import Contact from '../../../components/Contact'
 import Countries from '../../../components/Countries'
 import curve from '/public/small-curve.png'
 
-export default async function Main() {
+type PageProps = {
+  lng: string
+}
+
+export default async function Main({ lng }: PageProps) {
   const cayman = await fetchSingle('cayman')
+  let caymanText
+
+  lng === 'en'
+    ? (caymanText = cayman)
+    : (caymanText = cayman.localizations.data[0].attributes)
+  let langCayman
+  lng === 'en' ? (langCayman = 'cayman island') : (langCayman = '開曼群島')
+
   const curveWidth = 33
   const curveHeight = 10
-  const benefitTitle = cayman.benefit_title
+  const benefitTitle = caymanText.benefit_title
 
   const incorporation =
     process.env.NEXT_PUBLIC_STRAPI_URL +
@@ -17,59 +29,59 @@ export default async function Main() {
   const incorporationWidth = cayman.incorporation.data.attributes.width
   const incorporationHeight = cayman.incorporation.data.attributes.height
 
-  const benefit1Title = cayman.benefit1_title
-  const benefit1Content = cayman.benefit1_content
+  const benefit1Title = caymanText.benefit1_title
+  const benefit1Content = caymanText.benefit1_content
   const benefit1Image =
     process.env.NEXT_PUBLIC_STRAPI_URL +
     cayman.benefit1_image.data.attributes.url
   const benefit1ImageWidth = cayman.benefit1_image.data.attributes.width
   const benefit1ImageHeight = cayman.benefit1_image.data.attributes.height
 
-  const benefit2Title = cayman.benefit2_title
-  const benefit2Content = cayman.benefit2_content
+  const benefit2Title = caymanText.benefit2_title
+  const benefit2Content = caymanText.benefit2_content
   const benefit2Image =
     process.env.NEXT_PUBLIC_STRAPI_URL +
     cayman.benefit2_image.data.attributes.url
   const benefit2ImageWidth = cayman.benefit2_image.data.attributes.width
   const benefit2ImageHeight = cayman.benefit2_image.data.attributes.height
 
-  const benefit3Title = cayman.benefit3_title
-  const benefit3Content = cayman.benefit3_content
+  const benefit3Title = caymanText.benefit3_title
+  const benefit3Content = caymanText.benefit3_content
   const benefit3Image =
     process.env.NEXT_PUBLIC_STRAPI_URL +
     cayman.benefit3_image.data.attributes.url
   const benefit3ImageWidth = cayman.benefit3_image.data.attributes.width
   const benefit3ImageHeight = cayman.benefit3_image.data.attributes.height
 
-  const benefit4Title = cayman.benefit4_title
-  const benefit4Content = cayman.benefit4_content
+  const benefit4Title = caymanText.benefit4_title
+  const benefit4Content = caymanText.benefit4_content
   const benefit4Image =
     process.env.NEXT_PUBLIC_STRAPI_URL +
     cayman.benefit4_image.data.attributes.url
   const benefit4ImageWidth = cayman.benefit4_image.data.attributes.width
   const benefit4ImageHeight = cayman.benefit4_image.data.attributes.height
 
-  const benefit5Title = cayman.benefit5_title
-  const benefit5Content = cayman.benefit5_content
+  const benefit5Title = caymanText.benefit5_title
+  const benefit5Content = caymanText.benefit5_content
   const benefit5Image =
     process.env.NEXT_PUBLIC_STRAPI_URL +
     cayman.benefit5_image.data.attributes.url
   const benefit5ImageWidth = cayman.benefit5_image.data.attributes.width
   const benefit5ImageHeight = cayman.benefit5_image.data.attributes.height
 
-  const article1Title = cayman.article1_title
-  const article1Text = richTextReducer(cayman.article1_text)
+  const article1Title = caymanText.article1_title
+  const article1Text = richTextReducer(caymanText.article1_text)
 
-  const article2Title = cayman.article2_title
-  const article2Text = richTextReducer(cayman.article2_text)
+  const article2Title = caymanText.article2_title
+  const article2Text = richTextReducer(caymanText.article2_text)
 
-  const contactUs = cayman.contact_us
+  const contactUs = caymanText.contact_us
 
   return (
     <>
       <section className='mx-auto mt-10 mb-10 flex max-w-5xl flex-col md:flex-row'>
         {/* @ts-expect-error Server Component */}
-        <Countries country='cayman island' />
+        <Countries country={langCayman} lng={lng} />
         <div className='mx-10 md:w-4/5'>
           <Image
             alt=''
@@ -204,7 +216,7 @@ export default async function Main() {
         </div>
       </section>
       <section className='mx-auto flex max-w-5xl flex-col items-center'>
-        <Contact contactUs={contactUs} />
+        <Contact contactUs={contactUs} lng={lng} />
       </section>
     </>
   )

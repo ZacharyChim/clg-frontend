@@ -2,13 +2,19 @@ import React from 'react'
 import Hero from '../../../components/Hero'
 import Main from './Main'
 
-function internalControl() {
+type PageProps = {
+  params: {
+    lng: string
+  }
+}
+
+function internalControl({ params: { lng } }: PageProps) {
   return (
     <div className='bg-internalControlCurveLine bg-contain bg-[center_top_96rem] bg-no-repeat'>
       {/* @ts-ignore */}
-      <Hero page='internal-control' />
+      <Hero page='internal-control' lng={lng} />
       {/* @ts-ignore */}
-      <Main />
+      <Main lng={lng} />
     </div>
   )
 }

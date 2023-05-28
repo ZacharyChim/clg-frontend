@@ -2,13 +2,19 @@ import React from 'react'
 import Hero from '../../../components/Hero'
 import Main from './Main'
 
-function malaysia() {
+type PageProps = {
+  params: {
+    lng: string
+  }
+}
+
+function malaysia({ params: { lng } }: PageProps) {
   return (
     <div>
       {/* @ts-ignore */}
-      <Hero page='malaysia' />
+      <Hero page='malaysia' lng={lng} />
       {/* @ts-ignore */}
-      <Main />
+      <Main lng={lng} />
     </div>
   )
 }

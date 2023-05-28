@@ -5,22 +5,31 @@ import contactTop from '../../../public/contact-top.png'
 import caseTop from '../../../public/case-top.png'
 import Contact from '../../../components/Contact'
 
-export default async function Main() {
+type PageProps = {
+  lng: string
+}
+
+export default async function Main({ lng }: PageProps) {
   const receipt = await fetchSingle('receipt')
+  let receiptText
+
+  lng === 'en'
+    ? (receiptText = receipt)
+    : (receiptText = receipt.localizations.data[0].attributes)
 
   const cloudSolutions =
     process.env.NEXT_PUBLIC_STRAPI_URL +
     receipt.cloud_solutions.data.attributes.url
   const cloudSolutionsWidth = receipt.cloud_solutions.data.attributes.width
   const cloudSolutionsHeight = receipt.cloud_solutions.data.attributes.height
-  const aboutTitle = receipt.about_title
-  const aboutText = richTextReducer(receipt.about_text)
+  const aboutTitle = receiptText.about_title
+  const aboutText = richTextReducer(receiptText.about_text)
   const aboutImage =
     process.env.NEXT_PUBLIC_STRAPI_URL + receipt.about_image.data.attributes.url
   const aboutWidth = receipt.about_image.data.attributes.width
   const aboutHeight = receipt.about_image.data.attributes.height
 
-  const steps = receipt.steps
+  const steps = receiptText.steps
 
   const image1 =
     process.env.NEXT_PUBLIC_STRAPI_URL + receipt.step_image1.data.attributes.url
@@ -39,11 +48,11 @@ export default async function Main() {
   const arrowWidth = receipt.step_arrow.data.attributes.width
   const arrowHeight = receipt.step_arrow.data.attributes.height
 
-  const stepTitle1 = receipt.step_title1
-  const stepTitle2 = receipt.step_title2
-  const stepTitle3 = receipt.step_title3
+  const stepTitle1 = receiptText.step_title1
+  const stepTitle2 = receiptText.step_title2
+  const stepTitle3 = receiptText.step_title3
 
-  const features = receipt.title
+  const features = receiptText.title
 
   const featureImage1 =
     process.env.NEXT_PUBLIC_STRAPI_URL +
@@ -71,19 +80,19 @@ export default async function Main() {
   const featureImage5Width = receipt.feature_image5.data.attributes.width
   const featureImage5Height = receipt.feature_image5.data.attributes.height
 
-  const featureTitle1 = receipt.feature_title1
-  const featureTitle2 = receipt.feature_title2
-  const featureTitle3 = receipt.feature_title3
-  const featureTitle4 = receipt.feature_title4
-  const featureTitle5 = receipt.feature_title5
+  const featureTitle1 = receiptText.feature_title1
+  const featureTitle2 = receiptText.feature_title2
+  const featureTitle3 = receiptText.feature_title3
+  const featureTitle4 = receiptText.feature_title4
+  const featureTitle5 = receiptText.feature_title5
 
-  const featureText1 = richTextReducer(receipt.feature_text1)
-  const featureText2 = richTextReducer(receipt.feature_text2)
-  const featureText3 = richTextReducer(receipt.feature_text3)
-  const featureText4 = richTextReducer(receipt.feature_text4)
-  const featureText5 = richTextReducer(receipt.feature_text5)
+  const featureText1 = richTextReducer(receiptText.feature_text1)
+  const featureText2 = richTextReducer(receiptText.feature_text2)
+  const featureText3 = richTextReducer(receiptText.feature_text3)
+  const featureText4 = richTextReducer(receiptText.feature_text4)
+  const featureText5 = richTextReducer(receiptText.feature_text5)
 
-  const contactUs = receipt.contact_us
+  const contactUs = receiptText.contact_us
 
   return (
     <>
@@ -271,7 +280,7 @@ export default async function Main() {
           </div>
         </div>
 
-        <Contact contactUs={contactUs} />
+        <Contact contactUs={contactUs} lng={lng} />
       </section>
     </>
   )
