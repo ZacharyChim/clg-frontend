@@ -37,10 +37,6 @@ async function Header(props: { lng: string }) {
       url: langCloudSolutionsMenu.hrm_solution_url,
     },
     {
-      title: langCloudSolutionsMenu.pos_solution,
-      url: langCloudSolutionsMenu.pos_solution_url,
-    },
-    {
       title: langCloudSolutionsMenu.fb_pos_solution,
       url: langCloudSolutionsMenu.fb_pos_solution_url,
     },
