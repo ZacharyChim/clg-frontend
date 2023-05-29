@@ -245,7 +245,7 @@ export default async function Main({ lng }: PageProps) {
         </div>
       </section>
       <section className='mx-auto flex max-w-5xl flex-col items-center'>
-        <Contact contactUs={contactUs} />
+        <Contact contactUs={contactUs} lng={lng} />
       </section>
     </>
   )
