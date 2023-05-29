@@ -112,52 +112,52 @@ export default async function Main({ lng }: PageProps) {
 
   const faqs: { title: string; content: string }[] = [
     {
-      title: bud.faq1,
-      content: richTextReducer(bud.faq1_content),
+      title: budText.faq1,
+      content: richTextReducer(budText.faq1_content),
     },
     {
-      title: bud.faq2,
-      content: richTextReducer(bud.faq2_content),
+      title: budText.faq2,
+      content: richTextReducer(budText.faq2_content),
     },
     {
-      title: bud.faq3,
-      content: richTextReducer(bud.faq3_content),
+      title: budText.faq3,
+      content: richTextReducer(budText.faq3_content),
     },
     {
-      title: bud.faq4,
-      content: richTextReducer(bud.faq4_content),
+      title: budText.faq4,
+      content: richTextReducer(budText.faq4_content),
     },
     {
-      title: bud.faq5,
-      content: richTextReducer(bud.faq5_content),
+      title: budText.faq5,
+      content: richTextReducer(budText.faq5_content),
     },
     {
-      title: bud.faq6,
-      content: richTextReducer(bud.faq6_content),
+      title: budText.faq6,
+      content: richTextReducer(budText.faq6_content),
     },
     {
-      title: bud.faq7,
-      content: richTextReducer(bud.faq7_content),
+      title: budText.faq7,
+      content: richTextReducer(budText.faq7_content),
     },
     {
-      title: bud.faq8,
-      content: richTextReducer(bud.faq8_content),
+      title: budText.faq8,
+      content: richTextReducer(budText.faq8_content),
     },
     {
-      title: bud.faq9,
-      content: richTextReducer(bud.faq9_content),
+      title: budText.faq9,
+      content: richTextReducer(budText.faq9_content),
     },
     {
-      title: bud.faq10,
-      content: richTextReducer(bud.faq10_content),
+      title: budText.faq10,
+      content: richTextReducer(budText.faq10_content),
     },
     {
-      title: bud.faq11,
-      content: richTextReducer(bud.faq11_content),
+      title: budText.faq11,
+      content: richTextReducer(budText.faq11_content),
     },
     {
-      title: bud.faq12,
-      content: richTextReducer(bud.faq12_content),
+      title: budText.faq12,
+      content: richTextReducer(budText.faq12_content),
     },
   ]
 

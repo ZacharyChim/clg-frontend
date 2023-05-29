@@ -206,11 +206,19 @@ export default async function Main({ lng }: PageProps) {
   const service4ImageWidth = payroll.service4_image.data.attributes.width
   const service4ImageHeight = payroll.service4_image.data.attributes.height
 
-  const tableImage =
-    process.env.NEXT_PUBLIC_STRAPI_URL + payroll.table_image.data.attributes.url
-  const tableImageWidth = payroll.table_image.data.attributes.width
-  const tableImageHeight = payroll.table_image.data.attributes.height
-
+  if (lng === 'en') {
+    var tableImage =
+      process.env.NEXT_PUBLIC_STRAPI_URL +
+      payroll.table_image.data.attributes.url
+    var tableImageWidth = payroll.table_image.data.attributes.width
+    var tableImageHeight = payroll.table_image.data.attributes.height
+  } else {
+    var tableImage =
+      process.env.NEXT_PUBLIC_STRAPI_URL +
+      payroll.table_image_hk.data.attributes.url
+    var tableImageWidth = payroll.table_image_hk.data.attributes.width
+    var tableImageHeight = payroll.table_image_hk.data.attributes.height
+  }
   const contactUs = payrollText.contact_us
 
   const faqs: { title: string; content: string }[] = [
@@ -296,7 +304,7 @@ export default async function Main({ lng }: PageProps) {
 
       <section className='mt-20 w-full bg-veryLightBlue'>
         <Image src={caseTop} alt='' />
-        <div className='mx-auto max-w-5xl px-5 pb-5 text-left'>
+        <div className='mx-auto max-w-5xl px-0 pb-5 text-left'>
           <h3 className='mt-20 text-center text-4xl font-bold text-darkBlue'>
             {service}
           </h3>
@@ -308,7 +316,7 @@ export default async function Main({ lng }: PageProps) {
                   alt=''
                   width={service1ImageWidth}
                   height={service1ImageHeight}
-                  className='w-32 object-fill md:w-full'
+                  className='my-1 w-32 object-fill md:w-full'
                 />
               </div>
               <Image

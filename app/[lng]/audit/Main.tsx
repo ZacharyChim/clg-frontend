@@ -121,37 +121,45 @@ export default async function Main({ lng }: PageProps) {
   const service5ImageWidth = audit.service5_image.data.attributes.width
   const service5ImageHeight = audit.service5_image.data.attributes.height
 
-  const tableImage =
-    process.env.NEXT_PUBLIC_STRAPI_URL + audit.audit_diagram.data.attributes.url
-  const tableImageWidth = audit.audit_diagram.data.attributes.width
-  const tableImageHeight = audit.audit_diagram.data.attributes.height
-
+  if (lng === 'en') {
+    var tableImage =
+      process.env.NEXT_PUBLIC_STRAPI_URL +
+      audit.audit_diagram.data.attributes.url
+    var tableImageWidth = audit.audit_diagram.data.attributes.width
+    var tableImageHeight = audit.audit_diagram.data.attributes.height
+  } else {
+    var tableImage =
+      process.env.NEXT_PUBLIC_STRAPI_URL +
+      audit.audit_diagram_hk.data.attributes.url
+    var tableImageWidth = audit.audit_diagram_hk.data.attributes.width
+    var tableImageHeight = audit.audit_diagram_hk.data.attributes.height
+  }
   const contactUs = auditText.contact_us
 
   const faqs: { title: string; content: string }[] = [
     {
-      title: audit.faq1,
-      content: richTextReducer(audit.faq1_content),
+      title: auditText.faq1,
+      content: richTextReducer(auditText.faq1_content),
     },
     {
-      title: audit.faq2,
-      content: richTextReducer(audit.faq2_content),
+      title: auditText.faq2,
+      content: richTextReducer(auditText.faq2_content),
     },
     {
-      title: audit.faq3,
-      content: richTextReducer(audit.faq3_content),
+      title: auditText.faq3,
+      content: richTextReducer(auditText.faq3_content),
     },
     {
-      title: audit.faq4,
-      content: richTextReducer(audit.faq4_content),
+      title: auditText.faq4,
+      content: richTextReducer(auditText.faq4_content),
     },
     {
-      title: audit.faq5,
-      content: richTextReducer(audit.faq5_content),
+      title: auditText.faq5,
+      content: richTextReducer(auditText.faq5_content),
     },
     {
-      title: audit.faq6,
-      content: richTextReducer(audit.faq6_content),
+      title: auditText.faq6,
+      content: richTextReducer(auditText.faq6_content),
     },
   ]
 

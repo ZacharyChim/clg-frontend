@@ -265,19 +265,33 @@ export default async function Main({ lng }: PageProps) {
 
   const steps = xeroText.steps
 
-  const step1 =
-    process.env.NEXT_PUBLIC_STRAPI_URL + xero.step1.data.attributes.url
-  const step1Width = xero.step1.data.attributes.width
-  const step1Height = xero.step1.data.attributes.height
-  const step2 =
-    process.env.NEXT_PUBLIC_STRAPI_URL + xero.step2.data.attributes.url
-  const step2Width = xero.step2.data.attributes.width
-  const step2Height = xero.step2.data.attributes.height
-  const step3 =
-    process.env.NEXT_PUBLIC_STRAPI_URL + xero.step3.data.attributes.url
-  const step3Width = xero.step3.data.attributes.width
-  const step3Height = xero.step3.data.attributes.height
-
+  if (lng === 'en') {
+    var step1 =
+      process.env.NEXT_PUBLIC_STRAPI_URL + xero.step1.data.attributes.url
+    var step1Width = xero.step1.data.attributes.width
+    var step1Height = xero.step1.data.attributes.height
+    var step2 =
+      process.env.NEXT_PUBLIC_STRAPI_URL + xero.step2.data.attributes.url
+    var step2Width = xero.step2.data.attributes.width
+    var step2Height = xero.step2.data.attributes.height
+    var step3 =
+      process.env.NEXT_PUBLIC_STRAPI_URL + xero.step3.data.attributes.url
+    var step3Width = xero.step3.data.attributes.width
+    var step3Height = xero.step3.data.attributes.height
+  } else {
+    var step1 =
+      process.env.NEXT_PUBLIC_STRAPI_URL + xero.step1_hk.data.attributes.url
+    var step1Width = xero.step1_hk.data.attributes.width
+    var step1Height = xero.step1_hk.data.attributes.height
+    var step2 =
+      process.env.NEXT_PUBLIC_STRAPI_URL + xero.step2_hk.data.attributes.url
+    var step2Width = xero.step2_hk.data.attributes.width
+    var step2Height = xero.step2_hk.data.attributes.height
+    var step3 =
+      process.env.NEXT_PUBLIC_STRAPI_URL + xero.step3_hk.data.attributes.url
+    var step3Width = xero.step3_hk.data.attributes.width
+    var step3Height = xero.step3_hk.data.attributes.height
+  }
   const reasons = xeroText.reasons
   const reason1 = xeroText.reason1
   const reason1Image =
@@ -471,7 +485,7 @@ export default async function Main({ lng }: PageProps) {
               <Image
                 alt=''
                 src={simpleTitle}
-                width={simpleImageWidth}
+                width={simpleTitleWidth}
                 height={simpleTitleHeight}
                 className='mb-2 h-10 w-32 object-contain'
                 quality='100'

@@ -7,15 +7,6 @@ import BackToTop from './BackToTop'
 import FloatingButtons from '../../components/FloatingButtons'
 import { fetchSingle } from '../../lib/utils'
 
-const fetchLinks = async () => {
-  const res = await fetch(
-    `${process.env.NEXT_PUBLIC_STRAPI_API_URL}/navigation/render/1`
-  )
-
-  const links = await res.json()
-  return links
-}
-
 async function Footer(props: { lng: string }) {
   const footer = await fetchSingle('footer')
   const floatingButtons = await fetchSingle('floating-button')
@@ -155,7 +146,7 @@ async function Footer(props: { lng: string }) {
       url: langCloudMenu.accounting_solution_url,
     },
     { title: langCloudMenu.hrm_solution, url: langCloudMenu.hrm_solution_url },
-    { title: langCloudMenu.pos_solution, url: langCloudMenu.pos_solution_url },
+
     {
       title: langCloudMenu.fb_pos_solution,
       url: langCloudMenu.fb_pos_solution_url,
@@ -177,16 +168,7 @@ async function Footer(props: { lng: string }) {
       : footer[slug]
   }
   const copyright = translate('copyright')
-  const allLinks = await fetchLinks()
-  const linkWithParent = allLinks.filter((item) => item.parent !== null)
-  // const linkAboutUS = linkWithParent.filter((item) => item.parent.id === 4)
-  const linkAudit = linkWithParent.filter((item) => item.parent.id === 8)
-  const linkAdvisory = linkWithParent.filter((item) => item.parent.id === 9)
-  const linkFunding = linkWithParent.filter((item) => item.parent.id === 10)
-  const linkIncorporation = linkWithParent.filter(
-    (item) => item.parent.id === 19
-  )
-  const linkCloud = linkWithParent.filter((item) => item.parent.id === 20)
+
   const logoURL =
     process.env.NEXT_PUBLIC_STRAPI_URL + footer.LogoWhite.data.attributes.url
   const logoWidth = footer.LogoWhite.data.attributes.width

@@ -194,55 +194,55 @@ export default async function Main({ lng }: PageProps) {
     process.env.NEXT_PUBLIC_STRAPI_URL + hrm.function1_image.data.attributes.url
   const function1ImageWidth = hrm.function1_image.data.attributes.width
   const function1ImageHeight = hrm.function1_image.data.attributes.height
-  const function1Title = hrm.function1_title
-  const function1Desc = hrm.function1_desc
+  const function1Title = hrmText.function1_title
+  const function1Desc = hrmText.function1_desc
 
   const function2Image =
     process.env.NEXT_PUBLIC_STRAPI_URL + hrm.function2_image.data.attributes.url
   const function2ImageWidth = hrm.function2_image.data.attributes.width
   const function2ImageHeight = hrm.function2_image.data.attributes.height
-  const function2Title = hrm.function2_title
-  const function2Desc = hrm.function2_desc
+  const function2Title = hrmText.function2_title
+  const function2Desc = hrmText.function2_desc
 
   const function3Image =
     process.env.NEXT_PUBLIC_STRAPI_URL + hrm.function3_image.data.attributes.url
   const function3ImageWidth = hrm.function3_image.data.attributes.width
   const function3ImageHeight = hrm.function3_image.data.attributes.height
-  const function3Title = hrm.function3_title
-  const function3Desc = hrm.function3_desc
+  const function3Title = hrmText.function3_title
+  const function3Desc = hrmText.function3_desc
 
   const function4Image =
     process.env.NEXT_PUBLIC_STRAPI_URL + hrm.function4_image.data.attributes.url
   const function4ImageWidth = hrm.function4_image.data.attributes.width
   const function4ImageHeight = hrm.function4_image.data.attributes.height
-  const function4Title = hrm.function4_title
-  const function4Desc = hrm.function4_desc
+  const function4Title = hrmText.function4_title
+  const function4Desc = hrmText.function4_desc
 
   const function5Image =
     process.env.NEXT_PUBLIC_STRAPI_URL + hrm.function5_image.data.attributes.url
   const function5ImageWidth = hrm.function5_image.data.attributes.width
   const function5ImageHeight = hrm.function5_image.data.attributes.height
-  const function5Title = hrm.function5_title
-  const function5Desc = hrm.function5_desc
+  const function5Title = hrmText.function5_title
+  const function5Desc = hrmText.function5_desc
 
   const function6Image =
     process.env.NEXT_PUBLIC_STRAPI_URL + hrm.function6_image.data.attributes.url
   const function6ImageWidth = hrm.function6_image.data.attributes.width
   const function6ImageHeight = hrm.function6_image.data.attributes.height
-  const function6Title = hrm.function6_title
-  const function6Desc = hrm.function6_desc
+  const function6Title = hrmText.function6_title
+  const function6Desc = hrmText.function6_desc
   const function7Image =
     process.env.NEXT_PUBLIC_STRAPI_URL + hrm.function7_image.data.attributes.url
   const function7ImageWidth = hrm.function7_image.data.attributes.width
   const function7ImageHeight = hrm.function7_image.data.attributes.height
-  const function7Title = hrm.function7_title
-  const function7Desc = hrm.function7_desc
+  const function7Title = hrmText.function7_title
+  const function7Desc = hrmText.function7_desc
   const function8Image =
     process.env.NEXT_PUBLIC_STRAPI_URL + hrm.function8_image.data.attributes.url
   const function8ImageWidth = hrm.function8_image.data.attributes.width
   const function8ImageHeight = hrm.function8_image.data.attributes.height
-  const function8Title = hrm.function8_title
-  const function8Desc = hrm.function8_desc
+  const function8Title = hrmText.function8_title
+  const function8Desc = hrmText.function8_desc
 
   const tasks = hrmText.tasks
 
@@ -259,11 +259,18 @@ export default async function Main({ lng }: PageProps) {
   const task2ImageHeight = hrm.task2_image.data.attributes.height
 
   const why = hrmText.why
-  const whyImage =
-    process.env.NEXT_PUBLIC_STRAPI_URL + hrm.why_image.data.attributes.url
-  const whyImageWidth = hrm.why_image.data.attributes.width
-  const whyImageHeight = hrm.why_image.data.attributes.height
 
+  if (lng === 'en') {
+    var whyImage =
+      process.env.NEXT_PUBLIC_STRAPI_URL + hrm.why_image.data.attributes.url
+    var whyImageWidth = hrm.why_image.data.attributes.width
+    var whyImageHeight = hrm.why_image.data.attributes.height
+  } else {
+    var whyImage =
+      process.env.NEXT_PUBLIC_STRAPI_URL + hrm.hrm_vs_hk.data.attributes.url
+    var whyImageWidth = hrm.hrm_vs_hk.data.attributes.width
+    var whyImageHeight = hrm.hrm_vs_hk.data.attributes.height
+  }
   const reason1 = hrmText.reason1
   const reason1Image =
     process.env.NEXT_PUBLIC_STRAPI_URL + hrm.reason1_image.data.attributes.url

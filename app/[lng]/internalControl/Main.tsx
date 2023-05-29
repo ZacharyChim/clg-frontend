@@ -50,27 +50,49 @@ export default async function Main({ lng }: PageProps) {
   const image4Width = internalControl.image4.data.attributes.width
   const image4Height = internalControl.image4.data.attributes.height
 
-  const number1 =
-    process.env.NEXT_PUBLIC_STRAPI_URL +
-    internalControl.number1.data.attributes.url
-  const number1Width = internalControl.number1.data.attributes.width
-  const number1Height = internalControl.number1.data.attributes.height
-  const number2 =
-    process.env.NEXT_PUBLIC_STRAPI_URL +
-    internalControl.number2.data.attributes.url
-  const number2Width = internalControl.number2.data.attributes.width
-  const number2Height = internalControl.number2.data.attributes.height
-  const number3 =
-    process.env.NEXT_PUBLIC_STRAPI_URL +
-    internalControl.number3.data.attributes.url
-  const number3Width = internalControl.number3.data.attributes.width
-  const number3Height = internalControl.number3.data.attributes.height
-  const number4 =
-    process.env.NEXT_PUBLIC_STRAPI_URL +
-    internalControl.number4.data.attributes.url
-  const number4Width = internalControl.number4.data.attributes.width
-  const number4Height = internalControl.number4.data.attributes.height
-
+  if (lng === 'en') {
+    var number1 =
+      process.env.NEXT_PUBLIC_STRAPI_URL +
+      internalControl.number1.data.attributes.url
+    var number1Width = internalControl.number1.data.attributes.width
+    var number1Height = internalControl.number1.data.attributes.height
+    var number2 =
+      process.env.NEXT_PUBLIC_STRAPI_URL +
+      internalControl.number2.data.attributes.url
+    var number2Width = internalControl.number2.data.attributes.width
+    var number2Height = internalControl.number2.data.attributes.height
+    var number3 =
+      process.env.NEXT_PUBLIC_STRAPI_URL +
+      internalControl.number3.data.attributes.url
+    var number3Width = internalControl.number3.data.attributes.width
+    var number3Height = internalControl.number3.data.attributes.height
+    var number4 =
+      process.env.NEXT_PUBLIC_STRAPI_URL +
+      internalControl.number4.data.attributes.url
+    var number4Width = internalControl.number4.data.attributes.width
+    var number4Height = internalControl.number4.data.attributes.height
+  } else {
+    var number1 =
+      process.env.NEXT_PUBLIC_STRAPI_URL +
+      internalControl.number1_hk.data.attributes.url
+    var number1Width = internalControl.number1_hk.data.attributes.width
+    var number1Height = internalControl.number1_hk.data.attributes.height
+    var number2 =
+      process.env.NEXT_PUBLIC_STRAPI_URL +
+      internalControl.number2_hk.data.attributes.url
+    var number2Width = internalControl.number2_hk.data.attributes.width
+    var number2Height = internalControl.number2_hk.data.attributes.height
+    var number3 =
+      process.env.NEXT_PUBLIC_STRAPI_URL +
+      internalControl.number3_hk.data.attributes.url
+    var number3Width = internalControl.number3_hk.data.attributes.width
+    var number3Height = internalControl.number3_hk.data.attributes.height
+    var number4 =
+      process.env.NEXT_PUBLIC_STRAPI_URL +
+      internalControl.number4_hk.data.attributes.url
+    var number4Width = internalControl.number4_hk.data.attributes.width
+    var number4Height = internalControl.number4_hk.data.attributes.height
+  }
   const aboutTitle = internalControlText.about_title
   const aboutText = richTextReducer(internalControlText.about_text)
   const contactUs = internalControlText.contact_us

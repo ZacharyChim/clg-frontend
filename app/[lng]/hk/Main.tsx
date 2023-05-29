@@ -54,28 +54,28 @@ export default async function Main({ lng }: PageProps) {
 
   const faqs: { title: string; content: string }[] = [
     {
-      title: hk.faq1,
-      content: richTextReducer(hk.faq1_content),
+      title: hkText.faq1,
+      content: richTextReducer(hkText.faq1_content),
     },
     {
-      title: hk.faq2,
-      content: richTextReducer(hk.faq2_content),
+      title: hkText.faq2,
+      content: richTextReducer(hkText.faq2_content),
     },
     {
-      title: hk.faq3,
-      content: richTextReducer(hk.faq3_content),
+      title: hkText.faq3,
+      content: richTextReducer(hkText.faq3_content),
     },
     {
-      title: hk.faq4,
-      content: richTextReducer(hk.faq4_content),
+      title: hkText.faq4,
+      content: richTextReducer(hkText.faq4_content),
     },
     {
-      title: hk.faq5,
-      content: richTextReducer(hk.faq5_content),
+      title: hkText.faq5,
+      content: richTextReducer(hkText.faq5_content),
     },
     {
-      title: hk.faq6,
-      content: richTextReducer(hk.faq6_content),
+      title: hkText.faq6,
+      content: richTextReducer(hkText.faq6_content),
     },
   ]
 

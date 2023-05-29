@@ -207,26 +207,26 @@ export default async function Main({ lng }: PageProps) {
             <h2 className='mb-6 text-3xl font-bold text-darkBlue'>
               {customers}
             </h2>
-            <Image
+            {/* <Image
               alt=''
               src={customersTitle1}
               width={customersTitle1Width}
               height={customersTitle1Height}
               className='object-fit'
               quality='100'
-            />
+            /> */}
             <article
               className='mt-4 mb-4 space-y-4 leading-7 text-darkBrown'
               dangerouslySetInnerHTML={{ __html: customersText1 }}
             ></article>
-            <Image
+            {/* <Image
               alt=''
               src={customersTitle2}
               width={customersTitle2Width}
               height={customersTitle2Height}
               className='object-fit'
               quality='100'
-            />
+            /> */}
             <article
               className='mt-4 space-y-4 leading-7 text-darkBrown'
               dangerouslySetInnerHTML={{ __html: customersText2 }}

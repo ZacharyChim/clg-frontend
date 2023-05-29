@@ -81,11 +81,18 @@ export default async function Main({ lng }: PageProps) {
   }
 
   const diagramTitle = tvpText.diagram_title
-  const diagram =
-    process.env.NEXT_PUBLIC_STRAPI_URL + tvp.diagram.data.attributes.url
-  const diagramWidth = tvp.diagram.data.attributes.width
-  const diagramHeight = tvp.diagram.data.attributes.height
 
+  if (lng === 'en') {
+    var diagram =
+      process.env.NEXT_PUBLIC_STRAPI_URL + tvp.diagram.data.attributes.url
+    var diagramWidth = tvp.diagram.data.attributes.width
+    var diagramHeight = tvp.diagram.data.attributes.height
+  } else {
+    var diagram =
+      process.env.NEXT_PUBLIC_STRAPI_URL + tvp.diagram_hk.data.attributes.url
+    var diagramWidth = tvp.diagram_hk.data.attributes.width
+    var diagramHeight = tvp.diagram_hk.data.attributes.height
+  }
   const contactUs = tvpText.contact_us
 
   const faqs: { title: string; content: string }[] = [

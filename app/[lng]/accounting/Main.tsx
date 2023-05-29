@@ -297,7 +297,7 @@ export default async function Main({ lng }: PageProps) {
 
       <section id='numbers' className='mt-20 w-full bg-veryLightBlue'>
         <Image src={caseTop} alt='' />
-        <div className='mx-auto max-w-5xl px-5 text-left'>
+        <div className='mx-auto max-w-5xl px-0 text-left'>
           <h3 className='mt-20 text-center text-4xl font-bold text-darkBlue'>
             {service}
           </h3>
@@ -330,7 +330,7 @@ export default async function Main({ lng }: PageProps) {
                 alt=''
                 width={service3ImageWidth}
                 height={service3ImageHeight}
-                className='h-40 w-40'
+                className='my-2 h-36 w-40'
               />
               <h5 className='text-md pt-6 text-darkBlue'>{service3}</h5>
             </div>
@@ -352,7 +352,7 @@ export default async function Main({ lng }: PageProps) {
 
       <section className='mx-auto flex max-w-5xl flex-col items-center'>
         <div className='my-20 flex flex-col items-center'>
-          <h3 className='mb-8 text-3xl font-bold text-darkBlue'>{table}</h3>
+          {/* <h3 className='mb-8 text-3xl font-bold text-darkBlue'>{table}</h3> */}
           <Image
             src={tableImage}
             alt=''
