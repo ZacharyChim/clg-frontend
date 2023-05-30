@@ -7,11 +7,67 @@ import calendar from '../public/calendar.png'
 import whatsapp from '../public/whatsapp2.png'
 import React, { useEffect, useState } from 'react'
 import { useSearchParams } from 'next/navigation'
+import Datepicker from 'tailwind-datepicker-react'
+
+const DatePicker = (props) => {
+  const [show, setShow] = useState(false)
+  const handleChange = (selectedDate: Date) => {
+    props.setValue(selectedDate)
+    console.log(selectedDate)
+  }
+  const handleClose = (state: boolean) => {
+    setShow(state)
+  }
+  const date = new Date()
+  let day = date.getDate()
+  let month = date.getMonth() + 1
+  let year = date.getFullYear()
+  let currentDate = `${year}-${month}-${day}`
+  let lang
+  props.lang === 'en' ? (lang = 'en') : (lang = 'zh-Hant-HK')
+  const options = {
+    title: '',
+    autoHide: true,
+    todayBtn: false,
+    clearBtn: false,
+    maxDate: new Date('2030-01-01'),
+    minDate: new Date(currentDate),
+    theme: {
+      background: '',
+      todayBtn: '',
+      clearBtn: '',
+      icons: '',
+      text: '',
+      disabledText: 'bg-gray-100',
+      input: 'py-3 mt-3',
+      inputIcon: '',
+      selected: '',
+    },
+    icons: {
+      // () => ReactElement | JSX.Element
+      prev: () => <span>&larr;</span>,
+      next: () => <span>&rarr;</span>,
+    },
+    datepickerClassNames: 'top-12',
+    defaultDate: new Date(currentDate),
+    language: lang,
+  }
+  return (
+    <div>
+      <Datepicker
+        options={options}
+        onChange={handleChange}
+        show={show}
+        setShow={handleClose}
+      />
+    </div>
+  )
+}
 
 const Step1 = (props: any) => {
-  const [value1, setValue1] = useState('')
-  const [value2, setValue2] = useState('')
-  const [value3, setValue3] = useState('')
+  // const [value1, setValue1] = useState('')
+  // const [value2, setValue2] = useState('')
+  // const [value3, setValue3] = useState('')
   let lang = props.lang
   return (
     <div key='step1' className='container col-span-4 grid'>
@@ -19,7 +75,9 @@ const Step1 = (props: any) => {
         <label htmlFor='preferredDate' className='contact-label text-gray-700'>
           {lang.your_preferred_date}
         </label>
-        <input
+
+        <DatePicker lang={lang} setValue={props.setPreferredDate1} />
+        {/* <input
           key='preferredDate1'
           type='text'
           id='preferredDate'
@@ -30,7 +88,7 @@ const Step1 = (props: any) => {
           value={value1}
           onChange={(e) => setValue1(e.target.value)}
           onBlur={(e) => props.setPreferredDate1(e.target.value)}
-        />
+        />*/}
       </div>
 
       <div key='preferredTime1Div' className='contact input-wrapper col-span-2'>
@@ -64,7 +122,8 @@ const Step1 = (props: any) => {
           {lang.your_second_preferred_date}
         </label>
 
-        <input
+        <DatePicker lang={lang} setValue={props.setPreferredDate2} />
+        {/* <input
           key='preferredDate2'
           type='text'
           id='preferredDate2'
@@ -76,7 +135,7 @@ const Step1 = (props: any) => {
           onBlur={(e) => {
             props.setPreferredDate2(e.target.value)
           }}
-        />
+        /> */}
       </div>
 
       <div key='preferredTime2Div' className='contact input-wrapper col-span-2'>
@@ -107,7 +166,8 @@ const Step1 = (props: any) => {
           {lang.your_third_preferred_date}
         </label>
 
-        <input
+        <DatePicker lang={lang} setValue={props.setPreferredDate3} />
+        {/* <input
           key='preferredDate3'
           type='text'
           id='preferredDate3'
@@ -117,7 +177,7 @@ const Step1 = (props: any) => {
           value={value3}
           onChange={(e) => setValue3(e.target.value)}
           onBlur={(e: any) => props.setPreferredDate3(e.target.value)}
-        />
+        /> */}
       </div>
 
       <div key='preferredTime3Div' className='contact input-wrapper col-span-2'>
