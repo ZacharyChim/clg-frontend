@@ -125,6 +125,25 @@ export default function Main(props: PageProps) {
     unCheck('advisory')
     unCheck('funding')
     unCheck('cloud')
+
+    let mailData = {
+      message:
+        'NEW! Contact Form: Please Check COLLECTION TYPES/Contact Us in the Backend',
+    }
+
+    fetch('/api/mailer', {
+      method: 'POST',
+      headers: {
+        Accept: 'application/json, text/plain, */*',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(mailData),
+    }).then((res) => {
+      console.log('Response received')
+      if (res.status === 200) {
+        console.log('Response succeeded!')
+      }
+    })
   }
 
   return (

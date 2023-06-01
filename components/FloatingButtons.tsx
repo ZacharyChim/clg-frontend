@@ -30,8 +30,8 @@ const DatePicker = (props) => {
     autoHide: true,
     todayBtn: false,
     clearBtn: false,
-    maxDate: new Date('2030-01-01'),
-    minDate: new Date(currentDate),
+    maxDate: new Date('2030-01-01'.replace(/-/g, '/')),
+    minDate: new Date(currentDate.replace(/-/g, '/')),
     theme: {
       background: '',
       todayBtn: '',
@@ -49,7 +49,7 @@ const DatePicker = (props) => {
       next: () => <span>&rarr;</span>,
     },
     datepickerClassNames: 'top-12',
-    defaultDate: new Date(currentDate),
+    defaultDate: new Date(currentDate.replace(/-/g, '/')),
     language: lang,
   }
   return (
@@ -417,6 +417,25 @@ export default function FloatingButtons(props: PageProps) {
     setShop(false)
 
     setIsOpen(false)
+
+    let mailData = {
+      message:
+        'NEW! Schedule a Demo: Please Check COLLECTION TYPES/Demo In the Backend',
+    }
+
+    fetch('/api/mailer', {
+      method: 'POST',
+      headers: {
+        Accept: 'application/json, text/plain, */*',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(mailData),
+    }).then((res) => {
+      console.log('Response received')
+      if (res.status === 200) {
+        console.log('Response succeeded!')
+      }
+    })
   }
 
   const [isOpen, setIsOpen] = useState(false)

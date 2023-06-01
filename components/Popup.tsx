@@ -54,6 +54,25 @@ export default function Popup(props: PageProps) {
     if (isOpen) {
       setOpen(false)
     }
+
+    let mailData = {
+      message:
+        'NEW! Your Tax Expert Popup: Please Check COLLECTION TYPES/popup in the Backend',
+    }
+
+    fetch('/api/mailer', {
+      method: 'POST',
+      headers: {
+        Accept: 'application/json, text/plain, */*',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(mailData),
+    }).then((res) => {
+      console.log('Response received')
+      if (res.status === 200) {
+        console.log('Response succeeded!')
+      }
+    })
   }
 
   const [isOpen, setOpen] = useState(false)
