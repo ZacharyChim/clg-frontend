@@ -268,7 +268,7 @@ export default function Navigation(props) {
                 <button
                   id='dropdownLangButton'
                   data-dropdown-toggle='dropdownLang'
-                  className='inline-flex items-center rounded-lg text-center align-top text-sm hover:text-blue-700'
+                  className='inline-flex items-center rounded-lg py-2 pl-3 text-center align-top text-sm hover:text-blue-700 md:py-0 md:pl-0'
                   type='button'
                 >
                   <Image
