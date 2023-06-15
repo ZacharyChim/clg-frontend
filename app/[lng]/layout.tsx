@@ -25,8 +25,6 @@ export default function RootLayout({
     <html lang={lng} dir={dir(lng)}>
       <head>
         <title>CLG Group</title>
-        <Script src='https://chatroom.dumbchat.ai/lib/TC.chatbot.umd.prod.min.js?v=20230425' />
-        <Script src='chatbot.js' />
       </head>
       <body>
         {/* @ts-ignore */}
@@ -35,6 +33,8 @@ export default function RootLayout({
         {children}
         {/* @ts-ignore */}
         <Footer lng={lng} />
+        <Script src='https://chatroom.dumbchat.ai/lib/TC.chatbot.umd.prod.min.js?v=20230425' />
+        <Script src={process.env.NEXT_PUBLIC_SITE_URL + '/chatbot.js'} />
       </body>
     </html>
   )
