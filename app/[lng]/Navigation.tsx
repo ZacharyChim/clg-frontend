@@ -2,17 +2,13 @@
 import { v4 } from 'uuid'
 import Image from 'next/image'
 import Link from 'next/link'
-import React, { useState } from 'react'
-import 'flowbite'
+import React from 'react'
 import menuPoint from '../../public/menu-point.png'
 import menuPointLg from '../../public/menu-point-lg.png'
 import menuCloud from '../../public/menu-cloud.png'
 import langIcon from '../../public/lang.png'
 
 export default function Navigation(props) {
-  const [isOpen, setIsOpen] = useState(false)
-  const [isHidden, setIsHidden] = useState(true)
-
   return (
     <>
       <nav className='border-gray-200	bg-white align-text-bottom dark:border-gray-700 dark:bg-gray-900'>
@@ -52,8 +48,8 @@ export default function Navigation(props) {
                   return (
                     <li key={v4()}>
                       <button
-                        id='mega-menu-full-cta-image-button'
-                        data-dropdown-toggle='mega-menu-full-image-dropdown'
+                        id='assurance-advisory-button'
+                        data-dropdown-toggle='assurance-advisory-dropdown'
                         data-dropdown-offset-distance='12'
                         className='flex w-full items-center justify-between rounded py-2 pl-3 pr-4 align-baseline text-sm text-gray-900 hover:bg-gray-100 md:w-auto md:border-0 md:p-0 md:hover:bg-transparent md:hover:text-blue-700'
                       >
@@ -72,7 +68,7 @@ export default function Navigation(props) {
                         </svg>
                       </button>
                       <div
-                        id='mega-menu-full-image-dropdown'
+                        id='assurance-advisory-dropdown'
                         className='absolute left-0 z-10 hidden w-full bg-white shadow-sm'
                       >
                         <Image
@@ -181,8 +177,8 @@ export default function Navigation(props) {
                   return (
                     <li key={v4()}>
                       <button
-                        id='mega-menu-full-cta-image-button2'
-                        data-dropdown-toggle='mega-menu-full-image-dropdown2'
+                        id='cloud-solutions-button'
+                        data-dropdown-toggle='cloud-solutions-dropdown'
                         data-dropdown-offset-distance='12'
                         className='flex w-full items-center justify-between rounded py-2 pl-3 pr-4 text-sm text-gray-900 hover:bg-gray-100 md:w-auto md:border-0 md:p-0 md:hover:bg-transparent md:hover:text-blue-700'
                       >
@@ -202,7 +198,7 @@ export default function Navigation(props) {
                         </svg>
                       </button>
                       <div
-                        id='mega-menu-full-image-dropdown2'
+                        id='cloud-solutions-dropdown'
                         className='absolute left-0 z-10 hidden w-full bg-white shadow-sm'
                       >
                         <Image

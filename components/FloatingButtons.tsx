@@ -1,5 +1,4 @@
 'use client'
-import 'flowbite'
 import Image from 'next/image'
 import Link from 'next/link'
 import demoImage from '../public/demo.png'
