@@ -1,4 +1,5 @@
 'use client'
+import 'flowbite'
 import { Modal } from 'flowbite-react'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -568,7 +569,12 @@ export default function FloatingButtons(props: PageProps) {
     <React.Fragment>
       <div key='floatingButtons' className='relative'>
         <div className='fixed top-1/3 right-5'>
-          <button type='button' onClick={() => setIsOpen(true)}>
+          <button
+            type='button'
+            data-modal-target='demo'
+            data-modal-toggle='demo'
+            onClick={() => setIsOpen(true)}
+          >
             <Image
               src={calendar}
               width='50'
@@ -592,77 +598,78 @@ export default function FloatingButtons(props: PageProps) {
         </div>
       </div>
 
-      <Modal
-        key='demoModal'
+      <div
         id='demo'
-        size='5xl'
-        dismissible={true}
-        show={isOpen}
-        onClose={() => setIsOpen(false)}
+        className='fixed top-0 left-0 right-0 z-50 hidden h-[calc(100%-1rem)] max-h-full overflow-y-auto overflow-x-hidden p-4 md:inset-0'
       >
-        <Modal.Body className='max-w-5xl p-0'>
-          <div className='relative cursor-pointer text-gray-700 hover:bg-gray-200 hover:text-gray-900'>
-            <span
-              onClick={() => setIsOpen(false)}
-              className='absolute right-5 top-3'
-            >
-              X
-            </span>
-          </div>
-          <div className='flex flex-row'>
-            <div className='m-10 w-3/5 space-y-4'>
-              <h3 className='p-0 text-2xl font-bold text-darkBlue'>
-                {lang.schedule_demo}
-              </h3>
-              <p className='text-md m-0 p-0 text-left text-veryDarkBlue'>
-                {lang.tell_us}
-              </p>
-              <form
-                onSubmit={handleSubmit}
-                className='m-0 grid grid-cols-4 items-center'
-              >
-                {step === 1 ? (
-                  <Step1
-                    lang={lang}
-                    preferredDate1={preferredDate1}
-                    setPreferredDate1={setPreferredDate1}
-                    preferredTime1={preferredTime1}
-                    setPreferredTime1={setPreferredTime1}
-                    preferredDate2={preferredDate2}
-                    setPreferredDate2={setPreferredDate2}
-                    preferredTime2={preferredTime2}
-                    setPreferredTime2={setPreferredTime2}
-                    preferredDate3={preferredDate3}
-                    setPreferredDate3={setPreferredDate3}
-                    preferredTime3={preferredTime3}
-                    setPreferredTime3={setPreferredTime3}
-                    accounting={accounting}
-                    setAccounting={setAccounting}
-                    hrm={hrm}
-                    setHrm={setHrm}
-                    pos={pos}
-                    setPos={setPos}
-                    shop={shop}
-                    setShop={setShop}
-                    handleNext={handleNext}
-                  />
-                ) : (
-                  <Step2 />
-                )}
-              </form>
+        <div className='relative max-h-full w-full max-w-3xl'>
+          <div className='relative rounded-lg bg-white shadow dark:bg-gray-700'>
+            <div className='max-w-5xl p-0'>
+              <div className='relative cursor-pointer text-gray-700 hover:bg-gray-200 hover:text-gray-900'>
+                <span
+                  onClick={() => setIsOpen(false)}
+                  className='absolute right-5 top-3'
+                  data-modal-hide='demo'
+                >
+                  X
+                </span>
+              </div>
+              <div className='flex flex-row'>
+                <div className='m-10 w-full space-y-4 md:w-3/5'>
+                  <h3 className='p-0 text-2xl font-bold text-darkBlue'>
+                    {lang.schedule_demo}
+                  </h3>
+                  <p className='text-md m-0 p-0 text-left text-veryDarkBlue'>
+                    {lang.tell_us}
+                  </p>
+                  <form
+                    onSubmit={handleSubmit}
+                    className='m-0 grid grid-cols-4 items-center'
+                  >
+                    {step === 1 ? (
+                      <Step1
+                        lang={lang}
+                        preferredDate1={preferredDate1}
+                        setPreferredDate1={setPreferredDate1}
+                        preferredTime1={preferredTime1}
+                        setPreferredTime1={setPreferredTime1}
+                        preferredDate2={preferredDate2}
+                        setPreferredDate2={setPreferredDate2}
+                        preferredTime2={preferredTime2}
+                        setPreferredTime2={setPreferredTime2}
+                        preferredDate3={preferredDate3}
+                        setPreferredDate3={setPreferredDate3}
+                        preferredTime3={preferredTime3}
+                        setPreferredTime3={setPreferredTime3}
+                        accounting={accounting}
+                        setAccounting={setAccounting}
+                        hrm={hrm}
+                        setHrm={setHrm}
+                        pos={pos}
+                        setPos={setPos}
+                        shop={shop}
+                        setShop={setShop}
+                        handleNext={handleNext}
+                      />
+                    ) : (
+                      <Step2 />
+                    )}
+                  </form>
+                </div>
+                <div className='hidden md:flex md:w-2/5'>
+                  <Image
+                    className='h-full w-full object-cover'
+                    src={demoImage}
+                    alt=''
+                    width='300'
+                    height='400'
+                  ></Image>
+                </div>
+              </div>
             </div>
-            <div className='w-2/5'>
-              <Image
-                className='h-full w-full object-cover'
-                src={demoImage}
-                alt=''
-                width='300'
-                height='400'
-              ></Image>
-            </div>
           </div>
-        </Modal.Body>
-      </Modal>
+        </div>
+      </div>
     </React.Fragment>
   )
 }
