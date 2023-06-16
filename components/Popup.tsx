@@ -97,7 +97,7 @@ export default function Popup(props: PageProps) {
     <React.Fragment>
       <div
         id='popup'
-        className='fixed top-0 left-0 right-0 z-50 hidden h-full max-h-full w-full overflow-y-auto overflow-x-hidden p-4 md:inset-0'
+        className='fixed top-0 left-0 right-0 z-50 hidden h-[calc(100%-1rem)] max-h-full w-full overflow-y-auto overflow-x-hidden p-4 md:inset-0'
       >
         <div className='relative max-h-full w-[80%] max-w-2xl'>
           <div className='relative rounded-lg bg-white shadow dark:bg-gray-700'>
