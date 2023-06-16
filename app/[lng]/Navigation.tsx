@@ -15,6 +15,9 @@ export default function Navigation(props) {
   const [langMenuOpen, setLangMenuOpen] = useState(false)
 
   const toggleMenu = () => {
+    setAssuranceMenuOpen(false)
+    setLangMenuOpen(false)
+    setCloudMenuOpen(false)
     setMenuOpen(!menuOpen)
   }
 
@@ -32,7 +35,6 @@ export default function Navigation(props) {
 
   const toggleLangMenu = () => {
     setAssuranceMenuOpen(false)
-    setLangMenuOpen(false)
     setCloudMenuOpen(false)
     setLangMenuOpen(!langMenuOpen)
   }
