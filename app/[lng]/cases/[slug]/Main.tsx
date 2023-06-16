@@ -81,7 +81,7 @@ export default async function Main({ lng, slug }: PageProps) {
         <div className='flex flex-col md:flex-row'>
           <div className='pr-8 pb-8 text-center md:w-2/3 md:text-left'>
             <Link
-              href='/cases'
+              href={process.env.NEXT_PUBLIC_SITE_URL + '/' + lng + '/cases/'}
               className='inline-flex items-center text-xl text-darkBlue'
             >
               <svg
