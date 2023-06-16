@@ -31,7 +31,7 @@ export default function Post({ params }: PageProps) {
   return (
     <>
       {/* @ts-ignore */}
-      <Hero page='blog' />
+      <Hero page='blog' lng={lng} />
       {/* @ts-ignore */}
       <Main lng={lng} slug={slug} />
     </>

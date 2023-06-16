@@ -31,7 +31,7 @@ export default function caseDetail({ params }: PageProps) {
   return (
     <>
       {/* @ts-ignore */}
-      <Hero page='case-study' />
+      <Hero page='case-study' lng={lng} />
       {/* @ts-ignore */}
       <Main lng={lng} slug={slug} />
     </>
