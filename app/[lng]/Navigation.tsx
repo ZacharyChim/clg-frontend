@@ -358,13 +358,13 @@ export default function Navigation(props) {
           <div
             className={
               menuOpen
-                ? 'fixed left-0 top-0 h-screen w-[85%] bg-veryLightBlue p-8 duration-500 ease-in sm:hidden'
+                ? 'fixed left-0 top-0 h-screen w-[85%] overflow-auto bg-veryLightBlue p-8 duration-500 ease-in md:hidden'
                 : 'fixed left-[-100%] top-0 h-screen p-8'
             }
           >
             <div className='flex w-full items-center justify-end'>
               <div onClick={toggleMenu} className='cursor-pointer'>
-                <span className='text-lg'>&#10005;</span>
+                <span className='text-xl'>&#10005;</span>
               </div>
             </div>
             <div className='flex-col' id='mobile'>

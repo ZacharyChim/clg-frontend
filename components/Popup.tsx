@@ -97,31 +97,31 @@ export default function Popup(props: PageProps) {
     <React.Fragment>
       <div
         id='popup'
-        className='fixed top-0 left-0 right-0 z-50 hidden h-[calc(100%-1rem)] max-h-full w-full overflow-y-auto overflow-x-hidden p-4 md:inset-0'
+        className='fixed top-0 left-0 right-0 z-50 hidden h-[80%] max-h-full w-full overflow-y-auto overflow-x-hidden p-4 md:inset-0'
       >
-        <div className='relative max-h-full w-full max-w-2xl'>
+        <div className='relative max-h-full w-[80%] max-w-2xl'>
           <div className='relative rounded-lg bg-white shadow dark:bg-gray-700'>
             <div className='relative h-96 border-b-0 bg-popupBg bg-cover bg-no-repeat'>
               <div className='absolute top-80 w-full'>
                 <p
-                  className={`mx-auto mt-10 block text-center text-4xl font-bold text-darkBlue`}
+                  className={`mx-auto mt-12 block text-center text-2xl font-bold text-darkBlue`}
                 >
                   {lang.your_tax_expert}
                 </p>
               </div>
             </div>
 
-            <div className='mt-6 mb-20 space-y-6'>
+            <div className='mt-6 mb-20'>
               <p className='text-center text-lg leading-relaxed text-veryDarkBlue'>
                 {lang.sign_up_now}
-                <span className='half_background mx-2 text-3xl font-bold text-darkBlue'>
+                <span className='half_background mx-2 text-xl font-bold text-darkBlue'>
                   {lang.free}
                 </span>
                 {lang.tax_guide}
               </p>
               <form
                 onSubmit={handleSubmit}
-                className='mt-8 flex flex-col items-center'
+                className='flex flex-col items-center'
               >
                 <div className='flex w-full flex-row gap-3 px-4'>
                   <div className='input-wrapper w-full'>
