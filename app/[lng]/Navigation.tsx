@@ -125,7 +125,7 @@ export default function Navigation(props) {
                             </div>
                             <div>
                               <p className='mb-2 text-lg font-bold text-menuBlue'>
-                                {props.titleMenu[1]}
+                                {props.titleMenu[2]}
                               </p>
                               <ul className='mb-2 space-y-2 py-2 text-sm text-gray-700'>
                                 {props.fundMenu.map((subItem) => (
@@ -144,7 +144,7 @@ export default function Navigation(props) {
                           <div className='arrow-list mx-10 mt-4 grid md:mx-0 md:grid-rows-2 md:py-10'>
                             <div>
                               <p className='mb-2 text-lg font-bold text-menuBlue'>
-                                {props.titleMenu[2]}
+                                {props.titleMenu[1]}
                               </p>
                               <ul className='mb-2 space-y-2 py-2 text-sm text-gray-700'>
                                 {props.advisoryMenu.map((subItem) => (

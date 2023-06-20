@@ -222,7 +222,6 @@ export default async function Main(props: { lng: string }) {
   const postifyHeight = data.postifyLogo.data.attributes.height
 
   const caseTitle = translate('caseTitle')
-  const caseDesc = translate('caseDesc')
 
   const contactTitle = translate('contactTitle')
   const contactSubtitle = translate('contactSubtitle')
@@ -525,21 +524,12 @@ export default async function Main(props: { lng: string }) {
           </div>
 
           <div className='flex flex-col items-center justify-center md:flex-row md:space-x-4'>
-            <div className='flex flex-col justify-center space-y-2 p-6 md:w-1/4'>
+            <div className='flex flex-col justify-center space-y-2 p-6 md:w-1/3'>
               <Image
                 src={yoovURL}
                 alt=''
                 width={yoovWidth}
                 height={yoovHeight}
-              />
-            </div>
-
-            <div className='flex flex-col justify-center space-y-2 p-6 md:w-1/4'>
-              <Image
-                src={dkdooURL}
-                alt=''
-                width={dkdooWidth}
-                height={dkdooHeight}
               />
             </div>
 
@@ -599,7 +589,6 @@ export default async function Main(props: { lng: string }) {
           <h2 className='mb-10 mt-10 text-4xl font-bold text-darkBlue '>
             {caseTitle}
           </h2>
-          <p className='mb-10 text-lg text-darkBrown'>{caseDesc}</p>
 
           <div className='flex flex-col space-y-12 pb-20 md:flex-row md:space-x-14'>
             {newCases.map((item) => (

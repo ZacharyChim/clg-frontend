@@ -7,7 +7,6 @@ import caseTop from '../../../public/case-top.png'
 import Contact from '../../../components/Contact'
 import ImageArticle from '../../../components/ImageArticle'
 import curve from '/public/small-curve.png'
-import whatsapp from '../../../public/hrm-whatsapp.png'
 
 type PageProps = {
   lng: string
@@ -310,15 +309,6 @@ export default async function Main({ lng }: PageProps) {
           height='560'
           src={`https://www.youtube.com/embed/${video}?autoplay=0&origin=http://example.com&controls=0&rel=1`}
         ></iframe>
-
-        <Image
-          src={whatsapp}
-          alt=''
-          width='454'
-          height='66'
-          className='mt-14 h-14 self-center object-contain'
-          quality={100}
-        />
 
         <ImageArticle
           aboutImage={solution1ImageObj}
