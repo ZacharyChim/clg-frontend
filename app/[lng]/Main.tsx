@@ -191,11 +191,6 @@ export default async function Main(props: { lng: string }) {
   const yoovWidth = data.yoovLogo.data.attributes.width
   const yoovHeight = data.yoovLogo.data.attributes.height
 
-  const dkdooURL =
-    process.env.NEXT_PUBLIC_STRAPI_URL + data.dkdooLogo.data.attributes.url
-  const dkdooWidth = data.dkdooLogo.data.attributes.width
-  const dkdooHeight = data.dkdooLogo.data.attributes.height
-
   const kpayURL =
     process.env.NEXT_PUBLIC_STRAPI_URL + data.kpayLogo.data.attributes.url
   const kpayWidth = data.kpayLogo.data.attributes.width
