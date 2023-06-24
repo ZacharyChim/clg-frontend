@@ -107,7 +107,7 @@ export default async function Main({ lng, slug }: PageProps) {
             </p>
 
             <article
-              className='mt-4 text-darkBrown'
+              className='mt-4 text-justify text-darkBrown'
               dangerouslySetInnerHTML={{ __html: content }}
             ></article>
           </div>
