@@ -9,7 +9,9 @@ type PageProps = {
 }
 
 export default async function Main({ lng }: PageProps) {
-  const posts = await fetchCollection('posts', lng)
+  let language
+  lng === 'en' ? (language = 'en') : (language = 'zh-Hant-HK')
+  const posts = await fetchCollection('posts', language)
   const blogText = await fetchSingle('blog')
   let lang
   lng === 'en'
