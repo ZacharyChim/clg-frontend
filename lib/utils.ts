@@ -11,7 +11,7 @@ export const fetchSingle = async (single: string) => {
 
 export const fetchCollection = async (collection: string, lng: string) => {
   const res = await fetch(
-    `${process.env.NEXT_PUBLIC_STRAPI_API_URL}/${collection}?locale=${lng}`
+    `${process.env.NEXT_PUBLIC_STRAPI_API_URL}/${collection}?populate=%2A&locale=${lng}`
   )
 
   const resData = await res.json()
