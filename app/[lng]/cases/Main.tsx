@@ -9,7 +9,7 @@ type PageProps = {
 }
 
 export default async function Main({ lng }: PageProps) {
-  const allCases = await fetchCollection('cases')
+  const allCases = await fetchCollection('cases', lng)
   const caseText = await fetchSingle('case-study')
   let lang
   lng === 'en'
