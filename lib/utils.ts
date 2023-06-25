@@ -9,9 +9,9 @@ export const fetchSingle = async (single: string) => {
   return resData.data.attributes
 }
 
-export const fetchCollection = async (collection: string) => {
+export const fetchCollection = async (collection: string, lng: string) => {
   const res = await fetch(
-    `${process.env.NEXT_PUBLIC_STRAPI_API_URL}/${collection}?populate=%2A`
+    `${process.env.NEXT_PUBLIC_STRAPI_API_URL}/${collection}?locale=${lng}`
   )
 
   const resData = await res.json()
