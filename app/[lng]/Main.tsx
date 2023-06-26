@@ -18,7 +18,9 @@ export default async function Main(props: { lng: string }) {
   const data = await fetchSingle('home-page')
   const popupText = await fetchSingle('popup-text')
 
-  const allCases = await fetchCollection('cases')
+  let language
+  props.lng === 'en' ? (language = 'en') : (language = 'zh-Hant-HK')
+  const allCases = await fetchCollection('cases', language)
   const newCases = allCases.filter((item) => item.id < 4)
 
   const translate = (slug: string) => {

@@ -72,7 +72,10 @@ export default async function Main({ lng, slug }: PageProps) {
   lng === 'en'
     ? (fullDate = `${month} ${date}, ${year}`)
     : (fullDate = `${year} 年 ${month} ${date} 日`)
-  const allCases = await fetchCollection('cases')
+
+  let language
+  lng === 'en' ? (language = 'en') : (language = 'zh-Hant-HK')
+  const allCases = await fetchCollection('cases', language)
   const newCases = allCases.filter((item: any) => item.id < 4)
 
   return (

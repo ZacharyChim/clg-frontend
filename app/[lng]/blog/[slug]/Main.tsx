@@ -71,7 +71,9 @@ export default async function Main({ lng, slug }: PageProps) {
   lng === 'en'
     ? (fullDate = `${month} ${date}, ${year}`)
     : (fullDate = `${year} 年 ${month} ${date} 日`)
-  const allPosts = await fetchCollection('posts')
+  let language
+  lng === 'en' ? (language = 'en') : (language = 'zh-Hant-HK')
+  const allPosts = await fetchCollection('posts', language)
   const newPosts = allPosts.filter((item: any) => item.id < 4)
 
   return (

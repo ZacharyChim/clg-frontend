@@ -1,7 +1,7 @@
 import React from 'react'
 import Main from './Main'
 import Hero from '../../../../components/Hero'
-import { fetchCollection } from '../../../../lib/utils'
+import { fetchAllCollection } from '../../../../lib/utils'
 
 type PageProps = {
   params: {
@@ -12,7 +12,7 @@ type PageProps = {
 
 export async function generateStaticParams() {
   let params: {}[] = []
-  const cases = await fetchCollection('cases')
+  const cases = await fetchAllCollection('cases')
 
   cases.map((item: any) => {
     params.push({ lng: 'en', slug: item.attributes.slug as string })

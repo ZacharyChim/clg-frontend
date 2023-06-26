@@ -18,6 +18,15 @@ export const fetchCollection = async (collection: string, lng: string) => {
   return resData.data
 }
 
+export const fetchAllCollection = async (collection: string) => {
+  const res = await fetch(
+    `${process.env.NEXT_PUBLIC_STRAPI_API_URL}/${collection}?populate=%2A`
+  )
+
+  const resData = await res.json()
+  return resData.data
+}
+
 export const richTextReducer = (raw: string) => {
   const parsed = marked.parse(raw)
   const fixedImageURL = parsed.replace(
