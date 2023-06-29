@@ -2,10 +2,10 @@ import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 import {
-  fetchCollection,
   fetchSingle,
   richTextReducer,
   trimTitle,
+  fetchCollection,
 } from '../../../../lib/utils'
 import { v4 } from 'uuid'
 
@@ -76,7 +76,7 @@ export default async function Main({ lng, slug }: PageProps) {
   let language
   lng === 'en' ? (language = 'en') : (language = 'zh-Hant-HK')
   const allCases = await fetchCollection('cases', language)
-  const newCases = allCases.filter((item: any) => item.id < 4)
+  const newCases = allCases.slice(-3)
 
   return (
     <section id='case' className='mx-auto flex max-w-5xl flex-col items-center'>
@@ -117,58 +117,61 @@ export default async function Main({ lng, slug }: PageProps) {
 
           <div className='mx-auto text-center md:w-1/3'>
             <div className='flex flex-col space-y-12 pb-20'>
-              {newCases.map((item) => (
-                <div
-                  key={v4()}
-                  className='flex flex-col items-center space-y-2 bg-veryLightBlue '
-                >
-                  <article className='m-3 overflow-hidden border border-gray-100 bg-white shadow-sm md:w-auto'>
-                    <Image
-                      alt={item.attributes.title}
-                      src={
-                        process.env.NEXT_PUBLIC_STRAPI_URL +
-                        item.attributes.featuredImage.data.attributes.url
-                      }
-                      width={
-                        item.attributes.featuredImage.data.attributes.width
-                      }
-                      height={
-                        item.attributes.featuredImage.data.attributes.height
-                      }
-                      className='h-56 w-full object-cover'
-                    />
-
-                    <div className='p-4 text-left md:p-2'>
-                      <Link
-                        href={
-                          process.env.NEXT_PUBLIC_SITE_URL +
-                          '/' +
-                          lng +
-                          '/cases/' +
-                          item.attributes.slug
+              {newCases
+                .slice(0)
+                .reverse()
+                .map((item) => (
+                  <div
+                    key={v4()}
+                    className='flex flex-col items-center space-y-2 bg-veryLightBlue '
+                  >
+                    <article className='m-3 overflow-hidden border border-gray-100 bg-white shadow-sm md:w-auto'>
+                      <Image
+                        alt={item.attributes.title}
+                        src={
+                          process.env.NEXT_PUBLIC_STRAPI_URL +
+                          item.attributes.featuredImage.data.attributes.url
                         }
-                      >
-                        <h3 className='text-md text-darkBrown'>
-                          {trimTitle(item.attributes.title)}
-                        </h3>
-                      </Link>
-
-                      <Link
-                        href={
-                          process.env.NEXT_PUBLIC_SITE_URL +
-                          '/' +
-                          lng +
-                          '/cases/' +
-                          item.attributes.slug
+                        width={
+                          item.attributes.featuredImage.data.attributes.width
                         }
-                        className='group mt-2 inline-flex gap-1 text-sm font-medium text-blue-600'
-                      >
-                        {lang.details}
-                      </Link>
-                    </div>
-                  </article>
-                </div>
-              ))}
+                        height={
+                          item.attributes.featuredImage.data.attributes.height
+                        }
+                        className='h-56 w-full object-cover'
+                      />
+
+                      <div className='p-4 text-left md:p-2'>
+                        <Link
+                          href={
+                            process.env.NEXT_PUBLIC_SITE_URL +
+                            '/' +
+                            lng +
+                            '/cases/' +
+                            item.attributes.slug
+                          }
+                        >
+                          <h3 className='text-md text-darkBrown'>
+                            {trimTitle(item.attributes.title)}
+                          </h3>
+                        </Link>
+
+                        <Link
+                          href={
+                            process.env.NEXT_PUBLIC_SITE_URL +
+                            '/' +
+                            lng +
+                            '/cases/' +
+                            item.attributes.slug
+                          }
+                          className='group mt-2 inline-flex gap-1 text-sm font-medium text-blue-600'
+                        >
+                          {lang.details}
+                        </Link>
+                      </div>
+                    </article>
+                  </div>
+                ))}
             </div>
           </div>
         </div>
