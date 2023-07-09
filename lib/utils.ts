@@ -1,3 +1,12 @@
+import { type ClassValue, clsx } from "clsx"
+import { twMerge } from "tailwind-merge"
+ 
+export function cn(...inputs: ClassValue[]) {
+  return twMerge(clsx(inputs))
+}
+// Shadcn UI
+
+
 import { marked } from 'marked'
 
 export const fetchSingle = async (single: string) => {

@@ -1,496 +1,780 @@
 {
-  "data": {
-    "id": 1,
-    "attributes": {
-      "title": "Internal Control SERVICES",
-      "main_slogan": "Internal Control",
-      "about_title": "Internal Control",
-      "about_text": "Internal Control Is A Process For Assuring The Objectives Of Company In Operational Effectiveness And Efficiency, Reliable Financial Reporting, And Compliance With Laws, Regulations And Policies. In Summary, Internal Control Involves Everything That Controls Risks To An Organization.",
-      "contact_us": "Should you have any inquiry about Internal Control Services, please contact us and we will provide FREE consultation service.",
-      "createdAt": "2023-03-08T06:03:31.713Z",
-      "updatedAt": "2023-05-28T17:29:37.366Z",
-      "publishedAt": "2023-03-08T06:03:34.716Z",
-      "locale": "en",
-      "hero_image": {
-        "data": {
-          "id": 83,
-          "attributes": {
-            "name": "internal_control_hero.png",
-            "alternativeText": null,
-            "caption": null,
-            "width": 606,
-            "height": 493,
-            "formats": {
-              "thumbnail": {
-                "name": "thumbnail_internal_control_hero.png",
-                "hash": "thumbnail_internal_control_hero_eb95bf53da",
-                "ext": ".png",
-                "mime": "image/png",
-                "path": null,
-                "width": 192,
-                "height": 156,
-                "size": 60.42,
-                "url": "/uploads/thumbnail_internal_control_hero_eb95bf53da.png"
-              },
-              "small": {
-                "name": "small_internal_control_hero.png",
-                "hash": "small_internal_control_hero_eb95bf53da",
-                "ext": ".png",
-                "mime": "image/png",
-                "path": null,
-                "width": 500,
-                "height": 407,
-                "size": 315.44,
-                "url": "/uploads/small_internal_control_hero_eb95bf53da.png"
-              }
-            },
-            "hash": "internal_control_hero_eb95bf53da",
-            "ext": ".png",
-            "mime": "image/png",
-            "size": 101.84,
-            "url": "/uploads/internal_control_hero_eb95bf53da.png",
-            "previewUrl": null,
-            "provider": "local",
-            "provider_metadata": null,
-            "createdAt": "2023-03-08T05:51:35.071Z",
-            "updatedAt": "2023-03-08T05:51:35.071Z"
-          }
-        }
-      },
-      "about_image": {
-        "data": {
-          "id": 84,
-          "attributes": {
-            "name": "internal_control_about.png",
-            "alternativeText": null,
-            "caption": null,
-            "width": 462,
-            "height": 408,
-            "formats": {
-              "thumbnail": {
-                "name": "thumbnail_internal_control_about.png",
-                "hash": "thumbnail_internal_control_about_581a180209",
-                "ext": ".png",
-                "mime": "image/png",
-                "path": null,
-                "width": 177,
-                "height": 156,
-                "size": 71.37,
-                "url": "/uploads/thumbnail_internal_control_about_581a180209.png"
-              }
-            },
-            "hash": "internal_control_about_581a180209",
-            "ext": ".png",
-            "mime": "image/png",
-            "size": 90.9,
-            "url": "/uploads/internal_control_about_581a180209.png",
-            "previewUrl": null,
-            "provider": "local",
-            "provider_metadata": null,
-            "createdAt": "2023-03-08T05:51:44.121Z",
-            "updatedAt": "2023-03-08T05:51:44.121Z"
-          }
-        }
-      },
-      "advisory": {
-        "data": {
-          "id": 75,
-          "attributes": {
-            "name": "Advisory.png",
-            "alternativeText": null,
-            "caption": null,
-            "width": 69,
-            "height": 16,
-            "formats": null,
-            "hash": "Advisory_c32ef42669",
-            "ext": ".png",
-            "mime": "image/png",
-            "size": 0.59,
-            "url": "/uploads/Advisory_c32ef42669.png",
-            "previewUrl": null,
-            "provider": "local",
-            "provider_metadata": null,
-            "createdAt": "2023-03-01T17:05:35.344Z",
-            "updatedAt": "2023-03-01T17:05:35.344Z"
-          }
-        }
-      },
-      "number1": {
-        "data": {
-          "id": 310,
-          "attributes": {
-            "name": "internal-control-01-en.png",
-            "alternativeText": null,
-            "caption": null,
-            "width": 562,
-            "height": 269,
-            "formats": {
-              "thumbnail": {
-                "name": "thumbnail_internal-control-01-en.png",
-                "hash": "thumbnail_internal_control_01_en_1fdc3d52fb",
-                "ext": ".png",
-                "mime": "image/png",
-                "path": null,
-                "width": 245,
-                "height": 117,
-                "size": 27.16,
-                "url": "/uploads/thumbnail_internal_control_01_en_1fdc3d52fb.png"
-              },
-              "small": {
-                "name": "small_internal-control-01-en.png",
-                "hash": "small_internal_control_01_en_1fdc3d52fb",
-                "ext": ".png",
-                "mime": "image/png",
-                "path": null,
-                "width": 500,
-                "height": 239,
-                "size": 67.13,
-                "url": "/uploads/small_internal_control_01_en_1fdc3d52fb.png"
-              }
-            },
-            "hash": "internal_control_01_en_1fdc3d52fb",
-            "ext": ".png",
-            "mime": "image/png",
-            "size": 7.86,
-            "url": "/uploads/internal_control_01_en_1fdc3d52fb.png",
-            "previewUrl": null,
-            "provider": "local",
-            "provider_metadata": null,
-            "createdAt": "2023-05-28T17:23:35.092Z",
-            "updatedAt": "2023-05-28T17:23:35.092Z"
-          }
-        }
-      },
-      "image1": {
-        "data": {
-          "id": 86,
-          "attributes": {
-            "name": "internal_control_1.png",
-            "alternativeText": null,
-            "caption": null,
-            "width": 515,
-            "height": 499,
-            "formats": {
-              "thumbnail": {
-                "name": "thumbnail_internal_control_1.png",
-                "hash": "thumbnail_internal_control_1_8c354af2a6",
-                "ext": ".png",
-                "mime": "image/png",
-                "path": null,
-                "width": 161,
-                "height": 156,
-                "size": 55.16,
-                "url": "/uploads/thumbnail_internal_control_1_8c354af2a6.png"
-              },
-              "small": {
-                "name": "small_internal_control_1.png",
-                "hash": "small_internal_control_1_8c354af2a6",
-                "ext": ".png",
-                "mime": "image/png",
-                "path": null,
-                "width": 500,
-                "height": 484,
-                "size": 390.48,
-                "url": "/uploads/small_internal_control_1_8c354af2a6.png"
-              }
-            },
-            "hash": "internal_control_1_8c354af2a6",
-            "ext": ".png",
-            "mime": "image/png",
-            "size": 95.12,
-            "url": "/uploads/internal_control_1_8c354af2a6.png",
-            "previewUrl": null,
-            "provider": "local",
-            "provider_metadata": null,
-            "createdAt": "2023-03-08T06:02:10.938Z",
-            "updatedAt": "2023-03-08T06:02:10.938Z"
-          }
-        }
-      },
-      "number2": {
-        "data": {
-          "id": 311,
-          "attributes": {
-            "name": "internal-control-02-en.png",
-            "alternativeText": null,
-            "caption": null,
-            "width": 521,
-            "height": 378,
-            "formats": {
-              "thumbnail": {
-                "name": "thumbnail_internal-control-02-en.png",
-                "hash": "thumbnail_internal_control_02_en_1f1af84bad",
-                "ext": ".png",
-                "mime": "image/png",
-                "path": null,
-                "width": 215,
-                "height": 156,
-                "size": 33.05,
-                "url": "/uploads/thumbnail_internal_control_02_en_1f1af84bad.png"
-              },
-              "small": {
-                "name": "small_internal-control-02-en.png",
-                "hash": "small_internal_control_02_en_1f1af84bad",
-                "ext": ".png",
-                "mime": "image/png",
-                "path": null,
-                "width": 500,
-                "height": 363,
-                "size": 102.17,
-                "url": "/uploads/small_internal_control_02_en_1f1af84bad.png"
-              }
-            },
-            "hash": "internal_control_02_en_1f1af84bad",
-            "ext": ".png",
-            "mime": "image/png",
-            "size": 11.13,
-            "url": "/uploads/internal_control_02_en_1f1af84bad.png",
-            "previewUrl": null,
-            "provider": "local",
-            "provider_metadata": null,
-            "createdAt": "2023-05-28T17:29:14.867Z",
-            "updatedAt": "2023-05-28T17:29:14.867Z"
-          }
-        }
-      },
-      "image2": {
-        "data": {
-          "id": 88,
-          "attributes": {
-            "name": "internal_control_2.png",
-            "alternativeText": null,
-            "caption": null,
-            "width": 552,
-            "height": 459,
-            "formats": {
-              "thumbnail": {
-                "name": "thumbnail_internal_control_2.png",
-                "hash": "thumbnail_internal_control_2_9080cff2d6",
-                "ext": ".png",
-                "mime": "image/png",
-                "path": null,
-                "width": 188,
-                "height": 156,
-                "size": 67.71,
-                "url": "/uploads/thumbnail_internal_control_2_9080cff2d6.png"
-              },
-              "small": {
-                "name": "small_internal_control_2.png",
-                "hash": "small_internal_control_2_9080cff2d6",
-                "ext": ".png",
-                "mime": "image/png",
-                "path": null,
-                "width": 500,
-                "height": 416,
-                "size": 348.85,
-                "url": "/uploads/small_internal_control_2_9080cff2d6.png"
-              }
-            },
-            "hash": "internal_control_2_9080cff2d6",
-            "ext": ".png",
-            "mime": "image/png",
-            "size": 73.66,
-            "url": "/uploads/internal_control_2_9080cff2d6.png",
-            "previewUrl": null,
-            "provider": "local",
-            "provider_metadata": null,
-            "createdAt": "2023-03-08T06:02:30.919Z",
-            "updatedAt": "2023-03-08T06:02:30.919Z"
-          }
-        }
-      },
-      "number3": {
-        "data": {
-          "id": 312,
-          "attributes": {
-            "name": "internal-control-03-en.png",
-            "alternativeText": null,
-            "caption": null,
-            "width": 522,
-            "height": 267,
-            "formats": {
-              "thumbnail": {
-                "name": "thumbnail_internal-control-03-en.png",
-                "hash": "thumbnail_internal_control_03_en_26ec2cad68",
-                "ext": ".png",
-                "mime": "image/png",
-                "path": null,
-                "width": 245,
-                "height": 125,
-                "size": 27.73,
-                "url": "/uploads/thumbnail_internal_control_03_en_26ec2cad68.png"
-              },
-              "small": {
-                "name": "small_internal-control-03-en.png",
-                "hash": "small_internal_control_03_en_26ec2cad68",
-                "ext": ".png",
-                "mime": "image/png",
-                "path": null,
-                "width": 500,
-                "height": 256,
-                "size": 69.2,
-                "url": "/uploads/small_internal_control_03_en_26ec2cad68.png"
-              }
-            },
-            "hash": "internal_control_03_en_26ec2cad68",
-            "ext": ".png",
-            "mime": "image/png",
-            "size": 7.42,
-            "url": "/uploads/internal_control_03_en_26ec2cad68.png",
-            "previewUrl": null,
-            "provider": "local",
-            "provider_metadata": null,
-            "createdAt": "2023-05-28T17:29:25.534Z",
-            "updatedAt": "2023-05-28T17:29:25.534Z"
-          }
-        }
-      },
-      "image3": {
-        "data": {
-          "id": 89,
-          "attributes": {
-            "name": "internal_control_3.png",
-            "alternativeText": null,
-            "caption": null,
-            "width": 494,
-            "height": 464,
-            "formats": {
-              "thumbnail": {
-                "name": "thumbnail_internal_control_3.png",
-                "hash": "thumbnail_internal_control_3_93c2a625b0",
-                "ext": ".png",
-                "mime": "image/png",
-                "path": null,
-                "width": 166,
-                "height": 156,
-                "size": 50.58,
-                "url": "/uploads/thumbnail_internal_control_3_93c2a625b0.png"
-              }
-            },
-            "hash": "internal_control_3_93c2a625b0",
-            "ext": ".png",
-            "mime": "image/png",
-            "size": 69.54,
-            "url": "/uploads/internal_control_3_93c2a625b0.png",
-            "previewUrl": null,
-            "provider": "local",
-            "provider_metadata": null,
-            "createdAt": "2023-03-08T06:02:40.208Z",
-            "updatedAt": "2023-03-08T06:03:25.518Z"
-          }
-        }
-      },
-      "number4": {
-        "data": {
-          "id": 313,
-          "attributes": {
-            "name": "internal-control-04-en.png",
-            "alternativeText": null,
-            "caption": null,
-            "width": 525,
-            "height": 266,
-            "formats": {
-              "thumbnail": {
-                "name": "thumbnail_internal-control-04-en.png",
-                "hash": "thumbnail_internal_control_04_en_93c0ddd58b",
-                "ext": ".png",
-                "mime": "image/png",
-                "path": null,
-                "width": 245,
-                "height": 124,
-                "size": 30.34,
-                "url": "/uploads/thumbnail_internal_control_04_en_93c0ddd58b.png"
-              },
-              "small": {
-                "name": "small_internal-control-04-en.png",
-                "hash": "small_internal_control_04_en_93c0ddd58b",
-                "ext": ".png",
-                "mime": "image/png",
-                "path": null,
-                "width": 500,
-                "height": 253,
-                "size": 76.24,
-                "url": "/uploads/small_internal_control_04_en_93c0ddd58b.png"
-              }
-            },
-            "hash": "internal_control_04_en_93c0ddd58b",
-            "ext": ".png",
-            "mime": "image/png",
-            "size": 8.4,
-            "url": "/uploads/internal_control_04_en_93c0ddd58b.png",
-            "previewUrl": null,
-            "provider": "local",
-            "provider_metadata": null,
-            "createdAt": "2023-05-28T17:29:35.176Z",
-            "updatedAt": "2023-05-28T17:29:35.176Z"
-          }
-        }
-      },
-      "image4": {
-        "data": {
-          "id": 92,
-          "attributes": {
-            "name": "internal_control_4.png",
-            "alternativeText": null,
-            "caption": null,
-            "width": 505,
-            "height": 490,
-            "formats": {
-              "thumbnail": {
-                "name": "thumbnail_internal_control_4.png",
-                "hash": "thumbnail_internal_control_4_d7e8430e88",
-                "ext": ".png",
-                "mime": "image/png",
-                "path": null,
-                "width": 161,
-                "height": 156,
-                "size": 47.91,
-                "url": "/uploads/thumbnail_internal_control_4_d7e8430e88.png"
-              },
-              "small": {
-                "name": "small_internal_control_4.png",
-                "hash": "small_internal_control_4_d7e8430e88",
-                "ext": ".png",
-                "mime": "image/png",
-                "path": null,
-                "width": 500,
-                "height": 485,
-                "size": 317.92,
-                "url": "/uploads/small_internal_control_4_d7e8430e88.png"
-              }
-            },
-            "hash": "internal_control_4_d7e8430e88",
-            "ext": ".png",
-            "mime": "image/png",
-            "size": 84,
-            "url": "/uploads/internal_control_4_d7e8430e88.png",
-            "previewUrl": null,
-            "provider": "local",
-            "provider_metadata": null,
-            "createdAt": "2023-03-08T06:05:33.520Z",
-            "updatedAt": "2023-03-08T06:05:33.520Z"
-          }
-        }
-      },
-      "localizations": {
-        "data": [
-          {
-            "id": 2,
+  "data": [
+    {
+      "id": 17,
+      "attributes": {
+        "title": "Xero Story - YJ Jewellery",
+        "createdAt": "2023-06-25T13:01:00.832Z",
+        "updatedAt": "2023-06-29T07:04:20.055Z",
+        "publishedAt": "2023-06-25T13:01:02.731Z",
+        "slug": "Xero-Story-YJ-Jewellery",
+        "content": "‘YJ Jewellery’ originates from the philosophy in the traditional Chinese classic ‘I Ching’. In the I Ching, there are twelve 'Changsheng', representing the twelve stages of a person's life. YJ Jewellery is committed to the steady development of markets for different customer groups and provides an intimate consumer experience. Through the provision of a diverse range of products and services, it meets the needs of different stages of life. 'Yi' has three meanings: ‘unchanging’, ‘simple’, and ‘changing’. Among them, ‘changing’ emphasizes adapting to circumstances and being flexible in all matters. YJ Jewellery not only insists on maintaining traditional excellent quality but also continuously injects innovative elements, providing customers with cost-effective jewelry styles, and designs that incorporate local features and fashion. The brand and products have always been widely loved.\n\\\n\\\nThe retail industry was hit hard during the pandemic, and business was greatly affected. Many small and medium enterprises focused on expanding online sales channels. Our client, YJ Jewellery, was no exception. They chose to use creative methods to increase store revenue, while actively embracing digital development, simplifying financial work, and focusing resources on developing the online market.\n\\\n\\\nOur client - YJ Jewellery mainly engages in jewelry and diamond retail. Customers have always liked to visit the physical store in person, and have jewelry designers create unique styles for them. Facing the crisis of pandemic lockdowns, YJ Jewellery was also affected. Since the main customer base came from tourists, the number of travelers decreased under the pandemic. In addition, in order to protect their own safety under the pandemic, people were less willing to go out, and sales were severely hit. YJ Jewellery strengthened the promotion of digitalization. Not only did they switch to online platforms, but through live sales, they achieved brilliant results and launched a new series of light luxury jewelry that was favored by the younger generation. The number of online orders also increased, and customers needed to spend more time processing orders.\n\\\n\\\nWhile handling more orders, they decided to switch from using Excel spreadsheets for accounting to using Xero cloud accounting software. This made it more convenient to develop invoices for customers, while organizing and recording sales data, which helps the company better understand customer preferences, avoid confusing invoices, and promptly address customer needs. In the long run, it can help them expand into more markets.",
+        "Category": "Xero Story",
+        "locale": "en",
+        "featuredImage": {
+          "data": {
+            "id": 323,
             "attributes": {
-              "title": "CLG提供有關內部監控的服務，內容包括：",
-              "main_slogan": "內部監控",
-              "about_title": "內部監控",
-              "about_text": "內部監控是一個確保組織在營運有效性和效率，可靠的財務報告以及遵守法律，法規和政策方面達到目標的過程。 總括而言，內部控制涉及控制組織風險的一切。",
-              "contact_us": "如欲查詢更多有關內部監控服務的資料，請與我們的專業顧問聯絡，我們將為您提供免費諮詢。",
-              "createdAt": "2023-05-22T04:49:06.707Z",
-              "updatedAt": "2023-05-28T17:19:42.523Z",
-              "publishedAt": "2023-05-22T04:49:08.326Z",
-              "locale": "zh-Hant-HK"
+              "name": "182643552_290097506114422_2562883272544596502_n.jpg",
+              "alternativeText": null,
+              "caption": null,
+              "width": 1326,
+              "height": 994,
+              "formats": {
+                "thumbnail": {
+                  "name": "thumbnail_182643552_290097506114422_2562883272544596502_n.jpg",
+                  "hash": "thumbnail_182643552_290097506114422_2562883272544596502_n_d3666daaaa",
+                  "ext": ".jpg",
+                  "mime": "image/jpeg",
+                  "path": null,
+                  "width": 208,
+                  "height": 156,
+                  "size": 5.3,
+                  "url": "/uploads/thumbnail_182643552_290097506114422_2562883272544596502_n_d3666daaaa.jpg"
+                },
+                "medium": {
+                  "name": "medium_182643552_290097506114422_2562883272544596502_n.jpg",
+                  "hash": "medium_182643552_290097506114422_2562883272544596502_n_d3666daaaa",
+                  "ext": ".jpg",
+                  "mime": "image/jpeg",
+                  "path": null,
+                  "width": 750,
+                  "height": 562,
+                  "size": 54.37,
+                  "url": "/uploads/medium_182643552_290097506114422_2562883272544596502_n_d3666daaaa.jpg"
+                },
+                "small": {
+                  "name": "small_182643552_290097506114422_2562883272544596502_n.jpg",
+                  "hash": "small_182643552_290097506114422_2562883272544596502_n_d3666daaaa",
+                  "ext": ".jpg",
+                  "mime": "image/jpeg",
+                  "path": null,
+                  "width": 500,
+                  "height": 375,
+                  "size": 24.59,
+                  "url": "/uploads/small_182643552_290097506114422_2562883272544596502_n_d3666daaaa.jpg"
+                },
+                "large": {
+                  "name": "large_182643552_290097506114422_2562883272544596502_n.jpg",
+                  "hash": "large_182643552_290097506114422_2562883272544596502_n_d3666daaaa",
+                  "ext": ".jpg",
+                  "mime": "image/jpeg",
+                  "path": null,
+                  "width": 1000,
+                  "height": 750,
+                  "size": 96.03,
+                  "url": "/uploads/large_182643552_290097506114422_2562883272544596502_n_d3666daaaa.jpg"
+                }
+              },
+              "hash": "182643552_290097506114422_2562883272544596502_n_d3666daaaa",
+              "ext": ".jpg",
+              "mime": "image/jpeg",
+              "size": 166,
+              "url": "/uploads/182643552_290097506114422_2562883272544596502_n_d3666daaaa.jpg",
+              "previewUrl": null,
+              "provider": "local",
+              "provider_metadata": null,
+              "createdAt": "2023-06-08T00:09:11.802Z",
+              "updatedAt": "2023-06-08T00:09:11.802Z"
             }
           }
-        ]
+        },
+        "localizations": {
+          "data": [
+            {
+              "id": 11,
+              "attributes": {
+                "title": "Xero 故事 – YJ Jewellery 易珠寶",
+                "createdAt": "2023-06-25T11:16:06.432Z",
+                "updatedAt": "2023-06-29T07:03:59.417Z",
+                "publishedAt": "2023-06-25T12:23:37.393Z",
+                "slug": "Xero-YJ-Jewellery",
+                "content": "「易珠寶」命名源自中國傳統典籍《易經》的哲學。易經裡有一個十二長生，代表著人一生的十二個階段。而易珠寶致力於不同顧客群的市場穩步發展，並提供貼身的消費體驗。透過提供多元化的產品及服務，滿足其不同人生階段的需要。易有三義：「不易、簡易、變易」，其中「變易」強調因時適變，凡事要靈活運用。易珠寶不僅堅持保持傳統的優秀品質，同時亦不停注入創新元素，為客戶提供性價比高的珠寶款式，設計融入了本地特色及時尚。品牌及產品一直廣受愛戴。零售業在疫情期間首當其衝，生意大受影響，很多中小企把重點擴展網上銷售渠道，我們的客戶YJ Jewellery易珠寶也不例外，選擇用創意的方法來增加店舖收入，同時積極擁抱數碼化發展，把財務工作簡化，集中資源開拓線上市場。\n\\\n\\\n「易珠寶」命名源自中國傳統典籍《易經》的哲學。易經裡有一個十二長生，代表著人一生的十二個階段。而易珠寶致力於不同顧客群的市場穩步發展，並提供貼身的消費體驗。透過提供多元化的產品及服務，滿足其不同人生階段的需要。易有三義：「不易、簡易、變易」，其中「變易」強調因時適變，凡事要靈活運用。易珠寶不僅堅持保持傳統的優秀品質，同時亦不停注入創新元素，為客戶提供性價比高的珠寶款式，設計融入了本地特色及時尚。品牌及產品一直廣受愛戴。\n\\\n\\\n零售業在疫情期間首當其衝，生意大受影響，很多中小企把重點擴展網上銷售渠道，我們的客戶YJ Jewellery易珠寶也不例外，選擇用創意的方法來增加店舖收入，同時積極擁抱數碼化發展，把財務工作簡化，集中資源開拓線上市場。\n\\\n\\\n我們的客戶-YJ Jewellery 易珠寶主要從事珠寶鑽石零售，客人一向喜歡親身到實體店，由珠寶設計師為自己訂造獨一無二款式。面對疫情封鎖的危機，YJ Jewellery亦受到波及，由於主要客源來自於遊客，疫情底下，旅客人數減少。加上在疫情底下，為了保障自身的安全，亦減低了外出的意欲，銷售額更是受到重挫。YJ Jewelley加強推進數碼化進程，不但轉戰線上平台，透過直播銷售，得到亮麗的成績，更推出新系列輕奢首飾，更受年輕一代顧客青睞。網上訂單的數目也隨之增加，客戶需要花費更的時間去處理訂單。\n\\\n\\\n在處理更多訂單的同時，他們由原來用Excel表記帳，決定轉用 Xero 雲端會計軟件，可更方便開發帳單給客人，同時整理及記錄銷售數據，有助公司更了解客人的喜好，避免混淆帳單，及時處理客人的需求。長遠而言，可以幫助他們拓展更多的市場。",
+                "Category": "Xero 故事",
+                "locale": "zh-Hant-HK"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": 18,
+      "attributes": {
+        "title": "Xero Story - Gingersoft - POS Restaurant System",
+        "createdAt": "2023-06-25T14:00:44.350Z",
+        "updatedAt": "2023-06-25T14:21:13.454Z",
+        "publishedAt": "2023-06-25T14:01:45.165Z",
+        "slug": "xero-story-gingersoft-pos-restaurant-system",
+        "content": "Our partner, Gingersoft, uses the Xero system. In the future, the team will be able to easily handle daily bookkeeping and financial paperwork directly on their mobile phones. Real-time data can better reflect the company's cash flow situation, helping to expand business.\n\\\n\\\nXero can be connected to Dext. Even if the Gingersoft team needs to work outside, they can automatically obtain financial data directly through Dext on their mobile phones. Just take a picture to accurately extract the required numbers and text, and all the document data are collected in one place 📲, no manual input is required to complete the recording.\n\\\n\\\nIn addition, Gingersoft's POS can now directly connect to Xero, allowing restaurant customers 🍽 to enjoy the same easy financial work. Adding real-time financial data to the POS can help restaurants effectively get the latest cash flow situation. Truly achieve \"One mobile phone, all done online!\"",
+        "Category": "Xero Story",
+        "locale": "en",
+        "featuredImage": {
+          "data": {
+            "id": 333,
+            "attributes": {
+              "name": "186466697_300474058410100_4279808845411212050_n.jpg",
+              "alternativeText": null,
+              "caption": null,
+              "width": 960,
+              "height": 716,
+              "formats": {
+                "thumbnail": {
+                  "name": "thumbnail_186466697_300474058410100_4279808845411212050_n.jpg",
+                  "hash": "thumbnail_186466697_300474058410100_4279808845411212050_n_83c2534ea0",
+                  "ext": ".jpg",
+                  "mime": "image/jpeg",
+                  "path": null,
+                  "width": 209,
+                  "height": 156,
+                  "size": 8.45,
+                  "url": "/uploads/thumbnail_186466697_300474058410100_4279808845411212050_n_83c2534ea0.jpg"
+                },
+                "small": {
+                  "name": "small_186466697_300474058410100_4279808845411212050_n.jpg",
+                  "hash": "small_186466697_300474058410100_4279808845411212050_n_83c2534ea0",
+                  "ext": ".jpg",
+                  "mime": "image/jpeg",
+                  "path": null,
+                  "width": 500,
+                  "height": 373,
+                  "size": 35.85,
+                  "url": "/uploads/small_186466697_300474058410100_4279808845411212050_n_83c2534ea0.jpg"
+                },
+                "medium": {
+                  "name": "medium_186466697_300474058410100_4279808845411212050_n.jpg",
+                  "hash": "medium_186466697_300474058410100_4279808845411212050_n_83c2534ea0",
+                  "ext": ".jpg",
+                  "mime": "image/jpeg",
+                  "path": null,
+                  "width": 750,
+                  "height": 559,
+                  "size": 67.63,
+                  "url": "/uploads/medium_186466697_300474058410100_4279808845411212050_n_83c2534ea0.jpg"
+                }
+              },
+              "hash": "186466697_300474058410100_4279808845411212050_n_83c2534ea0",
+              "ext": ".jpg",
+              "mime": "image/jpeg",
+              "size": 69.23,
+              "url": "/uploads/186466697_300474058410100_4279808845411212050_n_83c2534ea0.jpg",
+              "previewUrl": null,
+              "provider": "local",
+              "provider_metadata": null,
+              "createdAt": "2023-06-25T12:38:29.728Z",
+              "updatedAt": "2023-06-25T14:01:29.730Z"
+            }
+          }
+        },
+        "localizations": {
+          "data": [
+            {
+              "id": 16,
+              "attributes": {
+                "title": "Xero 故事- 薑軟件 Gingersoft - POS 餐飲系統",
+                "createdAt": "2023-06-25T12:39:00.180Z",
+                "updatedAt": "2023-06-25T14:21:45.861Z",
+                "publishedAt": "2023-06-25T12:39:01.490Z",
+                "slug": "xero-story-gingersoft-pos-restaurant-system-chi",
+                "content": "我們的合作伙伴薑軟件 Gingersoft 使用Xero系統，📱團隊日後直接用手機就輕鬆完成處理日常記帳財務等文書工作， 實時數據更能反映公司現金流狀況，協助拓展業務。\n\\\n\\\nXero 可連接到 Dext ，Gingersoft 團隊即使要外出工作，都可以透過Dext 直接用手機自動獲取財務數據，拍一張相就能準確提取所需數字和文字，將所有文件單據資料都收集到同一個地方📲，再不需人手輸入就完成記錄。\n\\\n\\\n除此之外， Gingersoft POS 現在更可直接連接Xero，讓餐廳客戶🍽同樣享受輕鬆簡單的財務工作，POS加上實時財務數據更可幫助餐廳有效取得最新的現金流狀況，真正做到「一部手機，線上搞掂哂！」",
+                "Category": "Xero 故事",
+                "locale": "zh-Hant-HK"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": 19,
+      "attributes": {
+        "title": "Xero Story - PAE Wine Limited",
+        "createdAt": "2023-06-25T14:02:59.620Z",
+        "updatedAt": "2023-06-25T14:22:58.548Z",
+        "publishedAt": "2023-06-25T14:04:43.940Z",
+        "slug": "xero-story-pae-wine-limited2",
+        "content": "Our client, PAEwine, uses the Xero system to handle finances and manage inventory work📦, greatly reducing administrative costs.\n\\\n\\\nThey can manage the accounts payable process better through Xero. A single transaction can pay multiple bills to suppliers 📃. An efficient accounts payable process means saving a lot of management time and focusing on expanding the business.\n\\\n\\\nXero can also check the inventory of goods in real time, and the inventory management system automatically connects to the invoicing function 🖥. If a customer purchases red wine, PAE Wine Limited only needs to add the product items and quantities in the invoice system. The Xero system will immediately update the inventory system automatically 🆕. There is no longer a need for manual handling of inventory records, making sales easier and simpler.",
+        "Category": "Xero Story",
+        "locale": "en",
+        "featuredImage": {
+          "data": {
+            "id": 332,
+            "attributes": {
+              "name": "185181759_295779632212876_8311322595558216056_n.jpg",
+              "alternativeText": null,
+              "caption": null,
+              "width": 2016,
+              "height": 1512,
+              "formats": {
+                "thumbnail": {
+                  "name": "thumbnail_185181759_295779632212876_8311322595558216056_n.jpg",
+                  "hash": "thumbnail_185181759_295779632212876_8311322595558216056_n_64df36444b",
+                  "ext": ".jpg",
+                  "mime": "image/jpeg",
+                  "path": null,
+                  "width": 208,
+                  "height": 156,
+                  "size": 8.96,
+                  "url": "/uploads/thumbnail_185181759_295779632212876_8311322595558216056_n_64df36444b.jpg"
+                },
+                "small": {
+                  "name": "small_185181759_295779632212876_8311322595558216056_n.jpg",
+                  "hash": "small_185181759_295779632212876_8311322595558216056_n_64df36444b",
+                  "ext": ".jpg",
+                  "mime": "image/jpeg",
+                  "path": null,
+                  "width": 500,
+                  "height": 375,
+                  "size": 39.75,
+                  "url": "/uploads/small_185181759_295779632212876_8311322595558216056_n_64df36444b.jpg"
+                },
+                "medium": {
+                  "name": "medium_185181759_295779632212876_8311322595558216056_n.jpg",
+                  "hash": "medium_185181759_295779632212876_8311322595558216056_n_64df36444b",
+                  "ext": ".jpg",
+                  "mime": "image/jpeg",
+                  "path": null,
+                  "width": 750,
+                  "height": 563,
+                  "size": 80.56,
+                  "url": "/uploads/medium_185181759_295779632212876_8311322595558216056_n_64df36444b.jpg"
+                },
+                "large": {
+                  "name": "large_185181759_295779632212876_8311322595558216056_n.jpg",
+                  "hash": "large_185181759_295779632212876_8311322595558216056_n_64df36444b",
+                  "ext": ".jpg",
+                  "mime": "image/jpeg",
+                  "path": null,
+                  "width": 1000,
+                  "height": 750,
+                  "size": 131.66,
+                  "url": "/uploads/large_185181759_295779632212876_8311322595558216056_n_64df36444b.jpg"
+                }
+              },
+              "hash": "185181759_295779632212876_8311322595558216056_n_64df36444b",
+              "ext": ".jpg",
+              "mime": "image/jpeg",
+              "size": 412.35,
+              "url": "/uploads/185181759_295779632212876_8311322595558216056_n_64df36444b.jpg",
+              "previewUrl": null,
+              "provider": "local",
+              "provider_metadata": null,
+              "createdAt": "2023-06-25T12:36:44.715Z",
+              "updatedAt": "2023-06-25T14:03:06.153Z"
+            }
+          }
+        },
+        "localizations": {
+          "data": [
+            {
+              "id": 15,
+              "attributes": {
+                "title": "Xero 故事- PAE Wine Limited",
+                "createdAt": "2023-06-25T12:36:52.011Z",
+                "updatedAt": "2023-06-25T14:22:44.635Z",
+                "publishedAt": "2023-06-25T12:36:53.902Z",
+                "slug": "xero-story-pae-wine-limited-chi",
+                "content": "我們的客戶 PAE Wine 悅杯使用Xero系統處理財務及管理存貨工作📦，大大節省行政成本。\n\\\n\\\n他們可透過 Xero 更好地管理應付帳款流程，一次交易可向供應商支付多張賬單📃，有效率的應付帳款流程意味著節省不少管理時間，集中拓展生意業務。\n\\\n\\\nXero亦可實時查詢貨品存貨量，庫存管理系統自動連接發票功能🖥。如果客人購買紅酒，PAE Wine Limited只需在發票系統添加商品項目及數量，Xero系統就會即時在庫存系統自動更新🆕，不再需要人手處理庫存紀錄工作，銷售從此變得輕鬆簡單。",
+                "Category": "Xero 故事",
+                "locale": "zh-Hant-HK"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": 20,
+      "attributes": {
+        "title": "Xero Story – Cheng Hung Faat Alpha",
+        "createdAt": "2023-06-25T14:08:40.188Z",
+        "updatedAt": "2023-06-25T14:23:37.290Z",
+        "publishedAt": "2023-06-25T14:10:16.134Z",
+        "slug": "xero-story-cheng-hung-faat-alpha",
+        "content": "Our client, Alpha Cheng, has been in the insurance industry for 15 years and has become a multiple-year MDRT. To qualify as a MDRT member, one must meet specific commission performance, professional knowledge, ethical conduct, and customer service requirements. This is an industry-recognized performance certification and will be adjusted according to the cost of living indices in various places. At the same time, Alpha has nearly a thousand customers and serves as a team manager.\n\\\n\\\nWhether it's team operating costs or individual reimbursements, Alpha has been using Excel to manage finances. As the number of customers and team members increase, so does the volume of documents such as invoices and receipts. For Alpha, inputting invoice data one by one is very time-consuming. Sometimes, due to busy work, Alpha might forget to upload data. This makes financial management difficult for Alpha and may lead to errors and omissions.\n\\\n\\\nAlpha decided to use the Xero system to solve the above problems. Alpha can input team member data or activity expenses on the cloud system, generate reports with one click, and instantly save time on accounting tasks. This leaves more time to meet with clients, follow up on their conditions, and motivate team development.\n\\\n\\\nMoreover, Xero can alleviate the pressure Alpha faces with massive amounts of data and reduce the chances of errors occurring during manual entry. This helps maintain a professional image and attracts more customers.",
+        "Category": "Xero Story",
+        "locale": "en",
+        "featuredImage": {
+          "data": {
+            "id": 331,
+            "attributes": {
+              "name": "245375185_394272202363618_8300812987830939720_n.jpg",
+              "alternativeText": null,
+              "caption": null,
+              "width": 1600,
+              "height": 1200,
+              "formats": {
+                "thumbnail": {
+                  "name": "thumbnail_245375185_394272202363618_8300812987830939720_n.jpg",
+                  "hash": "thumbnail_245375185_394272202363618_8300812987830939720_n_977243331b",
+                  "ext": ".jpg",
+                  "mime": "image/jpeg",
+                  "path": null,
+                  "width": 208,
+                  "height": 156,
+                  "size": 9.56,
+                  "url": "/uploads/thumbnail_245375185_394272202363618_8300812987830939720_n_977243331b.jpg"
+                },
+                "small": {
+                  "name": "small_245375185_394272202363618_8300812987830939720_n.jpg",
+                  "hash": "small_245375185_394272202363618_8300812987830939720_n_977243331b",
+                  "ext": ".jpg",
+                  "mime": "image/jpeg",
+                  "path": null,
+                  "width": 500,
+                  "height": 375,
+                  "size": 39.37,
+                  "url": "/uploads/small_245375185_394272202363618_8300812987830939720_n_977243331b.jpg"
+                },
+                "large": {
+                  "name": "large_245375185_394272202363618_8300812987830939720_n.jpg",
+                  "hash": "large_245375185_394272202363618_8300812987830939720_n_977243331b",
+                  "ext": ".jpg",
+                  "mime": "image/jpeg",
+                  "path": null,
+                  "width": 1000,
+                  "height": 750,
+                  "size": 125.21,
+                  "url": "/uploads/large_245375185_394272202363618_8300812987830939720_n_977243331b.jpg"
+                },
+                "medium": {
+                  "name": "medium_245375185_394272202363618_8300812987830939720_n.jpg",
+                  "hash": "medium_245375185_394272202363618_8300812987830939720_n_977243331b",
+                  "ext": ".jpg",
+                  "mime": "image/jpeg",
+                  "path": null,
+                  "width": 750,
+                  "height": 563,
+                  "size": 77.64,
+                  "url": "/uploads/medium_245375185_394272202363618_8300812987830939720_n_977243331b.jpg"
+                }
+              },
+              "hash": "245375185_394272202363618_8300812987830939720_n_977243331b",
+              "ext": ".jpg",
+              "mime": "image/jpeg",
+              "size": 232.63,
+              "url": "/uploads/245375185_394272202363618_8300812987830939720_n_977243331b.jpg",
+              "previewUrl": null,
+              "provider": "local",
+              "provider_metadata": null,
+              "createdAt": "2023-06-25T12:32:10.902Z",
+              "updatedAt": "2023-06-25T12:32:10.902Z"
+            }
+          }
+        },
+        "localizations": {
+          "data": [
+            {
+              "id": 14,
+              "attributes": {
+                "title": "Xero故事 – Cheng Hung Faat Alpha",
+                "createdAt": "2023-06-25T12:32:24.977Z",
+                "updatedAt": "2023-06-25T14:23:46.966Z",
+                "publishedAt": "2023-06-25T12:32:26.578Z",
+                "slug": "xero-story-cheng-hung-faat-alpha-chi",
+                "content": "我們的客戶 Alpha Cheng 已經從事保險業15年，成爲了多年的MDRT，MDRT會員需要符合指定佣金業績、專業知識、道德操守及客戶服務要求，是業內公認業績證明，並會根據各地物價指數調整。同時，Alpha有近千名客戶，並擔任團隊經理。\n\\\n\\\n不論是團隊的經營費用，抑或是個人的報銷都是使用Excel去管理財務。隨著客戶及團隊人數越來越多，發票及收據等文件亦隨之增加，對於Alpha而言，逐一輸入發票的資料十分費時，甚至乎有時會因工作忙碌而忘記上載資料，這樣令Alpha難以管理財務，更會可能會出現錯漏。\n\\\n\\\nAlpha決定使用Xero系統解決以上問題，Alpha可以在雲端系統上輸入團隊成員的資料或活動費用，一鍵式生成報表，立即省卻了處理會計事務的時間，有更充裕的時間去見客，跟進客人的狀況，激勵團隊發展。\n\\\n\\\n加上Xero可以減輕Alpha面對龐大的數據的壓力，並減低了人手輸入時出現錯誤的機會，以保持專業形象，吸納更多的客戶。",
+                "Category": "Xero 故事",
+                "locale": "zh-Hant-HK"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": 21,
+      "attributes": {
+        "title": "Xero Story – SiuMing Photo",
+        "createdAt": "2023-06-25T14:12:39.891Z",
+        "updatedAt": "2023-06-25T14:13:33.740Z",
+        "publishedAt": "2023-06-25T14:13:02.101Z",
+        "slug": "xero-story-siuming-photo",
+        "content": "SiuMing, the founder of SiuMing Photo and its chief photographer, graduated from the Design Department of the Hong Kong Polytechnic University with a first-class honors degree and has worked in the field of design for more than ten years. In 2006, he founded SiuMing Photo, focusing on wedding and bridal photography. To date, he has won numerous awards, including being named one of the top ten wedding photographers in Hong Kong for six consecutive years and winning more than 50 awards in international wedding photography competitions. In 2020, SiuMing also founded SiuMingTeam to create high-quality wedding photography works for more couples.\n\\\n\\\nSiuMing Photo, engaged in commercial and wedding photography work, has always used Excel spreadsheets to manage finances. When customers purchase services, employees will issue invoices to collect deposits, and then collect the remaining payments in installments according to the progress of the shoot. However, using Excel to issue invoices requires manual entry of order numbers, which increases the workload of employees and the chances of errors. Sometimes, there are different revision versions, which makes the team easily face the problem of chaotic invoice management, greatly undermining the customers' confidence in the company.\n\\\n\\\nAs the number of customers continues to increase, employees find it overwhelming to handle Excel spreadsheets. SiuMing Photo realized that Excel has been replaced by cloud accounting systems and decided to use the Xero system to solve the above problems. Employees can enter invoices through Xero and send invoices to customers by email to collect payments. At the same time, Xero provides an invoice categorization feature, where employees can mark payment periods when issuing invoices and automatically calculate the balance, which is convenient for following up on the payment situation later. When customers make a payment, employees mark the payment date and method on the same invoice, and set a notification for the next payment date. This greatly alleviates the pressure of employees managing a large number of invoices, reduces the occurrence of manual errors, and maintains the company's professional image.\n\\\n\\\nCLG Group, the annual emerging partner and silver chapter partner of the cloud accounting platform Xero, can provide professional solutions for setting up and integrating Xero and other cloud platforms for various enterprises, as well as one-stop services for employee training and technical support. Please contact us for more information.",
+        "Category": "Xero Story",
+        "locale": "en",
+        "featuredImage": {
+          "data": {
+            "id": 329,
+            "attributes": {
+              "name": "189692603_305313511259488_8579680881736477709_n.jpg",
+              "alternativeText": null,
+              "caption": null,
+              "width": 2048,
+              "height": 1366,
+              "formats": {
+                "thumbnail": {
+                  "name": "thumbnail_189692603_305313511259488_8579680881736477709_n.jpg",
+                  "hash": "thumbnail_189692603_305313511259488_8579680881736477709_n_d3ebcba97c",
+                  "ext": ".jpg",
+                  "mime": "image/jpeg",
+                  "path": null,
+                  "width": 234,
+                  "height": 156,
+                  "size": 7.17,
+                  "url": "/uploads/thumbnail_189692603_305313511259488_8579680881736477709_n_d3ebcba97c.jpg"
+                },
+                "medium": {
+                  "name": "medium_189692603_305313511259488_8579680881736477709_n.jpg",
+                  "hash": "medium_189692603_305313511259488_8579680881736477709_n_d3ebcba97c",
+                  "ext": ".jpg",
+                  "mime": "image/jpeg",
+                  "path": null,
+                  "width": 750,
+                  "height": 500,
+                  "size": 49.41,
+                  "url": "/uploads/medium_189692603_305313511259488_8579680881736477709_n_d3ebcba97c.jpg"
+                },
+                "large": {
+                  "name": "large_189692603_305313511259488_8579680881736477709_n.jpg",
+                  "hash": "large_189692603_305313511259488_8579680881736477709_n_d3ebcba97c",
+                  "ext": ".jpg",
+                  "mime": "image/jpeg",
+                  "path": null,
+                  "width": 1000,
+                  "height": 667,
+                  "size": 78.93,
+                  "url": "/uploads/large_189692603_305313511259488_8579680881736477709_n_d3ebcba97c.jpg"
+                },
+                "small": {
+                  "name": "small_189692603_305313511259488_8579680881736477709_n.jpg",
+                  "hash": "small_189692603_305313511259488_8579680881736477709_n_d3ebcba97c",
+                  "ext": ".jpg",
+                  "mime": "image/jpeg",
+                  "path": null,
+                  "width": 500,
+                  "height": 333,
+                  "size": 24.99,
+                  "url": "/uploads/small_189692603_305313511259488_8579680881736477709_n_d3ebcba97c.jpg"
+                }
+              },
+              "hash": "189692603_305313511259488_8579680881736477709_n_d3ebcba97c",
+              "ext": ".jpg",
+              "mime": "image/jpeg",
+              "size": 238.61,
+              "url": "/uploads/189692603_305313511259488_8579680881736477709_n_d3ebcba97c.jpg",
+              "previewUrl": null,
+              "provider": "local",
+              "provider_metadata": null,
+              "createdAt": "2023-06-25T11:17:44.105Z",
+              "updatedAt": "2023-06-25T11:17:44.105Z"
+            }
+          }
+        },
+        "localizations": {
+          "data": [
+            {
+              "id": 12,
+              "attributes": {
+                "title": "Xero故事 – SiuMing Photo",
+                "createdAt": "2023-06-25T11:17:53.960Z",
+                "updatedAt": "2023-06-25T14:13:56.912Z",
+                "publishedAt": "2023-06-25T12:23:41.906Z",
+                "slug": "xero-story-siuming-photo-chi",
+                "content": "SiuMing Photo的創辦人 SiuMing，同時兼任首席攝影師，於香港理工大學設計系以一級榮譽學士畢業，並於設計範疇工作超過了超過十年。於2006年創立了SiuMing Photo，投身於婚禮及婚紗攝影，至今獲獎無數，當中包括：連續 6 年為香港十大婚禮攝影師、國際性婚禮攝影比賽並獲得超過 50項獎項等。 SiuMing亦於 2020年 創立 SiuMingTeam 為更多新人打造高質素的婚攝作品。\n\\\n\\\nSiuMing Photo從事商業及婚禮攝影工作， 一直採用Excel表管理財務，當客人購買服務，員工就會開發票收取訂金，以後按照拍攝進程分期收取餘下的款項。可是，使用Excel 表開發票需要用人手輸入單號，增加了員工的工作量及出錯的機會，有時亦會出現不同的修訂版本，這樣令團隊容易面對帳單混亂的管理問題，此舉大大減低了客戶對公司的信心。\n\\\n\\\n隨著客戶人數不斷增加，員工對於處理Excel表亦感到吃不消，SiuMing Photo了解到Excel已經被雲端會計系統所取替，決定使用Xero系統去解決以上問題。員工可以通過Xero去輸入賬單，並以電子郵件的形式發送賬單給客戶以收取款項。同時Xero提供了帳單分類功能，員工可在開發票時標註付款數期及自動計算餘額，方便日後跟進收款狀況。當客人付款後，員工在同一帳單標註付款日期及方法，同時制定下一個收款日期通知，這樣就能大大減輕員工管理大量帳單的壓力，同時減少出現人手錯誤，保持公司的專業形象。\n\\\n\\\nCLG Group 為雲端會計平台 Xero之年度新興合夥伴及銀章合作夥伴，我們可以為各個企業提供Xero及其他雲端平台設置及接軌的專業方案、員工培訓、及技術支援一站式服務，請即聯絡我們以了解更多。",
+                "Category": "Xero 故事",
+                "locale": "zh-Hant-HK"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": 22,
+      "attributes": {
+        "title": "Success Story of a Human Resource System — Crew Cut (Hair Salon)",
+        "createdAt": "2023-06-25T15:48:22.510Z",
+        "updatedAt": "2023-06-25T16:03:07.868Z",
+        "publishedAt": "2023-06-25T16:03:07.865Z",
+        "slug": "success-story-human-resource-system-crew-cut-hair-salon",
+        "content": "Crew Cut is engaged in the barber industry, focusing on the simple, durable, easy-to-manage, and masculine Crew Cut hairstyle. They have opened seven branches.\n\\\n\\\nCrew Cut appreciates the trust placed in the CLG Group, using their Human Resources Management System for scheduling, replacing the previous method of scheduling. This system has facilitated the collaboration between Crew Cut and CLG Group, increasing Crew Cut's efficiency in handling scheduling tasks.\n\\\n\\\nTash Ma, the person in charge at Crew Cut, pointed out that in the past, they used pen and paper to record employees' workdays and hours. Furthermore, since branches are scattered all over Hong Kong, Kowloon, and the New Territories, adjusting staff assignments was a big hassle.\n\\\n\\\nSince adopting the Human Resources Management System provided by the CLG Group, scheduling at Crew Cut has been simplified. The system features a batch scheduling function that, within a few minutes, can schedule and publish multiple employees' shifts at once. The system supports copying shifts by person or time, enabling scheduling for similar categories of employees all at once, and significantly shortening scheduling time.\n\\\n\\\nSimultaneously, supervisors can view employees' attendance data for the day within the program, whether it's lateness or early departure, it's all clearly visible. Employees, on the other hand, can view their work dates, times, and locations through the application, avoiding issues arising from last-minute adjustments.\n\\\n\\\nFurthermore, the person in charge at Crew Cut is interested in expanding into the mainland market, where contributions to the \"Five Insurances and One Fund\" are required, while in Hong Kong, contributions to the MPF are needed. To enable HR collaboration between the two regions, the system not only has a Hong Kong version but also a mainland version. This will ensure efficient employee management when Crew Cut expands in both Hong Kong and mainland China.",
+        "Category": "HRM Story",
+        "locale": "en",
+        "featuredImage": {
+          "data": {
+            "id": 330,
+            "attributes": {
+              "name": "WhatsApp-Image-2022-06-21-at-2.54.11-PM-1-1.jpeg",
+              "alternativeText": null,
+              "caption": null,
+              "width": 1600,
+              "height": 1076,
+              "formats": {
+                "thumbnail": {
+                  "name": "thumbnail_WhatsApp-Image-2022-06-21-at-2.54.11-PM-1-1.jpeg",
+                  "hash": "thumbnail_Whats_App_Image_2022_06_21_at_2_54_11_PM_1_1_128855b263",
+                  "ext": ".jpeg",
+                  "mime": "image/jpeg",
+                  "path": null,
+                  "width": 232,
+                  "height": 156,
+                  "size": 9.32,
+                  "url": "/uploads/thumbnail_Whats_App_Image_2022_06_21_at_2_54_11_PM_1_1_128855b263.jpeg"
+                },
+                "small": {
+                  "name": "small_WhatsApp-Image-2022-06-21-at-2.54.11-PM-1-1.jpeg",
+                  "hash": "small_Whats_App_Image_2022_06_21_at_2_54_11_PM_1_1_128855b263",
+                  "ext": ".jpeg",
+                  "mime": "image/jpeg",
+                  "path": null,
+                  "width": 500,
+                  "height": 336,
+                  "size": 34.1,
+                  "url": "/uploads/small_Whats_App_Image_2022_06_21_at_2_54_11_PM_1_1_128855b263.jpeg"
+                },
+                "large": {
+                  "name": "large_WhatsApp-Image-2022-06-21-at-2.54.11-PM-1-1.jpeg",
+                  "hash": "large_Whats_App_Image_2022_06_21_at_2_54_11_PM_1_1_128855b263",
+                  "ext": ".jpeg",
+                  "mime": "image/jpeg",
+                  "path": null,
+                  "width": 1000,
+                  "height": 673,
+                  "size": 112,
+                  "url": "/uploads/large_Whats_App_Image_2022_06_21_at_2_54_11_PM_1_1_128855b263.jpeg"
+                },
+                "medium": {
+                  "name": "medium_WhatsApp-Image-2022-06-21-at-2.54.11-PM-1-1.jpeg",
+                  "hash": "medium_Whats_App_Image_2022_06_21_at_2_54_11_PM_1_1_128855b263",
+                  "ext": ".jpeg",
+                  "mime": "image/jpeg",
+                  "path": null,
+                  "width": 750,
+                  "height": 504,
+                  "size": 68.04,
+                  "url": "/uploads/medium_Whats_App_Image_2022_06_21_at_2_54_11_PM_1_1_128855b263.jpeg"
+                }
+              },
+              "hash": "Whats_App_Image_2022_06_21_at_2_54_11_PM_1_1_128855b263",
+              "ext": ".jpeg",
+              "mime": "image/jpeg",
+              "size": 233.65,
+              "url": "/uploads/Whats_App_Image_2022_06_21_at_2_54_11_PM_1_1_128855b263.jpeg",
+              "previewUrl": null,
+              "provider": "local",
+              "provider_metadata": null,
+              "createdAt": "2023-06-25T12:29:11.801Z",
+              "updatedAt": "2023-06-25T12:29:11.801Z"
+            }
+          }
+        },
+        "localizations": {
+          "data": [
+            {
+              "id": 13,
+              "attributes": {
+                "title": "人力資源系統成功案例——Crew Cut (髮型屋)",
+                "createdAt": "2023-06-25T12:29:44.083Z",
+                "updatedAt": "2023-06-25T15:50:23.617Z",
+                "publishedAt": "2023-06-25T12:40:25.366Z",
+                "slug": "success-story-human-resource-system-crew-cut-hair-salon-chi",
+                "content": "Crew Cut從事理髮行業，以簡單、耐看、易打理及男人味爆發的Crew Cut髮型作為重點，並且開設了七間分店。\n\\\n\\\n感謝客戶Crew Cut對CLG Group的信任，使用人力資源管理系統進行排班，取代昔日的排班方法，人力資源管理系統促進了Crew Cut與CLG Group的合作，提升Crew Cut處理排班事務的工作效率。\n\\\n\\\nCrew Cut負責人Tash Ma指，過往都是以紙筆去記錄員工的上班下班的日子和時間，加上分店遍佈於港九新界，當需要進行人手調動時便會十分麻煩。\n\\\n\\\n自從使用了CLG Grou所提供的人力資源管理系統後，方便了Crew Cut進行排班。系統內設有批量編制班次功能只需幾分鐘，就可以一次性為多位僱員批量排班並發佈，系統支援按人或時間複製班次，一次編完同類別僱員班次，縮短了排班的時間。\n\\\n\\\n同時，主管程式內可以查看員工當日的考勤數據，無論是遲到或早退都一目了然，員工則可以透過應用程式查閲自己的上班日期、時間及地點，避免了臨時調動時所產生的問題。\n\\\n\\\n再者，Crew Cut負責人有意發展內地市場，而內地需要繳付五險一金，香港則需要為MPF供款。為了讓兩地的 HR 協同工作，系統不僅有香港版本，亦有內地版本，將來Crew cut在中港兩地發展時亦能夠高效地管理員工。\n\n",
+                "Category": "HRM Story",
+                "locale": "zh-Hant-HK"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": 23,
+      "attributes": {
+        "title": "Success Story of a Human Resource System — YummyDay (Food Factory)",
+        "createdAt": "2023-06-25T15:54:34.298Z",
+        "updatedAt": "2023-06-26T05:02:51.327Z",
+        "publishedAt": "2023-06-25T16:03:23.503Z",
+        "slug": "success-story-human-resource-system-yummyday-food-factory",
+        "content": "YummyDay is a Korean and Japanese food manufacturer with its own factory, managed by a Korean executive chef. The primary ingredients come directly from Korea and Japan, ensuring the use of genuine and high-quality materials.\n\\\n\\\nKelvin Chan, the person in charge at YummyDay, stated that they had always used pen-and-paper methods for scheduling and had never encountered any human resource management system before. Whenever an employee needed to take a leave, they would have to fill out a form and hand it to the supervisor. Only after the supervisor stamped the form could the leave be approved. There were many inconveniences when managing employees' data, such as difficulty in finding related payroll slips and leave forms.\n\\\n\\\nThe Human Resources Management System provided by the CLG Group has helped Kelvin solve the above problems. Whether it's the scheduling layout, employees' leave application, or leave balance, everything is very clear. Employees can check their leave balances and apply for leaves themselves through the mobile APP. The employer can approve the leave directly on their phone, and the leave arrangement system will automatically record it, eliminating the need for resubmitting applications.\n\\\n\\\nIn addition, the system will intelligently calculate salaries in accordance with Hong Kong laws, allowing Kelvin to accurately carry out payroll tasks. The Payroll Management System has a multitude of built-in payroll calculation formulas, covering a wide range of payroll rules and can handle even the most complex situations with ease. The payroll interface is simple and easy to operate. The payslip clearly shows each salary item, such as the number of leave days and working hours, making it easier and faster for both employees and employers to cross-check.",
+        "Category": "HRM Story",
+        "locale": "en",
+        "featuredImage": {
+          "data": {
+            "id": 328,
+            "attributes": {
+              "name": "WhatsApp-Image-2022-06-24-at-2.03.47-PM-1-1.jpeg",
+              "alternativeText": null,
+              "caption": null,
+              "width": 1536,
+              "height": 2048,
+              "formats": {
+                "thumbnail": {
+                  "name": "thumbnail_WhatsApp-Image-2022-06-24-at-2.03.47-PM-1-1.jpeg",
+                  "hash": "thumbnail_Whats_App_Image_2022_06_24_at_2_03_47_PM_1_1_74b0fc4743",
+                  "ext": ".jpeg",
+                  "mime": "image/jpeg",
+                  "path": null,
+                  "width": 117,
+                  "height": 156,
+                  "size": 3.4,
+                  "url": "/uploads/thumbnail_Whats_App_Image_2022_06_24_at_2_03_47_PM_1_1_74b0fc4743.jpeg"
+                },
+                "large": {
+                  "name": "large_WhatsApp-Image-2022-06-24-at-2.03.47-PM-1-1.jpeg",
+                  "hash": "large_Whats_App_Image_2022_06_24_at_2_03_47_PM_1_1_74b0fc4743",
+                  "ext": ".jpeg",
+                  "mime": "image/jpeg",
+                  "path": null,
+                  "width": 750,
+                  "height": 1000,
+                  "size": 54.7,
+                  "url": "/uploads/large_Whats_App_Image_2022_06_24_at_2_03_47_PM_1_1_74b0fc4743.jpeg"
+                },
+                "medium": {
+                  "name": "medium_WhatsApp-Image-2022-06-24-at-2.03.47-PM-1-1.jpeg",
+                  "hash": "medium_Whats_App_Image_2022_06_24_at_2_03_47_PM_1_1_74b0fc4743",
+                  "ext": ".jpeg",
+                  "mime": "image/jpeg",
+                  "path": null,
+                  "width": 563,
+                  "height": 750,
+                  "size": 34.52,
+                  "url": "/uploads/medium_Whats_App_Image_2022_06_24_at_2_03_47_PM_1_1_74b0fc4743.jpeg"
+                },
+                "small": {
+                  "name": "small_WhatsApp-Image-2022-06-24-at-2.03.47-PM-1-1.jpeg",
+                  "hash": "small_Whats_App_Image_2022_06_24_at_2_03_47_PM_1_1_74b0fc4743",
+                  "ext": ".jpeg",
+                  "mime": "image/jpeg",
+                  "path": null,
+                  "width": 375,
+                  "height": 500,
+                  "size": 18.56,
+                  "url": "/uploads/small_Whats_App_Image_2022_06_24_at_2_03_47_PM_1_1_74b0fc4743.jpeg"
+                }
+              },
+              "hash": "Whats_App_Image_2022_06_24_at_2_03_47_PM_1_1_74b0fc4743",
+              "ext": ".jpeg",
+              "mime": "image/jpeg",
+              "size": 210.11,
+              "url": "/uploads/Whats_App_Image_2022_06_24_at_2_03_47_PM_1_1_74b0fc4743.jpeg",
+              "previewUrl": null,
+              "provider": "local",
+              "provider_metadata": null,
+              "createdAt": "2023-06-25T07:10:42.171Z",
+              "updatedAt": "2023-06-25T07:10:42.171Z"
+            }
+          }
+        },
+        "localizations": {
+          "data": [
+            {
+              "id": 10,
+              "attributes": {
+                "title": "人力資源系統成功案例——YummyDay (食品工場)",
+                "createdAt": "2023-06-25T07:11:05.603Z",
+                "updatedAt": "2023-06-25T15:55:30.644Z",
+                "publishedAt": "2023-06-25T12:23:45.535Z",
+                "slug": "success-story-human-resource-system-yummyday-food-factory-chi",
+                "content": "YummyDay是一個韓日食品製造商，自設工場，由韓國人行政總廚主理。主要食材來自韓國及日本當地, 真材實料。\n\\\n\\\nYummyDay負責人Kelvin Chan表示以往都是使用紙筆的方法去排班，從來未接觸過任何人力資源管理系統。每次員工請假都需要填寫好表格，親手遞給主管後，經主管蓋印後才能獲得批核。在管理員工的資料時都會出現很多不便，有時更會難以尋找相關員工的工資單、請假表等。\n\\\n\\\nCLG Group所提供的人力資源管理系統協助了Kelvin解決了上述的問題，無論是排班版面、員工假期申請、假期餘額都十分清晰。\n僱員只需透過手機APP即可查看假期餘額，自助申請假期。\n僱主透過手機即可審批，假期安排系統會自動記錄，無需再次遞交申請。\n\\\n\\\n另外，系統會智能化地計算薪酬，緊貼香港法例，Kelvin可以準確地進行計糧工作。\n薪酬管理系統內置大量薪酬計算公式，全面覆蓋各種薪酬規則，再複雜的情況也能輕鬆應對。\n計糧介面簡潔，操作簡單，工資單更可以清晰顯示每個薪酬項目，例如請假日數、工作時數等，員工及僱主在核對時會更加方便快捷。",
+                "Category": "HRM Story",
+                "locale": "zh-Hant-HK"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": 25,
+      "attributes": {
+        "title": "Match Event Production x Xero Cloud Accounting System",
+        "createdAt": "2023-06-25T16:00:54.326Z",
+        "updatedAt": "2023-06-25T16:02:56.514Z",
+        "publishedAt": "2023-06-25T16:02:56.511Z",
+        "slug": "match-event-production-x-xero-cloud-accounting-system",
+        "content": "MATCH Event Production 🎊 is a renowned wedding decor company established in 2013 📅. As their business grew, they found managing finances with just Excel 📊 to be increasingly inadequate. Typically, clients would make installment payments 💰 according to the progress of the decorations. However, with a surge in the number of clients, they frequently faced issues of invoice disarray 📑 and human errors, which led to diminished trust in the company 📉.\n\\\n\\\nTo address these issues, they decided to use the Xero Cloud Accounting System 🌐. Not only did this system alleviate their previous predicaments, but it also made the entire financial process clearer and more efficient 🔝. With Xero, employees could directly issue quotations and invoices in the system and email them to clients for collection 📧. Moreover, when issuing invoices, employees could mark installment payment information and automatically calculate the outstanding amount, facilitating follow-up on payment statuses 👍.\n\\\n\\\nOnce a client makes a payment, employees could record the payment date and method within the same bill and set a notification for the next collection 🔔. This significantly reduced the pressure of managing a multitude of bills ⬇️ and significantly diminished human errors ✅, helping to maintain the company's professional image 🌟.\n\\\n\\\nAfter using the Xero Cloud Accounting System, administrative working hours at MATCH event production were significantly reduced ⏰. With the system's automated management functions, they saved at least 30 working hours each month 👏. This allowed the boss and employees to spend more time on customer service and business development, rather than on intricate financial details 📈.",
+        "Category": "Xero Story",
+        "locale": "en",
+        "featuredImage": {
+          "data": {
+            "id": 334,
+            "attributes": {
+              "name": "353459061_635307011956816_1552893056925984906_n.jpg",
+              "alternativeText": null,
+              "caption": null,
+              "width": 1024,
+              "height": 768,
+              "formats": {
+                "thumbnail": {
+                  "name": "thumbnail_353459061_635307011956816_1552893056925984906_n.jpg",
+                  "hash": "thumbnail_353459061_635307011956816_1552893056925984906_n_0a798bb94e",
+                  "ext": ".jpg",
+                  "mime": "image/jpeg",
+                  "path": null,
+                  "width": 208,
+                  "height": 156,
+                  "size": 9.54,
+                  "url": "/uploads/thumbnail_353459061_635307011956816_1552893056925984906_n_0a798bb94e.jpg"
+                },
+                "small": {
+                  "name": "small_353459061_635307011956816_1552893056925984906_n.jpg",
+                  "hash": "small_353459061_635307011956816_1552893056925984906_n_0a798bb94e",
+                  "ext": ".jpg",
+                  "mime": "image/jpeg",
+                  "path": null,
+                  "width": 500,
+                  "height": 375,
+                  "size": 40.98,
+                  "url": "/uploads/small_353459061_635307011956816_1552893056925984906_n_0a798bb94e.jpg"
+                },
+                "large": {
+                  "name": "large_353459061_635307011956816_1552893056925984906_n.jpg",
+                  "hash": "large_353459061_635307011956816_1552893056925984906_n_0a798bb94e",
+                  "ext": ".jpg",
+                  "mime": "image/jpeg",
+                  "path": null,
+                  "width": 1000,
+                  "height": 750,
+                  "size": 123.11,
+                  "url": "/uploads/large_353459061_635307011956816_1552893056925984906_n_0a798bb94e.jpg"
+                },
+                "medium": {
+                  "name": "medium_353459061_635307011956816_1552893056925984906_n.jpg",
+                  "hash": "medium_353459061_635307011956816_1552893056925984906_n_0a798bb94e",
+                  "ext": ".jpg",
+                  "mime": "image/jpeg",
+                  "path": null,
+                  "width": 750,
+                  "height": 563,
+                  "size": 79.64,
+                  "url": "/uploads/medium_353459061_635307011956816_1552893056925984906_n_0a798bb94e.jpg"
+                }
+              },
+              "hash": "353459061_635307011956816_1552893056925984906_n_0a798bb94e",
+              "ext": ".jpg",
+              "mime": "image/jpeg",
+              "size": 114.62,
+              "url": "/uploads/353459061_635307011956816_1552893056925984906_n_0a798bb94e.jpg",
+              "previewUrl": null,
+              "provider": "local",
+              "provider_metadata": null,
+              "createdAt": "2023-06-25T15:58:34.220Z",
+              "updatedAt": "2023-06-25T15:58:34.220Z"
+            }
+          }
+        },
+        "localizations": {
+          "data": [
+            {
+              "id": 24,
+              "attributes": {
+                "title": "Match Event Production x Xero 雲端會計系統",
+                "createdAt": "2023-06-25T15:58:08.010Z",
+                "updatedAt": "2023-06-25T16:03:01.634Z",
+                "publishedAt": "2023-06-25T16:03:01.628Z",
+                "slug": "match-event-production-x-xero-cloud-accounting-system-chi",
+                "content": "MATCH event production  🎊是一間知名的婚禮佈置公司，成立於2013年📅。隨著業務不斷發展，他們發現單憑Excel管理財務📊變得捉襟見肘。通常，客戶購買服務時會根據佈置進度分期付款💰，但隨著客戶數量激增，他們經常面對帳單混亂📑和人為失誤的問題，導致客戶對公司的信任降低📉。\n\\\n\\\n為解決這些問題，他們選擇使用 Xero 雲端會計系統🌐。這個系統不僅改善了他們先前的困境，還讓整個財務過程變得更加清晰和高效🔝。通過Xero，員工可以直接在系統上發出報價單（Quotation）和發票（Invoice），並以電子郵件形式發送給客戶收款📧。此外，員工在開具發票時可以標記分期付款資訊，並自動計算尚未付清的款項，以便日後跟進收款狀況👍。\n\\\n\\\n當客戶付款後，員工可以在同一賬單中記錄付款日期和方式，並設定下一次收款通知🔔。這樣一來，員工在管理大量帳單時的壓力得以大幅度降低⬇️，人為失誤也大幅減少✅，有助於維持公司的專業形象🌟。\n\\\n\\\n使用 Xero 雲端會計系統後，@ Match event production  的行政工作時間大幅減少⏰。由於系統自動化的管理功能，每月至少節省了30個工作小時👏。這樣一來，老闆和員工可以將更多時間用於客戶服務和業務發展上，而不是在繁瑣的財務細節上📈。",
+                "Category": "Xero Story",
+                "locale": "zh-Hant-HK"
+              }
+            }
+          ]
+        }
       }
     }
-  },
-  "meta": {}
+  ],
+  "meta": {
+    "pagination": { "page": 1, "pageSize": 25, "pageCount": 1, "total": 8 }
+  }
 }
