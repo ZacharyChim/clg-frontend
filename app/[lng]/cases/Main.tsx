@@ -18,13 +18,14 @@ export default async function Main({ lng }: PageProps) {
   let language
   lng === 'en' ? (language = 'en') : (language = 'zh-Hant-HK')
   const allCases = await fetchCollection('cases', language)
-  const caseText = await fetchSingle('case-study')
   let categories: string[] = ['All']
   allCases.forEach((item) => {
-    categories.includes(item.attributes.Category)
+    categories.includes(item.attributes.category)
       ? null
-      : categories.push(item.attributes.Category)
+      : categories.push(item.attributes.category)
   })
+
+  const caseText = await fetchSingle('case-study')
   let lang
   lng === 'en'
     ? (lang = caseText)
@@ -47,7 +48,7 @@ export default async function Main({ lng }: PageProps) {
               cases = allCases
             } else {
               cases = allCases.filter(
-                (caseItem) => caseItem.attributes.Category === item
+                (caseItem) => caseItem.attributes.category === item
               )
             }
             return (
