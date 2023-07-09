@@ -25,7 +25,6 @@ export default async function Main({ lng }: PageProps) {
       ? null
       : categories.push(item.attributes.Category)
   })
-  console.log(categories)
   let lang
   lng === 'en'
     ? (lang = caseText)
@@ -37,7 +36,9 @@ export default async function Main({ lng }: PageProps) {
         <Tabs defaultValue='All'>
           <TabsList>
             {categories.map((item) => (
-              <TabsTrigger value={item}>{item}</TabsTrigger>
+              <TabsTrigger value={item} key={v4()}>
+                {item}
+              </TabsTrigger>
             ))}
           </TabsList>
           {categories.map((item) => {
@@ -50,7 +51,7 @@ export default async function Main({ lng }: PageProps) {
               )
             }
             return (
-              <TabsContent value={item}>
+              <TabsContent value={item} key={v4()}>
                 <div className='grid grid-cols-1 gap-8 md:grid-cols-2 md:gap-12 lg:grid-cols-3'>
                   {cases
                     .slice(0)

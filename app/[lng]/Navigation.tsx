@@ -40,10 +40,10 @@ export default function Navigation(props) {
   }
   return (
     <>
-      <nav className='border-gray-200	bg-white align-text-bottom dark:border-gray-700 dark:bg-gray-900'>
-        <div className='mx-auto flex max-w-5xl flex-wrap items-center justify-between p-4'>
+      <nav className='border-gray-200	bg-white align-text-bottom'>
+        <div className='mx-auto flex max-w-6xl flex-wrap items-center justify-between'>
           <Link href='/' className='flex items-center'>
-            <Image src={props.logoURL} alt='' width={80} height={80} />
+            <Image src={props.logoURL} alt='' width={100} height={100} />
           </Link>
           <div className='hidden w-full md:flex md:w-auto' id='navbar'>
             <ul className='mt-4 flex flex-col rounded-lg border border-gray-100 bg-gray-50 font-medium md:mt-0 md:flex-row md:space-x-8 md:border-0 md:bg-white md:p-0'>
@@ -59,7 +59,7 @@ export default function Navigation(props) {
                         // data-dropdown-toggle='assurance-advisory-dropdown'
                         // data-dropdown-offset-distance='12'
                         onClick={toggleAssuranceMenu}
-                        className='flex w-full items-center justify-between rounded py-2 pl-3 pr-4 align-baseline text-sm text-gray-900 hover:bg-gray-100 md:w-auto md:border-0 md:p-0 md:hover:bg-transparent md:hover:text-blue-700'
+                        className='flex w-full items-center justify-between rounded py-2 pl-3 pr-4 align-baseline text-md text-gray-900 hover:bg-gray-100 md:w-auto md:border-0 md:p-0 md:hover:bg-transparent md:hover:text-blue-700'
                       >
                         {item.title}
                         <svg
@@ -193,7 +193,7 @@ export default function Navigation(props) {
                         // data-dropdown-toggle='cloud-solutions-dropdown'
                         // data-dropdown-offset-distance='12'
                         onClick={toggleCloudMenu}
-                        className='flex w-full items-center justify-between rounded py-2 pl-3 pr-4 text-sm text-gray-900 hover:bg-gray-100 md:w-auto md:border-0 md:p-0 md:hover:bg-transparent md:hover:text-blue-700'
+                        className='flex w-full items-center justify-between rounded py-2 pl-3 pr-4 text-md text-gray-900 hover:bg-gray-100 md:w-auto md:border-0 md:p-0 md:hover:bg-transparent md:hover:text-blue-700'
                       >
                         {item.title}
                         <svg
@@ -268,7 +268,7 @@ export default function Navigation(props) {
                   <li key={v4()}>
                     <Link
                       href={item.url}
-                      className='block rounded py-2 pl-3 pr-4 text-sm text-gray-900 hover:bg-gray-100 md:border-0 md:p-0 md:hover:bg-transparent md:hover:text-blue-700'
+                      className='block rounded py-2 pl-3 pr-4 text-md text-gray-900 hover:bg-gray-100 md:border-0 md:p-0 md:hover:bg-transparent md:hover:text-blue-700'
                     >
                       {item.title}
                     </Link>
@@ -280,7 +280,7 @@ export default function Navigation(props) {
                   id='dropdownLangButton'
                   // data-dropdown-toggle='dropdownLang'
                   onClick={toggleLangMenu}
-                  className='inline-flex items-center rounded-lg py-2 pl-3 text-center align-top text-sm hover:text-blue-700 md:py-0 md:pl-0'
+                  className='inline-flex items-center rounded-lg py-2 pl-3 text-center align-top text-md hover:text-blue-700 md:py-0 md:pl-0'
                   type='button'
                 >
                   <Image
@@ -312,7 +312,7 @@ export default function Navigation(props) {
                       : 'hidden'
                   }
                 >
-                  <ul className='py-2 text-sm text-gray-700'>
+                  <ul className='py-2 text-md text-gray-700'>
                     <li>
                       <Link
                         href='/en'

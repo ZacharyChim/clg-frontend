@@ -1,73 +1,73 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
- 
+
 @layer base {
   :root {
     --background: 0 0% 100%;
     --foreground: 222.2 84% 4.9%;
- 
+
     --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
- 
+
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
- 
+
     --card: 0 0% 100%;
     --card-foreground: 222.2 84% 4.9%;
- 
+
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
- 
+
     --primary: 222.2 47.4% 11.2%;
     --primary-foreground: 210 40% 98%;
- 
+
     --secondary: 210 40% 96.1%;
     --secondary-foreground: 222.2 47.4% 11.2%;
- 
+
     --accent: 210 40% 96.1%;
     --accent-foreground: 222.2 47.4% 11.2%;
- 
+
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
- 
+
     --ring: 215 20.2% 65.1%;
- 
+
     --radius: 0.5rem;
   }
- 
+
   .dark {
     --background: 222.2 84% 4.9%;
     --foreground: 210 40% 98%;
- 
+
     --muted: 217.2 32.6% 17.5%;
     --muted-foreground: 215 20.2% 65.1%;
- 
+
     --popover: 222.2 84% 4.9%;
     --popover-foreground: 210 40% 98%;
- 
+
     --card: 222.2 84% 4.9%;
     --card-foreground: 210 40% 98%;
- 
+
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
- 
+
     --primary: 210 40% 98%;
     --primary-foreground: 222.2 47.4% 11.2%;
- 
+
     --secondary: 217.2 32.6% 17.5%;
     --secondary-foreground: 210 40% 98%;
- 
+
     --accent: 217.2 32.6% 17.5%;
     --accent-foreground: 210 40% 98%;
- 
+
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 85.7% 97.3%;
- 
+
     --ring: 217.2 32.6% 17.5%;
   }
 }
- 
+
 @layer base {
   * {
     @apply border-border;
@@ -75,4 +75,164 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+
+article a {
+  color: blueviolet;
+}
+
+.hamburger {
+  cursor: pointer;
+  width: 24px;
+  transition: all 0.25s;
+  position: relative;
+}
+
+.hamburger-top,
+.hamburger-middle,
+.hamburger-bottom {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 24px;
+  height: 2px;
+  background: #030333;
+  transform: rotate(0);
+  transition: all 0.5s;
+}
+
+.hamburger-middle {
+  transform: translateY(7px);
+}
+
+.hamburger-bottom {
+  transform: translateY(14px);
+}
+
+.open {
+  transform: rotate(90deg);
+  transform: translate(0px);
+}
+
+.open .hamburger-top {
+  transform: rotate(45deg) translateY(6px) translate(6px);
+}
+
+.open .hamburger-middle {
+  display: none;
+}
+
+.open .hamburger-bottom {
+  transform: rotate(-45deg) translateY(6px) translate(-6px);
+}
+
+article ul li::before,
+.arrow-list ul li::before {
+  content: url(/arrow.png);
+  display: inline-block;
+  margin-right: 0.5em;
+}
+
+nav ul li::before {
+  content: '';
+}
+
+.faq ul {
+  list-style-position: outside;
+}
+
+.faq ul li::before {
+  content: url(/arrow-blue.png);
+  display: inline-block;
+  margin-right: 0.5em;
+  vertical-align: middle;
+}
+
+article ol {
+  list-style-type: decimal;
+  list-style-position: inside;
+}
+
+.circle {
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+}
+
+details[open] > summary > h4 > span.summary-title {
+  color: black;
+}
+
+/* half highlight */
+.half_background {
+  background: linear-gradient(to top, #cefdf9 40%, transparent 50%);
+}
+
+article h2,
+article h3 {
+  font-weight: bold;
+  padding: 2px 0;
+}
+
+.xero {
+  color: #0ea6e5;
+  text-decoration-line: underline;
+}
+
+.input-wrapper {
+  position: relative;
+  margin: 4px;
+}
+
+.contact-input {
+  border: 1px solid #0da4e7;
+  border-radius: 4px;
+  position: relative;
+  margin-top: 12px;
+  width: 100%;
+  line-height: 6ex;
+  padding: 0 10px;
+}
+
+.contact-select {
+  border: 1px solid #0da4e7;
+  border-radius: 4px;
+  margin-top: 12px;
+  height: 80%;
+  padding: 10px;
+  color: #0da4e7;
+}
+
+.contact-input::placeholder {
+  color: #0da4e7;
+  opacity: 1;
+  transition: opacity 0.5s;
+}
+
+.contact-input:focus::placeholder {
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+.contact-label {
+  position: absolute;
+  top: 0.1ex;
+  z-index: 1;
+  left: 1em;
+  /* background-color: white; */
+  padding: 0 5px;
+  color: transparent;
+  opacity: 0;
+}
+
+.input-wrapper:focus-within .contact-label {
+  position: absolute;
+  top: 0.1ex;
+  z-index: 1;
+  left: 1em;
+  background-color: white;
+  padding: 0 5px;
+  color: #0da4e7;
+  opacity: 1;
+  transition: opacity 0.5s;
 }
