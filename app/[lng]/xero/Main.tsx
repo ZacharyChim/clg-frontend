@@ -261,33 +261,19 @@ export default async function Main({ lng }: PageProps) {
 
   const steps = xeroText.steps
 
-  if (lng === 'en') {
-    var step1 =
-      process.env.NEXT_PUBLIC_STRAPI_URL + xero.step1.data.attributes.url
-    var step1Width = xero.step1.data.attributes.width
-    var step1Height = xero.step1.data.attributes.height
-    var step2 =
-      process.env.NEXT_PUBLIC_STRAPI_URL + xero.step2.data.attributes.url
-    var step2Width = xero.step2.data.attributes.width
-    var step2Height = xero.step2.data.attributes.height
-    var step3 =
-      process.env.NEXT_PUBLIC_STRAPI_URL + xero.step3.data.attributes.url
-    var step3Width = xero.step3.data.attributes.width
-    var step3Height = xero.step3.data.attributes.height
-  } else {
-    var step1 =
-      process.env.NEXT_PUBLIC_STRAPI_URL + xero.step1_hk.data.attributes.url
-    var step1Width = xero.step1_hk.data.attributes.width
-    var step1Height = xero.step1_hk.data.attributes.height
-    var step2 =
-      process.env.NEXT_PUBLIC_STRAPI_URL + xero.step2_hk.data.attributes.url
-    var step2Width = xero.step2_hk.data.attributes.width
-    var step2Height = xero.step2_hk.data.attributes.height
-    var step3 =
-      process.env.NEXT_PUBLIC_STRAPI_URL + xero.step3_hk.data.attributes.url
-    var step3Width = xero.step3_hk.data.attributes.width
-    var step3Height = xero.step3_hk.data.attributes.height
-  }
+  var step1 =
+    process.env.NEXT_PUBLIC_STRAPI_URL + xero.step1.data.attributes.url
+  var step1Width = xero.step1.data.attributes.width
+  var step1Height = xero.step1.data.attributes.height
+  var step2 =
+    process.env.NEXT_PUBLIC_STRAPI_URL + xero.step2.data.attributes.url
+  var step2Width = xero.step2.data.attributes.width
+  var step2Height = xero.step2.data.attributes.height
+  var step3 =
+    process.env.NEXT_PUBLIC_STRAPI_URL + xero.step3.data.attributes.url
+  var step3Width = xero.step3.data.attributes.width
+  var step3Height = xero.step3.data.attributes.height
+
   const reasons = xeroText.reasons
   const reason1 = xeroText.reason1
   const reason1Image =
