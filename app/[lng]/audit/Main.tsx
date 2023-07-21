@@ -117,19 +117,11 @@ export default async function Main({ lng }: PageProps) {
   const service5ImageWidth = audit.service5_image.data.attributes.width
   const service5ImageHeight = audit.service5_image.data.attributes.height
 
-  if (lng === 'en') {
-    var tableImage =
-      process.env.NEXT_PUBLIC_STRAPI_URL +
-      audit.audit_diagram.data.attributes.url
-    var tableImageWidth = audit.audit_diagram.data.attributes.width
-    var tableImageHeight = audit.audit_diagram.data.attributes.height
-  } else {
-    var tableImage =
-      process.env.NEXT_PUBLIC_STRAPI_URL +
-      audit.audit_diagram_hk.data.attributes.url
-    var tableImageWidth = audit.audit_diagram_hk.data.attributes.width
-    var tableImageHeight = audit.audit_diagram_hk.data.attributes.height
-  }
+  var tableImage =
+    process.env.NEXT_PUBLIC_STRAPI_URL + audit.audit_diagram.data.attributes.url
+  var tableImageWidth = audit.audit_diagram.data.attributes.width
+  var tableImageHeight = audit.audit_diagram.data.attributes.height
+
   const contactUs = auditText.contact_us
 
   const faqs: { title: string; content: string }[] = [

@@ -260,17 +260,11 @@ export default async function Main({ lng }: PageProps) {
 
   const why = hrmText.why
 
-  if (lng === 'en') {
     var whyImage =
       process.env.NEXT_PUBLIC_STRAPI_URL + hrm.why_image.data.attributes.url
     var whyImageWidth = hrm.why_image.data.attributes.width
     var whyImageHeight = hrm.why_image.data.attributes.height
-  } else {
-    var whyImage =
-      process.env.NEXT_PUBLIC_STRAPI_URL + hrm.hrm_vs_hk.data.attributes.url
-    var whyImageWidth = hrm.hrm_vs_hk.data.attributes.width
-    var whyImageHeight = hrm.hrm_vs_hk.data.attributes.height
-  }
+ 
   const reason1 = hrmText.reason1
   const reason1Image =
     process.env.NEXT_PUBLIC_STRAPI_URL + hrm.reason1_image.data.attributes.url
