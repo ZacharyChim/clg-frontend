@@ -2,10 +2,10 @@ import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 import {
-  fetchSingle,
   richTextReducer,
   trimTitle,
   fetchCollection,
+  fetchSingleLang,
 } from '../../../../lib/utils'
 import { v4 } from 'uuid'
 
@@ -25,11 +25,9 @@ const fetchCase = async (slug: string) => {
 
 export default async function Main({ lng, slug }: PageProps) {
   const caseObj = await fetchCase(slug)
-  const caseText = await fetchSingle('case-study')
-  let lang
-  lng === 'en'
-    ? (lang = caseText)
-    : (lang = caseText.localizations.data[0].attributes)
+  const caseText = await fetchSingleLang('case-study', lng)
+  let lang = caseText
+
   const content = richTextReducer(caseObj.content)
 
   const publishedAt = new Date(caseObj.publishedAt)
@@ -73,9 +71,7 @@ export default async function Main({ lng, slug }: PageProps) {
     ? (fullDate = `${month} ${date}, ${year}`)
     : (fullDate = `${year} 年 ${month} ${date} 日`)
 
-  let language
-  lng === 'en' ? (language = 'en') : (language = 'zh-Hant-HK')
-  const allCases = await fetchCollection('cases', language)
+  const allCases = await fetchCollection('cases', lng)
   const newCases = allCases.slice(-3)
 
   return (

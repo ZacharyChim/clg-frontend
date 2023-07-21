@@ -2,7 +2,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 import { v4 } from 'uuid'
-import { fetchCollection, fetchSingle, trimTitle } from '../../../lib/utils'
+import { fetchCollection, fetchSingleLang, trimTitle } from '../../../lib/utils'
 import {
   Tabs,
   TabsContent,
@@ -15,11 +15,9 @@ type PageProps = {
 }
 
 export default async function Main({ lng }: PageProps) {
-  let language
-  lng === 'en' ? (language = 'en') : (language = 'zh-Hant-HK')
-  const allPosts = await fetchCollection('posts', language)
+  const allPosts = await fetchCollection('posts', lng)
   let categories: string[] = ['All']
-  allPosts.forEach((item) => {
+  allPosts.forEach((item: any) => {
     if (
       !categories.includes(item.attributes.category) &&
       item.attributes.category !== null
@@ -27,11 +25,8 @@ export default async function Main({ lng }: PageProps) {
       categories.push(item.attributes.category)
   })
 
-  const blogText = await fetchSingle('blog')
-  let lang
-  lng === 'en'
-    ? (lang = blogText)
-    : (lang = blogText.localizations.data[0].attributes)
+  const blogText = await fetchSingleLang('blog', lng)
+  let lang = blogText
 
   return (
     <section id='case' className='mx-auto flex max-w-5xl flex-col items-center'>

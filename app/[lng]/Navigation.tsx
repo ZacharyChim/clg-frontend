@@ -40,9 +40,9 @@ export default function Navigation(props: any) {
   }
 
   let langText
-  if (props.lng === 'en') langText = 'English'
-  if (props.lng === 'hk') langText = '繁體中文'
-  if (props.lng === 'cn') langText = '简体中文'
+  if (props.lng === 'en') langText = 'EN'
+  if (props.lng === 'hk') langText = '繁'
+  if (props.lng === 'cn') langText = '简'
   return (
     <>
       <nav className='border-gray-200	bg-white align-text-bottom'>

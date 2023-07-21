@@ -6,6 +6,7 @@ import {
   richTextReducer,
   trimTitle,
   fetchCollection,
+  fetchSingleLang,
 } from '../../../../lib/utils'
 import { v4 } from 'uuid'
 
@@ -25,11 +26,8 @@ const fetchPost = async (slug: string) => {
 
 export default async function Main({ lng, slug }: PageProps) {
   const post = await fetchPost(slug)
-  const blogText = await fetchSingle('blog')
-  let lang
-  lng === 'en'
-    ? (lang = blogText)
-    : (lang = blogText.localizations.data[0].attributes)
+  const blogText = await fetchSingleLang('blog', lng)
+  let lang = blogText
   const content = richTextReducer(post.content)
 
   const publishedAt = new Date(post.publishedAt)
@@ -71,9 +69,8 @@ export default async function Main({ lng, slug }: PageProps) {
   lng === 'en'
     ? (fullDate = `${month} ${date}, ${year}`)
     : (fullDate = `${year} 年 ${month} ${date} 日`)
-  let language
-  lng === 'en' ? (language = 'en') : (language = 'zh-Hant-HK')
-  const allPosts = await fetchCollection('posts', language)
+
+  const allPosts = await fetchCollection('posts', lng)
   const newPosts = allPosts.slice(-3)
 
   return (

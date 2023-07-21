@@ -8,9 +8,9 @@ export function cn(...inputs: ClassValue[]) {
 
 import { marked } from 'marked'
 
-export const fetchSingle = async (single: string) => {
+export const fetchMeta = async (page: string) => {
   const res = await fetch(
-    `${process.env.NEXT_PUBLIC_STRAPI_API_URL}/${single}?populate=%2A`
+    `${process.env.NEXT_PUBLIC_STRAPI_API_URL}/${page}?populate=%2A`
   )
 
   const resData = await res.json()
