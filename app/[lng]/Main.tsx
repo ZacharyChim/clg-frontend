@@ -2,7 +2,12 @@ import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { v4 } from 'uuid'
-import { fetchCollection, fetchSingle, trimTitle } from '../../lib/utils'
+import {
+  fetchCollection,
+  fetchSingle,
+  fetchSingleLang,
+  trimTitle,
+} from '../../lib/utils'
 
 import contactTop from '../../public/contact-top.png'
 import caseTop from '../../public/case-top.png'
@@ -12,25 +17,15 @@ import Contact from '../../components/Contact'
 import Popup from '../../components/Popup'
 import commaURL from '../../public/comma.png'
 
-import { useTranslation } from '../i18n'
+export default async function Main({ lng }: { lng: string }) {
+  const data = await fetchSingleLang('home-page', lng)
+  const popupText = await fetchSingleLang('popup-text', lng)
 
-export default async function Main(props: { lng: string }) {
-  const data = await fetchSingle('home-page')
-  const popupText = await fetchSingle('popup-text')
+  const allCases = await fetchCollection('cases', lng)
+  const newCases = allCases.slice(0, 3)
 
-  let language
-  props.lng === 'en' ? (language = 'en') : (language = 'zh-Hant-HK')
-  const allCases = await fetchCollection('cases', language)
-  const newCases = allCases.filter((item) => item.id < 4)
-
-  const translate = (slug: string) => {
-    return props.lng === 'hk'
-      ? data.localizations.data[0].attributes[slug]
-      : data[slug]
-  }
-
-  const introTitle = translate('intro_title')
-  const introText = translate('intro_text')
+  const introTitle = data.intro_title
+  const introText = data.intro_text
 
   const descLeftURL =
     process.env.NEXT_PUBLIC_STRAPI_URL +
@@ -44,8 +39,8 @@ export default async function Main(props: { lng: string }) {
   const descLeftTitleWidth = data.desc_left_title.data.attributes.width
   const descLeftTitleHeight = data.desc_left_title.data.attributes.height
 
-  const descLeft = translate('desc_left')
-  const descRight = translate('desc_right')
+  const descLeft = data.desc_left
+  const descRight = data.desc_right
 
   const descRightTitleURL =
     process.env.NEXT_PUBLIC_STRAPI_URL +
@@ -64,25 +59,25 @@ export default async function Main(props: { lng: string }) {
   const expWidth = data.experience.data.attributes.width
   const expHeight = data.experience.data.attributes.height
 
-  const expNumber = translate('experienceNumber')
-  const expText = translate('experienceText')
+  const expNumber = data.experienceNumber
+  const expText = data.experienceText
 
   const clientURL =
     process.env.NEXT_PUBLIC_STRAPI_URL + data.client.data.attributes.url
   const clientWidth = data.client.data.attributes.width
   const clientHeight = data.client.data.attributes.height
 
-  const clientNumber = translate('clientNumber')
-  const clientText = translate('clientText')
+  const clientNumber = data.clientNumber
+  const clientText = data.clientText
 
   const awardURL =
     process.env.NEXT_PUBLIC_STRAPI_URL + data.award.data.attributes.url
   const awardWidth = data.award.data.attributes.width
   const awardHeight = data.award.data.attributes.height
 
-  const awardTitle = translate('awardTitle')
-  const awardText = translate('awardText')
-  const awardDesc = translate('awardDesc')
+  const awardTitle = data.awardTitle
+  const awardText = data.awardText
+  const awardDesc = data.awardDesc
 
   const xeroURL =
     process.env.NEXT_PUBLIC_STRAPI_URL + data.xero.data.attributes.url
@@ -94,18 +89,18 @@ export default async function Main(props: { lng: string }) {
   const xeroSilverWidth = data.xeroSilver.data.attributes.width
   const xeroSilverHeight = data.xeroSilver.data.attributes.height
 
-  const xeroTitle = translate('xeroTitle')
-  const xeroText = translate('xeroText')
+  const xeroTitle = data.xeroTitle
+  const xeroText = data.xeroText
 
-  const serviceTitle = translate('serviceTitle')
-  const incorporation = translate('incorporation')
-  const secretary = translate('secretary')
-  const accounting = translate('accounting')
-  const taxation = translate('taxation')
-  const auditing = translate('auditing')
-  const funding = translate('funding')
-  const cloud = translate('cloud')
-  const solution = translate('solution')
+  const serviceTitle = data.serviceTitle
+  const incorporation = data.incorporation
+  const secretary = data.secretary
+  const accounting = data.accounting
+  const taxation = data.taxation
+  const auditing = data.auditing
+  const funding = data.funding
+  const cloud = data.cloud
+  const solution = data.solution
 
   const incorporationURL =
     process.env.NEXT_PUBLIC_STRAPI_URL +
@@ -149,8 +144,8 @@ export default async function Main(props: { lng: string }) {
   const solutionWidth = data.solutionImage.data.attributes.width
   const solutionHeight = data.solutionImage.data.attributes.height
 
-  const partnership = translate('partnership')
-  const partnershipDesc = translate('partnershipDesc')
+  const partnership = data.partnership
+  const partnershipDesc = data.partnershipDesc
 
   const workstemURL =
     process.env.NEXT_PUBLIC_STRAPI_URL + data.workstemLogo.data.attributes.url
@@ -218,13 +213,13 @@ export default async function Main(props: { lng: string }) {
   const postifyWidth = data.postifyLogo.data.attributes.width
   const postifyHeight = data.postifyLogo.data.attributes.height
 
-  const caseTitle = translate('caseTitle')
+  const caseTitle = data.caseTitle
 
-  const contactTitle = translate('contactTitle')
-  const contactSubtitle = translate('contactSubtitle')
-  const contactText = translate('contactText')
+  const contactTitle = data.contactTitle
+  const contactSubtitle = data.contactSubtitle
+  const contactText = data.contactText
 
-  const detailsLink = translate('details')
+  const detailsLink = data.details
 
   return (
     <>
@@ -246,7 +241,7 @@ export default async function Main(props: { lng: string }) {
         className='bg-center md:bg-top mb-10 bg-curveLine bg-contain bg-no-repeat'
       >
         <div className='container mx-auto mt-10 flex max-w-5xl flex-col items-center space-y-12 px-10 md:flex-row md:space-y-0'>
-          <div className='container mx-auto mt-10 flex flex-col space-y-12 px-4 md:w-1/2 md:flex-row md:space-y-0'>
+          <div className='container mx-auto mt-10 flex flex-col space-y-8 px-4 md:w-1/2 md:flex-row md:space-y-0'>
             <Image
               src={descLeftURL}
               alt='Keep It Simple'
@@ -264,16 +259,16 @@ export default async function Main(props: { lng: string }) {
             <p>{descLeft}</p>
           </div>
         </div>
-        <div className='container mx-auto mt-10 flex max-w-5xl flex-col-reverse items-center space-y-12 px-10 md:flex-row md:space-y-0'>
+        <div className='container mx-auto mt-10 flex max-w-5xl flex-col items-center space-y-12 px-10 md:flex-row md:space-y-0'>
           <div className='container mx-auto mt-10 flex flex-col space-y-8 px-4 md:w-1/2 md:space-y-0'>
             <Image
               src={descRightTitleURL}
-              alt='Glow It Fast'
+              alt='Grow It Fast'
               width={descRightTitleWidth}
               height={descRightTitleHeight}
             />
 
-            <p>{descRight}</p>
+            <p className='pt-8'>{descRight}</p>
           </div>
           <div className='flex flex-col space-y-8 md:w-1/2'>
             <Image
@@ -698,10 +693,10 @@ export default async function Main(props: { lng: string }) {
             {contactSubtitle}
           </h2>
           {/* @ts-ignore */}
-          <Contact contactUs={contactText} lng={props.lng} />
+          <Contact contactUs={contactText} lng={lng} />
         </div>
 
-        <Popup lng={props.lng} popupText={popupText} />
+        <Popup popupText={popupText} lng={lng} />
       </section>
     </>
   )

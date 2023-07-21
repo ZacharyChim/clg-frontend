@@ -1,6 +1,11 @@
 import Image from 'next/image'
 import React from 'react'
-import { fetchSingle, richTextReducer, trimTitle } from '../../../lib/utils'
+import {
+  fetchSingle,
+  fetchSingleLang,
+  richTextReducer,
+  trimTitle,
+} from '../../../lib/utils'
 import Contact from '../../../components/Contact'
 import Faqs from '../../../components/Faqs'
 import number1 from '../../../public/01.png'
@@ -12,10 +17,8 @@ type PageProps = {
 }
 
 export default async function Main({ lng }: PageProps) {
-  const hk = await fetchSingle('hk')
-  let hkText
-
-  lng === 'en' ? (hkText = hk) : (hkText = hk.localizations.data[0].attributes)
+  const hk = await fetchSingleLang('hk', lng)
+  let hkText = hk
 
   const serviceTitle = hkText.service_title
   const serviceDesc = hkText.service_desc

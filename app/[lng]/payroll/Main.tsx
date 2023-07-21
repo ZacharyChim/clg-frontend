@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import React from 'react'
-import { fetchSingle, richTextReducer, trimTitle } from '../../../lib/utils'
+import { fetchSingleLang, richTextReducer, trimTitle } from '../../../lib/utils'
 import ImageArticle from '../../../components/ImageArticle'
 import Contact from '../../../components/Contact'
 import contactTop from '../../../public/contact-top.png'
@@ -16,12 +16,8 @@ export default async function Main({ lng }: PageProps) {
   const curveWidth = 33
   const curveHeight = 10
 
-  const payroll = await fetchSingle('payroll')
-  let payrollText
-
-  lng === 'en'
-    ? (payrollText = payroll)
-    : (payrollText = payroll.localizations.data[0].attributes)
+  const payroll = await fetchSingleLang('payroll', lng)
+  let payrollText = payroll
 
   const payrollTag =
     process.env.NEXT_PUBLIC_STRAPI_URL +
@@ -206,19 +202,11 @@ export default async function Main({ lng }: PageProps) {
   const service4ImageWidth = payroll.service4_image.data.attributes.width
   const service4ImageHeight = payroll.service4_image.data.attributes.height
 
-  if (lng === 'en') {
-    var tableImage =
-      process.env.NEXT_PUBLIC_STRAPI_URL +
-      payroll.table_image.data.attributes.url
-    var tableImageWidth = payroll.table_image.data.attributes.width
-    var tableImageHeight = payroll.table_image.data.attributes.height
-  } else {
-    var tableImage =
-      process.env.NEXT_PUBLIC_STRAPI_URL +
-      payroll.table_image_hk.data.attributes.url
-    var tableImageWidth = payroll.table_image_hk.data.attributes.width
-    var tableImageHeight = payroll.table_image_hk.data.attributes.height
-  }
+  var tableImage =
+    process.env.NEXT_PUBLIC_STRAPI_URL + payroll.table_image.data.attributes.url
+  var tableImageWidth = payroll.table_image.data.attributes.width
+  var tableImageHeight = payroll.table_image.data.attributes.height
+
   const contactUs = payrollText.contact_us
 
   const faqs: { title: string; content: string }[] = [

@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import React from 'react'
-import { fetchSingle, richTextReducer, trimTitle } from '../../../lib/utils'
+import { fetchSingleLang, richTextReducer, trimTitle } from '../../../lib/utils'
 import ImageArticle from '../../../components/ImageArticle'
 import Contact from '../../../components/Contact'
 import contactTop from '../../../public/contact-top.png'
@@ -12,12 +12,8 @@ type PageProps = {
 }
 
 export default async function Main({ lng }: PageProps) {
-  const audit = await fetchSingle('audit')
-  let auditText
-
-  lng === 'en'
-    ? (auditText = audit)
-    : (auditText = audit.localizations.data[0].attributes)
+  const audit = await fetchSingleLang('audit', lng)
+  let auditText = audit
 
   const auditTag =
     process.env.NEXT_PUBLIC_STRAPI_URL + audit.audit.data.attributes.url

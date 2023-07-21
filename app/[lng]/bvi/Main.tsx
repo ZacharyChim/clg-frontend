@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import React from 'react'
-import { fetchSingle, richTextReducer, trimTitle } from '../../../lib/utils'
+import { fetchSingleLang, richTextReducer, trimTitle } from '../../../lib/utils'
 import Contact from '../../../components/Contact'
 import Countries from '../../../components/Countries'
 import curve from '/public/small-curve.png'
@@ -10,15 +10,17 @@ type PageProps = {
 }
 
 export default async function Main({ lng }: PageProps) {
-  const bvi = await fetchSingle('bvi')
-  let bviText
-
-  lng === 'en'
-    ? (bviText = bvi)
-    : (bviText = bvi.localizations.data[0].attributes)
+  const bvi = await fetchSingleLang('bvi', lng)
+  let bviText = bvi
 
   let langBvi
-  lng === 'en' ? (langBvi = 'bvi') : (langBvi = '英屬維爾京群島')
+  if (lng === 'hk') {
+    langBvi = '英屬維爾京群島'
+  } else if (lng === 'cn') {
+    langBvi = '英属维尔京群岛'
+  } else {
+    langBvi = 'Anguilla'
+  }
   const curveWidth = 33
   const curveHeight = 10
   const benefitTitle = bviText.benefit_title

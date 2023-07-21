@@ -1,6 +1,10 @@
 import Image from 'next/image'
 import React from 'react'
-import { fetchSingle, richTextReducer } from '../../../lib/utils'
+import {
+  fetchSingle,
+  fetchSingleLang,
+  richTextReducer,
+} from '../../../lib/utils'
 import Contact from '../../../components/Contact'
 import Countries from '../../../components/Countries'
 import curve from '/public/small-curve.png'
@@ -10,14 +14,17 @@ type PageProps = {
 }
 
 export default async function Main({ lng }: PageProps) {
-  const anguilla = await fetchSingle('anguilla')
-  let anguillaText
+  const anguilla = await fetchSingleLang('anguilla', lng)
+  let anguillaText = anguilla
 
-  lng === 'en'
-    ? (anguillaText = anguilla)
-    : (anguillaText = anguilla.localizations.data[0].attributes)
   let langAnguilla
-  lng === 'en' ? (langAnguilla = 'anguilla') : (langAnguilla = '安圭拉')
+  if (lng === 'hk') {
+    langAnguilla = '安圭拉'
+  } else if (lng === 'cn') {
+    langAnguilla = '安圭拉'
+  } else {
+    langAnguilla = 'Anguilla'
+  }
 
   const curveWidth = 33
   const curveHeight = 10

@@ -12,7 +12,6 @@ const DatePicker = (props) => {
   const [show, setShow] = useState(false)
   const handleChange = (selectedDate: Date) => {
     props.setValue(selectedDate)
-    console.log(selectedDate)
   }
   const handleClose = (state: boolean) => {
     setShow(state)
@@ -23,7 +22,13 @@ const DatePicker = (props) => {
   let year = date.getFullYear()
   let currentDate = `${year}-${month}-${day}`
   let lang
-  props.lang === 'en' ? (lang = 'en') : (lang = 'zh-Hant-HK')
+  if (props.lang === 'hk') {
+    lang = 'zh-Hant-HK'
+  } else if (props.lang === 'cn') {
+    lang = 'zh-Hans-CN'
+  } else {
+    lang = 'en'
+  }
   const options = {
     title: '',
     autoHide: true,
@@ -75,7 +80,7 @@ const Step1 = (props: any) => {
           {lang.your_preferred_date}
         </label>
 
-        <DatePicker lang={lang} setValue={props.setPreferredDate1} />
+        <DatePicker lang={props.lng} setValue={props.setPreferredDate1} />
         {/* <input
           key='preferredDate1'
           type='text'
@@ -121,7 +126,7 @@ const Step1 = (props: any) => {
           {lang.your_second_preferred_date}
         </label>
 
-        <DatePicker lang={lang} setValue={props.setPreferredDate2} />
+        <DatePicker lang={props.lng} setValue={props.setPreferredDate2} />
         {/* <input
           key='preferredDate2'
           type='text'
@@ -165,7 +170,7 @@ const Step1 = (props: any) => {
           {lang.your_third_preferred_date}
         </label>
 
-        <DatePicker lang={lang} setValue={props.setPreferredDate3} />
+        <DatePicker lang={props.lng} setValue={props.setPreferredDate3} />
         {/* <input
           key='preferredDate3'
           type='text'
@@ -300,11 +305,7 @@ const Step1 = (props: any) => {
   )
 }
 
-type PageProps = {
-  lang: any
-}
-
-export default function FloatingButtons(props: PageProps) {
+export default function FloatingButtons(props: any) {
   // const [hidePopup, setHidePopup] = useState(false)
   const searchParams = useSearchParams()
   let lang = props.lang
@@ -627,6 +628,7 @@ export default function FloatingButtons(props: PageProps) {
                     {step === 1 ? (
                       <Step1
                         lang={lang}
+                        lng={props.lng}
                         preferredDate1={preferredDate1}
                         setPreferredDate1={setPreferredDate1}
                         preferredTime1={preferredTime1}

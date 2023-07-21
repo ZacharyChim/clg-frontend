@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import React from 'react'
-import { fetchSingle, richTextReducer } from '../../../lib/utils'
+import { fetchSingleLang, richTextReducer } from '../../../lib/utils'
 import Contact from '../../../components/Contact'
 import Countries from '../../../components/Countries'
 import curve from '/public/small-curve.png'
@@ -10,14 +10,18 @@ type PageProps = {
 }
 
 export default async function Main({ lng }: PageProps) {
-  const singapore = await fetchSingle('singapore')
-  let singaporeText
+  const singapore = await fetchSingleLang('singapore', lng)
+  let singaporeText = singapore
 
-  lng === 'en'
-    ? (singaporeText = singapore)
-    : (singaporeText = singapore.localizations.data[0].attributes)
   let langSingapore
   lng === 'en' ? (langSingapore = 'singapore') : (langSingapore = '新加坡')
+  if (lng === 'hk') {
+    langSingapore = '新加坡'
+  } else if (lng === 'cn') {
+    langSingapore = '新加坡'
+  } else {
+    langSingapore = 'singapore'
+  }
   const curveWidth = 33
   const curveHeight = 10
   const benefitTitle = singaporeText.benefit_title

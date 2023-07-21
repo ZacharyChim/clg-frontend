@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import React from 'react'
-import { fetchSingle, richTextReducer, trimTitle } from '../../../lib/utils'
+import { fetchSingleLang, richTextReducer, trimTitle } from '../../../lib/utils'
 import contactTop from '../../../public/contact-top.png'
 import caseTop from '../../../public/case-top.png'
 import Contact from '../../../components/Contact'
@@ -13,12 +13,8 @@ type PageProps = {
 }
 
 export default async function Main({ lng }: PageProps) {
-  const secretary = await fetchSingle('secretary')
-  let secretaryText
-
-  lng === 'en'
-    ? (secretaryText = secretary)
-    : (secretaryText = secretary.localizations.data[0].attributes)
+  const secretary = await fetchSingleLang('secretary', lng)
+  let secretaryText = secretary
 
   const advisory =
     process.env.NEXT_PUBLIC_STRAPI_URL + secretary.advisory.data.attributes.url
@@ -252,7 +248,7 @@ export default async function Main({ lng }: PageProps) {
       <Image src={contactTop} alt='' />
 
       <section className='mx-auto flex max-w-5xl flex-col items-center'>
-        <Contact contactUs={contactUs} />
+        <Contact contactUs={contactUs} lng={lng} />
 
         <Faqs faqs={faqs} />
       </section>

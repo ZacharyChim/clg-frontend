@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
-import { fetchSingle, richTextReducer, trimTitle } from '../../../lib/utils'
+import { fetchSingleLang, richTextReducer, trimTitle } from '../../../lib/utils'
 import contactTop from '../../../public/contact-top.png'
 import caseTop from '../../../public/case-top.png'
 import Contact from '../../../components/Contact'
@@ -11,12 +11,8 @@ type PageProps = {
 }
 
 export default async function Main({ lng }: PageProps) {
-  const mshop = await fetchSingle('mshop')
-  let mshopText
-
-  lng === 'en'
-    ? (mshopText = mshop)
-    : (mshopText = mshop.localizations.data[0].attributes)
+  const mshop = await fetchSingleLang('mshop', lng)
+  let mshopText = mshop
 
   const cloudSolutions =
     process.env.NEXT_PUBLIC_STRAPI_URL +

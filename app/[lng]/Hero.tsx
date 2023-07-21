@@ -1,9 +1,9 @@
 import Image from 'next/image'
 import React from 'react'
-import { fetchSingle } from '../../lib/utils'
+import { fetchSingleLang } from '../../lib/utils'
 
-export default async function Hero() {
-  const data = await fetchSingle('home-page')
+export default async function Hero({ lng }: { lng: string }) {
+  const data = await fetchSingleLang('home-page', lng)
   const heroIcon = data.HeroIcon.data.attributes
   const heroIconURL = process.env.NEXT_PUBLIC_STRAPI_URL + heroIcon.url
   const heroIconWidth = heroIcon.width

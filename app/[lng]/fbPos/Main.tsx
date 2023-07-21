@@ -2,7 +2,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 import Contact from '../../../components/Contact'
-import { fetchSingle, richTextReducer, trimTitle } from '../../../lib/utils'
+import { fetchSingleLang, richTextReducer, trimTitle } from '../../../lib/utils'
 import curve from '/public/small-curve.png'
 
 type PageProps = {
@@ -10,12 +10,8 @@ type PageProps = {
 }
 
 export default async function Main({ lng }: PageProps) {
-  const fbPos = await fetchSingle('fb-pos')
-  let fbPosText
-
-  lng === 'en'
-    ? (fbPosText = fbPos)
-    : (fbPosText = fbPos.localizations.data[0].attributes)
+  const fbPos = await fetchSingleLang('fb-pos', lng)
+  let fbPosText = fbPos
 
   const cloudSolutions =
     process.env.NEXT_PUBLIC_STRAPI_URL +

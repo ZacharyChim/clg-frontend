@@ -20,10 +20,7 @@ type PageProps = {
 }
 
 export default function Main(props: PageProps) {
-  const lang =
-    props.lng === 'en'
-      ? props.contactText
-      : props.contactText.localizations.data[0].attributes
+  const lang = props.contactText
   const title = lang.title
   const serviceTitle = lang.service_title
   const more = lang.more

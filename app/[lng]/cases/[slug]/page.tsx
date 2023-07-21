@@ -22,6 +22,10 @@ export async function generateStaticParams() {
     params.push({ lng: 'hk', slug: item.attributes.slug as string })
   })
 
+  cases.map((item: any) => {
+    params.push({ lng: 'cn', slug: item.attributes.slug as string })
+  })
+
   return params
 }
 

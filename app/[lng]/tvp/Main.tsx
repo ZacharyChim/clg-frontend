@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import React from 'react'
-import { fetchSingle, richTextReducer, trimTitle } from '../../../lib/utils'
+import { fetchSingleLang, richTextReducer, trimTitle } from '../../../lib/utils'
 import ImageArticle from '../../../components/ImageArticle'
 import Contact from '../../../components/Contact'
 import Faqs from '../../../components/Faqs'
@@ -10,13 +10,9 @@ type PageProps = {
 }
 
 export default async function Main({ lng }: PageProps) {
-  const tvp = await fetchSingle('tvp')
+  const tvp = await fetchSingleLang('tvp', lng)
 
-  let tvpText
-
-  lng === 'en'
-    ? (tvpText = tvp)
-    : (tvpText = tvp.localizations.data[0].attributes)
+  let tvpText = tvp
 
   const aboutTitle = tvpText.about_title
   const aboutText = richTextReducer(tvpText.about_content)
@@ -82,17 +78,11 @@ export default async function Main({ lng }: PageProps) {
 
   const diagramTitle = tvpText.diagram_title
 
-  if (lng === 'en') {
-    var diagram =
-      process.env.NEXT_PUBLIC_STRAPI_URL + tvp.diagram.data.attributes.url
-    var diagramWidth = tvp.diagram.data.attributes.width
-    var diagramHeight = tvp.diagram.data.attributes.height
-  } else {
-    var diagram =
-      process.env.NEXT_PUBLIC_STRAPI_URL + tvp.diagram_hk.data.attributes.url
-    var diagramWidth = tvp.diagram_hk.data.attributes.width
-    var diagramHeight = tvp.diagram_hk.data.attributes.height
-  }
+  var diagram =
+    process.env.NEXT_PUBLIC_STRAPI_URL + tvp.diagram.data.attributes.url
+  var diagramWidth = tvp.diagram.data.attributes.width
+  var diagramHeight = tvp.diagram.data.attributes.height
+
   const contactUs = tvpText.contact_us
 
   const faqs: { title: string; content: string }[] = [

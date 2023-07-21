@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import React from 'react'
-import { fetchSingle, richTextReducer, trimTitle } from '../../../lib/utils'
+import { fetchSingleLang, richTextReducer, trimTitle } from '../../../lib/utils'
 import Contact from '../../../components/Contact'
 import Countries from '../../../components/Countries'
 import curve from '/public/small-curve.png'
@@ -10,15 +10,18 @@ type PageProps = {
 }
 
 export default async function Main({ lng }: PageProps) {
-  const seychelles = await fetchSingle('seychelles')
+  const seychelles = await fetchSingleLang('seychelles', lng)
 
-  let seychellesText
+  let seychellesText = seychelles
 
-  lng === 'en'
-    ? (seychellesText = seychelles)
-    : (seychellesText = seychelles.localizations.data[0].attributes)
   let langSeychelles
-  lng === 'en' ? (langSeychelles = 'seychelles') : (langSeychelles = '塞舌爾')
+  if (lng === 'hk') {
+    langSeychelles = '塞舌爾'
+  } else if (lng === 'cn') {
+    langSeychelles = '塞舌尔'
+  } else {
+    langSeychelles = 'seychelles'
+  }
 
   const curveWidth = 33
   const curveHeight = 10

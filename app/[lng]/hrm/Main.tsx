@@ -1,7 +1,12 @@
 import Image from 'next/image'
 import React from 'react'
 import Link from 'next/link'
-import { fetchSingle, richTextReducer, trimTitle } from '../../../lib/utils'
+import {
+  fetchSingle,
+  fetchSingleLang,
+  richTextReducer,
+  trimTitle,
+} from '../../../lib/utils'
 import contactTop from '../../../public/contact-top.png'
 import caseTop from '../../../public/case-top.png'
 import Contact from '../../../components/Contact'
@@ -15,12 +20,8 @@ type PageProps = {
 export default async function Main({ lng }: PageProps) {
   const curveWidth = 33
   const curveHeight = 10
-  const hrm = await fetchSingle('hrm')
-  let hrmText
-
-  lng === 'en'
-    ? (hrmText = hrm)
-    : (hrmText = hrm.localizations.data[0].attributes)
+  const hrm = await fetchSingleLang('hrm', lng)
+  let hrmText = hrm
 
   const cloud =
     process.env.NEXT_PUBLIC_STRAPI_URL + hrm.cloud_solutions.data.attributes.url

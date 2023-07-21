@@ -5,175 +5,158 @@ import React from 'react'
 import footerCurve from '../../public/footer-curve.png'
 import BackToTop from './BackToTop'
 import FloatingButtons from '../../components/FloatingButtons'
-import { fetchSingle } from '../../lib/utils'
+import { fetchSingle, fetchSingleLang } from '../../lib/utils'
 
-async function Footer(props: { lng: string }) {
-  const footer = await fetchSingle('footer')
-  const floatingButtons = await fetchSingle('floating-button')
-  const bottomMenuData = await fetchSingle('bottom-menu')
-  let langBottomMenu
-  props.lng === 'en'
-    ? (langBottomMenu = bottomMenuData)
-    : (langBottomMenu = bottomMenuData.localizations.data[0].attributes)
+async function Footer({ lng }: { lng: string }) {
+  const footer = await fetchSingleLang('footer', lng)
+  const bottomMenuData = await fetchSingleLang('bottom-menu', lng)
 
   const bottomMenu = [
-    { title: langBottomMenu.home, url: langBottomMenu.home_url },
-    { title: langBottomMenu.blog, url: langBottomMenu.blog_url },
-    { title: langBottomMenu.contact_us, url: langBottomMenu.contact_us_url },
+    { title: bottomMenuData.home, url: bottomMenuData.home_url },
+    { title: bottomMenuData.blog, url: bottomMenuData.blog_url },
+    { title: bottomMenuData.contact_us, url: bottomMenuData.contact_us_url },
     {
-      title: langBottomMenu.case_studies,
-      url: langBottomMenu.case_studies_url,
+      title: bottomMenuData.case_studies,
+      url: bottomMenuData.case_studies_url,
     },
     {
-      title: langBottomMenu.audit_assurance,
-      url: langBottomMenu.audit_assurance_url,
+      title: bottomMenuData.audit_assurance,
+      url: bottomMenuData.audit_assurance_url,
     },
-    { title: langBottomMenu.advisory, url: langBottomMenu.advisory_url },
+    { title: bottomMenuData.advisory, url: bottomMenuData.advisory_url },
     {
-      title: langBottomMenu.funding_audit,
-      url: langBottomMenu.funding_audit_url,
-    },
-    {
-      title: langBottomMenu.incorporation,
-      url: langBottomMenu.incorporation_url,
+      title: bottomMenuData.funding_audit,
+      url: bottomMenuData.funding_audit_url,
     },
     {
-      title: langBottomMenu.cloud_solutions,
-      url: langBottomMenu.cloud_solutions_url,
+      title: bottomMenuData.incorporation,
+      url: bottomMenuData.incorporation_url,
+    },
+    {
+      title: bottomMenuData.cloud_solutions,
+      url: bottomMenuData.cloud_solutions_url,
     },
   ]
 
-  const auditAssuranceMenu = await fetchSingle('assurance-advisory-menu')
-  let langAssuranceAdvisoryMenu
-  props.lng === 'en'
-    ? (langAssuranceAdvisoryMenu = auditAssuranceMenu)
-    : (langAssuranceAdvisoryMenu =
-        auditAssuranceMenu.localizations.data[0].attributes)
+  const auditAssuranceMenu = await fetchSingleLang(
+    'assurance-advisory-menu',
+    lng
+  )
 
   const auditMenu = [
     {
-      title: langAssuranceAdvisoryMenu.accounting_bookkeeping,
-      url: langAssuranceAdvisoryMenu.accounting_bookkeeping_url,
+      title: auditAssuranceMenu.accounting_bookkeeping,
+      url: auditAssuranceMenu.accounting_bookkeeping_url,
     },
     {
-      title: langAssuranceAdvisoryMenu.audit_assurance,
-      url: langAssuranceAdvisoryMenu.audit_assurance_url,
+      title: auditAssuranceMenu.audit_assurance,
+      url: auditAssuranceMenu.audit_assurance_url,
     },
     {
-      title: langAssuranceAdvisoryMenu.hong_kong_taxation,
-      url: langAssuranceAdvisoryMenu.hong_kong_taxation_url,
+      title: auditAssuranceMenu.hong_kong_taxation,
+      url: auditAssuranceMenu.hong_kong_taxation_url,
     },
   ]
 
   const AdvisoryMenu = [
     {
-      title: langAssuranceAdvisoryMenu.company_secretary,
-      url: langAssuranceAdvisoryMenu.company_secretary_url,
+      title: auditAssuranceMenu.company_secretary,
+      url: auditAssuranceMenu.company_secretary_url,
     },
     {
-      title: langAssuranceAdvisoryMenu.payroll_outsourcing_service,
-      url: langAssuranceAdvisoryMenu.payroll_outsourcing_service_url,
+      title: auditAssuranceMenu.payroll_outsourcing_service,
+      url: auditAssuranceMenu.payroll_outsourcing_service_url,
     },
   ]
 
   const fundingMenu = [
     {
-      title: langAssuranceAdvisoryMenu.bud,
-      url: langAssuranceAdvisoryMenu.bud_url,
+      title: auditAssuranceMenu.bud,
+      url: auditAssuranceMenu.bud_url,
     },
     {
-      title: langAssuranceAdvisoryMenu.tvp,
-      url: langAssuranceAdvisoryMenu.tvp_url,
+      title: auditAssuranceMenu.tvp,
+      url: auditAssuranceMenu.tvp_url,
     },
     {
-      title: langAssuranceAdvisoryMenu.others,
-      url: langAssuranceAdvisoryMenu.others_url,
+      title: auditAssuranceMenu.others,
+      url: auditAssuranceMenu.others_url,
     },
   ]
 
   const incorporationMenu = [
     {
-      title: langAssuranceAdvisoryMenu.anguilla,
-      url: langAssuranceAdvisoryMenu.anguilla_url,
+      title: auditAssuranceMenu.anguilla,
+      url: auditAssuranceMenu.anguilla_url,
     },
     {
-      title: langAssuranceAdvisoryMenu.british,
-      url: langAssuranceAdvisoryMenu.british_url,
+      title: auditAssuranceMenu.british,
+      url: auditAssuranceMenu.british_url,
     },
     {
-      title: langAssuranceAdvisoryMenu.bvi,
-      url: langAssuranceAdvisoryMenu.bvi_url,
+      title: auditAssuranceMenu.bvi,
+      url: auditAssuranceMenu.bvi_url,
     },
     {
-      title: langAssuranceAdvisoryMenu.canada,
-      url: langAssuranceAdvisoryMenu.canada_url,
+      title: auditAssuranceMenu.canada,
+      url: auditAssuranceMenu.canada_url,
     },
     {
-      title: langAssuranceAdvisoryMenu.cayman_island,
-      url: langAssuranceAdvisoryMenu.cayman_island_url,
+      title: auditAssuranceMenu.cayman_island,
+      url: auditAssuranceMenu.cayman_island_url,
     },
     {
-      title: langAssuranceAdvisoryMenu.hong_kong,
-      url: langAssuranceAdvisoryMenu.hong_kong_url,
+      title: auditAssuranceMenu.hong_kong,
+      url: auditAssuranceMenu.hong_kong_url,
     },
     {
-      title: langAssuranceAdvisoryMenu.malaysia,
-      url: langAssuranceAdvisoryMenu.malaysia_url,
+      title: auditAssuranceMenu.malaysia,
+      url: auditAssuranceMenu.malaysia_url,
     },
     {
-      title: langAssuranceAdvisoryMenu.ngo,
-      url: langAssuranceAdvisoryMenu.ngo_url,
+      title: auditAssuranceMenu.ngo,
+      url: auditAssuranceMenu.ngo_url,
     },
     {
-      title: langAssuranceAdvisoryMenu.seychelles,
-      url: langAssuranceAdvisoryMenu.seychelles_url,
+      title: auditAssuranceMenu.seychelles,
+      url: auditAssuranceMenu.seychelles_url,
     },
     {
-      title: langAssuranceAdvisoryMenu.singapore,
-      url: langAssuranceAdvisoryMenu.singapore_url,
+      title: auditAssuranceMenu.singapore,
+      url: auditAssuranceMenu.singapore_url,
     },
   ]
 
-  const cloudMenuData = await fetchSingle('cloud-solutions-menu')
-  let langCloudMenu
-  props.lng === 'en'
-    ? (langCloudMenu = cloudMenuData)
-    : (langCloudMenu = cloudMenuData.localizations.data[0].attributes)
+  const cloudMenuData = await fetchSingleLang('cloud-solutions-menu', lng)
 
   const cloudMenu = [
     {
-      title: langCloudMenu.accounting_solution,
-      url: langCloudMenu.accounting_solution_url,
+      title: cloudMenuData.accounting_solution,
+      url: cloudMenuData.accounting_solution_url,
     },
-    { title: langCloudMenu.hrm_solution, url: langCloudMenu.hrm_solution_url },
+    { title: cloudMenuData.hrm_solution, url: cloudMenuData.hrm_solution_url },
 
     {
-      title: langCloudMenu.fb_pos_solution,
-      url: langCloudMenu.fb_pos_solution_url,
+      title: cloudMenuData.fb_pos_solution,
+      url: cloudMenuData.fb_pos_solution_url,
     },
     {
-      title: langCloudMenu.receipt_filing_solution,
-      url: langCloudMenu.receipt_filing_solution_url,
+      title: cloudMenuData.receipt_filing_solution,
+      url: cloudMenuData.receipt_filing_solution_url,
     },
-    { title: langCloudMenu.online_shop, url: langCloudMenu.online_shop_url },
+    { title: cloudMenuData.online_shop, url: cloudMenuData.online_shop_url },
   ]
 
-  let lang
-  props.lng === 'en'
-    ? (lang = floatingButtons)
-    : (lang = floatingButtons.localizations.data[0].attributes)
-  const translate = (slug: string) => {
-    return props.lng === 'hk'
-      ? footer.localizations.data[0].attributes[slug]
-      : footer[slug]
-  }
-  const copyright = translate('copyright')
+  const floatingButtons = await fetchSingleLang('floating-button', lng)
+  const lang = floatingButtons
+
+  const copyright = footer.copyright
 
   const logoURL =
     process.env.NEXT_PUBLIC_STRAPI_URL + footer.LogoWhite.data.attributes.url
   const logoWidth = footer.LogoWhite.data.attributes.width
   const logoHeight = footer.LogoWhite.data.attributes.height
-  const addr = translate('addr_text')
+  const addr = footer.addr_text
   const icons = [
     {
       text: footer.whatsapp_text,
@@ -200,7 +183,7 @@ async function Footer(props: { lng: string }) {
   return (
     <>
       <BackToTop />
-      <FloatingButtons lang={lang} />
+      <FloatingButtons lang={lang} lng={lng} />
       <footer className='bg-oceanBlue'>
         <div className='h-full w-full bg-white'>
           <Image src={footerCurve} alt='' />
@@ -242,20 +225,6 @@ async function Footer(props: { lng: string }) {
                 ))}
               </ul>
             </div>
-
-            {/* <div className='grid grid-cols-1 gap-8 sm:grid-cols-2 md:col-span-2 lg:col-span-2 lg:grid-cols-4'>
-          <div>
-             {links.map((item) => (
-                  <Link
-                    href='#'
-                    key={`footer-${item.id}`}
-                    className='hover:text-brightRed'
-                  >
-                    {item.title}
-                  </Link>
-              ))} 
-          </div>
-        </div> */}
 
             <div className='arrow-list ml-6 grid w-full grid-cols-1 gap-4 text-sm md:mx-auto lg:col-span-3 lg:grid-cols-4'>
               <div className='md:ml-4'>

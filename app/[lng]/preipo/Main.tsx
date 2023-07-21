@@ -2,21 +2,15 @@ import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 import Contact from '../../../components/Contact'
-import { fetchSingle, richTextReducer, trimTitle } from '../../../lib/utils'
+import { fetchSingleLang, richTextReducer, trimTitle } from '../../../lib/utils'
 
 type PageProps = {
-  params: {
-    lng: string
-  }
+  lng: string
 }
 
 export default async function Main({ lng }: PageProps) {
-  const preipo = await fetchSingle('pre-ipo')
-  let preipoText
-
-  lng === 'en'
-    ? (preipoText = preipo)
-    : (preipoText = preipo.localizations.data[0].attributes)
+  const preipo = await fetchSingleLang('pre-ipo', lng)
+  let preipoText = preipo
 
   const advisory =
     process.env.NEXT_PUBLIC_STRAPI_URL + preipo.advisory.data.attributes.url
@@ -163,7 +157,7 @@ export default async function Main({ lng }: PageProps) {
         </div>
       </div>
 
-      <Contact contactUs={contactUs} />
+      <Contact contactUs={contactUs} lng={lng} />
     </section>
   )
 }

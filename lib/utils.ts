@@ -1,11 +1,10 @@
-import { type ClassValue, clsx } from "clsx"
-import { twMerge } from "tailwind-merge"
- 
+import { type ClassValue, clsx } from 'clsx'
+import { twMerge } from 'tailwind-merge'
+
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
 }
 // Shadcn UI
-
 
 import { marked } from 'marked'
 
@@ -18,9 +17,41 @@ export const fetchSingle = async (single: string) => {
   return resData.data.attributes
 }
 
+export const fetchSingleLang = async (single: string, lng: string) => {
+  let language
+  if (lng === 'hk') {
+    language = 'zh-Hant-HK'
+  } else if (lng === 'cn') {
+    language = 'zh-Hans-CN'
+  } else {
+    language = lng
+  }
+
+  let res = await fetch(
+    `${process.env.NEXT_PUBLIC_STRAPI_API_URL}/${single}?populate=%2A&locale=${language}`
+  )
+
+  let resData = await res.json()
+  if (resData.data === null) {
+    res = await fetch(
+      `${process.env.NEXT_PUBLIC_STRAPI_API_URL}/${single}?populate=%2A&locale=${language}&publicationState=preview`
+    )
+    resData = await res.json()
+  }
+  return resData.data.attributes
+}
+
 export const fetchCollection = async (collection: string, lng: string) => {
+  let language
+  if (lng === 'hk') {
+    language = 'zh-Hant-HK'
+  } else if (lng === 'cn') {
+    language = 'zh-Hans-CN'
+  } else {
+    language = lng
+  }
   const res = await fetch(
-    `${process.env.NEXT_PUBLIC_STRAPI_API_URL}/${collection}?populate[0]=featuredImage&locale=${lng}`
+    `${process.env.NEXT_PUBLIC_STRAPI_API_URL}/${collection}?populate[0]=featuredImage&locale=${language}`
   )
 
   const resData = await res.json()
@@ -28,7 +59,6 @@ export const fetchCollection = async (collection: string, lng: string) => {
 }
 
 export const fetchAllCollection = async (collection: string) => {
-  console.log(collection)
   const res = await fetch(
     `${process.env.NEXT_PUBLIC_STRAPI_API_URL}/${collection}`
   )

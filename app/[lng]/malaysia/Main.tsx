@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import React from 'react'
-import { fetchSingle, richTextReducer, trimTitle } from '../../../lib/utils'
+import { fetchSingleLang, richTextReducer, trimTitle } from '../../../lib/utils'
 import Contact from '../../../components/Contact'
 import Countries from '../../../components/Countries'
 import curve from '/public/small-curve.png'
@@ -10,15 +10,17 @@ type PageProps = {
 }
 
 export default async function Main({ lng }: PageProps) {
-  const malaysia = await fetchSingle('malaysia')
-  let malaysiaText
-
-  lng === 'en'
-    ? (malaysiaText = malaysia)
-    : (malaysiaText = malaysia.localizations.data[0].attributes)
+  const malaysia = await fetchSingleLang('malaysia', lng)
+  let malaysiaText = malaysia
 
   let langMalaysia
-  lng === 'en' ? (langMalaysia = 'malaysia') : (langMalaysia = '馬來西亞')
+  if (lng === 'hk') {
+    langMalaysia = '馬來西亞'
+  } else if (lng === 'cn') {
+    langMalaysia = '马来西亚'
+  } else {
+    langMalaysia = 'malaysia'
+  }
   const curveWidth = 33
   const curveHeight = 10
   const benefitTitle = malaysiaText.benefit_title

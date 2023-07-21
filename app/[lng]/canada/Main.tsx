@@ -1,6 +1,10 @@
 import Image from 'next/image'
 import React from 'react'
-import { fetchSingle, richTextReducer } from '../../../lib/utils'
+import {
+  fetchSingle,
+  fetchSingleLang,
+  richTextReducer,
+} from '../../../lib/utils'
 import Contact from '../../../components/Contact'
 import Countries from '../../../components/Countries'
 import curve from '/public/small-curve.png'
@@ -10,14 +14,17 @@ type PageProps = {
 }
 
 export default async function Main({ lng }: PageProps) {
-  const canada = await fetchSingle('canada')
-  let canadaText
+  const canada = await fetchSingleLang('canada', lng)
+  let canadaText = canada
 
-  lng === 'en'
-    ? (canadaText = canada)
-    : (canadaText = canada.localizations.data[0].attributes)
   let langCanada
-  lng === 'en' ? (langCanada = 'canada') : (langCanada = '加拿大')
+  if (lng === 'hk') {
+    langCanada = '加拿大'
+  } else if (lng === 'cn') {
+    langCanada = '加拿大'
+  } else {
+    langCanada = 'Canada'
+  }
   const curveWidth = 33
   const curveHeight = 10
   const benefitTitle = canadaText.benefit_title

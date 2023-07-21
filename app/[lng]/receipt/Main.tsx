@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import React from 'react'
-import { fetchSingle, richTextReducer, trimTitle } from '../../../lib/utils'
+import { fetchSingleLang, richTextReducer, trimTitle } from '../../../lib/utils'
 import contactTop from '../../../public/contact-top.png'
 import caseTop from '../../../public/case-top.png'
 import Contact from '../../../components/Contact'
@@ -10,12 +10,8 @@ type PageProps = {
 }
 
 export default async function Main({ lng }: PageProps) {
-  const receipt = await fetchSingle('receipt')
-  let receiptText
-
-  lng === 'en'
-    ? (receiptText = receipt)
-    : (receiptText = receipt.localizations.data[0].attributes)
+  const receipt = await fetchSingleLang('receipt', lng)
+  let receiptText = receipt
 
   const cloudSolutions =
     process.env.NEXT_PUBLIC_STRAPI_URL +

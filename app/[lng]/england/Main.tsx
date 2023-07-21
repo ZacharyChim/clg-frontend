@@ -1,6 +1,11 @@
 import Image from 'next/image'
 import React from 'react'
-import { fetchSingle, richTextReducer, trimTitle } from '../../../lib/utils'
+import {
+  fetchSingle,
+  fetchSingleLang,
+  richTextReducer,
+  trimTitle,
+} from '../../../lib/utils'
 import Contact from '../../../components/Contact'
 import Countries from '../../../components/Countries'
 import curve from '/public/small-curve.png'
@@ -10,14 +15,17 @@ type PageProps = {
 }
 
 export default async function Main({ lng }: PageProps) {
-  const england = await fetchSingle('England')
-  let englandText
-
-  lng === 'en'
-    ? (englandText = england)
-    : (englandText = england.localizations.data[0].attributes)
+  const england = await fetchSingleLang('England', lng)
+  let englandText = england
   let langEngland
-  lng === 'en' ? (langEngland = 'england') : (langEngland = '英國')
+  if (lng === 'hk') {
+    langEngland = '英國'
+  } else if (lng === 'cn') {
+    langEngland = '英国'
+  } else {
+    langEngland = 'england'
+  }
+
   const curveWidth = 33
   const curveHeight = 10
   const benefitTitle = englandText.benefit_title

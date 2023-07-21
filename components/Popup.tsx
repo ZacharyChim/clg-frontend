@@ -7,11 +7,14 @@ type PageProps = {
   popupText: any
 }
 
-export default function Popup(props: PageProps) {
-  let lang: any
-  props.lng === 'en'
-    ? (lang = props.popupText)
-    : (lang = props.popupText.localizations.data[0].attributes)
+export default function Popup({
+  lng,
+  popupText,
+}: {
+  lng: string
+  popupText: any
+}) {
+  let lang = popupText
   const [hidePopup, setHidePopup] = useState(false)
   const handleSubmit = async (event) => {
     event.preventDefault()

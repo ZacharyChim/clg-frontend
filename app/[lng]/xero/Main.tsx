@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import React from 'react'
-import { fetchSingle, richTextReducer, trimTitle } from '../../../lib/utils'
+import { fetchSingleLang, richTextReducer, trimTitle } from '../../../lib/utils'
 import contactTop from '../../../public/contact-top.png'
 import caseTop from '../../../public/case-top.png'
 import Contact from '../../../components/Contact'
@@ -15,12 +15,8 @@ type PageProps = {
 export default async function Main({ lng }: PageProps) {
   const curveWidth = 33
   const curveHeight = 10
-  const xero = await fetchSingle('xero')
-  let xeroText
-
-  lng === 'en'
-    ? (xeroText = xero)
-    : (xeroText = xero.localizations.data[0].attributes)
+  const xero = await fetchSingleLang('xero', lng)
+  let xeroText = xero
 
   const cloud =
     process.env.NEXT_PUBLIC_STRAPI_URL +

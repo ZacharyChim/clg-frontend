@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import React from 'react'
-import { fetchSingle, richTextReducer, trimTitle } from '../../../lib/utils'
+import { fetchSingleLang, richTextReducer, trimTitle } from '../../../lib/utils'
 import ImageArticle from '../../../components/ImageArticle'
 import Contact from '../../../components/Contact'
 import contactTop from '../../../public/contact-top.png'
@@ -12,12 +12,8 @@ type PageProps = {
 }
 
 export default async function Main({ lng }: PageProps) {
-  const bud = await fetchSingle('bud')
-  let budText
-
-  lng === 'en'
-    ? (budText = bud)
-    : (budText = bud.localizations.data[0].attributes)
+  const bud = await fetchSingleLang('bud', lng)
+  let budText = bud
 
   const aboutTitle = budText.about_title
   const aboutText = richTextReducer(budText.about_content)

@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import earth from '../public/earth.png'
 import { v4 } from 'uuid'
-import { fetchSingle } from '../lib/utils'
+import { fetchSingle, fetchSingleLang } from '../lib/utils'
 
 const fetchLinks = async () => {
   const res = await fetch(
@@ -16,31 +16,31 @@ type PropType = {
   country: string
   lng: string
 }
-export default async function Countries(props: PropType) {
-  const dataMenu = await fetchSingle('incorporation-menu')
-
-  let data
-
-  props.lng === 'en'
-    ? (data = dataMenu)
-    : (data = dataMenu.localizations.data[0].attributes)
+export default async function Countries({
+  country,
+  lng,
+}: {
+  country: string
+  lng: string
+}) {
+  const dataMenu = await fetchSingleLang('incorporation-menu', lng)
 
   const nav = [
-    { title: data.anguilla, url: data.anguilla_url },
-    { title: data.british, url: data.british_url },
-    { title: data.bvi, url: data.bvi_url },
-    { title: data.canada, url: data.canada_url },
-    { title: data.cayman_island, url: data.cayman_island_url },
-    { title: data.malaysia, url: data.malaysia_url },
-    { title: data.seychelles, url: data.seychelles_url },
-    { title: data.singapore, url: data.singapore_url },
+    { title: dataMenu.anguilla, url: dataMenu.anguilla_url },
+    { title: dataMenu.british, url: dataMenu.british_url },
+    { title: dataMenu.bvi, url: dataMenu.bvi_url },
+    { title: dataMenu.canada, url: dataMenu.canada_url },
+    { title: dataMenu.cayman_island, url: dataMenu.cayman_island_url },
+    { title: dataMenu.malaysia, url: dataMenu.malaysia_url },
+    { title: dataMenu.seychelles, url: dataMenu.seychelles_url },
+    { title: dataMenu.singapore, url: dataMenu.singapore_url },
   ]
   return (
     <div className='mx-10 mb-10 flex flex-col md:mx-auto md:w-1/5'>
       <div className='flex flex-row border-b border-black pb-4'>
         <Image src={earth} alt='' width='23' height='23' />
         <span className='ml-2 font-bold text-darkBlue '>
-          {data.other_countries}
+          {dataMenu.other_countries}
         </span>
       </div>
       <div className='mt-3 text-sm leading-8'>
@@ -50,7 +50,7 @@ export default async function Countries(props: PropType) {
               <a
                 href={item.url}
                 className={`${
-                  props.country === item.title
+                  country === item.title
                     ? 'half_background text-black'
                     : 'text-darkGrayishBlue'
                 } transition hover:opacity-75`}

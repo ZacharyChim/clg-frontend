@@ -2,19 +2,16 @@ import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 import Contact from '../../../components/Contact'
-import { fetchSingle, richTextReducer, trimTitle } from '../../../lib/utils'
+import { fetchSingleLang, richTextReducer, trimTitle } from '../../../lib/utils'
 
 type PageProps = {
   lng: string
 }
 
 export default async function Main({ lng }: PageProps) {
-  const otherFunding = await fetchSingle('other-funding')
-  let otherFundingText
+  const otherFunding = await fetchSingleLang('other-funding', lng)
+  let otherFundingText = otherFunding
 
-  lng === 'en'
-    ? (otherFundingText = otherFunding)
-    : (otherFundingText = otherFunding.localizations.data[0].attributes)
   const image1 =
     process.env.NEXT_PUBLIC_STRAPI_URL + otherFunding.image1.data.attributes.url
   const image1Width = otherFunding.image1.data.attributes.width

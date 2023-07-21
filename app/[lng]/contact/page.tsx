@@ -1,6 +1,6 @@
 import React from 'react'
 import Hero from '../../../components/Hero'
-import { fetchSingle } from '../../../lib/utils'
+import { fetchSingleLang } from '../../../lib/utils'
 import Main from './Main'
 
 type PageProps = {
@@ -10,7 +10,7 @@ type PageProps = {
 }
 
 async function contact({ params: { lng } }: PageProps) {
-  const contactText = await fetchSingle('contact')
+  const contactText = await fetchSingleLang('contact', lng)
 
   return (
     <div>

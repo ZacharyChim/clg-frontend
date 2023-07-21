@@ -8,7 +8,7 @@ import menuPointLg from '../../public/menu-point-lg.png'
 import menuCloud from '../../public/menu-cloud.png'
 import langIcon from '../../public/lang.png'
 
-export default function Navigation(props) {
+export default function Navigation(props: any) {
   const [menuOpen, setMenuOpen] = useState(false)
   const [assuranceMenuOpen, setAssuranceMenuOpen] = useState(false)
   const [cloudMenuOpen, setCloudMenuOpen] = useState(false)
@@ -38,6 +38,11 @@ export default function Navigation(props) {
     setCloudMenuOpen(false)
     setLangMenuOpen(!langMenuOpen)
   }
+
+  let langText
+  if (props.lng === 'en') langText = 'English'
+  if (props.lng === 'hk') langText = '繁體中文'
+  if (props.lng === 'cn') langText = '简体中文'
   return (
     <>
       <nav className='border-gray-200	bg-white align-text-bottom'>
@@ -47,10 +52,11 @@ export default function Navigation(props) {
           </Link>
           <div className='hidden w-full md:flex md:w-auto' id='navbar'>
             <ul className='mt-4 flex flex-col rounded-lg border border-gray-100 bg-gray-50 font-medium md:mt-0 md:flex-row md:space-x-8 md:border-0 md:bg-white md:p-0'>
-              {props.parentMenu.map((item) => {
+              {props.parentMenu.map((item: any) => {
                 if (
                   item.title === 'Assurance & Advisory' ||
-                  item.title === '審計及諮詢'
+                  item.title === '審計及諮詢' ||
+                  item.title === '审计及咨询'
                 ) {
                   return (
                     <li key={v4()}>
@@ -59,7 +65,7 @@ export default function Navigation(props) {
                         // data-dropdown-toggle='assurance-advisory-dropdown'
                         // data-dropdown-offset-distance='12'
                         onClick={toggleAssuranceMenu}
-                        className='flex w-full items-center justify-between rounded py-2 pl-3 pr-4 align-baseline text-md text-gray-900 hover:bg-gray-100 md:w-auto md:border-0 md:p-0 md:hover:bg-transparent md:hover:text-blue-700'
+                        className='text-md flex w-full items-center justify-between rounded py-2 pl-3 pr-4 align-baseline text-gray-900 hover:bg-gray-100 md:w-auto md:border-0 md:p-0 md:hover:bg-transparent md:hover:text-blue-700'
                       >
                         {item.title}
                         <svg
@@ -111,7 +117,7 @@ export default function Navigation(props) {
                                 {props.titleMenu[0]}
                               </p>
                               <ul className='mb-2 space-y-2 py-2 text-sm text-gray-700'>
-                                {props.auditMenu.map((subItem) => (
+                                {props.auditMenu.map((subItem: any) => (
                                   <li key={v4()}>
                                     <Link
                                       href={subItem.url}
@@ -128,7 +134,7 @@ export default function Navigation(props) {
                                 {props.titleMenu[2]}
                               </p>
                               <ul className='mb-2 space-y-2 py-2 text-sm text-gray-700'>
-                                {props.fundMenu.map((subItem) => (
+                                {props.fundMenu.map((subItem: any) => (
                                   <li key={v4()}>
                                     <Link
                                       href={subItem.url}
@@ -147,7 +153,7 @@ export default function Navigation(props) {
                                 {props.titleMenu[1]}
                               </p>
                               <ul className='mb-2 space-y-2 py-2 text-sm text-gray-700'>
-                                {props.advisoryMenu.map((subItem) => (
+                                {props.advisoryMenu.map((subItem: any) => (
                                   <li key={v4()}>
                                     <Link
                                       href={subItem.url}
@@ -164,7 +170,7 @@ export default function Navigation(props) {
                                 {props.titleMenu[3]}
                               </p>
                               <ul className='mb-2 grid grid-cols-2 text-sm leading-7 text-gray-700'>
-                                {props.incorMenu.map((subItem) => (
+                                {props.incorMenu.map((subItem: any) => (
                                   <li key={v4()}>
                                     <Link
                                       href={subItem.url}
@@ -184,7 +190,8 @@ export default function Navigation(props) {
                 }
                 if (
                   item.title === 'Cloud Solutions' ||
-                  item.title === '雲端解決方案'
+                  item.title === '雲端解決方案' ||
+                  item.title === '云端解决方案'
                 ) {
                   return (
                     <li key={v4()}>
@@ -193,7 +200,7 @@ export default function Navigation(props) {
                         // data-dropdown-toggle='cloud-solutions-dropdown'
                         // data-dropdown-offset-distance='12'
                         onClick={toggleCloudMenu}
-                        className='flex w-full items-center justify-between rounded py-2 pl-3 pr-4 text-md text-gray-900 hover:bg-gray-100 md:w-auto md:border-0 md:p-0 md:hover:bg-transparent md:hover:text-blue-700'
+                        className='text-md flex w-full items-center justify-between rounded py-2 pl-3 pr-4 text-gray-900 hover:bg-gray-100 md:w-auto md:border-0 md:p-0 md:hover:bg-transparent md:hover:text-blue-700'
                       >
                         {item.title}
                         <svg
@@ -268,7 +275,7 @@ export default function Navigation(props) {
                   <li key={v4()}>
                     <Link
                       href={item.url}
-                      className='block rounded py-2 pl-3 pr-4 text-md text-gray-900 hover:bg-gray-100 md:border-0 md:p-0 md:hover:bg-transparent md:hover:text-blue-700'
+                      className='text-md block rounded py-2 pl-3 pr-4 text-gray-900 hover:bg-gray-100 md:border-0 md:p-0 md:hover:bg-transparent md:hover:text-blue-700'
                     >
                       {item.title}
                     </Link>
@@ -280,7 +287,7 @@ export default function Navigation(props) {
                   id='dropdownLangButton'
                   // data-dropdown-toggle='dropdownLang'
                   onClick={toggleLangMenu}
-                  className='inline-flex items-center rounded-lg py-2 pl-3 text-center align-top text-md hover:text-blue-700 md:py-0 md:pl-0'
+                  className='text-md inline-flex items-center rounded-lg py-2 pl-3 text-center align-top hover:text-blue-700 md:py-0 md:pl-0'
                   type='button'
                 >
                   <Image
@@ -290,7 +297,7 @@ export default function Navigation(props) {
                     alt=''
                     className='mr-1'
                   />
-                  {props.lng}
+                  {langText}
                   <svg
                     className='ml-1 h-5 w-5'
                     fill='#00b7e3'
@@ -312,7 +319,7 @@ export default function Navigation(props) {
                       : 'hidden'
                   }
                 >
-                  <ul className='py-2 text-md text-gray-700'>
+                  <ul className='text-md py-2 text-gray-700'>
                     <li>
                       <Link
                         href='/en'
@@ -328,7 +335,16 @@ export default function Navigation(props) {
                         locale='zh-Hant-HK'
                         className='block px-4 py-2 hover:bg-gray-100'
                       >
-                        中文（繁體）
+                        繁體中文
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        href='/cn'
+                        locale='zh-Hans-CN'
+                        className='block px-4 py-2 hover:bg-gray-100'
+                      >
+                        简体中文
                       </Link>
                     </li>
                   </ul>
@@ -371,10 +387,11 @@ export default function Navigation(props) {
             </div>
             <div className='flex-col' id='mobile'>
               <ul className='mt-4 flex-col space-y-2 font-medium'>
-                {props.parentMenu.map((item) => {
+                {props.parentMenu.map((item: any) => {
                   if (
                     item.title === 'Assurance & Advisory' ||
-                    item.title === '審計及諮詢'
+                    item.title === '審計及諮詢' ||
+                    item.title === '审计及咨询'
                   ) {
                     return (
                       <li key={v4()}>
@@ -435,7 +452,7 @@ export default function Navigation(props) {
                                   {props.titleMenu[0]}
                                 </p>
                                 <ul className='mb-2 space-y-2 py-2 text-sm text-gray-700'>
-                                  {props.auditMenu.map((subItem) => (
+                                  {props.auditMenu.map((subItem: any) => (
                                     <li key={v4()}>
                                       <Link
                                         href={subItem.url}
@@ -452,7 +469,7 @@ export default function Navigation(props) {
                                   {props.titleMenu[1]}
                                 </p>
                                 <ul className='mb-2 space-y-2 py-2 text-sm text-gray-700'>
-                                  {props.fundMenu.map((subItem) => (
+                                  {props.fundMenu.map((subItem: any) => (
                                     <li key={v4()}>
                                       <Link
                                         href={subItem.url}
@@ -471,7 +488,7 @@ export default function Navigation(props) {
                                   {props.titleMenu[2]}
                                 </p>
                                 <ul className='mb-2 space-y-2 py-2 text-sm text-gray-700'>
-                                  {props.advisoryMenu.map((subItem) => (
+                                  {props.advisoryMenu.map((subItem: any) => (
                                     <li key={v4()}>
                                       <Link
                                         href={subItem.url}
@@ -488,7 +505,7 @@ export default function Navigation(props) {
                                   {props.titleMenu[3]}
                                 </p>
                                 <ul className='mb-2 grid grid-cols-2 text-sm leading-7 text-gray-700'>
-                                  {props.incorMenu.map((subItem) => (
+                                  {props.incorMenu.map((subItem: any) => (
                                     <li key={v4()}>
                                       <Link
                                         href={subItem.url}
@@ -508,7 +525,8 @@ export default function Navigation(props) {
                   }
                   if (
                     item.title === 'Cloud Solutions' ||
-                    item.title === '雲端解決方案'
+                    item.title === '雲端解決方案' ||
+                    item.title === '云端解决方案'
                   ) {
                     return (
                       <li key={v4()}>
@@ -550,14 +568,7 @@ export default function Navigation(props) {
                             quality='100'
                             className='hidden md:flex'
                           ></Image>
-                          {/* <Image
-                          src={menuPoint}
-                          alt=''
-                          width='1918'
-                          height='27'
-                          quality='100'
-                          className='hidden md:flex lg:hidden'
-                        ></Image> */}
+
                           <div className='mx-auto grid text-sm text-gray-500 md:grid-cols-5 md:gap-8'>
                             <span className='col-span-2 hidden bg-menuBg bg-cover bg-no-repeat p-8 text-right hover:bg-blend-soft-light md:block'>
                               <p className='leading-wide mb-5 max-w-xl text-2xl font-extrabold tracking-wide text-white'>
@@ -570,7 +581,7 @@ export default function Navigation(props) {
                                   {props.titleMenu[4]}
                                 </p>
                                 <ul className='space-y-4 py-2 text-sm text-gray-700 dark:text-gray-400'>
-                                  {props.cloudMenu.map((cloudItem) => (
+                                  {props.cloudMenu.map((cloudItem: any) => (
                                     <li key={v4()}>
                                       <Link
                                         href={cloudItem.url}
@@ -599,65 +610,6 @@ export default function Navigation(props) {
                     </li>
                   )
                 })}
-                <li key={v4()}>
-                  <button
-                    id='dropdownLangButton'
-                    // data-dropdown-toggle='dropdownLang'
-                    onClick={toggleLangMenu}
-                    className='inline-flex items-center rounded-lg py-2 pl-3 text-center align-top text-sm hover:text-blue-700 md:py-0 md:pl-0'
-                    type='button'
-                  >
-                    <Image
-                      src={langIcon}
-                      width='18'
-                      height='18'
-                      alt=''
-                      className='mr-1'
-                    />
-                    {props.lng}
-                    <svg
-                      className='ml-1 h-5 w-5'
-                      fill='#00b7e3'
-                      viewBox='0 0 20 20'
-                      xmlns='http://www.w3.org/2000/svg'
-                    >
-                      <path
-                        fillRule='evenodd'
-                        d='M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z'
-                        clipRule='evenodd'
-                      ></path>
-                    </svg>
-                  </button>
-                  <div
-                    id='dropdownLang'
-                    className={
-                      langMenuOpen
-                        ? 'absolute z-10 mt-2 w-32 rounded-lg bg-white shadow-lg'
-                        : 'hidden'
-                    }
-                  >
-                    <ul className='py-2 text-sm text-gray-700'>
-                      <li>
-                        <Link
-                          href='/en'
-                          locale='en'
-                          className='block px-4 py-2 hover:bg-gray-100'
-                        >
-                          English
-                        </Link>
-                      </li>
-                      <li>
-                        <Link
-                          href='/hk'
-                          locale='zh-Hant-HK'
-                          className='block px-4 py-2 hover:bg-gray-100'
-                        >
-                          中文（繁體）
-                        </Link>
-                      </li>
-                    </ul>
-                  </div>
-                </li>
               </ul>
             </div>
           </div>

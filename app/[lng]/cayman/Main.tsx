@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import React from 'react'
-import { fetchSingle, richTextReducer } from '../../../lib/utils'
+import { fetchSingleLang, richTextReducer } from '../../../lib/utils'
 import Contact from '../../../components/Contact'
 import Countries from '../../../components/Countries'
 import curve from '/public/small-curve.png'
@@ -10,14 +10,17 @@ type PageProps = {
 }
 
 export default async function Main({ lng }: PageProps) {
-  const cayman = await fetchSingle('cayman')
-  let caymanText
+  const cayman = await fetchSingleLang('cayman', lng)
+  let caymanText = cayman
 
-  lng === 'en'
-    ? (caymanText = cayman)
-    : (caymanText = cayman.localizations.data[0].attributes)
   let langCayman
-  lng === 'en' ? (langCayman = 'cayman island') : (langCayman = '開曼群島')
+  if (lng === 'hk') {
+    langCayman = '開曼群島'
+  } else if (lng === 'cn') {
+    langCayman = '开曼群岛'
+  } else {
+    langCayman = 'cayman island'
+  }
 
   const curveWidth = 33
   const curveHeight = 10

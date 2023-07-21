@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import React from 'react'
-import { fetchSingle, richTextReducer, trimTitle } from '../../../lib/utils'
+import { fetchSingleLang, richTextReducer, trimTitle } from '../../../lib/utils'
 import Contact from '../../../components/Contact'
 import arrow from '../../../public/arrow-white.png'
 import ImageArticle from '../../../components/ImageArticle'
@@ -15,12 +15,8 @@ type PageProps = {
 export default async function Main({ lng }: PageProps) {
   const curveWidth = 33
   const curveHeight = 10
-  const ngo = await fetchSingle('ngo')
-  let ngoText
-
-  lng === 'en'
-    ? (ngoText = ngo)
-    : (ngoText = ngo.localizations.data[0].attributes)
+  const ngo = await fetchSingleLang('ngo', lng)
+  let ngoText = ngo
 
   const incorporation =
     process.env.NEXT_PUBLIC_STRAPI_URL + ngo.incorporation.data.attributes.url

@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import React from 'react'
-import { fetchSingle } from '../lib/utils'
+import { fetchSingleLang } from '../lib/utils'
 
 type PageProps = {
   page: string
@@ -8,11 +8,9 @@ type PageProps = {
 }
 
 export default async function Hero(props: PageProps) {
-  const data = await fetchSingle(props.page)
-  let lang
-  props.lng === 'en'
-    ? (lang = data)
-    : (lang = data.localizations.data[0].attributes)
+  const data = await fetchSingleLang(props.page, props.lng)
+  let lang = data
+
   const mainSlogan = lang.main_slogan
 
   const heroImage =
