@@ -38,7 +38,6 @@ export default function Navigation(props: any) {
     setCloudMenuOpen(false)
     setLangMenuOpen(!langMenuOpen)
   }
-
   let langText
   if (props.lng === 'en') langText = 'EN'
   if (props.lng === 'hk') langText = '繁'

@@ -157,6 +157,8 @@ async function Footer({ lng }: { lng: string }) {
   const logoWidth = footer.LogoWhite.data.attributes.width
   const logoHeight = footer.LogoWhite.data.attributes.height
   const addr = footer.addr_text
+  console.log(footer)
+  // console.log(footer.web_icon)
   const icons = [
     {
       text: footer.whatsapp_text,
@@ -178,8 +180,34 @@ async function Footer({ lng }: { lng: string }) {
       text: addr,
       iconURL: footer.addr_icon.data.attributes.url,
     },
+    {
+      text: footer.web_text,
+      iconURL: footer.web_icon.data.attributes.url,
+    },
   ]
 
+  const IconText = (props: any) => {
+    if (props.iconText === 'Email') {
+      return (
+        <>
+          Email :<a href='mailto:info@clgcpa.com'> info@clgcpa.com</a>
+        </>
+      )
+    } else if (
+      props.iconText === 'Web' ||
+      props.iconText === '網站' ||
+      props.iconText === '网站'
+    ) {
+      return (
+        <>
+          {props.iconText} :{' '}
+          <a href='https://clggroup.com.hk'>clggroup.com.hk</a>
+        </>
+      )
+    } else {
+      return <>{props.iconText}</>
+    }
+  }
   return (
     <>
       <BackToTop />
@@ -218,7 +246,7 @@ async function Footer({ lng }: { lng: string }) {
                     </span>
                     <span className='w-11/12'>
                       <p className='pl-2 pr-4 text-xs text-grayishWhite'>
-                        {icon.text}
+                        <IconText iconText={icon.text} />
                       </p>
                     </span>
                   </li>

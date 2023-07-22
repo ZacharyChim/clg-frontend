@@ -107,17 +107,18 @@ async function Header({ lng }: { lng: string }) {
       url: assuranceAdvisoryMenu.british_url,
     },
     {
-      title: assuranceAdvisoryMenu.cayman_island,
-      url: assuranceAdvisoryMenu.cayman_island_url,
+      title: assuranceAdvisoryMenu.canada,
+      url: assuranceAdvisoryMenu.canada_url,
     },
     {
       title: assuranceAdvisoryMenu.anguilla,
       url: assuranceAdvisoryMenu.anguilla_url,
     },
     {
-      title: assuranceAdvisoryMenu.ngo,
-      url: assuranceAdvisoryMenu.ngo_url,
+      title: assuranceAdvisoryMenu.cayman_island,
+      url: assuranceAdvisoryMenu.cayman_island_url,
     },
+
     {
       title: assuranceAdvisoryMenu.malaysia,
       url: assuranceAdvisoryMenu.malaysia_url,
@@ -131,8 +132,8 @@ async function Header({ lng }: { lng: string }) {
       url: assuranceAdvisoryMenu.seychelles_url,
     },
     {
-      title: assuranceAdvisoryMenu.canada,
-      url: assuranceAdvisoryMenu.canada_url,
+      title: assuranceAdvisoryMenu.ngo,
+      url: assuranceAdvisoryMenu.ngo_url,
     },
   ]
 
