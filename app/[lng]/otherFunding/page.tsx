@@ -5,7 +5,7 @@ import type { Metadata } from 'next'
 import { fetchMeta } from '../../../lib/utils'
 
 export async function generateMetadata(): Promise<Metadata> {
-  return await fetchMeta('otherFunding')
+  return await fetchMeta('other-funding')
 }
 
 type PageProps = {
