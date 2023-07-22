@@ -38,7 +38,8 @@ export const fetchSingleLang = async (single: string, lng: string) => {
   }
 
   let res = await fetch(
-    `${process.env.NEXT_PUBLIC_STRAPI_API_URL}/${single}?populate=%2A&locale=${language}`
+    `${process.env.NEXT_PUBLIC_STRAPI_API_URL}/${single}?populate=%2A&locale=${language}`,
+    { cache: 'no-store' }
   )
 
   let resData = await res.json()

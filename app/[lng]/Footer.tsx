@@ -157,8 +157,7 @@ async function Footer({ lng }: { lng: string }) {
   const logoWidth = footer.LogoWhite.data.attributes.width
   const logoHeight = footer.LogoWhite.data.attributes.height
   const addr = footer.addr_text
-  console.log(footer)
-  // console.log(footer.web_icon)
+
   const icons = [
     {
       text: footer.whatsapp_text,
@@ -194,7 +193,7 @@ async function Footer({ lng }: { lng: string }) {
         </>
       )
     } else if (
-      props.iconText === 'Web' ||
+      props.iconText === 'Website' ||
       props.iconText === '網站' ||
       props.iconText === '网站'
     ) {
