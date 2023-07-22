@@ -15,7 +15,6 @@ type PageProps = {
 }
 
 export default async function Main({ lng }: PageProps) {
-  let language
   const allCases = await fetchCollection('cases', lng)
   let categories: string[] = ['All']
   allCases.forEach((item: any) => {

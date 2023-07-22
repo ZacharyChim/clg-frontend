@@ -10,11 +10,25 @@ import { marked } from 'marked'
 
 export const fetchMeta = async (page: string) => {
   const res = await fetch(
-    `${process.env.NEXT_PUBLIC_STRAPI_API_URL}/${page}?populate=%2A`
+    `${process.env.NEXT_PUBLIC_STRAPI_API_URL}/${page}?fields[0]=meta_title&fields[1]=meta_description&fields[2]=meta_keywords`
   )
-
+  let title
+  let description
+  let keywords
   const resData = await res.json()
-  return resData.data.attributes
+  !resData.data.attributes.meta_title
+    ? (title =
+        'CLG Group | Accounting | Funding Audit | TVP Audit | BUD Audit | Company Secretary | Xero Hong Kong')
+    : (title = resData.data.attributes.meta_title)
+  !resData.data.attributes.meta_description
+    ? (description =
+        'By facing substantial change in society and the general environment, we are always passionate about finding solutions for different business difficulties, to help our clients to work smartly and easily everyday.  We did it through our three main service scopes — cloud solutions, assurance, and advisory.  We are always doing our best to assist our clients with their challenging and tough business tasks and realize their largest aspiration in their business.')
+    : (description = resData.data.attributes.meta_description)
+  !resData.data.attributes.meta_keywords
+    ? (keywords =
+        'Accounting, Funding Audit, TVP Audit, BUD Audit, Company Secretary, Xero Hong Kong')
+    : (keywords = resData.data.attributes.meta_keywords)
+  return { title, description, keywords }
 }
 
 export const fetchSingleLang = async (single: string, lng: string) => {
@@ -51,7 +65,7 @@ export const fetchCollection = async (collection: string, lng: string) => {
     language = lng
   }
   const res = await fetch(
-    `${process.env.NEXT_PUBLIC_STRAPI_API_URL}/${collection}?populate[0]=featuredImage&locale=${language}`
+    `${process.env.NEXT_PUBLIC_STRAPI_API_URL}/${collection}?populate[0]=featuredImage&populate[1]=category&locale=${language}`
   )
 
   const resData = await res.json()

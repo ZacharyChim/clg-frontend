@@ -10,9 +10,16 @@ export async function generateStaticParams() {
   return [{ lng: 'en' }, { lng: 'hk' }, { lng: 'cn' }]
 }
 
+// export const metadata: Metadata = {
+//   title:
+//     'CLG Group | Accounting | Funding Audit | TVP Audit | BUD Audit | Company Secretary | Xero Hong Kong',
+//   description:
+//     'By facing substantial change in society and the general environment, we are always passionate about finding solutions for different business difficulties, to help our clients to work smartly and easily everyday.  We did it through our three main service scopes — cloud solutions, assurance, and advisory.  We are always doing our best to assist our clients with their challenging and tough business tasks and realize their largest aspiration in their business.',
+//   keywords:
+//     'Accounting, Funding Audit, TVP Audit, BUD Audit, Company Secretary, Xero Hong Kong',
+// }
+
 export default function RootLayout({
-  // Layouts must accept a children prop.
-  // This will be populated with nested layouts or pages
   children,
   params: { lng },
 }: {
@@ -24,7 +31,6 @@ export default function RootLayout({
   return (
     <html lang={lng} dir={dir(lng)}>
       <head>
-        <title>CLG Group</title>
         <Script src='https://chatroom.dumbchat.ai/lib/TC.chatbot.umd.prod.min.js?v=20230425' />
         <Script src={process.env.NEXT_PUBLIC_SITE_URL + '/chatbot.js'} />
       </head>

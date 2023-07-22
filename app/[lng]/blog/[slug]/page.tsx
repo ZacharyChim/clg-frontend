@@ -2,6 +2,7 @@ import React from 'react'
 import Main from './Main'
 import Hero from '../../../../components/Hero'
 import { fetchAllCollection } from '../../../../lib/utils'
+import type { Metadata } from 'next'
 
 type PageProps = {
   params: {
@@ -29,6 +30,26 @@ export async function generateStaticParams() {
   })
 
   return params
+}
+
+const fetchPostMeta = async (slug: string) => {
+  const res = await fetch(
+    `${process.env.NEXT_PUBLIC_STRAPI_API_URL}/posts/${slug}`
+  )
+
+  const resData = await res.json()
+  return {
+    title: resData.data.attributes.meta_title,
+    description: resData.data.attributes.meta_description,
+    keywords: resData.data.attributes.meta_keywords,
+  }
+}
+
+export async function generateMetadata({
+  params,
+}: PageProps): Promise<Metadata> {
+  const { slug } = params
+  return await fetchPostMeta(slug)
 }
 
 export default function Post({ params }: PageProps) {
