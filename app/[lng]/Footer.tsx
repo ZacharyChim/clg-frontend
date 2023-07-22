@@ -5,7 +5,7 @@ import React from 'react'
 import footerCurve from '../../public/footer-curve.png'
 import BackToTop from './BackToTop'
 import FloatingButtons from '../../components/FloatingButtons'
-import { fetchSingle, fetchSingleLang } from '../../lib/utils'
+import { fetchSingleLang } from '../../lib/utils'
 
 async function Footer({ lng }: { lng: string }) {
   const footer = await fetchSingleLang('footer', lng)
