@@ -1,12 +1,7 @@
 import Image from 'next/image'
 import React from 'react'
 import Link from 'next/link'
-import {
-  fetchSingle,
-  fetchSingleLang,
-  richTextReducer,
-  trimTitle,
-} from '../../../lib/utils'
+import { fetchSingleLang, richTextReducer } from '../../../lib/utils'
 import contactTop from '../../../public/contact-top.png'
 import caseTop from '../../../public/case-top.png'
 import Contact from '../../../components/Contact'
@@ -260,11 +255,11 @@ export default async function Main({ lng }: PageProps) {
 
   const why = hrmText.why
 
-    var whyImage =
-      process.env.NEXT_PUBLIC_STRAPI_URL + hrm.why_image.data.attributes.url
-    var whyImageWidth = hrm.why_image.data.attributes.width
-    var whyImageHeight = hrm.why_image.data.attributes.height
- 
+  var whyImage =
+    process.env.NEXT_PUBLIC_STRAPI_URL + hrm.why_image.data.attributes.url
+  var whyImageWidth = hrm.why_image.data.attributes.width
+  var whyImageHeight = hrm.why_image.data.attributes.height
+
   const reason1 = hrmText.reason1
   const reason1Image =
     process.env.NEXT_PUBLIC_STRAPI_URL + hrm.reason1_image.data.attributes.url
