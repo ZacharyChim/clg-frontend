@@ -1,7 +1,7 @@
 import React from 'react'
 import Main from './Main'
 import Hero from '../../../../components/Hero'
-import { fetchAllCollection } from '../../../../lib/utils'
+import { fetchAllCollection, fetchCollection } from '../../../../lib/utils'
 import type { Metadata } from 'next'
 
 type PageProps = {
@@ -15,17 +15,19 @@ export async function generateStaticParams() {
   let params: {}[] = []
 
   let language
-  const posts = await fetchAllCollection('posts')
+  const enPosts = await fetchCollection('posts', 'en')
+  const hkPosts = await fetchCollection('posts', 'hk')
+  const cnPosts = await fetchCollection('posts', 'cn')
 
-  posts.map((item: any) => {
+  enPosts.map((item: any) => {
     params.push({ lng: 'en', slug: item.attributes.slug as string })
   })
 
-  posts.map((item: any) => {
+  hkPosts.map((item: any) => {
     params.push({ lng: 'hk', slug: item.attributes.slug as string })
   })
 
-  posts.map((item: any) => {
+  cnPosts.map((item: any) => {
     params.push({ lng: 'cn', slug: item.attributes.slug as string })
   })
 
