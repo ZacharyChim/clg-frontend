@@ -62,7 +62,8 @@ export const fetchCollection = async (collection: string, lng: string) => {
     language = lng
   }
   const res = await fetch(
-    `${process.env.NEXT_PUBLIC_STRAPI_API_URL}/${collection}?populate[0]=featuredImage&populate[1]=category&locale=${language}`
+    `${process.env.NEXT_PUBLIC_STRAPI_API_URL}/${collection}?populate[0]=featuredImage&populate[1]=category&locale=${language}`,
+    { cache: 'no-store' }
   )
 
   const resData = await res.json()
