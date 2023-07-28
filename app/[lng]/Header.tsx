@@ -1,6 +1,3 @@
-import { v4 } from 'uuid'
-import Image from 'next/image'
-import Link from 'next/link'
 import Navigation from './Navigation'
 import logo from '../../public/logo.png'
 import { fetchSingleLang } from '../../lib/utils'
@@ -66,6 +63,10 @@ async function Header({ lng }: { lng: string }) {
     {
       title: assuranceAdvisoryMenu.hong_kong_taxation,
       url: assuranceAdvisoryMenu.hong_kong_taxation_url,
+    },
+    {
+      title: assuranceAdvisoryMenu.accounting_bookkeeping,
+      url: assuranceAdvisoryMenu.accounting_bookkeeping_url,
     },
   ]
   const advisoryMenu = [
