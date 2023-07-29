@@ -4,7 +4,6 @@ import Link from 'next/link'
 import { v4 } from 'uuid'
 import {
   fetchCollection,
-  fetchSingle,
   fetchSingleLang,
   trimTitle,
 } from '../../lib/utils'
