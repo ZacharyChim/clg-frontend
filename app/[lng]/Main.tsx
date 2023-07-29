@@ -198,6 +198,11 @@ export default async function Main({ lng }: { lng: string }) {
   const eberWidth = data.eberLogo.data.attributes.width
   const eberHeight = data.eberLogo.data.attributes.height
 
+  const infotechURL =
+    process.env.NEXT_PUBLIC_STRAPI_URL + data.infotechLogo.data.attributes.url
+  const infotechWidth = data.infotechLogo.data.attributes.width
+  const infotechHeight = data.infotechLogo.data.attributes.height
+
   const hikeURL =
     process.env.NEXT_PUBLIC_STRAPI_URL + data.hikeLogo.data.attributes.url
   const hikeWidth = data.hikeLogo.data.attributes.width
@@ -212,6 +217,11 @@ export default async function Main({ lng }: { lng: string }) {
     process.env.NEXT_PUBLIC_STRAPI_URL + data.postifyLogo.data.attributes.url
   const postifyWidth = data.postifyLogo.data.attributes.width
   const postifyHeight = data.postifyLogo.data.attributes.height
+
+  const qfpayURL =
+    process.env.NEXT_PUBLIC_STRAPI_URL + data.qfpayLogo.data.attributes.url
+  const qfpayWidth = data.qfpayLogo.data.attributes.width
+  const qfpayHeight = data.qfpayLogo.data.attributes.height
 
   const caseTitle = data.caseTitle
 
@@ -542,6 +552,15 @@ export default async function Main({ lng }: { lng: string }) {
                 height={eberHeight}
               />
             </div>
+
+            <div className='flex flex-col justify-center space-y-2 p-6 md:w-1/4'>
+              <Image
+                src={infotechURL}
+                alt=''
+                width={infotechWidth}
+                height={infotechHeight}
+              />
+            </div>
           </div>
 
           <div className='flex flex-col items-center justify-center md:flex-row md:space-x-4'>
@@ -569,6 +588,15 @@ export default async function Main({ lng }: { lng: string }) {
                 alt=''
                 width={postifyWidth}
                 height={postifyHeight}
+              />
+            </div>
+
+            <div className='flex flex-col justify-center space-y-2 p-6 md:w-1/4'>
+              <Image
+                src={qfpayURL}
+                alt=''
+                width={qfpayWidth}
+                height={qfpayHeight}
               />
             </div>
           </div>
