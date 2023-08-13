@@ -17,7 +17,6 @@ export const fetchMeta = async (page: string, lng: string) => {
   } else {
     language = lng
   }
-  console.log(lng, language)
   const res = await fetch(
     `${process.env.NEXT_PUBLIC_STRAPI_API_URL}/${page}?fields[0]=meta_title&fields[1]=meta_description&fields[2]=meta_keywords&locale=${language}`
   )
