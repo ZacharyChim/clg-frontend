@@ -4,8 +4,12 @@ import Main from './Main'
 import type { Metadata } from 'next'
 import { fetchMeta } from '../../../lib/utils'
 
-export async function generateMetadata(): Promise<Metadata> {
-  return await fetchMeta('tax')
+export async function generateMetadata({
+  params: { lng },
+}: {
+  params: { lng: string }
+}): Promise<Metadata> {
+  return await fetchMeta('tax', lng)
 }
 
 type PageProps = {

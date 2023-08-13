@@ -8,9 +8,18 @@ export function cn(...inputs: ClassValue[]) {
 
 import { marked } from 'marked'
 
-export const fetchMeta = async (page: string) => {
+export const fetchMeta = async (page: string, lng: string) => {
+  let language
+  if (lng === 'hk') {
+    language = 'zh-Hant-HK'
+  } else if (lng === 'cn') {
+    language = 'zh-Hans-CN'
+  } else {
+    language = lng
+  }
+  console.log(lng, language)
   const res = await fetch(
-    `${process.env.NEXT_PUBLIC_STRAPI_API_URL}/${page}?fields[0]=meta_title&fields[1]=meta_description&fields[2]=meta_keywords`
+    `${process.env.NEXT_PUBLIC_STRAPI_API_URL}/${page}?fields[0]=meta_title&fields[1]=meta_description&fields[2]=meta_keywords&locale=${language}`
   )
 
   const resData = await res.json()

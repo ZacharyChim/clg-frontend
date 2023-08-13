@@ -10,8 +10,12 @@ type PageProps = {
   }
 }
 
-export async function generateMetadata(): Promise<Metadata> {
-  return await fetchMeta('hk')
+export async function generateMetadata({
+  params: { lng },
+}: {
+  params: { lng: string }
+}): Promise<Metadata> {
+  return await fetchMeta('hk', lng)
 }
 
 function hk({ params: { lng } }: PageProps) {

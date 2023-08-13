@@ -2,11 +2,7 @@ import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { v4 } from 'uuid'
-import {
-  fetchCollection,
-  fetchSingleLang,
-  trimTitle,
-} from '../../lib/utils'
+import { fetchCollection, fetchSingleLang, trimTitle } from '../../lib/utils'
 
 import contactTop from '../../public/contact-top.png'
 import caseTop from '../../public/case-top.png'
