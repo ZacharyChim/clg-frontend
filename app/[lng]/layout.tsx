@@ -30,10 +30,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang={lng} dir={dir(lng)}>
-      <head>
-        <Script src='https://chatroom.dumbchat.ai/lib/TC.chatbot.umd.prod.min.js?v=20230425' />
-        <Script src={process.env.NEXT_PUBLIC_SITE_URL + '/chatbot.js'} />
-      </head>
+      {/* <head> */}
+      {/* <Script src='https://chatroom.dumbchat.ai/lib/TC.chatbot.umd.prod.min.js?v=20230425' /> */}
+      {/* <Script src={process.env.NEXT_PUBLIC_SITE_URL + '/chatbot.js'} /> */}
+      {/* </head> */}
       <body>
         {/* @ts-ignore */}
         <Header lng={lng} />

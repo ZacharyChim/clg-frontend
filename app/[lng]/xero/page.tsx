@@ -22,7 +22,7 @@ function xero({ params: { lng } }: PageProps) {
   return (
     <div className='bg-preIpoCurveLine bg-contain bg-[center_top_134rem] bg-no-repeat'>
       {/* @ts-ignore */}
-      <Hero page='xero' lng={lng} />
+      {/* <Hero page='xero' lng={lng} /> */}
       {/* @ts-ignore */}
       <Main lng={lng} />
     </div>
