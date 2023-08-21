@@ -193,10 +193,10 @@ export default async function Main({ lng }: { lng: string }) {
   const eberWidth = data.eberLogo.data.attributes.width
   const eberHeight = data.eberLogo.data.attributes.height
 
-  const infologoURL =
-    process.env.NEXT_PUBLIC_STRAPI_URL + data.infologo.data.attributes.url
-  const infologoWidth = data.infolog.data.attributes.width
-  const infologoHeight = data.infologo.data.attributes.height
+  // const infologoURL =
+  //   process.env.NEXT_PUBLIC_STRAPI_URL + data.infologo.data.attributes.url
+  // const infologoWidth = data.infolog.data.attributes.width
+  // const infologoHeight = data.infologo.data.attributes.height
 
   const hikeURL =
     process.env.NEXT_PUBLIC_STRAPI_URL + data.hikeLogo.data.attributes.url
@@ -213,10 +213,10 @@ export default async function Main({ lng }: { lng: string }) {
   const postifyWidth = data.postifyLogo.data.attributes.width
   const postifyHeight = data.postifyLogo.data.attributes.height
 
-  const qflogoURL =
-    process.env.NEXT_PUBLIC_STRAPI_URL + data.qflogo.data.attributes.url
-  const qflogoWidth = data.qflogo.data.attributes.width
-  const qflogoHeight = data.qflogo.data.attributes.height
+  // const qflogoURL =
+  //   process.env.NEXT_PUBLIC_STRAPI_URL + data.qflogo.data.attributes.url
+  // const qflogoWidth = data.qflogo.data.attributes.width
+  // const qflogoHeight = data.qflogo.data.attributes.height
 
   const caseTitle = data.caseTitle
 
@@ -548,14 +548,14 @@ export default async function Main({ lng }: { lng: string }) {
               />
             </div>
 
-            <div className='flex flex-col justify-center space-y-2 p-6 md:w-1/4'>
+            {/* <div className='flex flex-col justify-center space-y-2 p-6 md:w-1/4'>
               <Image
                 src={infologoURL}
                 alt=''
                 width={infologoWidth}
                 height={infologoHeight}
               />
-            </div>
+            </div> */}
           </div>
 
           <div className='flex flex-col items-center justify-center md:flex-row md:space-x-4'>
@@ -586,14 +586,14 @@ export default async function Main({ lng }: { lng: string }) {
               />
             </div>
 
-            <div className='flex flex-col justify-center space-y-2 p-6 md:w-1/4'>
+            {/* <div className='flex flex-col justify-center space-y-2 p-6 md:w-1/4'>
               <Image
                 src={qflogoURL}
                 alt=''
                 width={qflogoWidth}
                 height={qflogoHeight}
               />
-            </div>
+            </div> */}
           </div>
         </div>
       </section>
