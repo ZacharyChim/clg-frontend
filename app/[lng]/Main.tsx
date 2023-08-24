@@ -624,9 +624,8 @@ export default async function Main({ lng }: { lng: string }) {
                   <div className='p-4 text-left sm:p-6'>
                     <Link
                       href={
-                        process.env.NEXT_PUBLIC_SITE_URL +
-                        '/cases/' +
-                        item.attributes.slug
+                        // process.env.NEXT_PUBLIC_SITE_URL +
+                        '/cases/' + item.attributes.slug
                       }
                     >
                       <h3 className='text-md text-darkBrown'>
@@ -636,9 +635,8 @@ export default async function Main({ lng }: { lng: string }) {
 
                     <Link
                       href={
-                        process.env.NEXT_PUBLIC_SITE_URL +
-                        '/cases/' +
-                        item.attributes.slug
+                        // process.env.NEXT_PUBLIC_SITE_URL +
+                        '/cases/' + item.attributes.slug
                       }
                       className='group mt-4 inline-flex gap-1 text-sm font-medium text-blue-600'
                     >
