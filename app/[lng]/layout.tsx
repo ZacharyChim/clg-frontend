@@ -30,10 +30,19 @@ export default function RootLayout({
 }) {
   return (
     <html lang={lng} dir={dir(lng)}>
-      {/* <head> */}
-      {/* <Script src='https://chatroom.dumbchat.ai/lib/TC.chatbot.umd.prod.min.js?v=20230425' /> */}
-      {/* <Script src={process.env.NEXT_PUBLIC_SITE_URL + '/chatbot.js'} /> */}
-      {/* </head> */}
+      <head>
+        <Script src='https://www.googletagmanager.com/gtag/js?id=G-Q099K983TN' />
+        <Script id='google-analytics'>
+          {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+ 
+          gtag('config', 'G-Q099K983TN"');
+        `}
+        </Script>
+      </head>
+
       <body>
         {/* @ts-ignore */}
         <Header lng={lng} />
