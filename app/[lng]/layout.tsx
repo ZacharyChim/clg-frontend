@@ -30,7 +30,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang={lng} dir={dir(lng)}>
-      <head>
+      <body>
+        {/* @ts-ignore */}
+        <Header lng={lng} />
+
+        {children}
+        {/* @ts-ignore */}
+        <Footer lng={lng} />
         <Script src='https://www.googletagmanager.com/gtag/js?id=G-Q099K983TN' />
         <Script id='google-analytics'>
           {`
@@ -41,15 +47,6 @@ export default function RootLayout({
           gtag('config', 'G-Q099K983TN"');
         `}
         </Script>
-      </head>
-
-      <body>
-        {/* @ts-ignore */}
-        <Header lng={lng} />
-
-        {children}
-        {/* @ts-ignore */}
-        <Footer lng={lng} />
       </body>
     </html>
   )
