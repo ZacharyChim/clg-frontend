@@ -19,11 +19,12 @@ export default async function Main({ lng }: PageProps) {
   const payroll = await fetchSingleLang('payroll', lng)
   let payrollText = payroll
 
-  const payrollTag =
-    process.env.NEXT_PUBLIC_STRAPI_URL +
-    payroll.cloud_solutions.data.attributes.url
-  const payrollTagWidth = payroll.cloud_solutions.data.attributes.width
-  const payrollTagHeight = payroll.cloud_solutions.data.attributes.height
+  const payrollTag = 'Payroll Outsourcing Service'
+  // const payrollTag =
+  //   process.env.NEXT_PUBLIC_STRAPI_URL +
+  //   payroll.cloud_solutions.data.attributes.url
+  // const payrollTagWidth = payroll.cloud_solutions.data.attributes.width
+  // const payrollTagHeight = payroll.cloud_solutions.data.attributes.height
 
   const payrollTitle = payrollText.payroll_title
 
@@ -236,13 +237,16 @@ export default async function Main({ lng }: PageProps) {
     <>
       <section className='mx-auto flex max-w-5xl flex-col items-center'>
         <div className='mt-10 self-start'>
-          <Image
+          {/* <Image
             alt=''
             src={payrollTag}
             width={payrollTagWidth}
             height={payrollTagHeight}
             className='items-start'
-          />
+          /> */}
+          <span className='half_background mx-2 text-xl font-bold text-darkBlue'>
+            {payrollTag}
+          </span>
           <h3 className='mt-4 text-2xl font-bold text-darkBlue'>
             {payrollTitle}
           </h3>

@@ -145,10 +145,6 @@ export default async function Main({ lng }: PageProps) {
       title: auditText.faq5,
       content: richTextReducer(auditText.faq5_content),
     },
-    {
-      title: auditText.faq6,
-      content: richTextReducer(auditText.faq6_content),
-    },
   ]
 
   return (

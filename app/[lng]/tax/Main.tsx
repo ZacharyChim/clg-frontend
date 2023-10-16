@@ -94,7 +94,7 @@ export default async function Main({ lng }: PageProps) {
       <ImageArticle
         aboutImage={aboutImageObj}
         aboutArticle={aboutArticle}
-        tagImage={auditObj}
+        // tagImage={auditObj}
         imageLeft={false}
       />
 

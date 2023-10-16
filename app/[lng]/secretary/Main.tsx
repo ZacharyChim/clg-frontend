@@ -164,10 +164,6 @@ export default async function Main({ lng }: PageProps) {
       title: secretaryText.faq15,
       content: richTextReducer(secretaryText.faq15_content),
     },
-    {
-      title: secretaryText.faq16,
-      content: richTextReducer(secretaryText.faq16_content),
-    },
   ]
 
   return (
